@@ -57,7 +57,7 @@ public class NewJFrame1 extends javax.swing.JFrame {
 
         jRadioButton1.setText("jRadioButton1");
         jPanel1.add(jRadioButton1);
-        jRadioButton1.setBounds(360, 40, 98, 21);
+        jRadioButton1.setBounds(360, 40, 99, 21);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 630, 490);
