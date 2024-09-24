@@ -39,6 +39,7 @@ public class MainApp {
         // ตั้ง mainPanel เป็น ContentPane ของ JFrame
         f.setContentPane(mainPanel);
         f.setVisible(true);
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 }
 
