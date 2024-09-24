@@ -26,17 +26,55 @@ public class MainFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        page2 = new javax.swing.JPanel();
+        b1 = new javax.swing.JButton();
+        b2 = new javax.swing.JButton();
+        b3 = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        page2.setBackground(new java.awt.Color(255, 102, 102));
+
+        b1.setText("jButton1");
+
+        b2.setText("jButton2");
+
+        b3.setText("jButton3");
+
+        javax.swing.GroupLayout page2Layout = new javax.swing.GroupLayout(page2);
+        page2.setLayout(page2Layout);
+        page2Layout.setHorizontalGroup(
+            page2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(page2Layout.createSequentialGroup()
+                .addGap(121, 121, 121)
+                .addGroup(page2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(b3, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE)
+                    .addGroup(page2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(b2, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE)
+                        .addComponent(b1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(127, Short.MAX_VALUE))
+        );
+        page2Layout.setVerticalGroup(
+            page2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(page2Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(b1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addComponent(b2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addComponent(b3, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(25, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(page2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(page2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -78,5 +116,9 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton b1;
+    private javax.swing.JButton b2;
+    private javax.swing.JButton b3;
+    private javax.swing.JPanel page2;
     // End of variables declaration//GEN-END:variables
 }
