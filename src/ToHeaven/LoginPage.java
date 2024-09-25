@@ -3,12 +3,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package ToHeaven;
-
+import java.util.*;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 /**
  *
  * @author FILLL
  */
-public class LoginPage extends javax.swing.JPanel {
+public class LoginPage extends JPanel {
     private String userName,password;
     /**
      * Creates new form LoginPage
@@ -164,13 +167,15 @@ public class LoginPage extends javax.swing.JPanel {
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
         // TODO add your handling code hered:
-        if(jTextFieldUsername.getText()!=null &&jPasswordField.getPassword()!=null){
-            userName=jTextFieldUsername.getText();
+         if (!jTextFieldUsername.getText().isEmpty() && jPasswordField.getPassword().length > 0) {
+            userName = jTextFieldUsername.getText();
             char[] p = jPasswordField.getPassword();
             password = new String(p); 
-        }else{
-            
-        }
+        // Proceed with the login process (validation, etc.)
+        System.out.println("Username: " + userName + ", Password: " + password);
+    } else {
+        JOptionPane.showMessageDialog(this, "Please enter both username and password.", "Input Error", JOptionPane.ERROR_MESSAGE);
+    }
     }//GEN-LAST:event_loginButtonActionPerformed
 
     private void registerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerButtonActionPerformed
