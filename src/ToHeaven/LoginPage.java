@@ -70,7 +70,7 @@ public class LoginPage extends JPanel {
             }
         });
 
-        jLoginText.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        jLoginText.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLoginText.setText("LOGIN");
 
         jLabelUsernameText.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -125,7 +125,7 @@ public class LoginPage extends JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabelUsernameText)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
                         .addComponent(jTextFieldUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabelPasswordText)
@@ -142,17 +142,17 @@ public class LoginPage extends JPanel {
                 .addGap(300, 300, 300)
                 .addComponent(loginButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(296, 296, 296))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(275, 275, 275)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLoginText)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(293, 293, 293))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
+                .addContainerGap()
                 .addComponent(jLoginText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(63, 63, 63)
+                .addGap(78, 78, 78)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextFieldUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelUsernameText))
@@ -165,7 +165,7 @@ public class LoginPage extends JPanel {
                     .addComponent(showPassRiado)
                     .addComponent(registerButton))
                 .addGap(44, 44, 44)
-                .addComponent(loginButton, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                .addComponent(loginButton, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
                 .addGap(113, 113, 113))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -178,7 +178,7 @@ public class LoginPage extends JPanel {
                     String excelUsername = rowUsername.getStringCellValue();
                     String excelPassword = rowPassword.getStringCellValue();
                     if (excelUsername.equals(userName) && excelPassword.equals(password)) {
-                        System.out.print("Welcome "+userName);
+                        System.out.print("Welcome "+userName+" | "+password+" | "+row.getCell(2).getStringCellValue()+" | "+row.getCell(3).getStringCellValue());
                         parentFrame.dispose();
                         return;
                     }
