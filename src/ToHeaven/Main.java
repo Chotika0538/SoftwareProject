@@ -15,23 +15,33 @@ public class Main extends javax.swing.JFrame {
         initComponents();
         cardLayout = new CardLayout();
         mainPanel = new  JPanel(cardLayout);
-        mainPanel.add(new LoginPage(this),"LoginPage");
+        mainPanel.add(new LoginPage(mainPanel),"LoginPage");
+        mainPanel.add(new Register(mainPanel),"RegisterPage");
+        add(mainPanel);
+        cardLayout.show(mainPanel,"LoginPage");
+        setSize(700,500);
+        setContentPane(mainPanel);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+        setResizable(false);
+        setVisible(true);
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(700, 500));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 700, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 500, Short.MAX_VALUE)
         );
 
         pack();

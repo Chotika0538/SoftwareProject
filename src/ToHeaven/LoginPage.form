@@ -29,20 +29,20 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jLabelUsernameText" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="14" max="32767" attributes="0"/>
-                      <Component id="jTextFieldUsername" min="-2" pref="382" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jTextFieldUsername" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jLabelPasswordText" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jPasswordField" max="32767" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
+                          <Group type="102" attributes="0">
                               <Component id="registerButton" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="showPassRiado" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="jPasswordField" min="-2" pref="382" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -81,7 +81,7 @@
                   <Component id="registerButton" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-              <Component id="loginButton" pref="64" max="32767" attributes="0"/>
+              <Component id="loginButton" pref="65" max="32767" attributes="0"/>
               <EmptySpace min="-2" pref="113" max="-2" attributes="0"/>
           </Group>
       </Group>
