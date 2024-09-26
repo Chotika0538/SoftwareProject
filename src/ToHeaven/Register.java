@@ -13,20 +13,12 @@ import java.awt.event.ActionListener;
  * @author FILLL
  */
 public class Register extends javax.swing.JPanel {
-    private CardLayout card;
-    private JPanel mainPanel;
     /**
      * Creates new form Register
      */
     public Register() {
         initComponents();
-        card = new CardLayout();
-        mainPanel=new JPanel(card);
-        mainPanel.add(new LoginPage(),"to login");
-        s();
-    }
-    public void s(){
-        add(mainPanel);
+
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -66,7 +58,6 @@ public class Register extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-       card.show(mainPanel,"to login");
     }//GEN-LAST:event_jButton1ActionPerformed
     public static void main(String args[]) {
     /* Set the Nimbus look and feel */

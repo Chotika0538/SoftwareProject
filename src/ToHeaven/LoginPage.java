@@ -18,16 +18,18 @@ import java.io.IOException;
  */
 public class LoginPage extends JPanel {
     private String userName,password;
-    String excelPath ;
-    FileInputStream fileInput;
-    Workbook wb;
-    Sheet sheet ;
+    private String excelPath ;
+    private FileInputStream fileInput;
+    private Workbook wb;
+    private Sheet sheet ;
+    private JFrame parentFrame;
     /**
      * Creates new form LoginPage
      */
-    public LoginPage() {
+    public LoginPage(JFrame parentFrame) {
         initComponents();
         setReadfile();
+        this.parentFrame = parentFrame;
     }
     private void setReadfile(){
         try{
@@ -176,7 +178,8 @@ public class LoginPage extends JPanel {
                     String excelUsername = rowUsername.getStringCellValue();
                     String excelPassword = rowPassword.getStringCellValue();
                     if (excelUsername.equals(userName) && excelPassword.equals(password)) {
-                        System.out.println();
+                        System.out.print("Welcome "+userName);
+                        parentFrame.dispose();
                         return;
                     }
                 }
@@ -198,6 +201,11 @@ public class LoginPage extends JPanel {
 
     private void showPassRiadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showPassRiadoActionPerformed
         // TODO add your handling code here:
+        if (showPassRiado.isSelected()) {
+            jPasswordField.setEchoChar((char) 0); // Show password
+        } else {
+            jPasswordField.setEchoChar('*'); // Hide password
+        }
     }//GEN-LAST:event_showPassRiadoActionPerformed
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
@@ -235,9 +243,9 @@ public class LoginPage extends JPanel {
     java.awt.EventQueue.invokeLater(new Runnable() {
         public void run() {
             // Create a new JFrame
-            javax.swing.JFrame frame = new javax.swing.JFrame("Login Page");
+            JFrame frame = new javax.swing.JFrame("Login Page");
             // Add the LoginPage JPanel to the frame
-            frame.setContentPane(new LoginPage());
+            frame.setContentPane(new LoginPage(frame));
             frame.setDefaultCloseOperation(javax.swing.JFrame.EXIT_ON_CLOSE);
             frame.pack(); // Adjust frame size to fit content
             frame.setLocationRelativeTo(null); // Center the frame on screen
