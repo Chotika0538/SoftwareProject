@@ -18,13 +18,27 @@ import java.io.IOException;
  */
 public class LoginPage extends JPanel {
     private String userName,password;
+    String excelPath ;
+    FileInputStream fileInput;
+    Workbook wb;
+    Sheet sheet ;
     /**
      * Creates new form LoginPage
      */
     public LoginPage() {
         initComponents();
+        setReadfile();
     }
-
+    private void setReadfile(){
+        try{
+            excelPath = "UserInfo.xlsx";
+            fileInput = new FileInputStream(new File(excelPath));
+            wb = new XSSFWorkbook(fileInput);
+            sheet = wb.getSheetAt(0);
+        }catch(Exception err){
+            System.out.print(err);
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -154,34 +168,21 @@ public class LoginPage extends JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
     private void checkUserPass(String userName,String password){
-            String excelPath = "UserInfo.xlsx";
-            try{
-                FileInputStream fileInput = new FileInputStream(new File(excelPath));
-                Workbook wb = new XSSFWorkbook(fileInput);
-                Sheet sheet = wb.getSheetAt(0);
-                for(Row row : sheet ){
-                    for(Cell cell : row){
-                        switch (cell.getCellTypeEnum()){
-                            case STRING:
-                            System.out.print(cell.getStringCellValue() + "\t");
-                            break;
-                            case NUMERIC:
-                                System.out.print(cell.getNumericCellValue() + "\t");
-                                break;
-                            case BOOLEAN:
-                                System.out.print(cell.getBooleanCellValue() + "\t");
-                                break;
-                            default:
-                            System.out.print("UNKNOWN\t");
-                            break;
-                        }
-                        
+        for(Row row : sheet ){
+            Cell rowUsername = row.getCell(0);
+            Cell rowPassword = row.getCell(1);
+            if (rowUsername != null && rowPassword != null) {
+                if (rowUsername.getCellTypeEnum() == CellType.STRING &&  rowPassword.getCellTypeEnum() == CellType.STRING) {
+                    String excelUsername = rowUsername.getStringCellValue();
+                    String excelPassword = rowPassword.getStringCellValue();
+                    if (excelUsername.equals(userName) && excelPassword.equals(password)) {
+                        System.out.println();
+                        return;
                     }
-                    System.out.println();
                 }
-            }catch(Exception err){
-                System.out.println(err);
             }
+        }
+        JOptionPane.showMessageDialog(this, "User Not Found !", "Search Error", JOptionPane.ERROR_MESSAGE);
     }
     private void formAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_formAncestorAdded
         // TODO add your handling code here:
@@ -208,7 +209,7 @@ public class LoginPage extends JPanel {
         // Proceed with the login process (validation, etc.)
         checkUserPass(userName,password);
     } else {
-        JOptionPane.showMessageDialog(this, "Please enter both username and password.", "Input Error", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(this, "Please enter both username and password.", "Input Error", JOptionPane.WARNING_MESSAGE);
     }
     }//GEN-LAST:event_loginButtonActionPerformed
 
