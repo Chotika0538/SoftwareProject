@@ -7,6 +7,11 @@ import java.util.*;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;  // Allows working with .xlsx files
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 /**
  *
  * @author FILLL
@@ -148,7 +153,36 @@ public class LoginPage extends JPanel {
                 .addGap(113, 113, 113))
         );
     }// </editor-fold>//GEN-END:initComponents
-
+    private void checkUserPass(String userName,String password){
+            String excelPath = "UserInfo.xlsx";
+            try{
+                FileInputStream fileInput = new FileInputStream(new File(excelPath));
+                Workbook wb = new XSSFWorkbook(fileInput);
+                Sheet sheet = wb.getSheetAt(0);
+                for(Row row : sheet ){
+                    for(Cell cell : row){
+                        switch (cell.getCellTypeEnum()){
+                            case STRING:
+                            System.out.print(cell.getStringCellValue() + "\t");
+                            break;
+                            case NUMERIC:
+                                System.out.print(cell.getNumericCellValue() + "\t");
+                                break;
+                            case BOOLEAN:
+                                System.out.print(cell.getBooleanCellValue() + "\t");
+                                break;
+                            default:
+                            System.out.print("UNKNOWN\t");
+                            break;
+                        }
+                        
+                    }
+                    System.out.println();
+                }
+            }catch(Exception err){
+                System.out.println(err);
+            }
+    }
     private void formAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_formAncestorAdded
         // TODO add your handling code here:
     }//GEN-LAST:event_formAncestorAdded
@@ -172,7 +206,7 @@ public class LoginPage extends JPanel {
             char[] p = jPasswordField.getPassword();
             password = new String(p); 
         // Proceed with the login process (validation, etc.)
-        System.out.println("Username: " + userName + ", Password: " + password);
+        checkUserPass(userName,password);
     } else {
         JOptionPane.showMessageDialog(this, "Please enter both username and password.", "Input Error", JOptionPane.ERROR_MESSAGE);
     }
