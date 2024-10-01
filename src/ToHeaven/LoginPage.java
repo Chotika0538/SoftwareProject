@@ -60,7 +60,7 @@ public class LoginPage extends JPanel {
         loginButton = new javax.swing.JButton();
         registerButton = new javax.swing.JButton();
 
-        setPreferredSize(new java.awt.Dimension(700, 500));
+        setPreferredSize(new java.awt.Dimension(800, 500));
         addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 formAncestorAdded(evt);
@@ -153,7 +153,7 @@ public class LoginPage extends JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLoginText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(78, 78, 78)
+                .addGap(45, 45, 45)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextFieldUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelUsernameText))
@@ -166,7 +166,7 @@ public class LoginPage extends JPanel {
                     .addComponent(showPassRiado)
                     .addComponent(registerButton))
                 .addGap(44, 44, 44)
-                .addComponent(loginButton, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
+                .addComponent(loginButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(113, 113, 113))
         );
     }// </editor-fold>//GEN-END:initComponents

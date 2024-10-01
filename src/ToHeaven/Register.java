@@ -98,7 +98,7 @@ public class Register extends javax.swing.JPanel {
 
         userNameField1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
-        setPreferredSize(new java.awt.Dimension(700, 500));
+        setPreferredSize(new java.awt.Dimension(800, 500));
 
         jLoginText.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLoginText.setText("REGISTER");
@@ -219,7 +219,7 @@ public class Register extends javax.swing.JPanel {
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(surnameField, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(passwordfield, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE))))))))
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(146, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -265,7 +265,7 @@ public class Register extends javax.swing.JPanel {
         wb=null;
          try{
             excelPath = "UserInfo.xlsx";
-            fileInput = new FileInputStream(new File(excelPath));
+            fileInput = new FileInputStream(new File("./UserInfo.xlsx"));
             wb = new XSSFWorkbook(fileInput);
             sheet = wb.getSheetAt(0);
         }catch(Exception err){
