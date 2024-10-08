@@ -39,64 +39,64 @@ public class AddWreath extends javax.swing.JPanel {
     private void initComponents() {
 
         name = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        size = new javax.swing.JLabel();
+        nameTF = new javax.swing.JTextField();
+        pattern = new javax.swing.JLabel();
         patternTF = new javax.swing.JTextField();
-        size1 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        size2 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        color = new javax.swing.JLabel();
+        colorTF = new javax.swing.JTextField();
+        pic_detail = new javax.swing.JLabel();
+        pic_detailSP = new javax.swing.JScrollPane();
+        pic_detailJP = new javax.swing.JPanel();
+        addListBT = new javax.swing.JButton();
+        deleteListBT = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(480, 370));
 
         name.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
         name.setText("ชื่อสินค้า : ");
 
-        jTextField1.setFont(new java.awt.Font("TH SarabunPSK", 0, 20)); // NOI18N
+        nameTF.setFont(new java.awt.Font("TH SarabunPSK", 0, 20)); // NOI18N
 
-        size.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
-        size.setText("รูปแบบสินค้า  : ");
+        pattern.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
+        pattern.setText("รูปแบบสินค้า  : ");
 
         patternTF.setFont(new java.awt.Font("TH SarabunPSK", 0, 20)); // NOI18N
 
-        size1.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
-        size1.setText("สีสินค้า  : ");
+        color.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
+        color.setText("สีสินค้า  : ");
 
-        jTextField3.setFont(new java.awt.Font("TH SarabunPSK", 0, 20)); // NOI18N
+        colorTF.setFont(new java.awt.Font("TH SarabunPSK", 0, 20)); // NOI18N
 
-        size2.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
-        size2.setText("รูปและรายละเอียดของสินค้า");
+        pic_detail.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
+        pic_detail.setText("รูปและรายละเอียดของสินค้า");
 
-        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        pic_detailSP.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
-        jPanel1.setBackground(new java.awt.Color(255, 204, 204));
-        jPanel1.setPreferredSize(new java.awt.Dimension(408, 181));
-        jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
+        pic_detailJP.setBackground(new java.awt.Color(255, 204, 204));
+        pic_detailJP.setPreferredSize(new java.awt.Dimension(408, 181));
+        pic_detailJP.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jPanel1MouseClicked(evt);
+                pic_detailJPMouseClicked(evt);
             }
         });
-        jPanel1.setLayout(new javax.swing.BoxLayout(jPanel1, javax.swing.BoxLayout.Y_AXIS));
-        wdList.add(new WreathDetail(wdList, jPanel1));
-        jPanel1.add(wdList.get(0));
-        jScrollPane1.setViewportView(jPanel1);
+        pic_detailJP.setLayout(new javax.swing.BoxLayout(pic_detailJP, javax.swing.BoxLayout.Y_AXIS));
+        wdList.add(new WreathDetail(wdList, pic_detailJP));
+        pic_detailJP.add(wdList.get(0));
+        pic_detailSP.setViewportView(pic_detailJP);
 
-        jButton1.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
-        jButton1.setText("+ เพิ่มรายการ");
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        addListBT.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
+        addListBT.setText("+ เพิ่มรายการ");
+        addListBT.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
+                addListBTMouseClicked(evt);
             }
         });
 
-        jButton2.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
-        jButton2.setText("- ลบรายการ");
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+        deleteListBT.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
+        deleteListBT.setText("- ลบรายการ");
+        deleteListBT.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
+                deleteListBTMouseClicked(evt);
             }
         });
 
@@ -109,25 +109,25 @@ public class AddWreath extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(34, 34, 34)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pic_detailSP, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(size1)
+                                .addComponent(color)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(colorTF, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(size)
+                                .addComponent(pattern)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(patternTF, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(name)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(size2)))
+                                .addComponent(nameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(pic_detail)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(123, 123, 123)
-                        .addComponent(jButton2)
+                        .addComponent(deleteListBT)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1)))
+                        .addComponent(addListBT)))
                 .addContainerGap(38, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -136,49 +136,49 @@ public class AddWreath extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(name)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(nameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(size, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pattern, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(patternTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(size1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(color, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(colorTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, 0)
-                .addComponent(size2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pic_detail, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pic_detailSP, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(addListBT)
+                    .addComponent(deleteListBT))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+    private void addListBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addListBTMouseClicked
         // TODO add your handling code here:
-        wdList.add(new WreathDetail(wdList, jPanel1));
-        jPanel1.setPreferredSize(new Dimension(408, jPanel1.getHeight()+181));
-        jPanel1.add(wdList.get(wdList.size()-1));
-        jPanel1.revalidate();
-        jPanel1.repaint();
-    }//GEN-LAST:event_jButton1MouseClicked
+        wdList.add(new WreathDetail(wdList, pic_detailJP));
+        pic_detailJP.setPreferredSize(new Dimension(408, pic_detailJP.getHeight()+181));
+        pic_detailJP.add(wdList.get(wdList.size()-1));
+        pic_detailJP.revalidate();
+        pic_detailJP.repaint();
+    }//GEN-LAST:event_addListBTMouseClicked
 
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+    private void deleteListBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteListBTMouseClicked
         // TODO add your handling code here:
         
-    }//GEN-LAST:event_jButton2MouseClicked
+    }//GEN-LAST:event_deleteListBTMouseClicked
 
-    private void jPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseClicked
+    private void pic_detailJPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pic_detailJPMouseClicked
         // TODO add your handling code here:
 //       JPanel clickjp = (JPanel) evt.getSource();
 //       for(int i =0; i< wdList.size(); i++){
 //           if (wdList.get(i) == clickjp){
 //               if (clickjp.)
 //       }
-    }//GEN-LAST:event_jPanel1MouseClicked
+    }//GEN-LAST:event_pic_detailJPMouseClicked
 // /* testing panel*/
 //    public static void main(String[] args){
 //        JFrame f = new JFrame();
@@ -191,17 +191,17 @@ public class AddWreath extends javax.swing.JPanel {
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JButton addListBT;
+    private javax.swing.JLabel color;
+    private javax.swing.JTextField colorTF;
+    private javax.swing.JButton deleteListBT;
     private javax.swing.JLabel name;
+    private javax.swing.JTextField nameTF;
+    private javax.swing.JLabel pattern;
     private javax.swing.JTextField patternTF;
-    private javax.swing.JLabel size;
-    private javax.swing.JLabel size1;
-    private javax.swing.JLabel size2;
+    private javax.swing.JLabel pic_detail;
+    private javax.swing.JPanel pic_detailJP;
+    private javax.swing.JScrollPane pic_detailSP;
     // End of variables declaration//GEN-END:variables
 
     public JTextField getPatternTF() {

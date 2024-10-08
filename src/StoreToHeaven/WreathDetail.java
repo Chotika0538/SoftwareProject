@@ -39,60 +39,60 @@ private JPanel jp;
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        FileLB = new javax.swing.JLabel();
-        FileLB1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        FileLB2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        FileLB3 = new javax.swing.JLabel();
+        choosePicBT = new javax.swing.JButton();
+        showPicName = new javax.swing.JLabel();
+        detailLB = new javax.swing.JLabel();
+        detailSP = new javax.swing.JScrollPane();
+        detailTA = new javax.swing.JTextArea();
+        priceLB = new javax.swing.JLabel();
+        priceTF = new javax.swing.JTextField();
+        bathLB = new javax.swing.JLabel();
         deleteCB = new javax.swing.JCheckBox();
 
         setBackground(new java.awt.Color(255, 241, 211));
         setLayout(null);
 
-        jButton1.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
-        jButton1.setText("กดแนบรูปภาพ");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        choosePicBT.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
+        choosePicBT.setText("กดแนบรูปภาพ");
+        choosePicBT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                choosePicBTActionPerformed(evt);
             }
         });
-        add(jButton1);
-        jButton1.setBounds(10, 10, 106, 26);
+        add(choosePicBT);
+        choosePicBT.setBounds(10, 10, 106, 26);
 
-        FileLB.setBackground(new java.awt.Color(204, 255, 255));
-        FileLB.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
-        add(FileLB);
-        FileLB.setBounds(130, 10, 160, 30);
+        showPicName.setBackground(new java.awt.Color(204, 255, 255));
+        showPicName.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
+        add(showPicName);
+        showPicName.setBounds(130, 10, 160, 30);
 
-        FileLB1.setBackground(new java.awt.Color(204, 255, 255));
-        FileLB1.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
-        FileLB1.setText("รายละเอียด ");
-        add(FileLB1);
-        FileLB1.setBounds(10, 40, 66, 22);
+        detailLB.setBackground(new java.awt.Color(204, 255, 255));
+        detailLB.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
+        detailLB.setText("รายละเอียด ");
+        add(detailLB);
+        detailLB.setBounds(10, 40, 66, 22);
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        detailTA.setColumns(20);
+        detailTA.setRows(5);
+        detailSP.setViewportView(detailTA);
 
-        add(jScrollPane1);
-        jScrollPane1.setBounds(10, 70, 347, 101);
+        add(detailSP);
+        detailSP.setBounds(10, 70, 347, 101);
 
-        FileLB2.setBackground(new java.awt.Color(204, 255, 255));
-        FileLB2.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
-        FileLB2.setText("ราคา");
-        add(FileLB2);
-        FileLB2.setBounds(210, 40, 27, 21);
-        add(jTextField1);
-        jTextField1.setBounds(240, 40, 76, 22);
+        priceLB.setBackground(new java.awt.Color(204, 255, 255));
+        priceLB.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
+        priceLB.setText("ราคา");
+        add(priceLB);
+        priceLB.setBounds(210, 40, 27, 21);
+        add(priceTF);
+        priceTF.setBounds(240, 40, 76, 22);
 
-        FileLB3.setBackground(new java.awt.Color(204, 255, 255));
-        FileLB3.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
-        FileLB3.setText("บาทต่อชิ้น");
-        add(FileLB3);
-        FileLB3.setBounds(320, 40, 55, 21);
+        bathLB.setBackground(new java.awt.Color(204, 255, 255));
+        bathLB.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
+        bathLB.setText("บาทต่อชิ้น");
+        add(bathLB);
+        bathLB.setBounds(320, 40, 55, 21);
 
         deleteCB.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         deleteCB.setText("เลือกเพื่อลบ");
@@ -110,15 +110,15 @@ private JPanel jp;
         deleteCB.setBounds(310, 10, 85, 20);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void choosePicBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_choosePicBTActionPerformed
         // TODO add your handling code here:
         int returnVal = fc.showDialog(null, "Choose");
         if (returnVal == JFileChooser.APPROVE_OPTION){
             File file = fc.getSelectedFile();
-            FileLB.setText("รูปภาพที่แนบ: "+file.getName());
+            showPicName.setText("รูปภาพที่แนบ: "+file.getName());
             //JOptionPane.showMessageDialog(jButton1, file);
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_choosePicBTActionPerformed
 
     private void deleteCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteCBActionPerformed
         // TODO add your handling code here:
@@ -145,15 +145,15 @@ private int getPanelIndex(){
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel FileLB;
-    private javax.swing.JLabel FileLB1;
-    private javax.swing.JLabel FileLB2;
-    private javax.swing.JLabel FileLB3;
+    private javax.swing.JLabel bathLB;
+    private javax.swing.JButton choosePicBT;
     private javax.swing.JCheckBox deleteCB;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel detailLB;
+    private javax.swing.JScrollPane detailSP;
+    private javax.swing.JTextArea detailTA;
+    private javax.swing.JLabel priceLB;
+    private javax.swing.JTextField priceTF;
+    private javax.swing.JLabel showPicName;
     // End of variables declaration//GEN-END:variables
 
     public JCheckBox getDeleteCB() {
