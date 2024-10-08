@@ -4,6 +4,7 @@
  */
 package ToHeaven;
 
+import java.awt.CardLayout;
 import javax.swing.JFrame;
 
 /**
@@ -81,16 +82,20 @@ public class MainFrame extends javax.swing.JPanel {
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
         frameJP.setBackground(new java.awt.Color(204, 255, 102));
+        ProductPage pp = new ProductPage(frameJP);
+        frameJP.add(pp,"propage");
+        CardLayout cd =(CardLayout)frameJP.getLayout();
+        cd.show(frameJP,"propage");
 
         javax.swing.GroupLayout frameJPLayout = new javax.swing.GroupLayout(frameJP);
         frameJP.setLayout(frameJPLayout);
         frameJPLayout.setHorizontalGroup(
             frameJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 798, Short.MAX_VALUE)
+            .addGap(0, 945, Short.MAX_VALUE)
         );
         frameJPLayout.setVerticalGroup(
             frameJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 883, Short.MAX_VALUE)
+            .addGap(0, 879, Short.MAX_VALUE)
         );
 
         jScrollPane1.setViewportView(frameJP);

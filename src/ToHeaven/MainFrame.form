@@ -145,16 +145,19 @@
               <Color blue="66" green="ff" red="cc" type="rgb"/>
             </Property>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="ProductPage pp = new ProductPage(frameJP);&#xa;frameJP.add(pp,&quot;propage&quot;);&#xa;CardLayout cd =(CardLayout)frameJP.getLayout();&#xa;cd.show(frameJP,&quot;propage&quot;);"/>
+          </AuxValues>
 
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="798" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="945" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="883" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="879" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
