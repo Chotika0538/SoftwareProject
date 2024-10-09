@@ -4,19 +4,16 @@
  */
 package ToHeaven;
 
-import java.awt.CardLayout;
-import javax.swing.JFrame;
-
 /**
  *
- * @author LENOVO
+ * @author Khao
  */
-public class MainFrame extends javax.swing.JPanel {
+public class ProductCoffin extends javax.swing.JPanel {
 
     /**
-     * Creates new form MainFrame
+     * Creates new form ProductCoffin
      */
-    public MainFrame() {
+    public ProductCoffin() {
         initComponents();
     }
 
@@ -35,12 +32,10 @@ public class MainFrame extends javax.swing.JPanel {
         jToggleButton3 = new javax.swing.JToggleButton();
         jToggleButton4 = new javax.swing.JToggleButton();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        frameJP = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        coffinPageJP = new javax.swing.JPanel();
 
+        setPreferredSize(new java.awt.Dimension(800, 500));
         setLayout(new java.awt.BorderLayout());
 
         menuBar.setBackground(new java.awt.Color(255, 204, 204));
@@ -79,54 +74,33 @@ public class MainFrame extends javax.swing.JPanel {
         menuBar.add(jLabel1);
         jLabel1.setBounds(70, 40, 37, 16);
 
-        jLabel2.setText("procoffin1");
-        menuBar.add(jLabel2);
-        jLabel2.setBounds(190, 40, 55, 16);
-
         add(menuBar, java.awt.BorderLayout.PAGE_START);
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
-        frameJP.setBackground(new java.awt.Color(204, 255, 102));
-        frameJP.setLayout(new java.awt.CardLayout());
-        ProCoffin pc = new ProCoffin(frameJP);
-        ProCoffin2 pc2 = new ProCoffin2(frameJP);
-        ToHeaven.ProOffering ps = new ToHeaven.ProOffering(frameJP);
+        coffinPageJP.setBackground(new java.awt.Color(204, 255, 102));
 
-        frameJP.add(pc,"procoffin");
-        frameJP.add(pc,"prosovenirs");
-        frameJP.add(pc2, "procoffin2");
-        CardLayout cd = (CardLayout)frameJP.getLayout();
-        cd.show(frameJP,"procoffin");
-        cd.show(frameJP,"prosovenirs");
-        cd.show(frameJP, "procoffin2");
+        javax.swing.GroupLayout coffinPageJPLayout = new javax.swing.GroupLayout(coffinPageJP);
+        coffinPageJP.setLayout(coffinPageJPLayout);
+        coffinPageJPLayout.setHorizontalGroup(
+            coffinPageJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 788, Short.MAX_VALUE)
+        );
+        coffinPageJPLayout.setVerticalGroup(
+            coffinPageJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1108, Short.MAX_VALUE)
+        );
 
-        jLabel4.setText("jLabel4");
-        frameJP.add(jLabel4, "card3");
-        frameJP.add(jLabel3, "card2");
-
-        jScrollPane1.setViewportView(frameJP);
+        jScrollPane1.setViewportView(coffinPageJP);
 
         add(jScrollPane1, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
- /* testing panel*/
-    public static void main(String[] args){
-        JFrame f = new JFrame();
-        f.setContentPane(new MainFrame());
-        f.setSize(800,500);
-        f.setResizable(false);
-        f.setLocationRelativeTo(null);
-        f.setVisible(true);
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel frameJP;
+    private javax.swing.JPanel coffinPageJP;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton jToggleButton2;
