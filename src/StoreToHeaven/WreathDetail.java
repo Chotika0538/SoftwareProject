@@ -48,6 +48,8 @@ private JPanel jp;
         priceTF = new javax.swing.JTextField();
         bathLB = new javax.swing.JLabel();
         deleteCB = new javax.swing.JCheckBox();
+        pattern = new javax.swing.JLabel();
+        patternTF = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(255, 241, 211));
         setLayout(null);
@@ -60,39 +62,39 @@ private JPanel jp;
             }
         });
         add(choosePicBT);
-        choosePicBT.setBounds(10, 10, 106, 26);
+        choosePicBT.setBounds(10, 50, 106, 26);
 
         showPicName.setBackground(new java.awt.Color(204, 255, 255));
         showPicName.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
         add(showPicName);
-        showPicName.setBounds(130, 10, 160, 30);
+        showPicName.setBounds(130, 50, 160, 30);
 
         detailLB.setBackground(new java.awt.Color(204, 255, 255));
         detailLB.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
         detailLB.setText("รายละเอียด ");
         add(detailLB);
-        detailLB.setBounds(10, 40, 66, 22);
+        detailLB.setBounds(10, 80, 66, 22);
 
         detailTA.setColumns(20);
         detailTA.setRows(5);
         detailSP.setViewportView(detailTA);
 
         add(detailSP);
-        detailSP.setBounds(10, 70, 347, 101);
+        detailSP.setBounds(10, 110, 347, 110);
 
         priceLB.setBackground(new java.awt.Color(204, 255, 255));
         priceLB.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
         priceLB.setText("ราคา");
         add(priceLB);
-        priceLB.setBounds(210, 40, 27, 21);
+        priceLB.setBounds(210, 80, 27, 21);
         add(priceTF);
-        priceTF.setBounds(240, 40, 76, 22);
+        priceTF.setBounds(240, 80, 76, 22);
 
         bathLB.setBackground(new java.awt.Color(204, 255, 255));
         bathLB.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
         bathLB.setText("บาทต่อชิ้น");
         add(bathLB);
-        bathLB.setBounds(320, 40, 55, 21);
+        bathLB.setBounds(320, 80, 55, 21);
 
         deleteCB.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         deleteCB.setText("เลือกเพื่อลบ");
@@ -107,7 +109,16 @@ private JPanel jp;
             }
         });
         add(deleteCB);
-        deleteCB.setBounds(310, 10, 85, 20);
+        deleteCB.setBounds(300, 10, 85, 20);
+
+        pattern.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
+        pattern.setText("รูปแบบสินค้า : ");
+        add(pattern);
+        pattern.setBounds(10, 10, 90, 21);
+
+        patternTF.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
+        add(patternTF);
+        patternTF.setBounds(100, 10, 160, 27);
     }// </editor-fold>//GEN-END:initComponents
 
     private void choosePicBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_choosePicBTActionPerformed
@@ -151,6 +162,8 @@ private int getPanelIndex(){
     private javax.swing.JLabel detailLB;
     private javax.swing.JScrollPane detailSP;
     private javax.swing.JTextArea detailTA;
+    private javax.swing.JLabel pattern;
+    private javax.swing.JTextField patternTF;
     private javax.swing.JLabel priceLB;
     private javax.swing.JTextField priceTF;
     private javax.swing.JLabel showPicName;

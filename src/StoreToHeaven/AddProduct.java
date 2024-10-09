@@ -32,7 +32,7 @@ public class AddProduct extends javax.swing.JPanel implements Product{
         showAddProduct = new javax.swing.JPanel();
         confirmBT = new javax.swing.JButton();
 
-        setPreferredSize(new java.awt.Dimension(800, 500));
+        setPreferredSize(new java.awt.Dimension(800, 600));
         setLayout(null);
 
         addChoices.setFont(new java.awt.Font("TH Sarabun New", 0, 24)); // NOI18N
@@ -67,7 +67,7 @@ public class AddProduct extends javax.swing.JPanel implements Product{
         showAddProduct.add(emptyPanel, "empty");
         showAddProduct.add(wreath, "wreath");
         add(showAddProduct);
-        showAddProduct.setBounds(10, 110, 480, 380);
+        showAddProduct.setBounds(10, 110, 480, 480);
 
         confirmBT.setFont(new java.awt.Font("TH SarabunPSK", 0, 24)); // NOI18N
         confirmBT.setText("ยืนยันรายการ");
@@ -82,7 +82,7 @@ public class AddProduct extends javax.swing.JPanel implements Product{
             }
         });
         add(confirmBT);
-        confirmBT.setBounds(580, 390, 120, 35);
+        confirmBT.setBounds(590, 460, 120, 35);
     }// </editor-fold>//GEN-END:initComponents
 
     private void addChoicesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addChoicesActionPerformed
@@ -107,7 +107,7 @@ public class AddProduct extends javax.swing.JPanel implements Product{
     public static void main(String[] args){
         JFrame f = new JFrame();
         f.setContentPane(new AddProduct());
-        f.setSize(800,540);
+        f.setSize(800,640);
         f.setResizable(false);
         f.setLocationRelativeTo(null);
         f.setVisible(true);
