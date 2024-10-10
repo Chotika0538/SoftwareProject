@@ -39,12 +39,12 @@ public class AddFrame extends javax.swing.JPanel implements CheckPanel{
     private void initComponents() {
 
         name = new javax.swing.JLabel();
-        pattern = new javax.swing.JLabel();
+        material = new javax.swing.JLabel();
         deleteListBT = new javax.swing.JButton();
-        patternTF1 = new javax.swing.JTextField();
+        priceTF = new javax.swing.JTextField();
         nameTF = new javax.swing.JTextField();
-        patternTF = new javax.swing.JTextField();
-        pattern1 = new javax.swing.JLabel();
+        materialTF = new javax.swing.JTextField();
+        price = new javax.swing.JLabel();
         pic_detail = new javax.swing.JLabel();
         pic_detailSP = new javax.swing.JScrollPane();
         pic_detailJP = new javax.swing.JPanel();
@@ -55,8 +55,8 @@ public class AddFrame extends javax.swing.JPanel implements CheckPanel{
         name.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
         name.setText("ชื่อสินค้า : ");
 
-        pattern.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
-        pattern.setText("วัสดุ  : ");
+        material.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
+        material.setText("วัสดุ  : ");
 
         deleteListBT.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
         deleteListBT.setText("- ลบรายการ");
@@ -65,15 +65,25 @@ public class AddFrame extends javax.swing.JPanel implements CheckPanel{
                 deleteListBTMouseClicked(evt);
             }
         });
+        deleteListBT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteListBTActionPerformed(evt);
+            }
+        });
 
-        patternTF1.setFont(new java.awt.Font("TH SarabunPSK", 0, 20)); // NOI18N
+        priceTF.setFont(new java.awt.Font("TH SarabunPSK", 0, 20)); // NOI18N
 
         nameTF.setFont(new java.awt.Font("TH SarabunPSK", 0, 20)); // NOI18N
+        nameTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nameTFActionPerformed(evt);
+            }
+        });
 
-        patternTF.setFont(new java.awt.Font("TH SarabunPSK", 0, 20)); // NOI18N
+        materialTF.setFont(new java.awt.Font("TH SarabunPSK", 0, 20)); // NOI18N
 
-        pattern1.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
-        pattern1.setText("ราคาสินค้าแต่ละแบบ  : ");
+        price.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
+        price.setText("ราคาสินค้าแต่ละแบบ  : ");
 
         pic_detail.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
         pic_detail.setText("รูปและรายละเอียดของสินค้า");
@@ -112,18 +122,18 @@ public class AddFrame extends javax.swing.JPanel implements CheckPanel{
                             .addComponent(pic_detailSP, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(pic_detail)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(pattern1)
+                                .addComponent(price)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(patternTF1, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(priceTF, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                     .addComponent(name)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(nameTF))
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(pattern)
+                                    .addComponent(material)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(patternTF, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(materialTF, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(121, 121, 121)
                         .addComponent(deleteListBT)
@@ -140,12 +150,12 @@ public class AddFrame extends javax.swing.JPanel implements CheckPanel{
                     .addComponent(nameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(pattern, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(patternTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(material, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(materialTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(pattern1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(patternTF1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(price, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(priceTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pic_detail, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -170,21 +180,23 @@ public class AddFrame extends javax.swing.JPanel implements CheckPanel{
                 //               if (clickjp.)
                 //       }
     }//GEN-LAST:event_pic_detailJPMouseClicked
- public JTextField getPatternTF() {
-        return materialTF;
-    }
 
-    public void setPatternTF(JTextField patternTF) {
-        this.materialTF = patternTF;
-    }
+    private void addListBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addListBTMouseClicked
+        // TODO add your handling code here:
+        fdList.add(new FrameDetail(fdList, pic_detailJP));
+        pic_detailJP.setPreferredSize(new Dimension(408, pic_detailJP.getHeight()+235));
+        pic_detailJP.add(fdList.get(fdList.size()-1));
+        pic_detailJP.revalidate();
+        pic_detailJP.repaint();
+    }//GEN-LAST:event_addListBTMouseClicked
 
-    public JTextField getNameTF() {
-        return nameTF;
-    }
+    private void nameTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nameTFActionPerformed
 
-    public void setNameTF(JTextField nameTF) {
-        this.nameTF = nameTF;
-    }
+    private void deleteListBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteListBTActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_deleteListBTActionPerformed
 
     public JTextField getMaterialTF() {
         return materialTF;
@@ -202,35 +214,41 @@ public class AddFrame extends javax.swing.JPanel implements CheckPanel{
         this.priceTF = priceTF;
     }
 
+    public JTextField getNameTF() {
+        return nameTF;
+    }
+
+    public void setNameTF(JTextField nameTF) {
+        this.nameTF = nameTF;
+    }
+
     public JPanel getPic_detailJP() {
         return pic_detailJP;
     }
 
-    public int getCountPic_DetailJP() {
-        return countPic_DetailJP;
+    public void setPic_detailJP(JPanel pic_detailJP) {
+        this.pic_detailJP = pic_detailJP;
     }
-    private void addListBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addListBTMouseClicked
-        // TODO add your handling code here:
-        fdList.add(new FrameDetail(fdList, pic_detailJP));
-        pic_detailJP.setPreferredSize(new Dimension(408, pic_detailJP.getHeight()+235));
-        pic_detailJP.add(fdList.get(fdList.size()-1));
-        pic_detailJP.revalidate();
-        pic_detailJP.repaint();
-    }//GEN-LAST:event_addListBTMouseClicked
 
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addListBT;
     private javax.swing.JButton deleteListBT;
+    private javax.swing.JLabel material;
+    private javax.swing.JTextField materialTF;
     private javax.swing.JLabel name;
     private javax.swing.JTextField nameTF;
-    private javax.swing.JLabel pattern;
-    private javax.swing.JLabel pattern1;
-    private javax.swing.JTextField patternTF;
-    private javax.swing.JTextField patternTF1;
     private javax.swing.JLabel pic_detail;
     private javax.swing.JPanel pic_detailJP;
     private javax.swing.JScrollPane pic_detailSP;
+    private javax.swing.JLabel price;
+    private javax.swing.JTextField priceTF;
     // End of variables declaration//GEN-END:variables
+
+    public void CheckCurentCard() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 
  
 }

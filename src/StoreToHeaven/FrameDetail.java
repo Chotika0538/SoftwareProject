@@ -6,8 +6,11 @@ package StoreToHeaven;
 
 import java.io.File;
 import java.util.ArrayList;
+import javax.swing.JCheckBox;
 import javax.swing.JFileChooser;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
 /**
  *
@@ -17,6 +20,12 @@ public class FrameDetail extends javax.swing.JPanel {
     final JFileChooser fc = new JFileChooser();
     private ArrayList<FrameDetail> fdList;
     private JPanel jp;
+    private String filePath;
+
+    public String getFilePath() {
+        return filePath;
+    }
+
     /**
      * Creates new form FrameDetail
      */
@@ -159,6 +168,38 @@ public class FrameDetail extends javax.swing.JPanel {
     private void deleteCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteCBActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_deleteCBActionPerformed
+
+    public JCheckBox getDeleteCB() {
+        return deleteCB;
+    }
+
+    public void setDeleteCB(JCheckBox deleteCB) {
+        this.deleteCB = deleteCB;
+    }
+
+    public JTextArea getDetailTA() {
+        return detailTA;
+    }
+
+    public void setDetailTA(JTextArea detailTA) {
+        this.detailTA = detailTA;
+    }
+
+    public JTextField getPatternTF() {
+        return patternTF;
+    }
+
+    public void setPatternTF(JTextField patternTF) {
+        this.patternTF = patternTF;
+    }
+
+    public JTextField getPriceTF() {
+        return priceTF;
+    }
+
+    public void setPriceTF(JTextField priceTF) {
+        this.priceTF = priceTF;
+    }
 
     private void choosePicBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_choosePicBTActionPerformed
         // TODO add your handling code here:

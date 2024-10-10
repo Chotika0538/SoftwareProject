@@ -12,6 +12,11 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.List;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 /**
  *
@@ -24,7 +29,7 @@ public class Framedao {
     private FileInputStream fileInput;
     private FileOutputStream fos;
     private ArrayList<List<String>> framelist = new ArrayList<>();
-    private String[] nameCol = { "ชื่อ","รายละเอียด" ,"pathรูปภาพ", "วัสดุ",  "ราคา","สี"};
+    private String[] nameCol = { "ชื่อ","รายละเอียด" ,"pathรูปภาพ", "วัสดุ",  "ราคา"};
     private ArrayList<FrameDetail> fd;
     private Component[] cmp;
     
@@ -44,7 +49,7 @@ public class Framedao {
             Row firstRow = sheet.getRow(0);
             if (firstRow == null) {       // this files valid?
                 firstRow = sheet.createRow(0);          // create first row
-                nameCol[0] = wreath.getNameTF().getText();
+                nameCol[0] = frame.getNameTF().getText();
                 /*bring all data in wreathlist to create each col in valid sheet*/
                 for(int j=0; j<nameCol.length; j++){
                     Cell cell = firstRow.createCell(j);
@@ -57,7 +62,7 @@ public class Framedao {
             String path = fd.get(a).getFilePath();
             String[] material = frame.getMaterialTF().getText().split(",");
             String[] price = frame.getPriceTF().getText().split(",");
-            String[] dataChecked = {pattern,detail,path,String.join(",", material),String.join(",", price),String.join(",", color)};
+            String[] dataChecked = {pattern,detail,path,String.join(",", material),String.join(",", price)};
             boolean haveData = false ;
             for (Row row : sheet){
                 Cell c = row.getCell(0);

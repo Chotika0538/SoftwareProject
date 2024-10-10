@@ -8,6 +8,6 @@ package StoreToHeaven;
  *
  * @author ASUS
  */
-public interface CheckPanel {
-    public void CheckCurentCard();
+interface CheckPanel {
+    
 }

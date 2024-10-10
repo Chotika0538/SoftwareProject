@@ -156,7 +156,6 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
 //         }
 //    }
 
-    @Override
     public void CheckCurentCard() {
          for (Component comp : showAddProduct.getComponents()) {
             if (comp.isVisible()) {
