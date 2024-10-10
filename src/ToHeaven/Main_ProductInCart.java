@@ -6,11 +6,7 @@ package ToHeaven;
 
 import java.awt.CardLayout;
 import javax.swing.JFrame;
-
-/**
- *
- * @author LENOVO
- */
+import java.util.*;
 public class Main_ProductInCart extends javax.swing.JPanel {
 
     /**
@@ -35,6 +31,7 @@ public class Main_ProductInCart extends javax.swing.JPanel {
         jToggleButton3 = new javax.swing.JToggleButton();
         jToggleButton4 = new javax.swing.JToggleButton();
         jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         CartJP = new javax.swing.JPanel();
 
         setLayout(new java.awt.BorderLayout());
@@ -44,7 +41,7 @@ public class Main_ProductInCart extends javax.swing.JPanel {
         menuBar.setLayout(null);
 
         jToggleButton1.setBackground(new java.awt.Color(89, 73, 34));
-        jToggleButton1.setFont(new java.awt.Font("TH Fah kwang", 0, 18)); // NOI18N
+        jToggleButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jToggleButton1.setForeground(new java.awt.Color(255, 255, 255));
         jToggleButton1.setText("ปรับแต่ง");
         jToggleButton1.setBorder(null);
@@ -52,7 +49,7 @@ public class Main_ProductInCart extends javax.swing.JPanel {
         jToggleButton1.setBounds(650, 0, 110, 100);
 
         jToggleButton2.setBackground(new java.awt.Color(89, 73, 34));
-        jToggleButton2.setFont(new java.awt.Font("TH Fah kwang", 0, 18)); // NOI18N
+        jToggleButton2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jToggleButton2.setForeground(new java.awt.Color(255, 255, 255));
         jToggleButton2.setText("แพ็คเกจ\n");
         jToggleButton2.setBorder(null);
@@ -60,7 +57,7 @@ public class Main_ProductInCart extends javax.swing.JPanel {
         jToggleButton2.setBounds(530, 0, 110, 100);
 
         jToggleButton3.setBackground(new java.awt.Color(89, 73, 34));
-        jToggleButton3.setFont(new java.awt.Font("TH Fah kwang", 0, 18)); // NOI18N
+        jToggleButton3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jToggleButton3.setForeground(new java.awt.Color(255, 255, 255));
         jToggleButton3.setText("ผลิตภัณฑ์");
         jToggleButton3.setBorder(null);
@@ -68,7 +65,7 @@ public class Main_ProductInCart extends javax.swing.JPanel {
         jToggleButton3.setBounds(410, 0, 110, 100);
 
         jToggleButton4.setBackground(new java.awt.Color(89, 73, 34));
-        jToggleButton4.setFont(new java.awt.Font("TH Fah kwang", 0, 18)); // NOI18N
+        jToggleButton4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jToggleButton4.setForeground(new java.awt.Color(255, 255, 255));
         jToggleButton4.setText("เกี่ยวกับเรา");
         jToggleButton4.setBorder(null);
@@ -79,6 +76,15 @@ public class Main_ProductInCart extends javax.swing.JPanel {
         jLabel1.setText("LOGO");
         menuBar.add(jLabel1);
         jLabel1.setBounds(70, 40, 37, 16);
+
+        jButton1.setText("TEST add");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        menuBar.add(jButton1);
+        jButton1.setBounds(160, 40, 110, 23);
 
         add(menuBar, java.awt.BorderLayout.PAGE_START);
 
@@ -97,12 +103,19 @@ public class Main_ProductInCart extends javax.swing.JPanel {
 
         CartJP.setLayout(new java.awt.CardLayout());
         ToHeaven.ProductInCart t = new ToHeaven.ProductInCart(CartJP);
+        // get InventoryCart as parameter
         CartJP.add(t, "ToHeaven.ProductInCart");
+        CartJP.add(new Payment(CartJP),"payment");
         CardLayout cl = (CardLayout) CartJP.getLayout();
         cl.show(CartJP, "Cart_test");
 
         add(CartJP, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        ProductInCart.add(new Picked_product("test",100*Math.random(),(int)(10*Math.random()),"/ToHeaven/t.png"));
+    }//GEN-LAST:event_jButton1ActionPerformed
  /* testing panel*/
     public static void main(String[] args){
         JFrame f = new JFrame();
@@ -116,6 +129,7 @@ public class Main_ProductInCart extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel CartJP;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton jToggleButton2;
