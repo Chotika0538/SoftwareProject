@@ -3,6 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package ToHeaven;
+import DAO.Userdao;
+import StoreToHeaven.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -19,20 +21,20 @@ import org.apache.poi.xssf.usermodel.*;
 public class Register extends javax.swing.JPanel {
     private JPanel mainPanel;
     private CardLayout card;
-    private FileInputStream fileInput;
-    private FileOutputStream fos;
-    private Workbook wb;
-    private Sheet sheet ;
-    private String excelPath ;
+//    private FileInputStream fileInput;
+//    private FileOutputStream fos;
+//    private Workbook wb;
+//    private Sheet sheet ;
+//    private String excelPath ;
     public Register() {
         initComponents();
-        setReadfile();
+        //setReadfile();
     }    
     public Register(JPanel mainpanel){
         this.mainPanel=mainpanel;
         this.card= (CardLayout) mainPanel.getLayout();
         initComponents();
-        setReadfile();
+        //setReadfile();
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -71,18 +73,8 @@ public class Register extends javax.swing.JPanel {
         jLabelPasswordText.setText("PASSWORD  : ");
 
         jTextFieldUsername.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jTextFieldUsername.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldUsernameActionPerformed(evt);
-            }
-        });
 
         jPasswordField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jPasswordField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordFieldActionPerformed(evt);
-            }
-        });
 
         jTextField1.setText("jTextField1");
 
@@ -124,32 +116,12 @@ public class Register extends javax.swing.JPanel {
         jLabel4.setText("Phone");
 
         phoneField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        phoneField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                phoneFieldActionPerformed(evt);
-            }
-        });
 
         addressField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        addressField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addressFieldActionPerformed(evt);
-            }
-        });
 
         userNamefield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        userNamefield.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                userNamefieldActionPerformed(evt);
-            }
-        });
 
         passwordfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        passwordfield.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passwordfieldActionPerformed(evt);
-            }
-        });
 
         registerButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         registerButton.setText("Register");
@@ -163,21 +135,11 @@ public class Register extends javax.swing.JPanel {
         nameFieldJlable.setText("Name");
 
         nameField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        nameField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nameFieldActionPerformed(evt);
-            }
-        });
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel8.setText("Password");
 
         surnameField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        surnameField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                surnameFieldActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -225,7 +187,7 @@ public class Register extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLoginText, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
+                .addComponent(jLoginText, javax.swing.GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(41, 41, 41)
@@ -251,7 +213,7 @@ public class Register extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(phoneField, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(backToLogin, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(registerButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -261,45 +223,21 @@ public class Register extends javax.swing.JPanel {
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {addressField, jLabel2, jLabel3, jLabel4, passwordfield, phoneField, userNamefield});
 
     }// </editor-fold>//GEN-END:initComponents
-    private void setReadfile(){
-        wb=null;
-         try{
-            excelPath = "UserInfo.xlsx";
-            fileInput = new FileInputStream(new File("./UserInfo.xlsx"));
-            wb = new XSSFWorkbook(fileInput);
-            sheet = wb.getSheetAt(0);
-        }catch(Exception err){
-            System.out.print(err);
-        }
-    }
+//    private void setReadfile(){
+//        wb=null;
+//         try{
+//            excelPath = "UserInfo.xlsx";
+//            fileInput = new FileInputStream(new File("./UserInfo.xlsx"));
+//            wb = new XSSFWorkbook(fileInput);
+//            sheet = wb.getSheetAt(0);
+//        }catch(Exception err){
+//            System.out.print(err);
+//        }
+//    }
     private void backToLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backToLoginActionPerformed
         // TODO add your handling code here:
         card.show(mainPanel,"LoginPage");
     }//GEN-LAST:event_backToLoginActionPerformed
-
-    private void jTextFieldUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldUsernameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldUsernameActionPerformed
-
-    private void jPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordFieldActionPerformed
-
-    private void phoneFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phoneFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_phoneFieldActionPerformed
-
-    private void addressFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addressFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_addressFieldActionPerformed
-
-    private void userNamefieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userNamefieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_userNamefieldActionPerformed
-
-    private void passwordfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordfieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_passwordfieldActionPerformed
 
     private void registerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerButtonActionPerformed
         // TODO add your handling code hered:
@@ -329,32 +267,9 @@ public class Register extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Please enter all information", "Input Error", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_registerButtonActionPerformed
-
-    private void nameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nameFieldActionPerformed
-
-    private void surnameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_surnameFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_surnameFieldActionPerformed
     private void savetoExcel(){
-        setReadfile();
-        try{
-            int lastRow = sheet.getLastRowNum();
-            Row newRow = sheet.createRow(lastRow+1);
-            newRow.createCell(0).setCellValue(nameField.getText());
-            newRow.createCell(1).setCellValue(surnameField.getText());
-            newRow.createCell(2).setCellValue(userNamefield.getText());
-            newRow.createCell(3).setCellValue(passwordfield.getText());
-            newRow.createCell(4).setCellValue(addressField.getText());
-            String phone = phoneField.getText();
-            if (phone.length() == 10) {
-                phone = phone.substring(0, 3) + "-" + phone.substring(3, 6) + "-" + phone.substring(6);
-            }
-            newRow.createCell(5).setCellValue(phone);
-            fos = new FileOutputStream(excelPath);
-            wb.write(fos);
-            fos.close();
+        new Userdao().save(this);
+        if(Userdao.complete){
             JOptionPane.showMessageDialog(this, "Registered successed", "Registered", JOptionPane.INFORMATION_MESSAGE);
             nameField.setText("");
             surnameField.setText("");
@@ -363,20 +278,34 @@ public class Register extends javax.swing.JPanel {
             addressField.setText("");    
             phoneField.setText("");
             card.show(mainPanel,"LoginPage");
-            
-            // have to re-programe When registerd. !!!!!!!!!!!
-        }catch(Exception err){
-            System.out.println(err);
-        }finally{
-            if(wb!=null){
-                try{
-                    wb.close();
-                }catch(Exception err){
-                    System.out.println(err);
-                }
-            }
         }
     }
+
+    public JTextField getAddressField() {
+        return addressField;
+    }
+
+    public JTextField getNameField() {
+        return nameField;
+    }
+
+    public JTextField getPasswordfield() {
+        return passwordfield;
+    }
+
+    public JTextField getPhoneField() {
+        return phoneField;
+    }
+
+    public JTextField getSurnameField() {
+        return surnameField;
+    }
+
+    public JTextField getUserNamefield() {
+        return userNamefield;
+    }
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField addressField;
     private javax.swing.JButton backToLogin;

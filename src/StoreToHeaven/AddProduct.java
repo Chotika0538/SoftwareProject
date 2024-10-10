@@ -10,7 +10,7 @@ import DAO.Wreathdao;
 import java.util.ArrayList;
 
 public class AddProduct extends javax.swing.JPanel implements CheckPanel{
-    private ArrayList<Wreath> wList;
+    private ArrayList<Wreath> wList;  //keep data to show at wreath template of user
     /**
      * Creates new form AddProduct
      */
@@ -38,7 +38,7 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
         setLayout(null);
 
         addChoices.setFont(new java.awt.Font("TH Sarabun New", 0, 24)); // NOI18N
-        addChoices.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "กรุณาเลือกตัวเลือก", "โลงศพ", "พวงหรีดและดอกไม้จันทน์", "ชุดไทยธรรม", "ธูปและเทียน", "ชุดอาหารว่าง", "ของชำร่วย", "กรอบรูป", "เพิ่มสินค้า" }));
+        addChoices.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "กรุณาเลือกตัวเลือก", "โลงศพ", "พวงหรีด", "ดอกไม้จันทน์", "ชุดไทยธรรม", "ธูป", "เทียน", "ชุดอาหารว่าง", "ของชำร่วย", "กรอบรูป" }));
         addChoices.setAlignmentX(1.0F);
         addChoices.setAlignmentY(1.0F);
         addChoices.addActionListener(new java.awt.event.ActionListener() {
@@ -65,9 +65,25 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
         showAddProduct.setLayout(new java.awt.CardLayout());
         JPanel emptyPanel = new JPanel();
         AddWreath wreath = new AddWreath(showAddProduct);
+        AddCoffin coffin = new AddCoffin(showAddProduct);
+        AddFrame frame = new AddFrame(showAddProduct);
+        AddIncense incense = new AddIncense(showAddProduct);
+        AddCandle candle = new AddCandle(showAddProduct);
+        AddOffering offering = new AddOffering(showAddProduct);
+        AddSandalWood sandalwood = new AddSandalWood(showAddProduct);
+        AddSnackBox snackbox = new AddSnackBox(showAddProduct);
+        AddSouvenirs souvenir= new AddSouvenirs(showAddProduct);
         emptyPanel.setBackground(new java.awt.Color(153, 255, 204));
         showAddProduct.add(emptyPanel, "empty");
+        showAddProduct.add(coffin, "coffin");
         showAddProduct.add(wreath, "wreath");
+        showAddProduct.add(frame, "frame");
+        showAddProduct.add(incense, "incense");
+        showAddProduct.add(candle, "candle");
+        showAddProduct.add(offering, "offering");
+        showAddProduct.add(sandlewood, "sandlewood");
+        showAddProduct.add(snackbox, "snackbox");
+        showAddProduct.add(souvenir, "souvenir");
         add(showAddProduct);
         showAddProduct.setBounds(10, 110, 480, 480);
 
@@ -90,10 +106,25 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
     private void addChoicesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addChoicesActionPerformed
         // TODO add your handling code here:
         JComboBox cb = (JComboBox) evt.getSource();
-        if (((String)cb.getSelectedItem()).equals("พวงหรีดและดอกไม้จันทน์")){
-           // jPanel2.add(new AddWreath(jPanel1), "wreath");
-            CardLayout cd = (CardLayout) showAddProduct.getLayout();
-            cd.show(showAddProduct, "wreath");
+        CardLayout cd = (CardLayout) showAddProduct.getLayout();
+        if (((String)cb.getSelectedItem()).equals("โลงศพ")){
+            cd.show(showAddProduct, "coffin");
+        } else if(((String)cb.getSelectedItem()).equals("พวงหรีด")){
+             cd.show(showAddProduct, "wreath");
+        }else if(((String)cb.getSelectedItem()).equals("ดอกไม้จันทน์")){
+             cd.show(showAddProduct, "sandlewood");
+        }else if(((String)cb.getSelectedItem()).equals("ชุดไทยธรรม")){
+             cd.show(showAddProduct, "offering");
+        }else if(((String)cb.getSelectedItem()).equals("ธูป")){
+             cd.show(showAddProduct, "incense");
+        }else if(((String)cb.getSelectedItem()).equals("เทียน")){
+             cd.show(showAddProduct, "candle");
+        }else if(((String)cb.getSelectedItem()).equals("ชุดอาหารว่าง")){
+             cd.show(showAddProduct, "snackbox");
+        }else if(((String)cb.getSelectedItem()).equals("ของชำร่วย")){
+             cd.show(showAddProduct, "souvenir");
+        }else if(((String)cb.getSelectedItem()).equals("กรอบรูป")){
+             cd.show(showAddProduct, "frame");
         }
     }//GEN-LAST:event_addChoicesActionPerformed
 
@@ -148,11 +179,11 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
                 }
                 break; // หยุดหลังจากเจอหน้าแรกที่แสดงอยู่String pattern = wd.get(a).getPatternTF().getText();
             }
-            else if (comp.isVisible()&& comp instanceof AddCoffin) {
-                Wreathdao wd = new Wreathdao();
-                wd.save((AddWreath) comp);
-                break; // หยุดหลังจากเจอหน้าแรกที่แสดงอยู่
-            }
+//            else if (comp.isVisible()&& comp instanceof AddCoffin) {
+//                Wreathdao wd = new Wreathdao();
+//                wd.save((AddWreath) comp);
+//                break; // หยุดหลังจากเจอหน้าแรกที่แสดงอยู่
+//            }
         }
     }
 }

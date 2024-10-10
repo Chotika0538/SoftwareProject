@@ -1,16 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package ToHeaven;
 
-import java.awt.CardLayout;
-import javax.swing.JPanel;
+import javax.swing.*;
+import java.awt.*;
+;
 
-/**
- *
- * @author ASUS
- */
 public class ProductPage extends javax.swing.JPanel {
     private CardLayout cd;
     private JPanel mainPanel;
@@ -31,123 +24,101 @@ public class ProductPage extends javax.swing.JPanel {
     private void initComponents() {
 
         product = new javax.swing.JLabel();
-        wreath = new javax.swing.JLabel();
-        snackBox = new javax.swing.JLabel();
-        pictureFrame = new javax.swing.JLabel();
-        souvenir = new javax.swing.JLabel();
-        incenseStick = new javax.swing.JLabel();
-        offering = new javax.swing.JLabel();
-        coffin = new javax.swing.JLabel();
-        sandalWood = new javax.swing.JLabel();
-        candle = new javax.swing.JLabel();
+        wreath = new javax.swing.JButton();
+        snackBox = new javax.swing.JButton();
+        frame = new javax.swing.JButton();
+        sandalWood = new javax.swing.JButton();
+        Souvenir = new javax.swing.JButton();
+        incense = new javax.swing.JButton();
+        candle = new javax.swing.JButton();
+        coffin = new javax.swing.JButton();
+        offering = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(242, 217, 220));
         setMaximumSize(new java.awt.Dimension(800, 400));
         setPreferredSize(new java.awt.Dimension(800, 400));
+        setLayout(null);
 
         product.setFont(new java.awt.Font("TH Sarabun New", 1, 36)); // NOI18N
         product.setText("ผลิตภัณฑ์");
+        add(product);
+        product.setBounds(50, 50, 140, 61);
 
         wreath.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
         wreath.setText("พวงหรีด");
-        wreath.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                wreathMouseClicked(evt);
-            }
-        });
+        wreath.setBorder(null);
+        wreath.setPreferredSize(new java.awt.Dimension(75, 30));
+        add(wreath);
+        wreath.setBounds(160, 130, 135, 41);
 
         snackBox.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
         snackBox.setText("ชุดอาหารว่าง");
+        snackBox.setBorder(null);
+        snackBox.setPreferredSize(new java.awt.Dimension(75, 30));
+        add(snackBox);
+        snackBox.setBounds(160, 190, 135, 41);
 
-        pictureFrame.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
-        pictureFrame.setText("กรอบรูป");
-
-        souvenir.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
-        souvenir.setText("ของชำร่วย");
-
-        incenseStick.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
-        incenseStick.setText("ธูป");
-
-        offering.setFont(new java.awt.Font("TH SarabunPSK", 1, 24)); // NOI18N
-        offering.setText("เครื่องไทยธรรม");
-
-        coffin.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
-        coffin.setText("โลงศพ");
+        frame.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
+        frame.setText("กรอบรูป");
+        frame.setBorder(null);
+        frame.setPreferredSize(new java.awt.Dimension(75, 30));
+        add(frame);
+        frame.setBounds(160, 250, 135, 41);
 
         sandalWood.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
         sandalWood.setText("ดอกไม้จันทน์");
+        sandalWood.setBorder(null);
+        sandalWood.setPreferredSize(new java.awt.Dimension(75, 30));
+        add(sandalWood);
+        sandalWood.setBounds(160, 310, 135, 41);
+
+        Souvenir.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
+        Souvenir.setText("ของชำร่วย");
+        Souvenir.setBorder(null);
+        Souvenir.setPreferredSize(new java.awt.Dimension(75, 30));
+        add(Souvenir);
+        Souvenir.setBounds(510, 130, 135, 41);
+
+        incense.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
+        incense.setText("ธูป");
+        incense.setBorder(null);
+        incense.setPreferredSize(new java.awt.Dimension(75, 30));
+        add(incense);
+        incense.setBounds(510, 190, 135, 41);
 
         candle.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
         candle.setText("เทียน");
+        candle.setBorder(null);
+        candle.setPreferredSize(new java.awt.Dimension(75, 30));
+        add(candle);
+        candle.setBounds(510, 250, 135, 41);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(product, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(110, 110, 110)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(wreath, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(pictureFrame, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(snackBox, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(sandalWood))
-                        .addGap(167, 167, 167)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(coffin, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(incenseStick, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(souvenir, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(candle)
-                            .addComponent(offering, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(0, 193, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(product, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(souvenir, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(wreath, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(22, 22, 22)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(snackBox, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(incenseStick))
-                .addGap(22, 22, 22)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(pictureFrame, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(candle))
-                .addGap(22, 22, 22)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(sandalWood)
-                    .addComponent(coffin, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(22, 22, 22)
-                .addComponent(offering, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
+        coffin.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
+        coffin.setText("โลงศพ");
+        coffin.setBorder(null);
+        coffin.setPreferredSize(new java.awt.Dimension(75, 30));
+        add(coffin);
+        coffin.setBounds(510, 310, 135, 41);
+
+        offering.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
+        offering.setText("เครื่องไทยธรรม");
+        offering.setBorder(null);
+        offering.setPreferredSize(new java.awt.Dimension(75, 30));
+        add(offering);
+        offering.setBounds(510, 370, 143, 41);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void wreathMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_wreathMouseClicked
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_wreathMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel candle;
-    private javax.swing.JLabel coffin;
-    private javax.swing.JLabel incenseStick;
-    private javax.swing.JLabel offering;
-    private javax.swing.JLabel pictureFrame;
+    private javax.swing.JButton Souvenir;
+    private javax.swing.JButton candle;
+    private javax.swing.JButton coffin;
+    private javax.swing.JButton frame;
+    private javax.swing.JButton incense;
+    private javax.swing.JButton offering;
     private javax.swing.JLabel product;
-    private javax.swing.JLabel sandalWood;
-    private javax.swing.JLabel snackBox;
-    private javax.swing.JLabel souvenir;
-    private javax.swing.JLabel wreath;
+    private javax.swing.JButton sandalWood;
+    private javax.swing.JButton snackBox;
+    private javax.swing.JButton wreath;
     // End of variables declaration//GEN-END:variables
 }

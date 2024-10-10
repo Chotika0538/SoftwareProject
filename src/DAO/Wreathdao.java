@@ -24,6 +24,7 @@ public class Wreathdao {
     private ArrayList<List<String>> wreathlist = new ArrayList<>();
     private String[] nameCol = { "ชื่อ","รายละเอียด" ,"pathรูปภาพ", "วัสดุ",  "ราคา","สี"};
     private ArrayList<WreathDetail> wd;
+    private ArrayList<Wreath> wList;
     private Component[] cmp;
 
     /*Save data in Excel file*/
@@ -85,6 +86,9 @@ public class Wreathdao {
             /*write data into StoreStock.xlsx*/
             fos = new FileOutputStream(new File(FILE_NAME));
             wb.write(fos);
+            wb.close();
+            fos.close();
+            fileInput.close();
         } catch (Exception e) {
             e.printStackTrace(); // แสดงข้อผิดพลาด
         } finally {
@@ -104,6 +108,12 @@ public class Wreathdao {
             }
         }
     }
+    
+    /*get All Data from excel file*/
+//    public ArrayList<Wreath> getAll(){
+//        return 
+//    }
+    
     
     /*Read Excel file*/
     public void read() {

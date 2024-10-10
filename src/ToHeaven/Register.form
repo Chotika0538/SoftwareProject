@@ -24,9 +24,6 @@
           <Font name="Segoe UI" size="18" style="0"/>
         </Property>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldUsernameActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JPasswordField" name="jPasswordField">
       <Properties>
@@ -34,9 +31,6 @@
           <Font name="Segoe UI" size="18" style="0"/>
         </Property>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jPasswordFieldActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextField1">
       <Properties>
@@ -156,7 +150,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jLoginText" pref="73" max="32767" attributes="0"/>
+              <Component id="jLoginText" pref="83" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
@@ -190,7 +184,7 @@
                   <Component id="jLabel4" linkSize="2" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="phoneField" linkSize="2" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="69" max="32767" attributes="0"/>
+              <EmptySpace pref="59" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="backToLogin" alignment="1" min="-2" max="-2" attributes="0"/>
                   <Component id="registerButton" alignment="1" min="-2" pref="44" max="-2" attributes="0"/>
@@ -258,9 +252,6 @@
           <Font name="Segoe UI" size="18" style="0"/>
         </Property>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="phoneFieldActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="addressField">
       <Properties>
@@ -268,9 +259,6 @@
           <Font name="Segoe UI" size="18" style="0"/>
         </Property>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addressFieldActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="userNamefield">
       <Properties>
@@ -278,9 +266,6 @@
           <Font name="Segoe UI" size="18" style="0"/>
         </Property>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="userNamefieldActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="passwordfield">
       <Properties>
@@ -288,9 +273,6 @@
           <Font name="Segoe UI" size="18" style="0"/>
         </Property>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="passwordfieldActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="registerButton">
       <Properties>
@@ -317,9 +299,6 @@
           <Font name="Segoe UI" size="18" style="0"/>
         </Property>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nameFieldActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel8">
       <Properties>
@@ -335,9 +314,6 @@
           <Font name="Segoe UI" size="18" style="0"/>
         </Property>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="surnameFieldActionPerformed"/>
-      </Events>
     </Component>
   </SubComponents>
 </Form>
