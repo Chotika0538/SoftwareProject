@@ -34,9 +34,9 @@
                           </Group>
                           <Component id="pic_detail" min="-2" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
-                              <Component id="pattern1" min="-2" max="-2" attributes="0"/>
+                              <Component id="price" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="patternTF1" min="-2" pref="244" max="-2" attributes="0"/>
+                              <Component id="priceTF" min="-2" pref="244" max="-2" attributes="0"/>
                           </Group>
                           <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
@@ -45,9 +45,9 @@
                                   <Component id="nameTF" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="pattern" min="-2" max="-2" attributes="0"/>
+                                  <Component id="material" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="patternTF" min="-2" pref="244" max="-2" attributes="0"/>
+                                  <Component id="materialTF" min="-2" pref="244" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -73,13 +73,13 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="pattern" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
-                  <Component id="patternTF" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="material" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                  <Component id="materialTF" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="pattern1" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
-                  <Component id="patternTF1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="price" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                  <Component id="priceTF" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="7" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -116,7 +116,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="pattern">
+    <Component class="javax.swing.JLabel" name="material">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="TH Sarabun New" size="20" style="0"/>
@@ -124,7 +124,7 @@
         <Property name="text" type="java.lang.String" value="&#xe27;&#xe31;&#xe2a;&#xe14;&#xe38;  : "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="patternTF">
+    <Component class="javax.swing.JTextField" name="materialTF">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="TH SarabunPSK" size="20" style="0"/>
@@ -205,7 +205,7 @@
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="deleteListBTMouseClicked"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="pattern1">
+    <Component class="javax.swing.JLabel" name="price">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="TH Sarabun New" size="20" style="0"/>
@@ -213,7 +213,7 @@
         <Property name="text" type="java.lang.String" value="&#xe23;&#xe32;&#xe04;&#xe32;&#xe2a;&#xe34;&#xe19;&#xe04;&#xe49;&#xe32;&#xe41;&#xe15;&#xe48;&#xe25;&#xe30;&#xe41;&#xe1a;&#xe1a;  : "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="patternTF1">
+    <Component class="javax.swing.JTextField" name="priceTF">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="TH SarabunPSK" size="20" style="0"/>

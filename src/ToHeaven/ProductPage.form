@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <Properties>
+    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+      <Color blue="dc" green="d9" red="f2" type="rgb"/>
+    </Property>
+    <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[800, 400]"/>
+    </Property>
+    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[800, 400]"/>
+    </Property>
+  </Properties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="40" pref="40" max="-2" attributes="0"/>
+                      <Component id="product" min="-2" pref="140" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="110" pref="110" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="wreath" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                          <Component id="pictureFrame" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
+                          <Component id="snackBox" min="-2" pref="110" max="-2" attributes="0"/>
+                          <Component id="sandalWood" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="167" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="coffin" min="-2" pref="60" max="-2" attributes="0"/>
+                          <Component id="incenseStick" min="-2" pref="80" max="-2" attributes="0"/>
+                          <Component id="souvenir" min="-2" pref="84" max="-2" attributes="0"/>
+                          <Component id="candle" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="offering" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace min="0" pref="193" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+              <Component id="product" min="-2" pref="61" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="souvenir" min="-2" pref="40" max="-2" attributes="0"/>
+                  <Component id="wreath" min="-2" pref="30" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="snackBox" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                  <Component id="incenseStick" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="pictureFrame" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                  <Component id="candle" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="sandalWood" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="coffin" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+              <Component id="offering" min="-2" pref="40" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="product">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="TH Sarabun New" size="36" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="&#xe1c;&#xe25;&#xe34;&#xe15;&#xe20;&#xe31;&#xe13;&#xe11;&#xe4c;"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="wreath">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="TH Sarabun New" size="24" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="&#xe1e;&#xe27;&#xe07;&#xe2b;&#xe23;&#xe35;&#xe14;"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="wreathMouseClicked"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="snackBox">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="TH Sarabun New" size="24" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="&#xe0a;&#xe38;&#xe14;&#xe2d;&#xe32;&#xe2b;&#xe32;&#xe23;&#xe27;&#xe48;&#xe32;&#xe07;"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="pictureFrame">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="TH Sarabun New" size="24" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="&#xe01;&#xe23;&#xe2d;&#xe1a;&#xe23;&#xe39;&#xe1b;"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="souvenir">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="TH Sarabun New" size="24" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="&#xe02;&#xe2d;&#xe07;&#xe0a;&#xe33;&#xe23;&#xe48;&#xe27;&#xe22;"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="incenseStick">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="TH Sarabun New" size="24" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="&#xe18;&#xe39;&#xe1b;"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="offering">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="TH SarabunPSK" size="24" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="&#xe40;&#xe04;&#xe23;&#xe37;&#xe48;&#xe2d;&#xe07;&#xe44;&#xe17;&#xe22;&#xe18;&#xe23;&#xe23;&#xe21;"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="coffin">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="TH Sarabun New" size="24" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="&#xe42;&#xe25;&#xe07;&#xe28;&#xe1e;"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="sandalWood">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="TH Sarabun New" size="24" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="&#xe14;&#xe2d;&#xe01;&#xe44;&#xe21;&#xe49;&#xe08;&#xe31;&#xe19;&#xe17;&#xe19;&#xe4c;"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="candle">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="TH Sarabun New" size="24" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="&#xe40;&#xe17;&#xe35;&#xe22;&#xe19;"/>
+      </Properties>
+    </Component>
+  </SubComponents>
+</Form>

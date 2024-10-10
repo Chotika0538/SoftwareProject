@@ -17,9 +17,7 @@ public class CustomCoffin extends javax.swing.JPanel {
     
     private CardLayout cd;
     private JPanel mainPanel;
-    /**
-     * Creates new form StartPage1
-     */
+    
     public CustomCoffin(JPanel mainPanel) {
         this.mainPanel = mainPanel;
         cd = (CardLayout) mainPanel.getLayout();

@@ -163,7 +163,7 @@
             </Property>
           </Properties>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_LayoutCodePre" type="java.lang.String" value="TestNewJPanel test = new TestNewJPanel(frameJP);&#xa;Home home = new Home(frameJP);&#xa;CustomCoffin coffin = new CustomCoffin(frameJP);&#xa;&#xa;//frameJP.add(frameJP, &quot;home&quot;);&#xa;frameJP.add(home, &quot;home&quot;);&#xa;frameJP.add(test, &quot;test&quot;);&#xa;frameJP.add(coffin, &quot;coffin&quot;);&#xa;&#xa;CardLayout cl = (CardLayout) frameJP.getLayout();&#xa;cl.show(frameJP, &quot;home&quot;);"/>
+            <AuxValue name="JavaCodeGenerator_LayoutCodePre" type="java.lang.String" value="TestNewJPanel test = new TestNewJPanel(frameJP);&#xa;Home home = new Home(frameJP);&#xa;ProductPage product = new ProductPage(frameJP);&#xa;CustomCoffin coffin = new CustomCoffin(frameJP);&#xa;&#xa;//frameJP.add(frameJP, &quot;home&quot;);&#xa;frameJP.add(home, &quot;home&quot;);&#xa;frameJP.add(test, &quot;test&quot;);&#xa;frameJP.add(product, &quot;product&quot;);&#xa;frameJP.add(coffin, &quot;coffin&quot;);&#xa;&#xa;CardLayout cl = (CardLayout) frameJP.getLayout();&#xa;cl.show(frameJP, &quot;home&quot;);"/>
           </AuxValues>
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>

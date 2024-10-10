@@ -5,6 +5,7 @@
 package StoreToHeaven;
 
 import java.awt.CardLayout;
+import java.awt.Component;
 import java.awt.Dimension;
 import java.util.ArrayList;
 import javax.swing.JFrame;
@@ -16,10 +17,11 @@ import javax.swing.JTextField;
  *
  * @author LENOVO
  */
-public class AddWreath extends javax.swing.JPanel {
+public class AddWreath extends javax.swing.JPanel implements CheckPanel{
     private ArrayList<WreathDetail> wdList;
     private CardLayout cd;
     private JPanel mainPanel;
+    private int countPic_DetailJP;
     /**
      * Creates new form AddWreath
      */
@@ -41,8 +43,8 @@ public class AddWreath extends javax.swing.JPanel {
 
         name = new javax.swing.JLabel();
         nameTF = new javax.swing.JTextField();
-        pattern = new javax.swing.JLabel();
-        patternTF = new javax.swing.JTextField();
+        material = new javax.swing.JLabel();
+        materialTF = new javax.swing.JTextField();
         color = new javax.swing.JLabel();
         colorTF = new javax.swing.JTextField();
         pic_detail = new javax.swing.JLabel();
@@ -50,8 +52,8 @@ public class AddWreath extends javax.swing.JPanel {
         pic_detailJP = new javax.swing.JPanel();
         addListBT = new javax.swing.JButton();
         deleteListBT = new javax.swing.JButton();
-        pattern1 = new javax.swing.JLabel();
-        patternTF1 = new javax.swing.JTextField();
+        price = new javax.swing.JLabel();
+        priceTF = new javax.swing.JTextField();
 
         setPreferredSize(new java.awt.Dimension(480, 480));
 
@@ -60,10 +62,10 @@ public class AddWreath extends javax.swing.JPanel {
 
         nameTF.setFont(new java.awt.Font("TH SarabunPSK", 0, 20)); // NOI18N
 
-        pattern.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
-        pattern.setText("วัสดุ  : ");
+        material.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
+        material.setText("วัสดุ  : ");
 
-        patternTF.setFont(new java.awt.Font("TH SarabunPSK", 0, 20)); // NOI18N
+        materialTF.setFont(new java.awt.Font("TH SarabunPSK", 0, 20)); // NOI18N
 
         color.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
         color.setText("สีสินค้า  : ");
@@ -103,10 +105,10 @@ public class AddWreath extends javax.swing.JPanel {
             }
         });
 
-        pattern1.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
-        pattern1.setText("ราคาสินค้าแต่ละแบบ  : ");
+        price.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
+        price.setText("ราคาสินค้าแต่ละแบบ  : ");
 
-        patternTF1.setFont(new java.awt.Font("TH SarabunPSK", 0, 20)); // NOI18N
+        priceTF.setFont(new java.awt.Font("TH SarabunPSK", 0, 20)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -124,18 +126,18 @@ public class AddWreath extends javax.swing.JPanel {
                                 .addComponent(colorTF, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(pic_detail)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(pattern1)
+                                .addComponent(price)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(patternTF1, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(priceTF, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                     .addComponent(name)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(nameTF))
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(pattern)
+                                    .addComponent(material)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(patternTF, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(materialTF, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(121, 121, 121)
                         .addComponent(deleteListBT)
@@ -152,12 +154,12 @@ public class AddWreath extends javax.swing.JPanel {
                     .addComponent(nameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(pattern, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(patternTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(material, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(materialTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(pattern1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(patternTF1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(price, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(priceTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(color, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -207,11 +209,11 @@ public class AddWreath extends javax.swing.JPanel {
 //        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 //    }
     public JTextField getPatternTF() {
-        return patternTF;
+        return materialTF;
     }
 
     public void setPatternTF(JTextField patternTF) {
-        this.patternTF = patternTF;
+        this.materialTF = patternTF;
     }
 
     public JTextField getColorTF() {
@@ -229,22 +231,54 @@ public class AddWreath extends javax.swing.JPanel {
     public void setNameTF(JTextField nameTF) {
         this.nameTF = nameTF;
     }
+
+    public JTextField getMaterialTF() {
+        return materialTF;
+    }
+
+    public void setMaterialTF(JTextField materialTF) {
+        this.materialTF = materialTF;
+    }
+
+    public JTextField getPriceTF() {
+        return priceTF;
+    }
+
+    public void setPriceTF(JTextField priceTF) {
+        this.priceTF = priceTF;
+    }
+
+    public JPanel getPic_detailJP() {
+        return pic_detailJP;
+    }
+
+    public int getCountPic_DetailJP() {
+        return countPic_DetailJP;
+    }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addListBT;
     private javax.swing.JLabel color;
     private javax.swing.JTextField colorTF;
     private javax.swing.JButton deleteListBT;
+    private javax.swing.JLabel material;
+    private javax.swing.JTextField materialTF;
     private javax.swing.JLabel name;
     private javax.swing.JTextField nameTF;
-    private javax.swing.JLabel pattern;
-    private javax.swing.JLabel pattern1;
-    private javax.swing.JTextField patternTF;
-    private javax.swing.JTextField patternTF1;
     private javax.swing.JLabel pic_detail;
     private javax.swing.JPanel pic_detailJP;
     private javax.swing.JScrollPane pic_detailSP;
+    private javax.swing.JLabel price;
+    private javax.swing.JTextField priceTF;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void checkCurrentCard() {
+        countPic_DetailJP = 0;
+        for(Component c : pic_detailJP.getComponents()){
+            countPic_DetailJP+=1;
+        }
+    }
 
 
 }

@@ -7,13 +7,15 @@ import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.*;
 import DAO.Wreathdao;
+import java.util.ArrayList;
 
-public class AddProduct extends javax.swing.JPanel implements Product{
-
+public class AddProduct extends javax.swing.JPanel implements CheckPanel{
+    private ArrayList<Wreath> wList;
     /**
      * Creates new form AddProduct
      */
     public AddProduct() {
+        wList = new ArrayList<>();
         initComponents();
     }
 
@@ -62,7 +64,7 @@ public class AddProduct extends javax.swing.JPanel implements Product{
         showAddProduct.setBackground(new java.awt.Color(153, 255, 204));
         showAddProduct.setLayout(new java.awt.CardLayout());
         JPanel emptyPanel = new JPanel();
-        AddWreath wreath = new AddWreath(jPanel1);
+        AddWreath wreath = new AddWreath(showAddProduct);
         emptyPanel.setBackground(new java.awt.Color(153, 255, 204));
         showAddProduct.add(emptyPanel, "empty");
         showAddProduct.add(wreath, "wreath");
@@ -101,7 +103,7 @@ public class AddProduct extends javax.swing.JPanel implements Product{
 
     private void confirmBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_confirmBTMouseClicked
         // TODO add your handling code here:
-        CheckCurrentCard();
+        checkCurrentCard();
     }//GEN-LAST:event_confirmBTMouseClicked
  /* testing panel*/
     public static void main(String[] args){
@@ -122,13 +124,33 @@ public class AddProduct extends javax.swing.JPanel implements Product{
     private javax.swing.JPanel showAddProduct;
     // End of variables declaration//GEN-END:variables
 
+    public void buildTemplate(){
+        
+    }
+    
     @Override
-    public void CheckCurrentCard() {
+    public void checkCurrentCard() {
         for (Component comp : showAddProduct.getComponents()) {
-            if (comp.isVisible()) {
+            if (comp.isVisible()&& comp instanceof AddWreath) {
+                AddWreath aw = (AddWreath) comp;
+                Wreathdao wd = new Wreathdao();
+                wd.save(aw);
+                for(int i = 0; i<aw.getCountPic_DetailJP(); i++){
+                    WreathDetail temp = (WreathDetail) aw.getPic_detailJP().getComponent(i);
+                    String name = aw.getNameTF().getText();
+                    String pattern = temp.getPatternTF().getText();
+                    String detail = temp.getDetailTA().getText();
+                    String path = temp.getFilePath();
+                    String material = aw.getMaterialTF().getText();
+                    String color = aw.getColorTF().getText();
+                    String price = aw.getPriceTF().getText();
+                    wList.add(new Wreath(name,pattern,detail,path,material,color,price));       
+                }
+                break; // หยุดหลังจากเจอหน้าแรกที่แสดงอยู่String pattern = wd.get(a).getPatternTF().getText();
+            }
+            else if (comp.isVisible()&& comp instanceof AddCoffin) {
                 Wreathdao wd = new Wreathdao();
                 wd.save((AddWreath) comp);
-                //System.out.println("หน้าในขณะนี้คือ: " + comp);
                 break; // หยุดหลังจากเจอหน้าแรกที่แสดงอยู่
             }
         }

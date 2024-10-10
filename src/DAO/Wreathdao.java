@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package DAO;
 import java.io.BufferedInputStream;
 import org.apache.poi.ss.usermodel.*;
@@ -11,8 +7,12 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import StoreToHeaven.AddWreath;
 import StoreToHeaven.WreathDetail;
+import StoreToHeaven.Wreath;
+import java.awt.Component;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.*;
 
 
 public class Wreathdao {
@@ -21,27 +21,19 @@ public class Wreathdao {
     private final String FILE_NAME = "StoreStock.xlsx";
     private FileInputStream fileInput;
     private FileOutputStream fos;
-    private ArrayList<String> wreathlist = new ArrayList<>();
+    private ArrayList<List<String>> wreathlist = new ArrayList<>();
+    private String[] nameCol = { "ชื่อ","รายละเอียด" ,"pathรูปภาพ", "วัสดุ",  "ราคา","สี"};
+    private ArrayList<WreathDetail> wd;
+    private Component[] cmp;
 
-    /*save data int                String pattern = wreath.getPatternTF().getText();          // get String value from getPatternTF()
-                if (pattern != null && !pattern.isEmpty()) {           //String is not empty?
-                    String[] s = pattern.split(",") ;    
-                    for (int i=0; i<s.length; i++){
-                        wreathlist.add(s[i]);     // put Pattern data into wreathlist
-                    }o StoreStock.xlsx*/
+    /*Save data in Excel file*/
     public void save(AddWreath wreath) {
-        /*get all data to ArrayList*/
-        String newData = wreath.getNameTF().getText() ;
-        String pattern = wreath.getPatternTF().getText();          // get String value from getPatternTF()
-        if (newData != null && !newData.isEmpty()&&pattern != null && !pattern.isEmpty()) {           //String is not empty?
-           wreathlist.add(newData);
-            String[] s = pattern.split(",") ;    
-            for (int i=0; i<s.length; i++){
-                wreathlist.add(s[i]);     // put Pattern data into wreathlist
-            }
-        } else {
-                    //s = new String[0]; // หากไม่มีค่าให้เป็น array ว่าง
+        cmp = wreath.getPic_detailJP().getComponents();    // get WreathDetail panel
+        wd = new ArrayList<>();
+        for (Component c : cmp){
+            wd.add((WreathDetail) c);
         }
+    
         /*Excel*/    
         read();             // read StroeStock.xlsx
         try {           // check that StoreStock.xlsx was found
@@ -52,17 +44,44 @@ public class Wreathdao {
             Row firstRow = sheet.getRow(0);
             if (firstRow == null) {       // this files valid?
                 firstRow = sheet.createRow(0);          // create first row
-                
+                nameCol[0] = wreath.getNameTF().getText();
                 /*bring all data in wreathlist to create each col in valid sheet*/
-                for(int j=0; j<=wreathlist.size(); j++){
+                for(int j=0; j<nameCol.length; j++){
                     Cell cell = firstRow.createCell(j);
-                    cell.setCellValue(wreathlist.get(j-1));
+                    cell.setCellValue(nameCol[j]);
                 }
-            } else {
-                // หากแถวแรกมีอยู่แล้ว คุณสามารถเลือกที่จะเขียนต่อหรือเพิ่มเซลล์ใหม่ที่นี่
-                System.out.println("have first row");
             }
-            
+            for (int a=0; a<wd.size(); a++){
+            String pattern = wd.get(a).getPatternTF().getText();
+            String detail = wd.get(a).getDetailTA().getText();
+            String path = wd.get(a).getFilePath();
+            String[] material = wreath.getMaterialTF().getText().split(",");
+            String[] price = wreath.getPriceTF().getText().split(",");
+            String[] color = wreath.getColorTF().getText().split(",");
+            String[] dataChecked = {pattern,detail,path,String.join(",", material),String.join(",", price),String.join(",", color)};
+            boolean haveData = false ;
+            for (Row row : sheet){
+                Cell c = row.getCell(0);
+                if(c.toString().equals(dataChecked[0])){
+                    haveData = true;
+                    break;
+                }
+            }
+            if(!haveData){
+               try {
+                int lastRow = sheet.getLastRowNum();
+                Row newRow = sheet.createRow(lastRow+1);
+                newRow.createCell(0).setCellValue(pattern);
+                newRow.createCell(1).setCellValue(detail);
+                newRow.createCell(2).setCellValue(path);
+                newRow.createCell(3).setCellValue(wreath.getMaterialTF().getText());
+                newRow.createCell(4).setCellValue(wreath.getPriceTF().getText());
+                newRow.createCell(5).setCellValue(wreath.getColorTF().getText());
+               } catch (Exception e) {
+                    e.printStackTrace();
+               }             
+           }
+        }
             /*write data into StoreStock.xlsx*/
             fos = new FileOutputStream(new File(FILE_NAME));
             wb.write(fos);
@@ -85,6 +104,8 @@ public class Wreathdao {
             }
         }
     }
+    
+    /*Read Excel file*/
     public void read() {
         wb = null;
         try {
@@ -95,7 +116,5 @@ public class Wreathdao {
             System.out.println("can't read file: " + err);
         }
     }
-    public static void main(String[] args){
-        //new Wreathdao().save();
-    }
+   
 }

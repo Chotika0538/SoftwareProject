@@ -4,24 +4,26 @@
  */
 package StoreToHeaven;
 
+import java.awt.Dimension;
 import java.awt.event.ItemEvent;
 import java.io.File;
 import java.util.ArrayList;
 import javax.swing.JCheckBox;
 import javax.swing.JFileChooser;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
-/**
- *
- * @author LENOVO
- */
 public class WreathDetail extends javax.swing.JPanel {
 final JFileChooser fc = new JFileChooser();
 private ArrayList<WreathDetail> wdList;
 private JPanel jp;
-    /**
-     * Creates new form WreathDetail
-     */
+private String filePath;
+
+    public String getFilePath() {
+        return filePath;
+    }
+
     public WreathDetail(ArrayList l, JPanel jp) {
         wdList = l; 
         this.jp = jp;
@@ -76,6 +78,7 @@ private JPanel jp;
         detailLB.setBounds(10, 80, 66, 22);
 
         detailTA.setColumns(20);
+        detailTA.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         detailTA.setRows(5);
         detailSP.setViewportView(detailTA);
 
@@ -103,6 +106,11 @@ private JPanel jp;
                 deleteCBItemStateChanged(evt);
             }
         });
+        deleteCB.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                deleteCBMouseClicked(evt);
+            }
+        });
         deleteCB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deleteCBActionPerformed(evt);
@@ -126,6 +134,11 @@ private JPanel jp;
         int returnVal = fc.showDialog(null, "Choose");
         if (returnVal == JFileChooser.APPROVE_OPTION){
             File file = fc.getSelectedFile();
+            try {
+                filePath = file.getCanonicalPath();          //get imgae's path
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             showPicName.setText("รูปภาพที่แนบ: "+file.getName());
             //JOptionPane.showMessageDialog(jButton1, file);
         }
@@ -141,9 +154,18 @@ private JPanel jp;
 //           wdList.remove(  getPanelIndex());
 //        }
     }//GEN-LAST:event_deleteCBItemStateChanged
-private int getPanelIndex(){
-    return wdList.indexOf(this);
-}
+
+    private void deleteCBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteCBMouseClicked
+        // TODO add your handling code here:
+        wdList.remove(this);
+        jp.remove(this);
+        jp.setPreferredSize(new Dimension(408, jp.getHeight()-235));
+        jp.revalidate();
+        jp.repaint();
+    }//GEN-LAST:event_deleteCBMouseClicked
+//private int getPanelIndex(){
+//    return wdList.indexOf(this);
+//}
 // /* testing panel*/
 //    public static void main(String[] args){
 //        JFrame f = new JFrame();
@@ -154,7 +176,38 @@ private int getPanelIndex(){
 //        f.setVisible(true);
 //        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 //    }
+    public JCheckBox getDeleteCB() {
+        return deleteCB;
+    }
 
+    public void setDeleteCB(JCheckBox deleteCB) {
+        this.deleteCB = deleteCB;
+    }
+
+    public JTextArea getDetailTA() {
+        return detailTA;
+    }
+
+    public void setDetailTA(JTextArea detailTA) {
+        this.detailTA = detailTA;
+    }
+
+    public JTextField getPatternTF() {
+        return patternTF;
+    }
+
+    public void setPatternTF(JTextField patternTF) {
+        this.patternTF = patternTF;
+    }
+
+    public JTextField getPriceTF() {
+        return priceTF;
+    }
+
+    public void setPriceTF(JTextField priceTF) {
+        this.priceTF = priceTF;
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel bathLB;
     private javax.swing.JButton choosePicBT;
@@ -169,11 +222,5 @@ private int getPanelIndex(){
     private javax.swing.JLabel showPicName;
     // End of variables declaration//GEN-END:variables
 
-    public JCheckBox getDeleteCB() {
-        return deleteCB;
-    }
 
-    public void setDeleteCB(JCheckBox deleteCB) {
-        this.deleteCB = deleteCB;
-    }
 }

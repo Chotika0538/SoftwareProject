@@ -106,11 +106,13 @@ public class MainFrame extends javax.swing.JPanel {
         frameJP.setLayout(new java.awt.CardLayout());
         TestNewJPanel test = new TestNewJPanel(frameJP);
         Home home = new Home(frameJP);
+        ProductPage product = new ProductPage(frameJP);
         CustomCoffin coffin = new CustomCoffin(frameJP);
 
         //frameJP.add(frameJP, "home");
         frameJP.add(home, "home");
         frameJP.add(test, "test");
+        frameJP.add(product, "product");
         frameJP.add(coffin, "coffin");
 
         CardLayout cl = (CardLayout) frameJP.getLayout();
@@ -121,25 +123,26 @@ public class MainFrame extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jToggleButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton3MouseClicked
-        CardLayout cl = (CardLayout) frameJP.getLayout();
-        cl.show(frameJP, "test");
+        CardLayout cd = (CardLayout) frameJP.getLayout();
+        cd.show(frameJP, "product");
     }//GEN-LAST:event_jToggleButton3MouseClicked
 
     private void jToggleButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton4MouseClicked
         // TODO add your handling code here:
-        CardLayout cl = (CardLayout) frameJP.getLayout();
-        cl.show(frameJP, "home");
+        CardLayout cd = (CardLayout) frameJP.getLayout();
+        cd.show(frameJP, "home");
     }//GEN-LAST:event_jToggleButton4MouseClicked
 
     private void jToggleButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton2MouseClicked
         // TODO add your handling code here:
-       
+       CardLayout cd = (CardLayout) frameJP.getLayout();
+       cd.show(frameJP, "coffin");
     }//GEN-LAST:event_jToggleButton2MouseClicked
 
     private void jToggleButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton1MouseClicked
         // TODO add your handling code here:
-         CardLayout cl = (CardLayout) frameJP.getLayout();
-        cl.show(frameJP, "coffin");
+         CardLayout cd = (CardLayout) frameJP.getLayout();
+         cd.show(frameJP, "coffin");
     }//GEN-LAST:event_jToggleButton1MouseClicked
  /* testing panel*/
     public static void main(String[] args){
