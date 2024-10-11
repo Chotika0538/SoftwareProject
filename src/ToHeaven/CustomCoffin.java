@@ -34,11 +34,11 @@ public class CustomCoffin extends javax.swing.JPanel {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         jLabel7 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        menuCustom = new javax.swing.JPanel();
         coffinStageLB = new javax.swing.JLabel();
         funeralStageLB = new javax.swing.JLabel();
         boneStageLB = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
+        coffinPanel = new javax.swing.JPanel();
         negletBT = new javax.swing.JRadioButton();
         jPanel3 = new javax.swing.JPanel();
         sizeLB = new javax.swing.JLabel();
@@ -73,29 +73,29 @@ public class CustomCoffin extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(800, 1400));
         setLayout(new java.awt.BorderLayout());
 
-        jPanel1.setBackground(new java.awt.Color(0, 204, 204));
-        jPanel1.setPreferredSize(new java.awt.Dimension(800, 80));
-        jPanel1.setLayout(null);
+        menuCustom.setBackground(new java.awt.Color(0, 204, 204));
+        menuCustom.setPreferredSize(new java.awt.Dimension(800, 80));
+        menuCustom.setLayout(null);
 
         coffinStageLB.setFont(new java.awt.Font("MiTNThin", 1, 24)); // NOI18N
         coffinStageLB.setText("สั่งซื้อโลงศพ");
-        jPanel1.add(coffinStageLB);
+        menuCustom.add(coffinStageLB);
         coffinStageLB.setBounds(70, 20, 110, 41);
 
         funeralStageLB.setFont(new java.awt.Font("MiTNThin", 1, 24)); // NOI18N
         funeralStageLB.setText("งานฌาปนกิจ");
-        jPanel1.add(funeralStageLB);
+        menuCustom.add(funeralStageLB);
         funeralStageLB.setBounds(340, 20, 121, 41);
 
         boneStageLB.setFont(new java.awt.Font("MiTNThin", 1, 24)); // NOI18N
         boneStageLB.setText("การจัดการอัฐิ");
-        jPanel1.add(boneStageLB);
+        menuCustom.add(boneStageLB);
         boneStageLB.setBounds(610, 20, 117, 41);
 
-        add(jPanel1, java.awt.BorderLayout.PAGE_START);
+        add(menuCustom, java.awt.BorderLayout.PAGE_START);
 
-        jPanel2.setBackground(new java.awt.Color(204, 255, 204));
-        jPanel2.setPreferredSize(new java.awt.Dimension(800, 900));
+        coffinPanel.setBackground(new java.awt.Color(204, 255, 204));
+        coffinPanel.setPreferredSize(new java.awt.Dimension(800, 900));
 
         negletBT.setFont(new java.awt.Font("RainyThin", 0, 20)); // NOI18N
         negletBT.setText("ไม่สนใจสั่งซื้อ");
@@ -301,38 +301,38 @@ public class CustomCoffin extends javax.swing.JPanel {
         nextBT.setFont(new java.awt.Font("MoopaThin", 0, 20)); // NOI18N
         nextBT.setText("ถัดไป >");
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout coffinPanelLayout = new javax.swing.GroupLayout(coffinPanel);
+        coffinPanel.setLayout(coffinPanelLayout);
+        coffinPanelLayout.setHorizontalGroup(
+            coffinPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(coffinPanelLayout.createSequentialGroup()
                 .addGap(88, 88, 88)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(coffinPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(negletBT)
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(20, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
+            .addGroup(coffinPanelLayout.createSequentialGroup()
                 .addGap(360, 360, 360)
                 .addComponent(confirmBT)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(nextBT)
                 .addGap(72, 72, 72))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        coffinPanelLayout.setVerticalGroup(
+            coffinPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(coffinPanelLayout.createSequentialGroup()
                 .addGap(52, 52, 52)
                 .addComponent(negletBT)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(coffinPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(confirmBT)
                     .addComponent(nextBT))
                 .addContainerGap(38, Short.MAX_VALUE))
         );
 
-        add(jPanel2, java.awt.BorderLayout.CENTER);
+        add(coffinPanel, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
     private void negletBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_negletBTMouseClicked
@@ -366,6 +366,7 @@ public class CustomCoffin extends javax.swing.JPanel {
     private javax.swing.JLabel cof3Pic;
     private javax.swing.JLabel cof4Pic;
     private javax.swing.JLabel cof5Pic;
+    private javax.swing.JPanel coffinPanel;
     private javax.swing.JLabel coffinStageLB;
     private javax.swing.JButton confirmBT;
     private javax.swing.JTextArea detailCof1;
@@ -379,8 +380,6 @@ public class CustomCoffin extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
@@ -388,6 +387,7 @@ public class CustomCoffin extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JPanel menuCustom;
     private javax.swing.JRadioButton negletBT;
     private javax.swing.JButton nextBT;
     private javax.swing.JRadioButton size20BT;

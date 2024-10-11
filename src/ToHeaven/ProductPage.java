@@ -24,15 +24,15 @@ public class ProductPage extends javax.swing.JPanel {
     private void initComponents() {
 
         product = new javax.swing.JLabel();
-        wreath = new javax.swing.JButton();
-        snackBox = new javax.swing.JButton();
-        frame = new javax.swing.JButton();
-        sandalWood = new javax.swing.JButton();
-        Souvenir = new javax.swing.JButton();
-        incense = new javax.swing.JButton();
-        candle = new javax.swing.JButton();
-        coffin = new javax.swing.JButton();
-        offering = new javax.swing.JButton();
+        wreathBT = new javax.swing.JButton();
+        snackBoxBT = new javax.swing.JButton();
+        frameBT = new javax.swing.JButton();
+        sandalWoodBT = new javax.swing.JButton();
+        SouvenirBT = new javax.swing.JButton();
+        incenseBT = new javax.swing.JButton();
+        candleBT = new javax.swing.JButton();
+        coffinBT = new javax.swing.JButton();
+        offeringBT = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(242, 217, 220));
         setMaximumSize(new java.awt.Dimension(800, 400));
@@ -44,81 +44,92 @@ public class ProductPage extends javax.swing.JPanel {
         add(product);
         product.setBounds(50, 50, 140, 61);
 
-        wreath.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
-        wreath.setText("พวงหรีด");
-        wreath.setBorder(null);
-        wreath.setPreferredSize(new java.awt.Dimension(75, 30));
-        add(wreath);
-        wreath.setBounds(160, 130, 135, 41);
+        wreathBT.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
+        wreathBT.setText("พวงหรีด");
+        wreathBT.setBorder(null);
+        wreathBT.setPreferredSize(new java.awt.Dimension(75, 30));
+        wreathBT.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                wreathBTMouseClicked(evt);
+            }
+        });
+        add(wreathBT);
+        wreathBT.setBounds(160, 130, 135, 41);
 
-        snackBox.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
-        snackBox.setText("ชุดอาหารว่าง");
-        snackBox.setBorder(null);
-        snackBox.setPreferredSize(new java.awt.Dimension(75, 30));
-        add(snackBox);
-        snackBox.setBounds(160, 190, 135, 41);
+        snackBoxBT.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
+        snackBoxBT.setText("ชุดอาหารว่าง");
+        snackBoxBT.setBorder(null);
+        snackBoxBT.setPreferredSize(new java.awt.Dimension(75, 30));
+        add(snackBoxBT);
+        snackBoxBT.setBounds(160, 190, 135, 41);
 
-        frame.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
-        frame.setText("กรอบรูป");
-        frame.setBorder(null);
-        frame.setPreferredSize(new java.awt.Dimension(75, 30));
-        add(frame);
-        frame.setBounds(160, 250, 135, 41);
+        frameBT.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
+        frameBT.setText("กรอบรูป");
+        frameBT.setBorder(null);
+        frameBT.setPreferredSize(new java.awt.Dimension(75, 30));
+        add(frameBT);
+        frameBT.setBounds(160, 250, 135, 41);
 
-        sandalWood.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
-        sandalWood.setText("ดอกไม้จันทน์");
-        sandalWood.setBorder(null);
-        sandalWood.setPreferredSize(new java.awt.Dimension(75, 30));
-        add(sandalWood);
-        sandalWood.setBounds(160, 310, 135, 41);
+        sandalWoodBT.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
+        sandalWoodBT.setText("ดอกไม้จันทน์");
+        sandalWoodBT.setBorder(null);
+        sandalWoodBT.setPreferredSize(new java.awt.Dimension(75, 30));
+        add(sandalWoodBT);
+        sandalWoodBT.setBounds(160, 310, 135, 41);
 
-        Souvenir.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
-        Souvenir.setText("ของชำร่วย");
-        Souvenir.setBorder(null);
-        Souvenir.setPreferredSize(new java.awt.Dimension(75, 30));
-        add(Souvenir);
-        Souvenir.setBounds(510, 130, 135, 41);
+        SouvenirBT.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
+        SouvenirBT.setText("ของชำร่วย");
+        SouvenirBT.setBorder(null);
+        SouvenirBT.setPreferredSize(new java.awt.Dimension(75, 30));
+        add(SouvenirBT);
+        SouvenirBT.setBounds(510, 130, 135, 41);
 
-        incense.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
-        incense.setText("ธูป");
-        incense.setBorder(null);
-        incense.setPreferredSize(new java.awt.Dimension(75, 30));
-        add(incense);
-        incense.setBounds(510, 190, 135, 41);
+        incenseBT.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
+        incenseBT.setText("ธูป");
+        incenseBT.setBorder(null);
+        incenseBT.setPreferredSize(new java.awt.Dimension(75, 30));
+        add(incenseBT);
+        incenseBT.setBounds(510, 190, 135, 41);
 
-        candle.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
-        candle.setText("เทียน");
-        candle.setBorder(null);
-        candle.setPreferredSize(new java.awt.Dimension(75, 30));
-        add(candle);
-        candle.setBounds(510, 250, 135, 41);
+        candleBT.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
+        candleBT.setText("เทียน");
+        candleBT.setBorder(null);
+        candleBT.setPreferredSize(new java.awt.Dimension(75, 30));
+        add(candleBT);
+        candleBT.setBounds(510, 250, 135, 41);
 
-        coffin.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
-        coffin.setText("โลงศพ");
-        coffin.setBorder(null);
-        coffin.setPreferredSize(new java.awt.Dimension(75, 30));
-        add(coffin);
-        coffin.setBounds(510, 310, 135, 41);
+        coffinBT.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
+        coffinBT.setText("โลงศพ");
+        coffinBT.setBorder(null);
+        coffinBT.setPreferredSize(new java.awt.Dimension(75, 30));
+        add(coffinBT);
+        coffinBT.setBounds(510, 310, 135, 41);
 
-        offering.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
-        offering.setText("เครื่องไทยธรรม");
-        offering.setBorder(null);
-        offering.setPreferredSize(new java.awt.Dimension(75, 30));
-        add(offering);
-        offering.setBounds(510, 370, 143, 41);
+        offeringBT.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
+        offeringBT.setText("เครื่องไทยธรรม");
+        offeringBT.setBorder(null);
+        offeringBT.setPreferredSize(new java.awt.Dimension(75, 30));
+        add(offeringBT);
+        offeringBT.setBounds(510, 370, 143, 41);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void wreathBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_wreathBTMouseClicked
+        // TODO add your handling code here:
+        //CardLayout cd = (CardLayout) frameJP.getLayout();
+        cd.show(mainPanel, "wreathproductpage");
+    }//GEN-LAST:event_wreathBTMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Souvenir;
-    private javax.swing.JButton candle;
-    private javax.swing.JButton coffin;
-    private javax.swing.JButton frame;
-    private javax.swing.JButton incense;
-    private javax.swing.JButton offering;
+    private javax.swing.JButton SouvenirBT;
+    private javax.swing.JButton candleBT;
+    private javax.swing.JButton coffinBT;
+    private javax.swing.JButton frameBT;
+    private javax.swing.JButton incenseBT;
+    private javax.swing.JButton offeringBT;
     private javax.swing.JLabel product;
-    private javax.swing.JButton sandalWood;
-    private javax.swing.JButton snackBox;
-    private javax.swing.JButton wreath;
+    private javax.swing.JButton sandalWoodBT;
+    private javax.swing.JButton snackBoxBT;
+    private javax.swing.JButton wreathBT;
     // End of variables declaration//GEN-END:variables
 }

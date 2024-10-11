@@ -1,17 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package ToHeaven;
 
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 
-public class CustomFuneral extends javax.swing.JPanel {
+
+public class CustomAsh extends javax.swing.JPanel {
     private CardLayout cd;
     private JPanel mainPanel;
     
-    public CustomFuneral(JPanel mainPanel) {
+    public CustomAsh(JPanel mainPanel) {
         this.mainPanel = mainPanel;
         cd = (CardLayout) mainPanel.getLayout();
         initComponents();
@@ -29,11 +26,9 @@ public class CustomFuneral extends javax.swing.JPanel {
         coffinStageLB = new javax.swing.JLabel();
         funeralStageLB = new javax.swing.JLabel();
         boneStageLB = new javax.swing.JLabel();
-        Panel1 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        funeralPanel = new javax.swing.JPanel();
+        ashPanel = new javax.swing.JPanel();
 
-        setPreferredSize(new java.awt.Dimension(800, 1800));
+        setPreferredSize(new java.awt.Dimension(800, 1000));
         setLayout(new java.awt.BorderLayout());
 
         menuCustom.setBackground(new java.awt.Color(0, 204, 204));
@@ -57,47 +52,28 @@ public class CustomFuneral extends javax.swing.JPanel {
 
         add(menuCustom, java.awt.BorderLayout.PAGE_START);
 
-        Panel1.setPreferredSize(new java.awt.Dimension(800, 1700));
+        ashPanel.setPreferredSize(new java.awt.Dimension(800, 920));
 
-        funeralPanel.setPreferredSize(new java.awt.Dimension(800, 1500));
-
-        javax.swing.GroupLayout funeralPanelLayout = new javax.swing.GroupLayout(funeralPanel);
-        funeralPanel.setLayout(funeralPanelLayout);
-        funeralPanelLayout.setHorizontalGroup(
-            funeralPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 798, Short.MAX_VALUE)
+        javax.swing.GroupLayout ashPanelLayout = new javax.swing.GroupLayout(ashPanel);
+        ashPanel.setLayout(ashPanelLayout);
+        ashPanelLayout.setHorizontalGroup(
+            ashPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 800, Short.MAX_VALUE)
         );
-        funeralPanelLayout.setVerticalGroup(
-            funeralPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1405, Short.MAX_VALUE)
+        ashPanelLayout.setVerticalGroup(
+            ashPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 920, Short.MAX_VALUE)
         );
 
-        jScrollPane1.setViewportView(funeralPanel);
-
-        javax.swing.GroupLayout Panel1Layout = new javax.swing.GroupLayout(Panel1);
-        Panel1.setLayout(Panel1Layout);
-        Panel1Layout.setHorizontalGroup(
-            Panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1)
-        );
-        Panel1Layout.setVerticalGroup(
-            Panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Panel1Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1735, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 185, Short.MAX_VALUE))
-        );
-
-        add(Panel1, java.awt.BorderLayout.LINE_END);
+        add(ashPanel, java.awt.BorderLayout.LINE_START);
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel Panel1;
+    private javax.swing.JPanel ashPanel;
     private javax.swing.JLabel boneStageLB;
     private javax.swing.JLabel coffinStageLB;
-    private javax.swing.JPanel funeralPanel;
     private javax.swing.JLabel funeralStageLB;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel menuCustom;
     // End of variables declaration//GEN-END:variables
 }

@@ -26,6 +26,9 @@ public class Wreathdao {
     private ArrayList<WreathDetail> wd;
     private ArrayList<Wreath> wList;
     private Component[] cmp;
+    String name , pattern, detail, path;
+    String[] material   , color;
+    Double[] price;    
 
     /*Save data in Excel file*/
     public void save(AddWreath wreath) {
@@ -110,9 +113,53 @@ public class Wreathdao {
     }
     
     /*get All Data from excel file*/
-//    public ArrayList<Wreath> getAll(){
-//        return 
-//    }
+    public ArrayList<Wreath> getAll(){        
+        read();
+        try {
+            if (sheet == null) {
+                System.out.println("Sheet not found");
+            }
+           // String name = 
+            for(Row row : sheet){
+                if(row.getRowNum()==0){
+                    name = row.getCell(0).getStringCellValue();
+                    continue;
+                }
+                for(Cell cell : row){
+                   switch (cell.getColumnIndex()){
+                       case 0:
+                           pattern = cell.getStringCellValue();
+                           break;
+                       case 1:
+                           detail = cell.getStringCellValue();
+                           break;
+                       case 2:
+                           path = cell.getStringCellValue();
+                           break;
+                       case 3:
+                           material = cell.getStringCellValue().split(",");
+                           break;
+                       case 4:
+                           String[] s = cell.getStringCellValue().split(",");
+                           price = new Double[s.length];
+                           int i = 0;
+                           for(String t : s){
+                               price[i] = Double.parseDouble(t);
+                               i++;
+                           }
+                           break;        
+                       case 5:
+                           color = cell.getStringCellValue().split(",");
+                           break;
+                   }
+                   wList.add(new Wreath(name, pattern, detail, path, material, color, price));
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return wList;
+    }
     
     
     /*Read Excel file*/

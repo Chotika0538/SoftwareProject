@@ -97,7 +97,7 @@
             </Property>
           </Properties>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_LayoutCodePre" type="java.lang.String" value="CustomCoffin coffin = new CustomCoffin(customFrameJP);&#xa;&#xa;customFrameJP.add(coffin, &quot;coffin&quot;);&#xa;&#xa;&#xa;CardLayout  cl = (CardLayout) customFrameJP.getLayout();&#xa;cl.show(customFrameJP, &quot;coffin&quot;);"/>
+            <AuxValue name="JavaCodeGenerator_LayoutCodePre" type="java.lang.String" value="CustomCoffin coffin = new CustomCoffin(customFrameJP);&#xa;CustomFuneral funeral = new CustomFuneral(customFrameJP);&#xa;CustomAsh ash = new CustomAsh(customFrameJP);&#xa;&#xa;customFrameJP.add(coffin, &quot;coffincustom&quot;);&#xa;customFrameJP.add(funeral, &quot;funeralcustom&quot;);&#xa;customFrameJP.add(ash, &quot;ashcustom&quot;);&#xa;&#xa;&#xa;CardLayout  cd = (CardLayout) customFrameJP.getLayout();&#xa;cd.show(customFrameJP, &quot;coffincustom&quot;);"/>
           </AuxValues>
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>

@@ -77,6 +77,8 @@ private String filePath;
         add(detailLB);
         detailLB.setBounds(10, 80, 66, 22);
 
+        detailSP.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
         detailTA.setColumns(20);
         detailTA.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         detailTA.setRows(5);

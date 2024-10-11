@@ -10,12 +10,12 @@ public class Wreath extends Product {
     private String color;
     private String material;
 
-    public Wreath(String name,String pattern,String detail,String path,String material,String color,String price) {
+    public Wreath(String name,String pattern,String detail,String path,String[] material,String[] color,Double[] price) {
         super(name,pattern,detail,path);
         //materialAll = new ArrayList<>();
-        materialAll.add(Arrays.toString(material.split(",")));
-        colorAll.add(Arrays.toString(color.split(",")));
-        priceAll.add(Double.parseDouble((Arrays.toString(price.split(",")))));
+        materialAll.add(Arrays.toString(material));
+        colorAll.add(Arrays.toString(color));
+        priceAll.add(Double.parseDouble((Arrays.toString(price))));
     }
     
     

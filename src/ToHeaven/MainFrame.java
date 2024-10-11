@@ -32,7 +32,7 @@ public class MainFrame extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         frameJP = new javax.swing.JPanel();
 
-        setPreferredSize(new java.awt.Dimension(800, 500));
+        setPreferredSize(new java.awt.Dimension(800, 600));
         setLayout(new java.awt.BorderLayout());
 
         menuBar.setBackground(new java.awt.Color(255, 204, 204));
@@ -97,14 +97,17 @@ public class MainFrame extends javax.swing.JPanel {
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
         frameJP.setBackground(new java.awt.Color(204, 255, 153));
+        frameJP.setPreferredSize(new java.awt.Dimension(800, 500));
         frameJP.setLayout(new java.awt.CardLayout());
         Home home = new Home(frameJP);
         ProductPage product = new ProductPage(frameJP);
+        WreathProductPage wpp = new WreathProductPage(frameJP);
         CustomCoffin coffin = new CustomCoffin(frameJP);
 
         /*add each pages into cardlayout on frameJP*/
         frameJP.add(home, "home");
         frameJP.add(product, "product");
+        frameJP.add(wpp, "wreathproductpage");
         frameJP.add(coffin, "coffin");
 
         /*called home page(1st page)*/

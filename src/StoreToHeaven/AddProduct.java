@@ -65,25 +65,25 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
         showAddProduct.setLayout(new java.awt.CardLayout());
         JPanel emptyPanel = new JPanel();
         AddWreath wreath = new AddWreath(showAddProduct);
-        AddCoffin coffin = new AddCoffin(showAddProduct);
-        AddFrame frame = new AddFrame(showAddProduct);
-        AddIncense incense = new AddIncense(showAddProduct);
-        AddCandle candle = new AddCandle(showAddProduct);
-        AddOffering offering = new AddOffering(showAddProduct);
-        AddSandalWood sandalwood = new AddSandalWood(showAddProduct);
-        AddSnackBox snackbox = new AddSnackBox(showAddProduct);
-        AddSouvenirs souvenir= new AddSouvenirs(showAddProduct);
+        //AddCoffin coffin = new AddCoffin(showAddProduct);
+        //AddFrame frame = new AddFrame(showAddProduct);
+        //AddIncense incense = new AddIncense(showAddProduct);
+        //AddCandle candle = new AddCandle(showAddProduct);
+        //AddOffering offering = new AddOffering(showAddProduct);
+        //AddSandalWood sandalwood = new AddSandalWood(showAddProduct);
+        //AddSnackBox snackbox = new AddSnackBox(showAddProduct);
+        //AddSouvenirs souvenir= new AddSouvenirs(showAddProduct);
         emptyPanel.setBackground(new java.awt.Color(153, 255, 204));
         showAddProduct.add(emptyPanel, "empty");
-        showAddProduct.add(coffin, "coffin");
+        //showAddProduct.add(coffin, "coffin");
         showAddProduct.add(wreath, "wreath");
-        showAddProduct.add(frame, "frame");
-        showAddProduct.add(incense, "incense");
-        showAddProduct.add(candle, "candle");
-        showAddProduct.add(offering, "offering");
-        showAddProduct.add(sandlewood, "sandlewood");
-        showAddProduct.add(snackbox, "snackbox");
-        showAddProduct.add(souvenir, "souvenir");
+        //showAddProduct.add(frame, "frame");
+        //showAddProduct.add(incense, "incense");
+        //showAddProduct.add(candle, "candle");
+        //showAddProduct.add(offering, "offering");
+        //showAddProduct.add(sandlewood, "sandlewood");
+        //showAddProduct.add(snackbox, "snackbox");
+        //showAddProduct.add(souvenir, "souvenir");
         add(showAddProduct);
         showAddProduct.setBounds(10, 110, 480, 480);
 
@@ -111,20 +111,20 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
             cd.show(showAddProduct, "coffin");
         } else if(((String)cb.getSelectedItem()).equals("พวงหรีด")){
              cd.show(showAddProduct, "wreath");
-        }else if(((String)cb.getSelectedItem()).equals("ดอกไม้จันทน์")){
-             cd.show(showAddProduct, "sandlewood");
-        }else if(((String)cb.getSelectedItem()).equals("ชุดไทยธรรม")){
-             cd.show(showAddProduct, "offering");
-        }else if(((String)cb.getSelectedItem()).equals("ธูป")){
-             cd.show(showAddProduct, "incense");
-        }else if(((String)cb.getSelectedItem()).equals("เทียน")){
-             cd.show(showAddProduct, "candle");
-        }else if(((String)cb.getSelectedItem()).equals("ชุดอาหารว่าง")){
-             cd.show(showAddProduct, "snackbox");
-        }else if(((String)cb.getSelectedItem()).equals("ของชำร่วย")){
-             cd.show(showAddProduct, "souvenir");
-        }else if(((String)cb.getSelectedItem()).equals("กรอบรูป")){
-             cd.show(showAddProduct, "frame");
+//        }else if(((String)cb.getSelectedItem()).equals("ดอกไม้จันทน์")){
+//             cd.show(showAddProduct, "sandlewood");
+//        }else if(((String)cb.getSelectedItem()).equals("ชุดไทยธรรม")){
+//             cd.show(showAddProduct, "offering");
+//        }else if(((String)cb.getSelectedItem()).equals("ธูป")){
+//             cd.show(showAddProduct, "incense");
+//        }else if(((String)cb.getSelectedItem()).equals("เทียน")){
+//             cd.show(showAddProduct, "candle");
+//        }else if(((String)cb.getSelectedItem()).equals("ชุดอาหารว่าง")){
+//             cd.show(showAddProduct, "snackbox");
+//        }else if(((String)cb.getSelectedItem()).equals("ของชำร่วย")){
+//             cd.show(showAddProduct, "souvenir");
+//        }else if(((String)cb.getSelectedItem()).equals("กรอบรูป")){
+//             cd.show(showAddProduct, "frame");
         }
     }//GEN-LAST:event_addChoicesActionPerformed
 
@@ -166,17 +166,17 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
                 AddWreath aw = (AddWreath) comp;
                 Wreathdao wd = new Wreathdao();
                 wd.save(aw);
-                for(int i = 0; i<aw.getCountPic_DetailJP(); i++){
-                    WreathDetail temp = (WreathDetail) aw.getPic_detailJP().getComponent(i);
-                    String name = aw.getNameTF().getText();
-                    String pattern = temp.getPatternTF().getText();
-                    String detail = temp.getDetailTA().getText();
-                    String path = temp.getFilePath();
-                    String material = aw.getMaterialTF().getText();
-                    String color = aw.getColorTF().getText();
-                    String price = aw.getPriceTF().getText();
-                    wList.add(new Wreath(name,pattern,detail,path,material,color,price));       
-                }
+//                for(int i = 0; i<aw.getCountPic_DetailJP(); i++){
+//                    WreathDetail temp = (WreathDetail) aw.getPic_detailJP().getComponent(i);
+//                    String name = aw.getNameTF().getText();
+//                    String pattern = temp.getPatternTF().getText();
+//                    String detail = temp.getDetailTA().getText();
+//                    String path = temp.getFilePath();
+//                    String material = aw.getMaterialTF().getText();
+//                    String color = aw.getColorTF().getText();
+//                    String price = aw.getPriceTF().getText();
+//                    wList.add(new Wreath(name,pattern,detail,path,material,color,price));       
+//                }
                 break; // หยุดหลังจากเจอหน้าแรกที่แสดงอยู่String pattern = wd.get(a).getPatternTF().getText();
             }
 //            else if (comp.isVisible()&& comp instanceof AddCoffin) {

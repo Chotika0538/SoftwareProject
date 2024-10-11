@@ -42,7 +42,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JButton" name="wreath">
+    <Component class="javax.swing.JButton" name="wreathBT">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="TH Sarabun New" size="24" style="1"/>
@@ -55,13 +55,16 @@
           <Dimension value="[75, 30]"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="wreathBTMouseClicked"/>
+      </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="160" y="130" width="135" height="41"/>
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JButton" name="snackBox">
+    <Component class="javax.swing.JButton" name="snackBoxBT">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="TH Sarabun New" size="24" style="1"/>
@@ -80,7 +83,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JButton" name="frame">
+    <Component class="javax.swing.JButton" name="frameBT">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="TH Sarabun New" size="24" style="1"/>
@@ -99,7 +102,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JButton" name="sandalWood">
+    <Component class="javax.swing.JButton" name="sandalWoodBT">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="TH Sarabun New" size="24" style="1"/>
@@ -118,7 +121,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JButton" name="Souvenir">
+    <Component class="javax.swing.JButton" name="SouvenirBT">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="TH Sarabun New" size="24" style="1"/>
@@ -137,7 +140,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JButton" name="incense">
+    <Component class="javax.swing.JButton" name="incenseBT">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="TH Sarabun New" size="24" style="1"/>
@@ -156,7 +159,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JButton" name="candle">
+    <Component class="javax.swing.JButton" name="candleBT">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="TH Sarabun New" size="24" style="1"/>
@@ -175,7 +178,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JButton" name="coffin">
+    <Component class="javax.swing.JButton" name="coffinBT">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="TH Sarabun New" size="24" style="1"/>
@@ -194,7 +197,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JButton" name="offering">
+    <Component class="javax.swing.JButton" name="offeringBT">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="TH Sarabun New" size="24" style="1"/>
