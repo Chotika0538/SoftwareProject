@@ -5,7 +5,6 @@
 package StoreToHeaven;
 
 import java.awt.Dimension;
-import java.awt.event.ItemEvent;
 import java.io.File;
 import java.util.ArrayList;
 import javax.swing.JCheckBox;
@@ -15,18 +14,25 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-public class WreathDetail extends javax.swing.JPanel {
+/**
+ *
+ * @author ASUS
+ */
+public class SnackBoxDetail extends javax.swing.JPanel {
     final JFileChooser fc = new JFileChooser();
-    private ArrayList<WreathDetail> wdList;
+    private ArrayList<SnackBoxDetail> sdList;
     private JPanel jp;
     private String filePath;
-
-    public WreathDetail(ArrayList l, JPanel jp) {
-        wdList = l; 
+    /**
+     * Creates new form SnackBoxDetail
+     */
+    public SnackBoxDetail(ArrayList l, JPanel jp) {
+        sdList = l; 
         this.jp = jp;
         fc.setMultiSelectionEnabled(false);
         fc.setCurrentDirectory(new File(System.getProperty("user.home")));
         initComponents();
+        //deleteCB.setVisible(false);
     }
 
     /**
@@ -50,8 +56,7 @@ public class WreathDetail extends javax.swing.JPanel {
         pattern = new javax.swing.JLabel();
         patternTF = new javax.swing.JTextField();
 
-        setBackground(new java.awt.Color(255, 241, 211));
-        setLayout(null);
+        setBackground(new java.awt.Color(115, 161, 178));
 
         choosePicBT.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
         choosePicBT.setText("กดแนบรูปภาพ");
@@ -60,41 +65,25 @@ public class WreathDetail extends javax.swing.JPanel {
                 choosePicBTActionPerformed(evt);
             }
         });
-        add(choosePicBT);
-        choosePicBT.setBounds(10, 50, 106, 26);
 
         showPicName.setBackground(new java.awt.Color(204, 255, 255));
         showPicName.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
-        add(showPicName);
-        showPicName.setBounds(130, 50, 160, 30);
 
         detailLB.setBackground(new java.awt.Color(204, 255, 255));
         detailLB.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
         detailLB.setText("รายละเอียด ");
-        add(detailLB);
-        detailLB.setBounds(10, 80, 66, 22);
 
         detailTA.setColumns(20);
-        detailTA.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         detailTA.setRows(5);
         detailSP.setViewportView(detailTA);
-
-        add(detailSP);
-        detailSP.setBounds(10, 110, 347, 110);
 
         priceLB.setBackground(new java.awt.Color(204, 255, 255));
         priceLB.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
         priceLB.setText("ราคา");
-        add(priceLB);
-        priceLB.setBounds(210, 80, 27, 21);
-        add(priceTF);
-        priceTF.setBounds(240, 80, 76, 22);
 
         bathLB.setBackground(new java.awt.Color(204, 255, 255));
         bathLB.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
         bathLB.setText("บาทต่อชิ้น");
-        add(bathLB);
-        bathLB.setBounds(320, 80, 55, 21);
 
         deleteCB.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         deleteCB.setText("เลือกเพื่อลบ");
@@ -113,20 +102,73 @@ public class WreathDetail extends javax.swing.JPanel {
                 deleteCBActionPerformed(evt);
             }
         });
-        add(deleteCB);
-        deleteCB.setBounds(300, 10, 85, 20);
 
         pattern.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
-        pattern.setText("รูปแบบสินค้า : ");
-        add(pattern);
-        pattern.setBounds(10, 10, 90, 21);
+        pattern.setText("รูปแบบสินค้า: ");
 
         patternTF.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
-        add(patternTF);
-        patternTF.setBounds(100, 10, 160, 27);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(detailSP, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(pattern)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(patternTF, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(38, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(290, 290, 290)
+                            .addComponent(deleteCB, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(choosePicBT, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(14, 14, 14)
+                            .addComponent(showPicName, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(detailLB, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(134, 134, 134)
+                            .addComponent(priceLB, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(3, 3, 3)
+                            .addComponent(priceTF, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(4, 4, 4)
+                            .addComponent(bathLB, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(11, 11, 11)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(pattern)
+                    .addComponent(patternTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
+                .addComponent(detailSP, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 6, Short.MAX_VALUE)
+                    .addComponent(deleteCB, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(20, 20, 20)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(choosePicBT, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(showPicName, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(detailLB, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(priceLB)
+                        .addComponent(priceTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(bathLB))
+                    .addGap(0, 133, Short.MAX_VALUE)))
+        );
     }// </editor-fold>//GEN-END:initComponents
 
-    //
     private void choosePicBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_choosePicBTActionPerformed
         // TODO add your handling code here:
         int returnVal = fc.showDialog(null, "Choose");//set null to show dialog in the middle of monitor
@@ -137,88 +179,69 @@ public class WreathDetail extends javax.swing.JPanel {
             } catch (Exception e) {
                 e.printStackTrace();
             }
+            //show the chosen file's name
             showPicName.setText("รูปภาพที่แนบ: "+file.getName());
             //JOptionPane.showMessageDialog(jButton1, file);
         }
     }//GEN-LAST:event_choosePicBTActionPerformed
 
+    private void deleteCBItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_deleteCBItemStateChanged
+        // TODO add your handling code here:
+        //        if (evt.getStateChange() == ItemEvent.SELECTED){
+            //           wdList.remove(  getPanelIndex());
+            //        }
+    }//GEN-LAST:event_deleteCBItemStateChanged
+
     private void deleteCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteCBActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_deleteCBActionPerformed
 
-    private void deleteCBItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_deleteCBItemStateChanged
-        // TODO add your handling code here:
-//        if (evt.getStateChange() == ItemEvent.SELECTED){
-//           wdList.remove(  getPanelIndex());
-//        }
-    }//GEN-LAST:event_deleteCBItemStateChanged
-
     private void deleteCBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteCBMouseClicked
-        // TODO add your handling code here:
         int result = JOptionPane.showConfirmDialog(null,"You can not go back after you choose. Do you want to continue?","Confirm", JOptionPane.YES_NO_OPTION);
         if(result == JOptionPane.YES_OPTION){
-            wdList.remove(this);
+            sdList.remove(this);
             jp.remove(this);
             jp.setPreferredSize(new Dimension(408, jp.getHeight()-235));
             jp.revalidate();
             jp.repaint(); 
         }
-//        wdList.remove(this);
-//        jp.remove(this);
-//        jp.setPreferredSize(new Dimension(408, jp.getHeight()-235));
-//        jp.revalidate();
-//        jp.repaint();
+            //Choose No option
+            else{
+                deleteCB.setSelected(false);
+            }
     }//GEN-LAST:event_deleteCBMouseClicked
-
-//private int getPanelIndex(){
-//    return wdList.indexOf(this);
-//}
-// /* testing panel*/
-//    public static void main(String[] args){
-//        JFrame f = new JFrame();
-//        f.setContentPane(new WreathDetail());
-//        f.setSize(1200,700);
-//        f.setResizable(false);
-//        f.setLocationRelativeTo(null);
-//        f.setVisible(true);
-//        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//    }
+    
+    public JTextField getPatternTF() {
+        return patternTF;
+    }
+    public void setPatternTF(JTextField pattern) {
+        this.patternTF = pattern;
+    }
+    public JCheckBox getDeleteCB() {
+        return deleteCB ;
+    }
+    public void setDeleteCB(JCheckBox deleteCB) {
+        this.deleteCB = deleteCB;
+    }
+    
     public String getFilePath() {
         return filePath;
     }
      
-    public JCheckBox getDeleteCB() {
-        return deleteCB;
-    }
-
-    public void setDeleteCB(JCheckBox deleteCB) {
-        this.deleteCB = deleteCB;
-    }
-
     public JTextArea getDetailTA() {
         return detailTA;
     }
-
     public void setDetailTA(JTextArea detailTA) {
         this.detailTA = detailTA;
-    }
-
-    public JTextField getPatternTF() {
-        return patternTF;
-    }
-
-    public void setPatternTF(JTextField patternTF) {
-        this.patternTF = patternTF;
     }
 
     public JTextField getPriceTF() {
         return priceTF;
     }
-
     public void setPriceTF(JTextField priceTF) {
         this.priceTF = priceTF;
     }
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel bathLB;
     private javax.swing.JButton choosePicBT;
@@ -232,6 +255,4 @@ public class WreathDetail extends javax.swing.JPanel {
     private javax.swing.JTextField priceTF;
     private javax.swing.JLabel showPicName;
     // End of variables declaration//GEN-END:variables
-
-
 }

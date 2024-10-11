@@ -208,44 +208,32 @@ public class AddWreath extends javax.swing.JPanel implements CheckPanel{
 //        f.setVisible(true);
 //        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 //    }
-    public JTextField getPatternTF() {
-        return materialTF;
-    }
-
-    public void setPatternTF(JTextField patternTF) {
-        this.materialTF = patternTF;
-    }
-
-    public JTextField getColorTF() {
-        return colorTF;
-    }
-
-    public void setColorTF(JTextField colorTF) {
-        this.colorTF = colorTF;
-    }
-
     public JTextField getNameTF() {
         return nameTF;
     }
-
     public void setNameTF(JTextField nameTF) {
         this.nameTF = nameTF;
     }
-
+    
     public JTextField getMaterialTF() {
         return materialTF;
     }
-
     public void setMaterialTF(JTextField materialTF) {
         this.materialTF = materialTF;
     }
-
+    
     public JTextField getPriceTF() {
         return priceTF;
     }
-
     public void setPriceTF(JTextField priceTF) {
         this.priceTF = priceTF;
+    }
+    
+    public JTextField getColorTF() {
+        return colorTF;
+    }
+    public void setColorTF(JTextField colorTF) {
+        this.colorTF = colorTF;
     }
 
     public JPanel getPic_detailJP() {
@@ -255,7 +243,14 @@ public class AddWreath extends javax.swing.JPanel implements CheckPanel{
     public int getCountPic_DetailJP() {
         return countPic_DetailJP;
     }
-    
+    @Override
+    //override abstract method checkCurrentCard() in interface CheckPanel
+    public void checkCurrentCard() {
+        countPic_DetailJP = 0;
+        for(Component c : pic_detailJP.getComponents()){
+            countPic_DetailJP+=1;
+        }
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addListBT;
     private javax.swing.JLabel color;
@@ -272,13 +267,7 @@ public class AddWreath extends javax.swing.JPanel implements CheckPanel{
     private javax.swing.JTextField priceTF;
     // End of variables declaration//GEN-END:variables
 
-    @Override
-    public void checkCurrentCard() {
-        countPic_DetailJP = 0;
-        for(Component c : pic_detailJP.getComponents()){
-            countPic_DetailJP+=1;
-        }
-    }
+    
 
 
 }

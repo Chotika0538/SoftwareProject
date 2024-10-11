@@ -51,6 +51,8 @@ public class Wreathdao {
                     cell.setCellValue(nameCol[j]);
                 }
             }
+            //wd.size() = all component in scrollPane
+            //add
             for (int a=0; a<wd.size(); a++){
             String pattern = wd.get(a).getPatternTF().getText();
             String detail = wd.get(a).getDetailTA().getText();
@@ -61,7 +63,7 @@ public class Wreathdao {
             String[] dataChecked = {pattern,detail,path,String.join(",", material),String.join(",", price),String.join(",", color)};
             boolean haveData = false ;
             for (Row row : sheet){
-                Cell c = row.getCell(0);
+                Cell c = row.getCell(0);//pull the value in the first cell(.getCell(0)) of that row
                 if(c.toString().equals(dataChecked[0])){
                     haveData = true;
                     break;
@@ -90,6 +92,7 @@ public class Wreathdao {
         } finally {
             // ปิด resource ที่เปิดไว้
             try {
+                //(fos != null) means there's still has some data left in the stream(not empty), So you have to close it. 
                 if (fos != null) {
                     fos.close();
                 }
@@ -116,5 +119,5 @@ public class Wreathdao {
             System.out.println("can't read file: " + err);
         }
     }
-   
+    
 }

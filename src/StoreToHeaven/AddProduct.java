@@ -6,16 +6,17 @@ package StoreToHeaven;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.*;
-import DAO.Wreathdao;
 import java.util.ArrayList;
-
+import DAO.Wreathdao;
+import DAO.Snackboxdao;
 public class AddProduct extends javax.swing.JPanel implements CheckPanel{
+    
     private ArrayList<Wreath> wList;
-    /**
-     * Creates new form AddProduct
-     */
+    private ArrayList<SnackBox> snackList;
+    
     public AddProduct() {
         wList = new ArrayList<>();
+        snackList = new ArrayList<>();
         initComponents();
     }
 
@@ -65,9 +66,12 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
         showAddProduct.setLayout(new java.awt.CardLayout());
         JPanel emptyPanel = new JPanel();
         AddWreath wreath = new AddWreath(showAddProduct);
+        AddSnackBox boxset = new AddSnackBox(showAddProduct);
+
         emptyPanel.setBackground(new java.awt.Color(153, 255, 204));
         showAddProduct.add(emptyPanel, "empty");
         showAddProduct.add(wreath, "wreath");
+        showAddProduct.add(boxset, "snackbox");
         add(showAddProduct);
         showAddProduct.setBounds(10, 110, 480, 480);
 
@@ -90,10 +94,47 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
     private void addChoicesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addChoicesActionPerformed
         // TODO add your handling code here:
         JComboBox cb = (JComboBox) evt.getSource();
+        CardLayout cd;
+        //choose wreath&flower
         if (((String)cb.getSelectedItem()).equals("พวงหรีดและดอกไม้จันทน์")){
            // jPanel2.add(new AddWreath(jPanel1), "wreath");
-            CardLayout cd = (CardLayout) showAddProduct.getLayout();
+            cd = (CardLayout) showAddProduct.getLayout();
             cd.show(showAddProduct, "wreath");
+        }
+        //choose coffin
+        else if(((String)cb.getSelectedItem()).equals("โลงศพ")){
+//            cd = (CardLayout) showAddProduct.getLayout();
+//            cd.show(showAddProduct, "");
+        }
+        //choose snack box
+        else if(((String)cb.getSelectedItem()).equals("ชุดอาหารว่าง")){
+            cd = (CardLayout) showAddProduct.getLayout();
+            cd.show(showAddProduct, "snackbox");
+        }
+        //choose offerings
+        else if(((String)cb.getSelectedItem()).equals("ชุดไทยธรรม")){
+            //cd = (CardLayout) showAddProduct.getLayout();
+            //cd.show(showAddProduct, "");
+        }
+        //choose candles
+        else if(((String)cb.getSelectedItem()).equals("ธูปและเทียน")){
+            //cd = (CardLayout) showAddProduct.getLayout();
+            //cd.show(showAddProduct, "");
+        }
+        //choose sevanior
+        else if(((String)cb.getSelectedItem()).equals("ของชำร่วย")){
+            //cd = (CardLayout) showAddProduct.getLayout();
+            //cd.show(showAddProduct, "");
+        }
+        //choose frame 
+        else if(((String)cb.getSelectedItem()).equals("กรอบรูป")){
+            //cd = (CardLayout) showAddProduct.getLayout();
+            //cd.show(showAddProduct, "");
+        }
+        //choose add product
+        else if(((String)cb.getSelectedItem()).equals("เพิ่มสินค้า")){
+            //cd = (CardLayout) showAddProduct.getLayout();
+            //cd.show(showAddProduct, "");
         }
     }//GEN-LAST:event_addChoicesActionPerformed
 
@@ -148,11 +189,27 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
                 }
                 break; // หยุดหลังจากเจอหน้าแรกที่แสดงอยู่String pattern = wd.get(a).getPatternTF().getText();
             }
-            else if (comp.isVisible()&& comp instanceof AddCoffin) {
-                Wreathdao wd = new Wreathdao();
-                wd.save((AddWreath) comp);
-                break; // หยุดหลังจากเจอหน้าแรกที่แสดงอยู่
+            else if (comp.isVisible()&& comp instanceof AddSnackBox){
+                AddSnackBox as = (AddSnackBox)comp;
+                Snackboxdao sd = new Snackboxdao();
+                sd.save(as);
+                for(int i = 0; i<as.getCountPic_DetailJP(); i++){
+                    SnackBoxDetail temp = (SnackBoxDetail) as.getPic_detailJP().getComponent(i);
+                    
+                    String name = as.getNameTF().getText();
+                    String pattern = temp.getPatternTF().getText();
+                    String detail = temp.getDetailTA().getText();
+                    String path = temp.getFilePath();
+                    String price = temp.getPriceTF().getText();
+                    snackList.add(new SnackBox(name, pattern, detail,path, price));       
+                }
+                break;
             }
+//            else if (comp.isVisible()&& comp instanceof AddCoffin) {
+//                Wreathdao wd = new Wreathdao();
+//                wd.save((AddWreath) comp);
+//                break; // หยุดหลังจากเจอหน้าแรกที่แสดงอยู่
+//            }
         }
     }
 }
