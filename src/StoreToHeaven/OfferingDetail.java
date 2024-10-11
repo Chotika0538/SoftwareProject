@@ -68,6 +68,8 @@ public class OfferingDetail extends javax.swing.JPanel {
         priceLB.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
         priceLB.setText("ราคา");
 
+        priceTF.setFont(new java.awt.Font("TH SarabunPSK", 0, 12)); // NOI18N
+
         bathLB.setBackground(new java.awt.Color(204, 255, 255));
         bathLB.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
         bathLB.setText("บาทต่อชิ้น");

@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package DAO;
 
 import StoreToHeaven.AddOffering;
@@ -16,10 +12,6 @@ import java.util.List;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-/**
- *
- * @author ASUS
- */
 public class Offeringdao {
     private Workbook wb;
     private Sheet sheet;
@@ -34,7 +26,7 @@ public class Offeringdao {
 
     /*Save data in Excel file*/
     public void save(AddOffering offering) {
-        cmp = offering.getPic_detailJP().getComponents();    // get WreathDetail panel
+        cmp = offering.getPic_detailJP().getComponents();    // get OfferingDetail panel
         od = new ArrayList<>();
         for (Component c : cmp){
             od.add((OfferingDetail) c);
@@ -51,7 +43,7 @@ public class Offeringdao {
             if (firstRow == null) {       // this files valid?
                 firstRow = sheet.createRow(0);          // create first row
                 nameCol[0] = offering.getNameTF().getText();
-                /*bring all data in wreathlist to create each col in valid sheet*/
+                /*bring all data in offeringlist to create each col in valid sheet*/
                 for(int j=0; j<nameCol.length; j++){
                     Cell cell = firstRow.createCell(j);
                     cell.setCellValue(nameCol[j]);
@@ -109,20 +101,14 @@ public class Offeringdao {
             }
         }
     }
-    
-    /*get All Data from excel file*/
-//    public ArrayList<Wreath> getAll(){
-//        return 
-//    }
-    
-    
+
     /*Read Excel file*/
     public void read() {
         wb = null;
         try {
             fileInput = new FileInputStream(new File(FILE_NAME));
             wb = new XSSFWorkbook(fileInput);
-            sheet = wb.getSheetAt(1); // เปลี่ยนไปที่ชีตแรก
+            sheet = wb.getSheetAt(6); // เปลี่ยนไปที่ชีตแรก
         } catch (Exception err) {
             System.out.println("can't read file: " + err);
         }

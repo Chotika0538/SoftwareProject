@@ -1,9 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package DAO;
 
+import java.io.BufferedInputStream;
 import StoreToHeaven.AddFrame;
 import StoreToHeaven.FrameDetail;
 import java.awt.Component;
@@ -12,16 +9,9 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.List;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-/**
- *
- * @author ASUS
- */
 public class Framedao {
     private Workbook wb;
     private Sheet sheet;
@@ -32,7 +22,6 @@ public class Framedao {
     private String[] nameCol = { "ชื่อ","รายละเอียด" ,"pathรูปภาพ", "วัสดุ",  "ราคา"};
     private ArrayList<FrameDetail> fd;
     private Component[] cmp;
-    
     
     public void save(AddFrame frame){
          cmp = frame.getPic_detailJP().getComponents();
@@ -50,7 +39,7 @@ public class Framedao {
             if (firstRow == null) {       // this files valid?
                 firstRow = sheet.createRow(0);          // create first row
                 nameCol[0] = frame.getNameTF().getText();
-                /*bring all data in wreathlist to create each col in valid sheet*/
+                /*bring all data in framelist to create each col in valid sheet*/
                 for(int j=0; j<nameCol.length; j++){
                     Cell cell = firstRow.createCell(j);
                     cell.setCellValue(nameCol[j]);
@@ -61,8 +50,9 @@ public class Framedao {
             String detail = fd.get(a).getDetailTA().getText();
             String path = fd.get(a).getFilePath();
             String[] material = frame.getMaterialTF().getText().split(",");
-            String[] price = frame.getPriceTF().getText().split(",");
-            String[] dataChecked = {pattern,detail,path,String.join(",", material),String.join(",", price)};
+            String[] pricel = frame.getPriceTF().getText().split(",");
+            double price = Double.parseDouble(fd.get(a).getPriceTF().getText());
+            String[] dataChecked = {pattern,detail,path,String.join(",", material),Double.toString(price)};
             boolean haveData = false ;
             for (Row row : sheet){
                 Cell c = row.getCell(0);
@@ -89,7 +79,7 @@ public class Framedao {
             fos = new FileOutputStream(new File(FILE_NAME));
             wb.write(fos);
         } catch (Exception e) {
-            e.printStackTrace(); // แสดงข้อผิดพลาด
+            e.printStackTrace(); // แสดงexception
         } finally {
             // ปิด resource ที่เปิดไว้
             try {
@@ -113,7 +103,7 @@ public class Framedao {
         try {
             fileInput = new FileInputStream(new File(FILE_NAME));
             wb = new XSSFWorkbook(fileInput);
-            sheet = wb.getSheetAt(1); // เปลี่ยนไปที่ชีตแรก
+            sheet = wb.getSheetAt(3); // เปลี่ยนไปที่ชีตแรก
         } catch (Exception err) {
             System.out.println("can't read file: " + err);
         }

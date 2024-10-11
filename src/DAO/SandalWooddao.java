@@ -19,10 +19,6 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-/**
- *
- * @author ASUS
- */
 public class SandalWooddao {
         private Workbook wb;
     private Sheet sheet;
@@ -37,7 +33,7 @@ public class SandalWooddao {
 
     /*Save data in Excel file*/
     public void save(AddSandalWood sandalWood) {
-        cmp = sandalWood.getPic_detailJP().getComponents();    // get WreathDetail panel
+        cmp = sandalWood.getPic_detailJP().getComponents();    // get SandalWoodDetail panel
         sd = new ArrayList<>();
         for (Component c : cmp){
             sd.add((SandalWoodDetail) c);
@@ -54,19 +50,19 @@ public class SandalWooddao {
             if (firstRow == null) {       // this files valid?
                 firstRow = sheet.createRow(0);          // create first row
                 nameCol[0] = sandalWood.getNameTF().getText();
-                /*bring all data in wreathlist to create each col in valid sheet*/
+                /*bring all data in sandalWoodlist to create each col in valid sheet*/
                 for(int j=0; j<nameCol.length; j++){
                     Cell cell = firstRow.createCell(j);
                     cell.setCellValue(nameCol[j]);
                 }
             }
-            for (int a=0; a<wd.size(); a++){
-            String pattern = wd.get(a).getPatternTF().getText();
-            String detail = wd.get(a).getDetailTA().getText();
-            String path = wd.get(a).getFilePath();
-            String[] material = wreath.getMaterialTF().getText().split(",");
-            String[] price = wreath.getPriceTF().getText().split(",");
-            String[] color = wreath.getColorTF().getText().split(",");
+            for (int a=0; a<sd.size(); a++){
+            String pattern = sd.get(a).getPatternTF().getText();
+            String detail = sd.get(a).getDetailTA().getText();
+            String path = sd.get(a).getFilePath();
+            String[] material = sandalWood.getMaterialTF().getText().split(",");
+            String[] price = sandalWood.getPriceTF().getText().split(",");
+            String[] color = sandalWood.getColorTF().getText().split(",");
             String[] dataChecked = {pattern,detail,path,String.join(",", material),String.join(",", price),String.join(",", color)};
             boolean haveData = false ;
             for (Row row : sheet){
@@ -83,9 +79,9 @@ public class SandalWooddao {
                 newRow.createCell(0).setCellValue(pattern);
                 newRow.createCell(1).setCellValue(detail);
                 newRow.createCell(2).setCellValue(path);
-                newRow.createCell(3).setCellValue(wreath.getMaterialTF().getText());
-                newRow.createCell(4).setCellValue(wreath.getPriceTF().getText());
-                newRow.createCell(5).setCellValue(wreath.getColorTF().getText());
+                newRow.createCell(3).setCellValue(sandalWood.getMaterialTF().getText());
+                newRow.createCell(4).setCellValue(sandalWood.getPriceTF().getText());
+                newRow.createCell(5).setCellValue(sandalWood.getColorTF().getText());
                } catch (Exception e) {
                     e.printStackTrace();
                }             
@@ -117,19 +113,13 @@ public class SandalWooddao {
         }
     }
     
-    /*get All Data from excel file*/
-//    public ArrayList<Wreath> getAll(){
-//        return 
-//    }
-    
-    
     /*Read Excel file*/
     public void read() {
         wb = null;
         try {
             fileInput = new FileInputStream(new File(FILE_NAME));
             wb = new XSSFWorkbook(fileInput);
-            sheet = wb.getSheetAt(1); // เปลี่ยนไปที่ชีตแรก
+            sheet = wb.getSheetAt(9); // เปลี่ยนไปที่ชีตแรก
         } catch (Exception err) {
             System.out.println("can't read file: " + err);
         }

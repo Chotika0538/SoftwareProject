@@ -4,10 +4,14 @@
  */
 package StoreToHeaven;
 
+import java.awt.Dimension;
 import java.io.File;
 import java.util.ArrayList;
+import javax.swing.JCheckBox;
 import javax.swing.JFileChooser;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
 /**
  *
@@ -17,6 +21,13 @@ public class SandalWoodDetail extends javax.swing.JPanel {
 final JFileChooser fc = new JFileChooser();
 private ArrayList<SandalWoodDetail> sddList;
 private JPanel jp;
+private String filePath;
+
+
+public String getFilePath() {
+        return filePath;
+    }
+
     /**
      * Creates new form WreathDetail
      */
@@ -67,6 +78,7 @@ private JPanel jp;
         detailLB.setText("รายละเอียด ");
 
         detailTA.setColumns(20);
+        detailTA.setFont(new java.awt.Font("TH SarabunPSK", 0, 20)); // NOI18N
         detailTA.setRows(5);
         detailSP.setViewportView(detailTA);
 
@@ -74,15 +86,23 @@ private JPanel jp;
         priceLB.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
         priceLB.setText("ราคา");
 
+        priceTF.setFont(new java.awt.Font("TH SarabunPSK", 0, 12)); // NOI18N
+
         bathLB.setBackground(new java.awt.Color(204, 255, 255));
         bathLB.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
         bathLB.setText("บาทต่อชิ้น");
 
+        deleteCB.setBackground(new java.awt.Color(204, 228, 236));
         deleteCB.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         deleteCB.setText("เลือกเพื่อลบ");
         deleteCB.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 deleteCBItemStateChanged(evt);
+            }
+        });
+        deleteCB.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                deleteCBMouseClicked(evt);
             }
         });
         deleteCB.addActionListener(new java.awt.event.ActionListener() {
@@ -153,9 +173,14 @@ private JPanel jp;
 
     private void choosePicBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_choosePicBTActionPerformed
         // TODO add your handling code here:
-        int returnVal = fc.showDialog(null, "Choose");
+         int returnVal = fc.showDialog(null, "Choose");
         if (returnVal == JFileChooser.APPROVE_OPTION){
             File file = fc.getSelectedFile();
+            try {
+                filePath = file.getCanonicalPath();          //get imgae's path
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             showPicName.setText("รูปภาพที่แนบ: "+file.getName());
             //JOptionPane.showMessageDialog(jButton1, file);
         }
@@ -171,6 +196,46 @@ private JPanel jp;
     private void deleteCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteCBActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_deleteCBActionPerformed
+
+    private void deleteCBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteCBMouseClicked
+        sddList.remove(this);
+        jp.remove(this);
+        jp.setPreferredSize(new Dimension(408, jp.getHeight()-235));
+        jp.revalidate();
+        jp.repaint();
+    }//GEN-LAST:event_deleteCBMouseClicked
+
+    public JTextArea getDetailTA() {
+        return detailTA;
+    }
+    
+    public void setDetailTA(JTextArea detailTA) {
+        this.detailTA = detailTA;
+    }
+
+    public JCheckBox getDeleteCB() {
+        return deleteCB;
+    }
+
+    public void setDeleteCB(JCheckBox deleteCB) {
+        this.deleteCB = deleteCB;
+    }
+
+    public JTextField getPatternTF() {
+        return patternTF;
+    }
+
+    public void setPatternTF(JTextField patternTF) {
+        this.patternTF = patternTF;
+    }
+
+    public JTextField getPriceTF() {
+        return priceTF;
+    }
+
+    public void setPriceTF(JTextField priceTF) {
+        this.priceTF = priceTF;
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

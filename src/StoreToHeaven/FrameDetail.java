@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package StoreToHeaven;
 
 import java.io.File;
@@ -12,10 +8,6 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-/**
- *
- * @author ASUS
- */
 public class FrameDetail extends javax.swing.JPanel {
     final JFileChooser fc = new JFileChooser();
     private ArrayList<FrameDetail> fdList;
@@ -74,8 +66,10 @@ public class FrameDetail extends javax.swing.JPanel {
         priceLB.setText("ราคา");
         add(priceLB);
         priceLB.setBounds(212, 80, 27, 21);
+
+        priceTF.setFont(new java.awt.Font("TH Sarabun New", 0, 12)); // NOI18N
         add(priceTF);
-        priceTF.setBounds(242, 80, 76, 22);
+        priceTF.setBounds(242, 80, 76, 23);
 
         bathLB.setBackground(new java.awt.Color(204, 255, 255));
         bathLB.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N

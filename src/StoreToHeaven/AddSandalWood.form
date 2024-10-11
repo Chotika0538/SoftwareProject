@@ -45,9 +45,9 @@
                                   <Component id="nameTF" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="pattern" min="-2" max="-2" attributes="0"/>
+                                  <Component id="material" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="patternTF" min="-2" pref="244" max="-2" attributes="0"/>
+                                  <Component id="materialTF" min="-2" pref="244" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -73,8 +73,8 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="pattern" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
-                  <Component id="patternTF" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="material" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                  <Component id="materialTF" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -101,7 +101,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="pattern">
+    <Component class="javax.swing.JLabel" name="material">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="TH Sarabun New" size="20" style="0"/>
@@ -116,7 +116,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="patternTF">
+    <Component class="javax.swing.JTextField" name="materialTF">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="TH SarabunPSK" size="20" style="0"/>
