@@ -29,9 +29,11 @@ public class CustomFuneral extends javax.swing.JPanel {
         coffinStageLB = new javax.swing.JLabel();
         funeralStageLB = new javax.swing.JLabel();
         boneStageLB = new javax.swing.JLabel();
-        Panel1 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        funeralPanel = new javax.swing.JPanel();
+        buttonPanel = new javax.swing.JPanel();
+        confirmBT = new javax.swing.JButton();
+        nextBT = new javax.swing.JButton();
+        backBT = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
 
         setPreferredSize(new java.awt.Dimension(800, 1800));
         setLayout(new java.awt.BorderLayout());
@@ -57,47 +59,67 @@ public class CustomFuneral extends javax.swing.JPanel {
 
         add(menuCustom, java.awt.BorderLayout.PAGE_START);
 
-        Panel1.setPreferredSize(new java.awt.Dimension(800, 1700));
+        confirmBT.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
+        confirmBT.setText("ยืนยันสินค้า");
 
-        funeralPanel.setPreferredSize(new java.awt.Dimension(800, 1500));
+        nextBT.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
+        nextBT.setText("หน้าถัดไป>");
 
-        javax.swing.GroupLayout funeralPanelLayout = new javax.swing.GroupLayout(funeralPanel);
-        funeralPanel.setLayout(funeralPanelLayout);
-        funeralPanelLayout.setHorizontalGroup(
-            funeralPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 798, Short.MAX_VALUE)
+        backBT.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
+        backBT.setText("<ย้อนกลับ");
+
+        javax.swing.GroupLayout buttonPanelLayout = new javax.swing.GroupLayout(buttonPanel);
+        buttonPanel.setLayout(buttonPanelLayout);
+        buttonPanelLayout.setHorizontalGroup(
+            buttonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(buttonPanelLayout.createSequentialGroup()
+                .addGap(57, 57, 57)
+                .addComponent(backBT)
+                .addGap(212, 212, 212)
+                .addComponent(confirmBT)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 206, Short.MAX_VALUE)
+                .addComponent(nextBT)
+                .addGap(76, 76, 76))
         );
-        funeralPanelLayout.setVerticalGroup(
-            funeralPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1405, Short.MAX_VALUE)
+        buttonPanelLayout.setVerticalGroup(
+            buttonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, buttonPanelLayout.createSequentialGroup()
+                .addContainerGap(9, Short.MAX_VALUE)
+                .addGroup(buttonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(confirmBT)
+                    .addComponent(nextBT)
+                    .addComponent(backBT))
+                .addGap(36, 36, 36))
         );
 
-        jScrollPane1.setViewportView(funeralPanel);
+        add(buttonPanel, java.awt.BorderLayout.PAGE_END);
 
-        javax.swing.GroupLayout Panel1Layout = new javax.swing.GroupLayout(Panel1);
-        Panel1.setLayout(Panel1Layout);
-        Panel1Layout.setHorizontalGroup(
-            Panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1)
+        jPanel3.setBackground(new java.awt.Color(255, 255, 204));
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 800, Short.MAX_VALUE)
         );
-        Panel1Layout.setVerticalGroup(
-            Panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Panel1Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1735, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 185, Short.MAX_VALUE))
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1647, Short.MAX_VALUE)
         );
 
-        add(Panel1, java.awt.BorderLayout.LINE_END);
+        add(jPanel3, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel Panel1;
+    private javax.swing.JButton backBT;
     private javax.swing.JLabel boneStageLB;
+    private javax.swing.JPanel buttonPanel;
     private javax.swing.JLabel coffinStageLB;
-    private javax.swing.JPanel funeralPanel;
+    private javax.swing.JButton confirmBT;
     private javax.swing.JLabel funeralStageLB;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel menuCustom;
+    private javax.swing.JButton nextBT;
     // End of variables declaration//GEN-END:variables
 }

@@ -27,6 +27,8 @@ public class CustomAsh extends javax.swing.JPanel {
         funeralStageLB = new javax.swing.JLabel();
         boneStageLB = new javax.swing.JLabel();
         ashPanel = new javax.swing.JPanel();
+        confirmBT = new javax.swing.JButton();
+        nextBT = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(800, 1000));
         setLayout(new java.awt.BorderLayout());
@@ -52,18 +54,18 @@ public class CustomAsh extends javax.swing.JPanel {
 
         add(menuCustom, java.awt.BorderLayout.PAGE_START);
 
-        ashPanel.setPreferredSize(new java.awt.Dimension(800, 920));
+        ashPanel.setPreferredSize(new java.awt.Dimension(800, 800));
+        ashPanel.setLayout(null);
 
-        javax.swing.GroupLayout ashPanelLayout = new javax.swing.GroupLayout(ashPanel);
-        ashPanel.setLayout(ashPanelLayout);
-        ashPanelLayout.setHorizontalGroup(
-            ashPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
-        );
-        ashPanelLayout.setVerticalGroup(
-            ashPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 920, Short.MAX_VALUE)
-        );
+        confirmBT.setFont(new java.awt.Font("MoopaThin", 0, 20)); // NOI18N
+        confirmBT.setText("ยืนยัน");
+        ashPanel.add(confirmBT);
+        confirmBT.setBounds(370, 800, 72, 39);
+
+        nextBT.setFont(new java.awt.Font("MoopaThin", 0, 20)); // NOI18N
+        nextBT.setText("< ย้อนกลับ");
+        ashPanel.add(nextBT);
+        nextBT.setBounds(70, 800, 110, 39);
 
         add(ashPanel, java.awt.BorderLayout.LINE_START);
     }// </editor-fold>//GEN-END:initComponents
@@ -73,7 +75,9 @@ public class CustomAsh extends javax.swing.JPanel {
     private javax.swing.JPanel ashPanel;
     private javax.swing.JLabel boneStageLB;
     private javax.swing.JLabel coffinStageLB;
+    private javax.swing.JButton confirmBT;
     private javax.swing.JLabel funeralStageLB;
     private javax.swing.JPanel menuCustom;
+    private javax.swing.JButton nextBT;
     // End of variables declaration//GEN-END:variables
 }

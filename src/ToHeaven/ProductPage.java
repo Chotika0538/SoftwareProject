@@ -5,12 +5,12 @@ import java.awt.*;
 ;
 
 public class ProductPage extends javax.swing.JPanel {
-    private CardLayout cd;
+    //private CardLayout cd;
     private JPanel mainPanel;
     
     public ProductPage(JPanel mainPanel) {
         this.mainPanel = mainPanel;
-        cd = (CardLayout) mainPanel.getLayout();
+       // cd = (CardLayout) mainPanel.getLayout();
         initComponents();
     }
 
@@ -116,7 +116,7 @@ public class ProductPage extends javax.swing.JPanel {
     private void wreathBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_wreathBTMouseClicked
         // TODO add your handling code here:
         //CardLayout cd = (CardLayout) frameJP.getLayout();
-        cd.show(mainPanel, "wreathproductpage");
+        ((CardLayout)mainPanel.getLayout()).show(mainPanel, "wreathproductpage");
     }//GEN-LAST:event_wreathBTMouseClicked
 
 

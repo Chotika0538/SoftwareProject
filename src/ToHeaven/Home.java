@@ -13,14 +13,14 @@ import javax.swing.JPanel;
  */
 public class Home extends javax.swing.JPanel {
     
-    private CardLayout cd;
+    //private CardLayout cd;
     private JPanel mainPanel;
     /**
      * Creates new form StartPage1
      */
     public Home(JPanel mainPanel) {
         this.mainPanel = mainPanel;
-        cd = (CardLayout) mainPanel.getLayout();
+       // cd = (CardLayout) mainPanel.getLayout();
         initComponents();
     }
 
