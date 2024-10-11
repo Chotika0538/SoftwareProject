@@ -14,9 +14,7 @@ public class AddSandalWood extends javax.swing.JPanel implements  CheckPanel{
     private CardLayout cd;
     private JPanel mainPanel;
     private int countPic_DetailJP;
-    /**
-     * Creates new form AddWreath
-     */
+    
     public AddSandalWood( JPanel mainPanel) {
         sddList = new ArrayList<>();
         this.mainPanel = mainPanel;
@@ -24,9 +22,6 @@ public class AddSandalWood extends javax.swing.JPanel implements  CheckPanel{
         initComponents();
     }
 
-    /**
-     * Creates new form AddSandalWood
-     */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

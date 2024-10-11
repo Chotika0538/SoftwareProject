@@ -1,16 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package StoreToHeaven;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-/**
- *
- * @author ASUS
- */
 public class SandalWood extends Product{
     private ArrayList<SandalWood> sdList;
     private ArrayList<String> colorAll;

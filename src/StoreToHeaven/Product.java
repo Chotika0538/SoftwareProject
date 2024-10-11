@@ -4,10 +4,6 @@
  */
 package StoreToHeaven;
 
-/**
- *
- * @author ASUS
- */
 public class Product {
     private String name;
     private String pattern;

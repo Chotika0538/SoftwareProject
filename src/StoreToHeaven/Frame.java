@@ -11,8 +11,6 @@ import java.util.Arrays;
     private String material;
 
     public Frame(String name,String pattern,String detail,String path,String material,String price) {
-//        super(name,pattern,detail,path);
-        //materialAll = new ArrayList<>();
         materialAll.add(Arrays.toString(material.split(",")));
         priceAll.add(Double.parseDouble((Arrays.toString(price.split(",")))));
     }

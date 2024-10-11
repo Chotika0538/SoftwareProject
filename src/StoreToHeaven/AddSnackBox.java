@@ -9,9 +9,7 @@ public class AddSnackBox extends javax.swing.JPanel {
     private ArrayList<SnackBoxDetail> sdList;
     private CardLayout cd;
     private JPanel mainPanel;
-    /**
-     * Creates new form AddSnackBox
-     */
+   
     public AddSnackBox(JPanel mainPanel) {
         sdList = new ArrayList<>();
         this.mainPanel = mainPanel;
