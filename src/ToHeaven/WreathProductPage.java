@@ -1,13 +1,18 @@
 package ToHeaven;
 
 import java.awt.CardLayout;
+import java.awt.Dimension;
+import java.util.ArrayList;
 import javax.swing.JPanel;
 
 public class WreathProductPage extends javax.swing.JPanel {
+    
+    private ArrayList<WreathProduct> wreathList;
     private CardLayout cd;
     private JPanel mainPanel;
     
     public WreathProductPage(JPanel mainPanel) {
+        wreathList = new ArrayList<>();
         this.mainPanel = mainPanel;
         cd = (CardLayout) mainPanel.getLayout();
         initComponents();
@@ -22,21 +27,130 @@ public class WreathProductPage extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setPreferredSize(new java.awt.Dimension(800, 500));
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        confirm = new javax.swing.JButton();
+        addWreath1 = new javax.swing.JButton();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
+        setBackground(new java.awt.Color(201, 156, 99));
+        setPreferredSize(new java.awt.Dimension(800, 500));
+        setLayout(null);
+
+        jPanel1.setPreferredSize(new java.awt.Dimension(800, 50));
+
+        jLabel1.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("พวงหรีด");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(353, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(351, 351, 351))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(11, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addContainerGap())
         );
+
+        add(jPanel1);
+        jPanel1.setBounds(0, 0, 800, 50);
+
+        jPanel2.setBackground(new java.awt.Color(147, 123, 98));
+
+        confirm.setFont(new java.awt.Font("TH Sarabun New", 1, 20)); // NOI18N
+        confirm.setText("ยืนยัน");
+        confirm.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                confirmMouseClicked(evt);
+            }
+        });
+        confirm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirmActionPerformed(evt);
+            }
+        });
+
+        addWreath1.setFont(new java.awt.Font("TH Sarabun New", 1, 20)); // NOI18N
+        addWreath1.setText("เพิ่มสินค้า");
+        addWreath1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addWreath1MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(671, Short.MAX_VALUE)
+                .addComponent(confirm, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29))
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGap(16, 16, 16)
+                    .addComponent(addWreath1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(684, Short.MAX_VALUE)))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(395, Short.MAX_VALUE)
+                .addComponent(confirm, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15))
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                    .addContainerGap(394, Short.MAX_VALUE)
+                    .addComponent(addWreath1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(16, 16, 16)))
+        );
+
+        WreathProduct wp = new WreathProduct(jPanel2);
+        //jPanel2.add(wp,"wreathproduct");
+        //cd.show(jPanel2, "wreathproduct");
+
+        //wreathList.add(new WreathProduct(wreathList, jPanel2));
+        //jPanel2.add(wreathList.get(0));
+
+        //wreathList.add(new WreathProduct(jPanel2));
+        jPanel2.add(wp,"wreathPD");
+
+        add(jPanel2);
+        jPanel2.setBounds(0, 50, 800, 450);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void confirmMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_confirmMouseClicked
+
+    }//GEN-LAST:event_confirmMouseClicked
+
+    private void addWreath1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addWreath1MouseClicked
+        CardLayout cd = (CardLayout) jPanel2.getLayout();
+        cd.show(jPanel2, "wreathPD");
+//        wreathList.add(new WreathProduct(wreathList, jPanel2));
+//        jPanel2.setPreferredSize(new Dimension(800, jPanel2.getHeight()+450));
+//        jPanel2.add(wreathList.get(wreathList.size()-1));
+//        jPanel2.revalidate();
+//        jPanel2.repaint();
+    }//GEN-LAST:event_addWreath1MouseClicked
+
+    private void confirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_confirmActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton addWreath1;
+    private javax.swing.JButton confirm;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }

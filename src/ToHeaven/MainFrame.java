@@ -12,6 +12,9 @@ public class MainFrame extends javax.swing.JPanel {
         this.mainPanel = mainPanel;
         cd = (CardLayout) mainPanel.getLayout();
         initComponents();
+        
+        WreathProductPage wpp = new WreathProductPage(frameJP);
+        frameJP.add(wpp, "wreathproductpage");
     }
 
     /**
@@ -40,7 +43,7 @@ public class MainFrame extends javax.swing.JPanel {
         menuBar.setLayout(null);
 
         customBT.setBackground(new java.awt.Color(255, 204, 204));
-        customBT.setFont(new java.awt.Font("MiTNThin", 0, 18)); // NOI18N
+        customBT.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
         customBT.setText("ปรับแต่ง");
         customBT.setBorder(null);
         customBT.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -52,7 +55,7 @@ public class MainFrame extends javax.swing.JPanel {
         customBT.setBounds(650, 0, 110, 100);
 
         packageBT.setBackground(new java.awt.Color(255, 204, 204));
-        packageBT.setFont(new java.awt.Font("MiTNThin", 0, 18)); // NOI18N
+        packageBT.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
         packageBT.setText("แพ็คเกจ\n");
         packageBT.setBorder(null);
         packageBT.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -64,7 +67,7 @@ public class MainFrame extends javax.swing.JPanel {
         packageBT.setBounds(530, 0, 110, 100);
 
         productBT.setBackground(new java.awt.Color(255, 204, 204));
-        productBT.setFont(new java.awt.Font("MiTNThin", 0, 18)); // NOI18N
+        productBT.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
         productBT.setText("ผลิตภัณฑ์");
         productBT.setBorder(null);
         productBT.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -76,7 +79,7 @@ public class MainFrame extends javax.swing.JPanel {
         productBT.setBounds(410, 0, 110, 100);
 
         homeBT.setBackground(new java.awt.Color(255, 204, 204));
-        homeBT.setFont(new java.awt.Font("MiTNThin", 0, 18)); // NOI18N
+        homeBT.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
         homeBT.setText("เกี่ยวกับเรา");
         homeBT.setBorder(null);
         homeBT.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -101,13 +104,14 @@ public class MainFrame extends javax.swing.JPanel {
         frameJP.setLayout(new java.awt.CardLayout());
         Home home = new Home(frameJP);
         ProductPage product = new ProductPage(frameJP);
-        WreathProductPage wpp = new WreathProductPage(frameJP);
+        //WreathProductPage wpp = new WreathProductPage(frameJP);
+        //frameJP.add(wpp, "wreathproductpage");
+
         CustomCoffin coffin = new CustomCoffin(frameJP);
 
         /*add each pages into cardlayout on frameJP*/
         frameJP.add(home, "home");
         frameJP.add(product, "product");
-        frameJP.add(wpp, "wreathproductpage");
         frameJP.add(coffin, "coffin");
 
         /*called home page(1st page)*/

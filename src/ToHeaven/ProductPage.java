@@ -116,6 +116,10 @@ public class ProductPage extends javax.swing.JPanel {
     private void wreathBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_wreathBTMouseClicked
         // TODO add your handling code here:
         //CardLayout cd = (CardLayout) frameJP.getLayout();
+        //cd.show(mainPanel, "wreathproductpage");
+//        WreathProductPage wpp = new WreathProductPage(frameJP);
+//        frameJP.add(wpp, "wreathproductpage");
+//        CardLayout cd = (CardLayout) frameJP.getLayout();
         cd.show(mainPanel, "wreathproductpage");
     }//GEN-LAST:event_wreathBTMouseClicked
 
