@@ -8,6 +8,8 @@ import java.io.File;
 import java.util.ArrayList;
 import javax.swing.JFileChooser;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
 /**
  *
@@ -17,6 +19,7 @@ public class CoffinDetail extends javax.swing.JPanel {
 final JFileChooser fc = new JFileChooser();
 private ArrayList<CoffinDetail> cfdList;
 private JPanel jp;
+private String filePath;
     /**
      * Creates new form WreathDetail
      */
@@ -50,7 +53,9 @@ private JPanel jp;
         pattern = new javax.swing.JLabel();
         patternTF = new javax.swing.JTextField();
 
+        setBackground(new java.awt.Color(255, 204, 204));
         setPreferredSize(new java.awt.Dimension(400, 230));
+        setLayout(null);
 
         choosePicBT.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
         choosePicBT.setText("กดแนบรูปภาพ");
@@ -59,25 +64,43 @@ private JPanel jp;
                 choosePicBTActionPerformed(evt);
             }
         });
+        add(choosePicBT);
+        choosePicBT.setBounds(12, 50, 106, 26);
 
         showPicName.setBackground(new java.awt.Color(204, 255, 255));
         showPicName.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
+        add(showPicName);
+        showPicName.setBounds(132, 50, 160, 30);
 
         detailLB.setBackground(new java.awt.Color(204, 255, 255));
         detailLB.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
         detailLB.setText("รายละเอียด ");
+        add(detailLB);
+        detailLB.setBounds(12, 80, 66, 22);
+
+        detailSP.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
 
         detailTA.setColumns(20);
+        detailTA.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         detailTA.setRows(5);
         detailSP.setViewportView(detailTA);
+
+        add(detailSP);
+        detailSP.setBounds(12, 110, 347, 110);
 
         priceLB.setBackground(new java.awt.Color(204, 255, 255));
         priceLB.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
         priceLB.setText("ราคา");
+        add(priceLB);
+        priceLB.setBounds(190, 80, 27, 21);
+        add(priceTF);
+        priceTF.setBounds(220, 80, 76, 22);
 
         bathLB.setBackground(new java.awt.Color(204, 255, 255));
         bathLB.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
         bathLB.setText("บาทต่อชิ้น");
+        add(bathLB);
+        bathLB.setBounds(300, 80, 55, 21);
 
         deleteCB.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         deleteCB.setText("เลือกเพื่อลบ");
@@ -91,65 +114,17 @@ private JPanel jp;
                 deleteCBActionPerformed(evt);
             }
         });
+        add(deleteCB);
+        deleteCB.setBounds(280, 10, 85, 20);
 
         pattern.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
         pattern.setText("รูปแบบสินค้า : ");
+        add(pattern);
+        pattern.setBounds(12, 10, 90, 21);
 
         patternTF.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(pattern, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(0, 0, 0)
-                            .addComponent(patternTF, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(40, 40, 40)
-                            .addComponent(deleteCB, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(choosePicBT, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(14, 14, 14)
-                            .addComponent(showPicName, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(detailLB, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(134, 134, 134)
-                            .addComponent(priceLB, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(3, 3, 3)
-                            .addComponent(priceTF, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(4, 4, 4)
-                            .addComponent(bathLB, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(detailSP, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 230, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(pattern)
-                        .addComponent(patternTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(deleteCB, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(13, 13, 13)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(choosePicBT, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(showPicName, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(detailLB, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(priceLB)
-                        .addComponent(priceTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(bathLB))
-                    .addGap(8, 8, 8)
-                    .addComponent(detailSP, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+        add(patternTF);
+        patternTF.setBounds(102, 10, 160, 27);
     }// </editor-fold>//GEN-END:initComponents
 
     private void choosePicBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_choosePicBTActionPerformed
@@ -157,6 +132,11 @@ private JPanel jp;
         int returnVal = fc.showDialog(null, "Choose");
         if (returnVal == JFileChooser.APPROVE_OPTION){
             File file = fc.getSelectedFile();
+            try {
+                filePath = file.getCanonicalPath();          //get imgae's path
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             showPicName.setText("รูปภาพที่แนบ: "+file.getName());
             //JOptionPane.showMessageDialog(jButton1, file);
         }
@@ -173,6 +153,20 @@ private JPanel jp;
         // TODO add your handling code here:
     }//GEN-LAST:event_deleteCBActionPerformed
 
+     public JTextField getPatternTF() {
+        return patternTF;
+    }
+    public JTextArea getDetailTA() {
+        return detailTA;
+    }
+
+    public String getFilePath() {
+        return filePath;
+    }
+     public JTextField getPriceTF() {
+        return priceTF;
+    }
+  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel bathLB;

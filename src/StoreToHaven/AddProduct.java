@@ -39,7 +39,7 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel {
         setLayout(null);
 
         addChoices.setFont(new java.awt.Font("TH Sarabun New", 0, 24)); // NOI18N
-        addChoices.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "กรุณาเลือกตัวเลือก", "โลงศพ", "พวงหรีดและดอกไม้จันทน์", "ชุดไทยธรรม", "ธูปและเทียน", "ชุดอาหารว่าง", "ของชำร่วย", "กรอบรูป", "เพิ่มสินค้า" }));
+        addChoices.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "กรุณาเลือกตัวเลือก", "โลงศพ", "พวงหรีด", "ดอกไม้จันทน์", "ชุดไทยธรรม", "ธูป", "เทียน", "ชุดอาหารว่าง", "ของชำร่วย", "กรอบรูป" }));
         addChoices.setAlignmentX(1.0F);
         addChoices.setAlignmentY(1.0F);
         addChoices.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -70,14 +70,26 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel {
         showAddProduct.setBackground(new java.awt.Color(153, 255, 204));
         showAddProduct.setLayout(new java.awt.CardLayout());
         JPanel emptyPanel = new JPanel();
-        AddCoffin cf = new AddCoffin(showAddProduct);
-        AddCandle cn = new AddCandle(showAddProduct);
-        AddIncense in = new AddIncense(showAddProduct);
+        //AddWreath wreath = new AddWreath(showAddProduct);
+        AddCoffin coffin = new AddCoffin(showAddProduct);
+        //AddFrame frame = new AddFrame(showAddProduct);
+        AddIncense incense = new AddIncense(showAddProduct);
+        AddCandle candle = new AddCandle(showAddProduct);
+        //AddOffering offering = new AddOffering(showAddProduct);
+        //AddSandalWood sandalwood = new AddSandalWood(showAddProduct);
+        //AddSnackBox snackbox = new AddSnackBox(showAddProduct);
+        //AddSouvenirs souvenir= new AddSouvenirs(showAddProduct);
         emptyPanel.setBackground(new java.awt.Color(153, 255, 204));
         showAddProduct.add(emptyPanel, "empty");
-        showAddProduct.add(cf, "coffin");
-        showAddProduct.add(cn, "candle");
-        showAddProduct.add(in, "incense");
+        showAddProduct.add(coffin, "coffin");
+        //showAddProduct.add(wreath, "wreath");
+        //showAddProduct.add(frame, "frame");
+        showAddProduct.add(incense, "incense");
+        showAddProduct.add(candle, "candle");
+        //showAddProduct.add(offering, "offering");
+        //showAddProduct.add(sandlewood, "sandlewood");
+        //showAddProduct.add(snackbox, "snackbox");
+        //showAddProduct.add(souvenir, "souvenir");
         add(showAddProduct);
         showAddProduct.setBounds(10, 115, 480, 480);
 
@@ -99,12 +111,27 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel {
 
     private void addChoicesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addChoicesActionPerformed
         // TODO add your handling code here:
-//        JComboBox cb = (JComboBox) evt.getSource();
-//        if (((String)cb.getSelectedItem()).equals("พวงหรีดและดอกไม้จันทน์")){
-//            // jPanel2.add(new AddWreath(jPanel1), "wreath");
-//            CardLayout cd = (CardLayout) showAddProduct.getLayout();
-//            cd.show(showAddProduct, "coffin");
-//        }
+        JComboBox cb = (JComboBox) evt.getSource();
+        CardLayout cd = (CardLayout) showAddProduct.getLayout();
+        if (((String)cb.getSelectedItem()).equals("โลงศพ")){
+            cd.show(showAddProduct, "coffin");
+        } else if(((String)cb.getSelectedItem()).equals("พวงหรีด")){
+             cd.show(showAddProduct, "wreath");
+        }else if(((String)cb.getSelectedItem()).equals("ดอกไม้จันทน์")){
+             cd.show(showAddProduct, "sandlewood");
+        }else if(((String)cb.getSelectedItem()).equals("ชุดไทยธรรม")){
+             cd.show(showAddProduct, "offering");
+        }else if(((String)cb.getSelectedItem()).equals("ธูป")){
+             cd.show(showAddProduct, "incense");
+        }else if(((String)cb.getSelectedItem()).equals("เทียน")){
+             cd.show(showAddProduct, "candle");
+        }else if(((String)cb.getSelectedItem()).equals("ชุดอาหารว่าง")){
+             cd.show(showAddProduct, "snackbox");
+        }else if(((String)cb.getSelectedItem()).equals("ของชำร่วย")){
+             cd.show(showAddProduct, "souvenir");
+        }else if(((String)cb.getSelectedItem()).equals("กรอบรูป")){
+             cd.show(showAddProduct, "frame");
+        }
     }//GEN-LAST:event_addChoicesActionPerformed
 
     private void confirmBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_confirmBTMouseClicked
@@ -118,12 +145,12 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel {
 
     private void addChoicesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addChoicesMouseClicked
         // TODO add your handling code here:
-         JComboBox cb = (JComboBox) evt.getSource();
-        if (((String)cb.getSelectedItem()).equals("โลงศพ")){
-           // jPanel2.add(new AddWreath(jPanel1), "wreath");
-            CardLayout cd = (CardLayout) showAddProduct.getLayout();
-            cd.show(showAddProduct, "coffin");
-        }
+//         JComboBox cb = (JComboBox) evt.getSource();
+//        if (((String)cb.getSelectedItem()).equals("โลงศพ")){
+//           // jPanel2.add(new AddWreath(jPanel1), "wreath");
+//            CardLayout cd = (CardLayout) showAddProduct.getLayout();
+//            cd.show(showAddProduct, "coffin");
+//        }
     }//GEN-LAST:event_addChoicesMouseClicked
  /* testing panel*/
     public static void main(String[] args){

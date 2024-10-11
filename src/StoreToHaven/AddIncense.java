@@ -8,6 +8,7 @@ import java.awt.CardLayout;
 import java.awt.Dimension;
 import java.util.ArrayList;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 /**
  *
@@ -50,7 +51,7 @@ public class AddIncense extends javax.swing.JPanel {
         pic_detailSP.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
         pic_detailJP.setBackground(new java.awt.Color(255, 204, 204));
-        pic_detailJP.setPreferredSize(new java.awt.Dimension(408, 181));
+        pic_detailJP.setPreferredSize(new java.awt.Dimension(400, 230));
         pic_detailJP.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 pic_detailJPMouseClicked(evt);
@@ -91,7 +92,7 @@ public class AddIncense extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(34, 34, 34)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(pic_detailSP, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pic_detailSP, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(name)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -102,7 +103,7 @@ public class AddIncense extends javax.swing.JPanel {
                         .addComponent(deleteListBT)
                         .addGap(18, 18, 18)
                         .addComponent(addListBT)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -114,12 +115,12 @@ public class AddIncense extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pic_detail, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pic_detailSP, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(pic_detailSP, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(addListBT)
                     .addComponent(deleteListBT))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(8, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -135,7 +136,7 @@ public class AddIncense extends javax.swing.JPanel {
     private void addListBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addListBTMouseClicked
         // TODO add your handling code here:
         icdList.add(new IncenseDetail(icdList, pic_detailJP));
-        pic_detailJP.setPreferredSize(new Dimension(408, pic_detailJP.getHeight()+181));
+        pic_detailJP.setPreferredSize(new Dimension(408, pic_detailJP.getHeight()+235));
         pic_detailJP.add(icdList.get(icdList.size()-1));
         pic_detailJP.revalidate();
         pic_detailJP.repaint();
@@ -155,4 +156,17 @@ public class AddIncense extends javax.swing.JPanel {
     private javax.swing.JPanel pic_detailJP;
     private javax.swing.JScrollPane pic_detailSP;
     // End of variables declaration//GEN-END:variables
+  
+     public JPanel getPic_detailJP() {
+        return pic_detailJP;
+    }
+    
+    public JTextField getNameTF() {
+        return nameTF;
+    }
+
+    public Object getPriceTF() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
+

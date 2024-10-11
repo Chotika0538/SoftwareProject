@@ -8,6 +8,7 @@ import java.awt.CardLayout;
 import java.awt.Dimension;
 import java.util.ArrayList;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 /**
  *
@@ -35,6 +36,7 @@ public class AddCandle extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jColorChooser1 = new javax.swing.JColorChooser();
         pic_detail = new javax.swing.JLabel();
         pic_detailSP = new javax.swing.JScrollPane();
         pic_detailJP = new javax.swing.JPanel();
@@ -43,13 +45,17 @@ public class AddCandle extends javax.swing.JPanel {
         deleteListBT = new javax.swing.JButton();
         nameTF = new javax.swing.JTextField();
 
+        setLayout(null);
+
         pic_detail.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
         pic_detail.setText("รูปและรายละเอียดของสินค้า");
+        add(pic_detail);
+        pic_detail.setBounds(34, 41, 157, 27);
 
         pic_detailSP.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
         pic_detailJP.setBackground(new java.awt.Color(255, 204, 204));
-        pic_detailJP.setPreferredSize(new java.awt.Dimension(408, 181));
+        pic_detailJP.setPreferredSize(new java.awt.Dimension(400, 230));
         pic_detailJP.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 pic_detailJPMouseClicked(evt);
@@ -60,6 +66,9 @@ public class AddCandle extends javax.swing.JPanel {
         pic_detailJP.add(cndList.get(0));
         pic_detailSP.setViewportView(pic_detailJP);
 
+        add(pic_detailSP);
+        pic_detailSP.setBounds(34, 74, 400, 250);
+
         addListBT.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
         addListBT.setText("+ เพิ่มรายการ");
         addListBT.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -67,9 +76,13 @@ public class AddCandle extends javax.swing.JPanel {
                 addListBTMouseClicked(evt);
             }
         });
+        add(addListBT);
+        addListBT.setBounds(243, 330, 100, 32);
 
         name.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
         name.setText("ชื่อสินค้า : ");
+        add(name);
+        name.setBounds(34, 8, 58, 27);
 
         deleteListBT.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
         deleteListBT.setText("- ลบรายการ");
@@ -78,48 +91,12 @@ public class AddCandle extends javax.swing.JPanel {
                 deleteListBTMouseClicked(evt);
             }
         });
+        add(deleteListBT);
+        deleteListBT.setBounds(136, 330, 93, 32);
 
         nameTF.setFont(new java.awt.Font("TH SarabunPSK", 0, 20)); // NOI18N
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(pic_detailSP, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(name)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(nameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(pic_detail)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(136, 136, 136)
-                        .addComponent(deleteListBT)
-                        .addGap(18, 18, 18)
-                        .addComponent(addListBT)))
-                .addContainerGap(38, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(name)
-                    .addComponent(nameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pic_detail, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pic_detailSP, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(addListBT)
-                    .addComponent(deleteListBT))
-                .addContainerGap(18, Short.MAX_VALUE))
-        );
+        add(nameTF);
+        nameTF.setBounds(95, 6, 270, 27);
     }// </editor-fold>//GEN-END:initComponents
 
     private void pic_detailJPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pic_detailJPMouseClicked
@@ -134,7 +111,7 @@ public class AddCandle extends javax.swing.JPanel {
     private void addListBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addListBTMouseClicked
         // TODO add your handling code here:
         cndList.add(new CandleDetail(cndList, pic_detailJP));
-        pic_detailJP.setPreferredSize(new Dimension(408, pic_detailJP.getHeight()+181));
+        pic_detailJP.setPreferredSize(new Dimension(408, pic_detailJP.getHeight()+235));
         pic_detailJP.add(cndList.get(cndList.size()-1));
         pic_detailJP.revalidate();
         pic_detailJP.repaint();
@@ -144,10 +121,19 @@ public class AddCandle extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_deleteListBTMouseClicked
 
+    public JTextField getNameTF() {
+        return nameTF;
+    }
+
+    public JPanel getPic_detailJP() {
+        return pic_detailJP;
+    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addListBT;
     private javax.swing.JButton deleteListBT;
+    private javax.swing.JColorChooser jColorChooser1;
     private javax.swing.JLabel name;
     private javax.swing.JTextField nameTF;
     private javax.swing.JLabel pic_detail;
@@ -155,3 +141,4 @@ public class AddCandle extends javax.swing.JPanel {
     private javax.swing.JScrollPane pic_detailSP;
     // End of variables declaration//GEN-END:variables
 }
+
