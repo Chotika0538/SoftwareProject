@@ -7,6 +7,7 @@ package StoreToHaven;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.*;
+import DAO.*;
 /**
  *
  * @author Khao
@@ -174,11 +175,36 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel {
 
     @Override
     public void checkCurrentCard() {
-       for (Component c : showAddProduct.getComponents()){
-           if(c.isVisible()){
-               
-           }
-       }
+       for (Component comp : showAddProduct.getComponents()) {
+            if (comp.isVisible()&& comp instanceof AddCoffin) {
+                AddCoffin aw = (AddCoffin) comp;
+                Coffindao cfd = new Coffindao();
+                cfd.save(aw);
+//                for(int i = 0; i<aw.getCountPic_DetailJP(); i++){
+//                    WreathDetail temp = (WreathDetail) aw.getPic_detailJP().getComponent(i);
+//                    String name = aw.getNameTF().getText();
+//                    String pattern = temp.getPatternTF().getText();
+//                    String detail = temp.getDetailTA().getText();
+//                    String path = temp.getFilePath();
+//                    String material = aw.getMaterialTF().getText();
+//                    String color = aw.getColorTF().getText();
+//                    String price = aw.getPriceTF().getText();
+//                    wList.add(new Wreath(name,pattern,detail,path,material,color,price));       
+//                }
+                break; // หยุดหลังจากเจอหน้าแรกที่แสดงอยู่String pattern = wd.get(a).getPatternTF().getText();
+            }
+            
+            else if (comp.isVisible()&& comp instanceof AddCandle) {
+                Candledao cfd = new Candledao();
+                cfd.save((AddCandle) comp);
+
+                break; // หยุดหลังจากเจอหน้าแรกที่แสดงอยู่
+            }
+            else if (comp.isVisible()&& comp instanceof AddIncense) {
+                Incensedao cfd = new Incensedao();
+                cfd.save((AddIncense) comp);
+                break; // หยุดหลังจากเจอหน้าแรกที่แสดงอยู่
+            }
     }
-       
+ } 
 }

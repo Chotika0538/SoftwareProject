@@ -36,7 +36,7 @@ public class Incensedao {
     private FileInputStream fileInput;
     private FileOutputStream fos;
     private ArrayList<List<String>> incenselist = new ArrayList<>();
-    private String[] nameCol = { "ชื่อ","รายละเอียด" ,"pathรูปภาพ", "ราคา"};
+    private String[] nameCol = { "ชื่อ","ขนาด","รายละเอียด" ,"pathรูปภาพ", "ราคา"};
     private ArrayList<IncenseDetail> icd;
     private Component[] cmp;
 
@@ -86,6 +86,7 @@ public class Incensedao {
                 newRow.createCell(0).setCellValue(pattern);
                 newRow.createCell(1).setCellValue(detail);
                 newRow.createCell(2).setCellValue(path);
+                newRow.createCell(3).setCellValue(price);
                 //newRow.createCell(4).setCellValue(incense.getPriceTF().getText());
                } catch (Exception e) {
                     e.printStackTrace();
@@ -121,7 +122,7 @@ public class Incensedao {
         try {
             fileInput = new FileInputStream(new File(FILE_NAME));
             wb = new XSSFWorkbook(fileInput);
-            sheet = wb.getSheetAt(1); // เปลี่ยนไปที่ชีตแรก
+            sheet = wb.getSheetAt(5); // เปลี่ยนไปที่ชีต 5
         } catch (Exception err) {
             System.out.println("can't read file: " + err);
         }

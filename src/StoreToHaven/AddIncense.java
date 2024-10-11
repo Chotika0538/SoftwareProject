@@ -41,17 +41,21 @@ public class AddIncense extends javax.swing.JPanel {
         pic_detailSP = new javax.swing.JScrollPane();
         pic_detailJP = new javax.swing.JPanel();
         addListBT = new javax.swing.JButton();
-        name = new javax.swing.JLabel();
         deleteListBT = new javax.swing.JButton();
+        name1 = new javax.swing.JLabel();
         nameTF = new javax.swing.JTextField();
+
+        setLayout(null);
 
         pic_detail.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
         pic_detail.setText("รูปและรายละเอียดของสินค้า");
+        add(pic_detail);
+        pic_detail.setBounds(30, 50, 157, 27);
 
         pic_detailSP.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
         pic_detailJP.setBackground(new java.awt.Color(255, 204, 204));
-        pic_detailJP.setPreferredSize(new java.awt.Dimension(400, 230));
+        pic_detailJP.setPreferredSize(new java.awt.Dimension(400, 300));
         pic_detailJP.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 pic_detailJPMouseClicked(evt);
@@ -62,6 +66,9 @@ public class AddIncense extends javax.swing.JPanel {
         pic_detailJP.add(icdList.get(0));
         pic_detailSP.setViewportView(pic_detailJP);
 
+        add(pic_detailSP);
+        pic_detailSP.setBounds(30, 80, 400, 250);
+
         addListBT.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
         addListBT.setText("+ เพิ่มรายการ");
         addListBT.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -69,9 +76,8 @@ public class AddIncense extends javax.swing.JPanel {
                 addListBTMouseClicked(evt);
             }
         });
-
-        name.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
-        name.setText("ชื่อสินค้า : ");
+        add(addListBT);
+        addListBT.setBounds(240, 350, 100, 32);
 
         deleteListBT.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
         deleteListBT.setText("- ลบรายการ");
@@ -80,48 +86,17 @@ public class AddIncense extends javax.swing.JPanel {
                 deleteListBTMouseClicked(evt);
             }
         });
+        add(deleteListBT);
+        deleteListBT.setBounds(130, 350, 93, 32);
+
+        name1.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
+        name1.setText("ชื่อสินค้า : ");
+        add(name1);
+        name1.setBounds(30, 10, 58, 27);
 
         nameTF.setFont(new java.awt.Font("TH SarabunPSK", 0, 20)); // NOI18N
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(pic_detailSP, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(name)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(nameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(pic_detail)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(136, 136, 136)
-                        .addComponent(deleteListBT)
-                        .addGap(18, 18, 18)
-                        .addComponent(addListBT)))
-                .addContainerGap(46, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(name)
-                    .addComponent(nameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pic_detail, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pic_detailSP, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(addListBT)
-                    .addComponent(deleteListBT))
-                .addContainerGap(8, Short.MAX_VALUE))
-        );
+        add(nameTF);
+        nameTF.setBounds(100, 10, 270, 27);
     }// </editor-fold>//GEN-END:initComponents
 
     private void pic_detailJPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pic_detailJPMouseClicked
@@ -150,7 +125,7 @@ public class AddIncense extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addListBT;
     private javax.swing.JButton deleteListBT;
-    private javax.swing.JLabel name;
+    private javax.swing.JLabel name1;
     private javax.swing.JTextField nameTF;
     private javax.swing.JLabel pic_detail;
     private javax.swing.JPanel pic_detailJP;
@@ -165,8 +140,5 @@ public class AddIncense extends javax.swing.JPanel {
         return nameTF;
     }
 
-    public Object getPriceTF() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }
 

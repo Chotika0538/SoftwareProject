@@ -7,7 +7,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import StoreToHaven.AddCoffin;
 import StoreToHaven.CoffinDetail;
-import StoreToHeaven.Coffin;
+import StoreToHeaven.*;
 import java.awt.Component;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
@@ -22,7 +22,7 @@ public class Coffindao {
     private FileInputStream fileInput;
     private FileOutputStream fos;
     private ArrayList<List<String>> coffinlist = new ArrayList<>();
-    private String[] nameCol = { "ชื่อ","รายละเอียด" ,"pathรูปภาพ", "ราคา"};
+    private String[] nameCol = { "ชื่อ","ขนาด","รายละเอียด" ,"pathรูปภาพ", "ราคา"};
     private ArrayList<CoffinDetail> cfd;
     private Component[] cmp;
 
@@ -55,8 +55,12 @@ public class Coffindao {
             String pattern = cfd.get(a).getPatternTF().getText();    
             String detail = cfd.get(a).getDetailTA().getText();
             String path = cfd.get(a).getFilePath();
+            String size = coffin.getSizeTF().getText();
+            //double price = Double.parseDouble(cfd.get(a).getPriceTF().getText());
+            //String[] dataChecked = {pattern,detail,path,Double.toString(price)};
             double price = Double.parseDouble(cfd.get(a).getPriceTF().getText());
-            String[] dataChecked = {pattern,detail,path,Double.toString(price)};
+            String[] dataChecked = {pattern, detail, path, Double.toString(price)};
+
    
             boolean haveData = false ;
             for (Row row : sheet){
@@ -71,8 +75,10 @@ public class Coffindao {
                 int lastRow = sheet.getLastRowNum();
                 Row newRow = sheet.createRow(lastRow+1);
                 newRow.createCell(0).setCellValue(pattern);
-                newRow.createCell(1).setCellValue(detail);
-                newRow.createCell(2).setCellValue(path);
+                newRow.createCell(1).setCellValue(size);
+                newRow.createCell(2).setCellValue(detail);
+                newRow.createCell(3).setCellValue(path);
+                newRow.createCell(4).setCellValue(price);
                } catch (Exception e) {
                     e.printStackTrace();
                }             
@@ -107,7 +113,7 @@ public class Coffindao {
         try {
             fileInput = new FileInputStream(new File(FILE_NAME));
             wb = new XSSFWorkbook(fileInput);
-            sheet = wb.getSheetAt(1); // เปลี่ยนไปที่ชีตแรก
+            sheet = wb.getSheetAt(0); // เปลี่ยนไปที่ชีต 0
         } catch (Exception err) {
             System.out.println("can't read file: " + err);
         }

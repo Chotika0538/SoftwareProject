@@ -1,12 +1,14 @@
 package StoreToHeaven;
+
+import StoreToHaven.Product;
 import java.util.*;
 public class Coffin extends Product {
     private ArrayList<Coffin> cList;
     private ArrayList<Double> priceAll;
     private int size;
     
-    public Coffin(String name,String pattern,String detail,String path, String price){
-        super(name,pattern,detail,path);
+    public Coffin(String name,String pattern,int size,String detail,String path, String price){
+        super(name,pattern,size,detail,path);
         priceAll.add(Double.parseDouble((Arrays.toString(price.split(",")))));
     }
 
@@ -21,8 +23,8 @@ public class Coffin extends Product {
         return cList;
     }
 
-    public void setwList(ArrayList<Coffin> wList) {
-        this.cList = wList;
+    public void setwList(ArrayList<Coffin> cList) {
+        this.cList = cList;
     }
 
     

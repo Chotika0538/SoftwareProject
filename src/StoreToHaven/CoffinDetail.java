@@ -93,8 +93,10 @@ private String filePath;
         priceLB.setText("ราคา");
         add(priceLB);
         priceLB.setBounds(190, 80, 27, 21);
+
+        priceTF.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
         add(priceTF);
-        priceTF.setBounds(220, 80, 76, 22);
+        priceTF.setBounds(220, 80, 76, 31);
 
         bathLB.setBackground(new java.awt.Color(204, 255, 255));
         bathLB.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N

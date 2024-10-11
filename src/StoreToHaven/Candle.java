@@ -1,12 +1,13 @@
 package StoreToHeaven;
+import StoreToHaven.Product;
 import java.util.*;
-public class Candle extends Product {
+public class Candle extends Product{
     private ArrayList<Candle> cnList;
     private ArrayList<Double> priceAll;
     private int size;
-    
-    public Candle(String name,String pattern,String detail,String path, String price){
-        super(name,pattern,detail,path);
+
+    public Candle(String name,String pattern,int size, String detail,String path, String price){
+        super(name,pattern,size,detail,path);
         priceAll.add(Double.parseDouble((Arrays.toString(price.split(",")))));
     }
 

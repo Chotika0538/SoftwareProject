@@ -28,7 +28,7 @@ public class Candledao {
     private FileInputStream fileInput;
     private FileOutputStream fos;
     private ArrayList<List<String>> candlelist = new ArrayList<>();
-    private String[] nameCol = { "ชื่อ","รายละเอียด" ,"pathรูปภาพ", "ราคา"};
+    private String[] nameCol = { "ชื่อ","ขนาด","รายละเอียด" ,"pathรูปภาพ", "ราคา"};
     private ArrayList<CandleDetail> cnd;
     private Component[] cmp;
 
@@ -61,6 +61,7 @@ public class Candledao {
             String pattern = cnd.get(a).getPatternTF().getText();    
             String detail = cnd.get(a).getDetailTA().getText();
             String path = cnd.get(a).getFilePath();
+            String size = candle.getSizeTF().getText();
             double price = Double.parseDouble(cnd.get(a).getPriceTF().getText());
             String[] dataChecked = {pattern,detail,path,Double.toString(price)};
    
@@ -77,8 +78,10 @@ public class Candledao {
                 int lastRow = sheet.getLastRowNum();
                 Row newRow = sheet.createRow(lastRow+1);
                 newRow.createCell(0).setCellValue(pattern);
-                newRow.createCell(1).setCellValue(detail);
-                newRow.createCell(2).setCellValue(path);
+                newRow.createCell(1).setCellValue(size);
+                newRow.createCell(2).setCellValue(detail);
+                newRow.createCell(3).setCellValue(path);
+                newRow.createCell(4).setCellValue(price);
                } catch (Exception e) {
                     e.printStackTrace();
                }             
@@ -113,7 +116,7 @@ public class Candledao {
         try {
             fileInput = new FileInputStream(new File(FILE_NAME));
             wb = new XSSFWorkbook(fileInput);
-            sheet = wb.getSheetAt(1); // เปลี่ยนไปที่ชีตแรก
+            sheet = wb.getSheetAt(4); // เปลี่ยนไปที่ชีต 4
         } catch (Exception err) {
             System.out.println("can't read file: " + err);
         }

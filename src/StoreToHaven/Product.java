@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package StoreToHeaven;
+package StoreToHaven;
 
 import java.util.ArrayList;
 
@@ -10,13 +10,15 @@ import java.util.ArrayList;
 public class Product {
     private String name;
     private String pattern;
+    private int size ;
     private String detail;
     private double price;
     private String path;
 
-    public Product(String name,String pattern,String detail,String path){
+    public Product(String name,String pattern,int size, String detail,String path){
         this.name = name;
         this.pattern = pattern;
+        this.size = size;
         this.detail = detail;
         this.path = path;
     }
@@ -36,6 +38,14 @@ public class Product {
 
     public void setPattern(String pattern) {
         this.pattern = pattern;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
     }
 
     public String getDetail() {

@@ -40,9 +40,11 @@ public class AddCoffin extends javax.swing.JPanel {
         pic_detailSP = new javax.swing.JScrollPane();
         pic_detailJP = new javax.swing.JPanel();
         addListBT = new javax.swing.JButton();
-        name = new javax.swing.JLabel();
         deleteListBT = new javax.swing.JButton();
+        sizeTF = new javax.swing.JTextField();
+        name1 = new javax.swing.JLabel();
         nameTF = new javax.swing.JTextField();
+        name3 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(480, 370));
         setLayout(null);
@@ -50,12 +52,12 @@ public class AddCoffin extends javax.swing.JPanel {
         pic_detail.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
         pic_detail.setText("รูปและรายละเอียดของสินค้า");
         add(pic_detail);
-        pic_detail.setBounds(34, 41, 157, 27);
+        pic_detail.setBounds(30, 90, 157, 27);
 
         pic_detailSP.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
         pic_detailJP.setBackground(new java.awt.Color(255, 204, 204));
-        pic_detailJP.setPreferredSize(new java.awt.Dimension(400, 230));
+        pic_detailJP.setPreferredSize(new java.awt.Dimension(400, 300));
         pic_detailJP.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 pic_detailJPMouseClicked(evt);
@@ -67,7 +69,7 @@ public class AddCoffin extends javax.swing.JPanel {
         pic_detailSP.setViewportView(pic_detailJP);
 
         add(pic_detailSP);
-        pic_detailSP.setBounds(34, 74, 400, 250);
+        pic_detailSP.setBounds(30, 120, 400, 250);
 
         addListBT.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
         addListBT.setText("+ เพิ่มรายการ");
@@ -77,12 +79,7 @@ public class AddCoffin extends javax.swing.JPanel {
             }
         });
         add(addListBT);
-        addListBT.setBounds(243, 330, 100, 32);
-
-        name.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
-        name.setText("ชื่อสินค้า : ");
-        add(name);
-        name.setBounds(34, 8, 58, 27);
+        addListBT.setBounds(240, 380, 100, 32);
 
         deleteListBT.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
         deleteListBT.setText("- ลบรายการ");
@@ -92,21 +89,30 @@ public class AddCoffin extends javax.swing.JPanel {
             }
         });
         add(deleteListBT);
-        deleteListBT.setBounds(136, 330, 93, 32);
+        deleteListBT.setBounds(130, 380, 93, 32);
+
+        sizeTF.setFont(new java.awt.Font("TH SarabunPSK", 0, 20)); // NOI18N
+        add(sizeTF);
+        sizeTF.setBounds(100, 50, 270, 27);
+
+        name1.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
+        name1.setText("ชื่อสินค้า : ");
+        add(name1);
+        name1.setBounds(30, 10, 58, 27);
 
         nameTF.setFont(new java.awt.Font("TH SarabunPSK", 0, 20)); // NOI18N
         add(nameTF);
-        nameTF.setBounds(95, 6, 270, 27);
+        nameTF.setBounds(100, 10, 270, 27);
+
+        name3.setFont(new java.awt.Font("TH SarabunPSK", 0, 20)); // NOI18N
+        name3.setText("ขนาด : ");
+        add(name3);
+        name3.setBounds(30, 50, 50, 23);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void pic_detailJPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pic_detailJPMouseClicked
+    private void deleteListBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteListBTMouseClicked
         // TODO add your handling code here:
-        //       JPanel clickjp = (JPanel) evt.getSource();
-        //       for(int i =0; i< wdList.size(); i++){
-            //           if (wdList.get(i) == clickjp){
-                //               if (clickjp.)
-                //       }
-    }//GEN-LAST:event_pic_detailJPMouseClicked
+    }//GEN-LAST:event_deleteListBTMouseClicked
 
     private void addListBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addListBTMouseClicked
         // TODO add your handling code here:
@@ -117,10 +123,14 @@ public class AddCoffin extends javax.swing.JPanel {
         pic_detailJP.repaint();
     }//GEN-LAST:event_addListBTMouseClicked
 
-    private void deleteListBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteListBTMouseClicked
+    private void pic_detailJPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pic_detailJPMouseClicked
         // TODO add your handling code here:
-
-    }//GEN-LAST:event_deleteListBTMouseClicked
+        //       JPanel clickjp = (JPanel) evt.getSource();
+        //       for(int i =0; i< wdList.size(); i++){
+            //           if (wdList.get(i) == clickjp){
+                //               if (clickjp.)
+                //       }
+    }//GEN-LAST:event_pic_detailJPMouseClicked
 
 // /* testing panel*/
 //    public static void main(String[] args){
@@ -135,22 +145,25 @@ public class AddCoffin extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addListBT;
     private javax.swing.JButton deleteListBT;
-    private javax.swing.JLabel name;
+    private javax.swing.JLabel name1;
+    private javax.swing.JLabel name3;
     private javax.swing.JTextField nameTF;
     private javax.swing.JLabel pic_detail;
     private javax.swing.JPanel pic_detailJP;
     private javax.swing.JScrollPane pic_detailSP;
+    private javax.swing.JTextField sizeTF;
     // End of variables declaration//GEN-END:variables
 
      public JPanel getPic_detailJP() {
         return pic_detailJP;
     }
-    
+
     public JTextField getNameTF() {
         return nameTF;
     }
 
-    public Object getPriceTF() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public JTextField getSizeTF() {
+        return sizeTF;
     }
+
 }
