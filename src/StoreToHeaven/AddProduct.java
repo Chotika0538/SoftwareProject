@@ -3,17 +3,21 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package StoreToHeaven;
+import DAO.Framedao;
 import java.awt.CardLayout;
 import java.awt.Component;
+import java.awt.Frame;
+import java.util.ArrayList;
 import javax.swing.*;
 
 
 public class AddProduct extends javax.swing.JPanel implements CheckPanel{
-
+        private ArrayList<Frame> fList;
     /**
      * Creates new form AddProduct
      */
     public AddProduct() {
+        fList = new ArrayList<>();
         initComponents();
     }
 
@@ -36,7 +40,7 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
         setLayout(null);
 
         addChoices.setFont(new java.awt.Font("TH Sarabun New", 0, 24)); // NOI18N
-        addChoices.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "กรุณาเลือกตัวเลือก", "โลงศพ", "พวงหรีดและดอกไม้จันทน์", "ชุดไทยธรรม", "ธูปและเทียน", "ชุดอาหารว่าง", "ของชำร่วย", "กรอบรูป", "เพิ่มสินค้า" }));
+        addChoices.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "กรุณาเลือกตัวเลือก", "โลงศพ", "พวงหรีด", "ดอกไม้จันทน์", "ชุดไทยธรรม", "ธูปและเทียน", "ชุดอาหารว่าง", "ของชำร่วย", "กรอบรูป", "เพิ่มสินค้า" }));
         addChoices.setAlignmentX(1.0F);
         addChoices.setAlignmentY(1.0F);
         addChoices.addActionListener(new java.awt.event.ActionListener() {
@@ -96,25 +100,22 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
         // TODO add your handling code here:
         JComboBox cb = (JComboBox) evt.getSource();
         if (((String)cb.getSelectedItem()).equals("กรอบรูป")){
-           // jPanel2.add(new AddWreath(jPanel1), "wreath");
             CardLayout cd = (CardLayout) showAddProduct.getLayout();
             cd.show(showAddProduct, "frame");
         }
         else if (((String)cb.getSelectedItem()).equals("ชุดไทยธรรม")){
-           // jPanel2.add(new AddWreath(jPanel1), "wreath");
             CardLayout cd = (CardLayout) showAddProduct.getLayout();
             cd.show(showAddProduct, "offering");
         }
         else if (((String)cb.getSelectedItem()).equals("ชุดอาหารว่าง")){
-           // jPanel2.add(new AddWreath(jPanel1), "wreath");
             CardLayout cd = (CardLayout) showAddProduct.getLayout();
             cd.show(showAddProduct, "snackBox");
         }
-//        else if (((String)cb.getSelectedItem()).equals("ดอกไม้จันทน์")){
-//           // jPanel2.add(new AddWreath(jPanel1), "wreath");
-//            CardLayout cd = (CardLayout) showAddProduct.getLayout();
-//            cd.show(showAddProduct, "sandalWood");
-//        }
+        else if (((String)cb.getSelectedItem()).equals("ดอกไม้จันทน์")){
+           // jPanel2.add(new AddWreath(jPanel1), "wreath");
+            CardLayout cd = (CardLayout) showAddProduct.getLayout();
+            cd.show(showAddProduct, "sandalWood");
+        }
     }//GEN-LAST:event_addChoicesActionPerformed
 
     private void confirmBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmBTActionPerformed
@@ -163,9 +164,9 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
 //                wd.save((AddWreath) comp);
 //                //System.out.println("หน้าในขณะนี้คือ: " + comp);
                    break; // หยุดหลังจากเจอหน้าแรกที่แสดงอยู่
-            }
+           }
         
          }       
         
-    }
+   }
 }

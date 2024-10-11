@@ -14,10 +14,11 @@ import javax.swing.JPanel;
  *
  * @author ASUS
  */
-public class AddSandalWood extends javax.swing.JPanel {
+public class AddSandalWood extends javax.swing.JPanel implements  CheckPanel{
      private ArrayList<SandalWoodDetail> sddList;
     private CardLayout cd;
     private JPanel mainPanel;
+    private int countPic_DetailJP;
     /**
      * Creates new form AddWreath
      */
@@ -43,7 +44,7 @@ public class AddSandalWood extends javax.swing.JPanel {
     private void initComponents() {
 
         pattern = new javax.swing.JLabel();
-        patternTF1 = new javax.swing.JTextField();
+        priceTF = new javax.swing.JTextField();
         patternTF = new javax.swing.JTextField();
         color = new javax.swing.JLabel();
         colorTF = new javax.swing.JTextField();
@@ -54,14 +55,14 @@ public class AddSandalWood extends javax.swing.JPanel {
         name = new javax.swing.JLabel();
         deleteListBT = new javax.swing.JButton();
         nameTF = new javax.swing.JTextField();
-        pattern1 = new javax.swing.JLabel();
+        price = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(480, 480));
 
         pattern.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
         pattern.setText("วัสดุ  : ");
 
-        patternTF1.setFont(new java.awt.Font("TH SarabunPSK", 0, 20)); // NOI18N
+        priceTF.setFont(new java.awt.Font("TH SarabunPSK", 0, 20)); // NOI18N
 
         patternTF.setFont(new java.awt.Font("TH SarabunPSK", 0, 20)); // NOI18N
 
@@ -108,8 +109,8 @@ public class AddSandalWood extends javax.swing.JPanel {
 
         nameTF.setFont(new java.awt.Font("TH SarabunPSK", 0, 20)); // NOI18N
 
-        pattern1.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
-        pattern1.setText("ราคาสินค้าแต่ละแบบ  : ");
+        price.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
+        price.setText("ราคาสินค้าแต่ละแบบ  : ");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -127,9 +128,9 @@ public class AddSandalWood extends javax.swing.JPanel {
                                 .addComponent(colorTF, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(pic_detail)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(pattern1)
+                                .addComponent(price)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(patternTF1, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(priceTF, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                     .addComponent(name)
@@ -159,8 +160,8 @@ public class AddSandalWood extends javax.swing.JPanel {
                     .addComponent(patternTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(pattern1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(patternTF1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(price, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(priceTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(color, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -218,11 +219,11 @@ public class AddSandalWood extends javax.swing.JPanel {
     private javax.swing.JLabel name;
     private javax.swing.JTextField nameTF;
     private javax.swing.JLabel pattern;
-    private javax.swing.JLabel pattern1;
     private javax.swing.JTextField patternTF;
-    private javax.swing.JTextField patternTF1;
     private javax.swing.JLabel pic_detail;
     private javax.swing.JPanel pic_detailJP;
     private javax.swing.JScrollPane pic_detailSP;
+    private javax.swing.JLabel price;
+    private javax.swing.JTextField priceTF;
     // End of variables declaration//GEN-END:variables
 }

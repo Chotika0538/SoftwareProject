@@ -8,15 +8,17 @@ import java.awt.CardLayout;
 import java.awt.Dimension;
 import java.util.ArrayList;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 /**
  *
  * @author ASUS
  */
-public class AddOffering extends javax.swing.JPanel {
+public class AddOffering extends javax.swing.JPanel implements CheckPanel{
     private ArrayList<OfferingDetail> odList;
     private CardLayout cd;
     private JPanel mainPanel;
+    private int countPic_DetailJP;
     /**
      * Creates new form AddOffering
      */
@@ -37,8 +39,8 @@ public class AddOffering extends javax.swing.JPanel {
     private void initComponents() {
 
         nameTF = new javax.swing.JTextField();
-        pattern1 = new javax.swing.JLabel();
-        patternTF1 = new javax.swing.JTextField();
+        price = new javax.swing.JLabel();
+        priceTF = new javax.swing.JTextField();
         pic_detail = new javax.swing.JLabel();
         pic_detailSP = new javax.swing.JScrollPane();
         pic_detailJP = new javax.swing.JPanel();
@@ -50,10 +52,10 @@ public class AddOffering extends javax.swing.JPanel {
 
         nameTF.setFont(new java.awt.Font("TH SarabunPSK", 0, 20)); // NOI18N
 
-        pattern1.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
-        pattern1.setText("ราคาสินค้าแต่ละแบบ  : ");
+        price.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
+        price.setText("ราคาสินค้าแต่ละแบบ  : ");
 
-        patternTF1.setFont(new java.awt.Font("TH SarabunPSK", 0, 20)); // NOI18N
+        priceTF.setFont(new java.awt.Font("TH SarabunPSK", 0, 20)); // NOI18N
 
         pic_detail.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
         pic_detail.setText("รูปและรายละเอียดของสินค้า");
@@ -103,9 +105,9 @@ public class AddOffering extends javax.swing.JPanel {
                             .addComponent(pic_detailSP, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(pic_detail)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(pattern1)
+                                .addComponent(price)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(patternTF1, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(priceTF, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(name)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -126,8 +128,8 @@ public class AddOffering extends javax.swing.JPanel {
                     .addComponent(nameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(patternTF1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pattern1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(priceTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(price, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pic_detail, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(25, 25, 25)
@@ -162,16 +164,40 @@ public class AddOffering extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_deleteListBTMouseClicked
 
+    public JTextField getPriceTF() {
+        return priceTF;
+    }
+
+    public void setPriceTF(JTextField priceTF) {
+        this.priceTF = priceTF;
+    }
+
+    public JTextField getNameTF() {
+        return nameTF;
+    }
+
+    public void setNameTF(JTextField nameTF) {
+        this.nameTF = nameTF;
+    }
+
+    public JPanel getPic_detailJP() {
+        return pic_detailJP;
+    }
+
+    public void setPic_detailJP(JPanel pic_detailJP) {
+        this.pic_detailJP = pic_detailJP;
+    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addListBT;
     private javax.swing.JButton deleteListBT;
     private javax.swing.JLabel name;
     private javax.swing.JTextField nameTF;
-    private javax.swing.JLabel pattern1;
-    private javax.swing.JTextField patternTF1;
     private javax.swing.JLabel pic_detail;
     private javax.swing.JPanel pic_detailJP;
     private javax.swing.JScrollPane pic_detailSP;
+    private javax.swing.JLabel price;
+    private javax.swing.JTextField priceTF;
     // End of variables declaration//GEN-END:variables
 }

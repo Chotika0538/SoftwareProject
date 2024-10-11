@@ -49,6 +49,8 @@ private JPanel jp;
         pattern = new javax.swing.JLabel();
         patternTF = new javax.swing.JTextField();
 
+        setBackground(new java.awt.Color(204, 228, 236));
+
         choosePicBT.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
         choosePicBT.setText("กดแนบรูปภาพ");
         choosePicBT.addActionListener(new java.awt.event.ActionListener() {

@@ -6,8 +6,11 @@ package StoreToHeaven;
 
 import java.io.File;
 import java.util.ArrayList;
+import javax.swing.JCheckBox;
 import javax.swing.JFileChooser;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
 /**
  *
@@ -17,6 +20,11 @@ public class OfferingDetail extends javax.swing.JPanel {
     final JFileChooser fc = new JFileChooser();
     private ArrayList<OfferingDetail> odList;
     private JPanel jp;
+    private String filePath;
+     
+    public String getFilePath() {
+        return filePath;
+    }
     /**
      * Creates new form OfferingDetail
      */
@@ -49,7 +57,10 @@ public class OfferingDetail extends javax.swing.JPanel {
         showPicName = new javax.swing.JLabel();
         detailLB = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 128, 178));
+
         detailTA.setColumns(20);
+        detailTA.setFont(new java.awt.Font("TH SarabunPSK", 0, 20)); // NOI18N
         detailTA.setRows(5);
         detailSP.setViewportView(detailTA);
 
@@ -160,11 +171,48 @@ public class OfferingDetail extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_deleteCBActionPerformed
 
+    public JCheckBox getDeleteCB() {
+        return deleteCB;
+    }
+
+    public void setDeleteCB(JCheckBox deleteCB) {
+        this.deleteCB = deleteCB;
+    }
+
+    public JTextArea getDetailTA() {
+        return detailTA;
+    }
+
+    public void setDetailTA(JTextArea detailTA) {
+        this.detailTA = detailTA;
+    }
+
+    public JTextField getPatternTF() {
+        return patternTF;
+    }
+
+    public void setPatternTF(JTextField patternTF) {
+        this.patternTF = patternTF;
+    }
+
+    public JTextField getPriceTF() {
+        return priceTF;
+    }
+
+    public void setPriceTF(JTextField priceTF) {
+        this.priceTF = priceTF;
+    }
+
     private void choosePicBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_choosePicBTActionPerformed
-        // TODO add your handling code here:
+         // TODO add your handling code here:
         int returnVal = fc.showDialog(null, "Choose");
         if (returnVal == JFileChooser.APPROVE_OPTION){
             File file = fc.getSelectedFile();
+            try {
+                filePath = file.getCanonicalPath();          //get imgae's path
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             showPicName.setText("รูปภาพที่แนบ: "+file.getName());
             //JOptionPane.showMessageDialog(jButton1, file);
         }

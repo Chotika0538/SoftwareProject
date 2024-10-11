@@ -29,9 +29,9 @@
                           <Component id="pic_detailSP" alignment="0" min="-2" pref="408" max="-2" attributes="0"/>
                           <Component id="pic_detail" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="pattern1" min="-2" max="-2" attributes="0"/>
+                              <Component id="price" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="patternTF1" min="-2" pref="244" max="-2" attributes="0"/>
+                              <Component id="priceTF" min="-2" pref="244" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="name" min="-2" max="-2" attributes="0"/>
@@ -61,8 +61,8 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="patternTF1" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="pattern1" alignment="0" min="-2" pref="33" max="-2" attributes="0"/>
+                  <Component id="priceTF" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="price" alignment="0" min="-2" pref="33" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="pic_detail" min="-2" pref="27" max="-2" attributes="0"/>
@@ -86,7 +86,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="pattern1">
+    <Component class="javax.swing.JLabel" name="price">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="TH Sarabun New" size="20" style="0"/>
@@ -94,7 +94,7 @@
         <Property name="text" type="java.lang.String" value="&#xe23;&#xe32;&#xe04;&#xe32;&#xe2a;&#xe34;&#xe19;&#xe04;&#xe49;&#xe32;&#xe41;&#xe15;&#xe48;&#xe25;&#xe30;&#xe41;&#xe1a;&#xe1a;  : "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="patternTF1">
+    <Component class="javax.swing.JTextField" name="priceTF">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="TH SarabunPSK" size="20" style="0"/>

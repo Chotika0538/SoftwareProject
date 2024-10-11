@@ -5,6 +5,7 @@
 package StoreToHeaven;
 
 import java.awt.CardLayout;
+import java.awt.Component;
 import java.awt.Dimension;
 import java.util.ArrayList;
 import java.util.zip.Checksum;
@@ -19,6 +20,7 @@ public class AddFrame extends javax.swing.JPanel implements CheckPanel{
     private ArrayList<FrameDetail> fdList;
     private CardLayout cd;
     private JPanel mainPanel;
+    private int countPic_DetailJP;
     /**
      * Creates new form AddFrame
      */
@@ -226,8 +228,8 @@ public class AddFrame extends javax.swing.JPanel implements CheckPanel{
         return pic_detailJP;
     }
 
-    public void setPic_detailJP(JPanel pic_detailJP) {
-        this.pic_detailJP = pic_detailJP;
+    public int getCountPic_DetailJP() {
+        return countPic_DetailJP;
     }
 
     
@@ -247,7 +249,10 @@ public class AddFrame extends javax.swing.JPanel implements CheckPanel{
     // End of variables declaration//GEN-END:variables
 
     public void CheckCurentCard() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        countPic_DetailJP = 0;
+        for(Component c : pic_detailJP.getComponents()){
+            countPic_DetailJP+=1;
+        }
     }
 
  
