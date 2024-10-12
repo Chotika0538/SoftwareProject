@@ -100,10 +100,11 @@ public class OfferingProductPage extends javax.swing.JPanel {
         add(menuPanel, java.awt.BorderLayout.PAGE_END);
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane1.setPreferredSize(new java.awt.Dimension(800, 250));
 
         offeringProductPanel.setBackground(new java.awt.Color(255, 180, 87));
-        offeringProductPanel.setPreferredSize(new java.awt.Dimension(798, 500));
-        offeringProductPanel.setLayout(new java.awt.GridLayout(10, 0, 0, 5));
+        offeringProductPanel.setPreferredSize(new java.awt.Dimension(798, 250));
+        offeringProductPanel.setLayout(new java.awt.GridLayout(0, 1, 0, 5));
         jScrollPane1.setViewportView(offeringProductPanel);
 
         add(jScrollPane1, java.awt.BorderLayout.CENTER);
@@ -127,7 +128,7 @@ public class OfferingProductPage extends javax.swing.JPanel {
          //offeringProductPanel.removeAll();
          for(int i=0; i<offeringClassList.size(); i++){
              offeringProduct.add(new OfferingProduct(offeringClassList.get(i)));
-             offeringProductPanel.setPreferredSize(new Dimension(800, offeringProductPanel.getHeight()+250));
+             //offeringProductPanel.setPreferredSize(new Dimension(800, offeringProductPanel.getHeight()+250));
             offeringProductPanel.add(offeringProduct.get(i));
             offeringProductPanel.revalidate();
             offeringProductPanel.repaint();
@@ -140,6 +141,37 @@ public class OfferingProductPage extends javax.swing.JPanel {
 //        offeringProductPanel.add(productPanel.gertPanel()); // ตรวจสอบให้ OfferingProduct มีเมธอด getPanel()
 //        offeringProductPanel.revalidate();
 //        offeringProductPanel.repaint();
+//// ลบทุก component ภายใน offeringProductPanel เพื่อป้องกันการซ้ำซ้อน
+//    offeringProductPanel.removeAll();  
+//    
+//    // ปรับขนาดเริ่มต้นของ panel ให้เพียงพอสำหรับการแสดงผล
+//    int panelHeight = offeringProductPanel.getHeight();
+//
+//    for (Offering offering : offeringClassList) {
+//        // ตรวจสอบว่า offeringProductPanel มีสินค้าเดียวกันนี้อยู่แล้วหรือไม่
+//        boolean exists = false;
+//        for (OfferingProduct product : offeringProduct) {
+//            if (product.getOfferingClass().equals(offering)) {
+//                exists = true;
+//                break;
+//            }
+//        }
+//        
+//        // ถ้าไม่มีสินค้านี้ใน panel ก็ให้เพิ่ม
+//        if (!exists) {
+//            OfferingProduct productPanel = new OfferingProduct(offering);
+//            offeringProduct.add(productPanel);
+//
+//            // เพิ่ม JPanel ของสินค้าลงใน offeringProductPanel
+//            offeringProductPanel.add(productPanel);
+//
+//            // คำนวณความสูงของ panel ให้สัมพันธ์กับจำนวนสินค้าที่เพิ่มเข้ามา
+//            panelHeight += 250;  // ปรับตามขนาดจริงของแต่ละ JPanel
+//        }
+//    }
+//
+//    // ปรับขนาดของ offeringProductPanel ให้เพียงพอกับเนื้อหาที่จะเพิ่ม
+//        offeringProductPanel.setPreferredSize(new Dimension(800, panelHeight));
     }
     
     

@@ -71,11 +71,11 @@ public class OfferingProduct extends javax.swing.JPanel {
         scrollDetail.setViewportView(details);
 
         add(scrollDetail);
-        scrollDetail.setBounds(320, 80, 330, 91);
+        scrollDetail.setBounds(320, 50, 330, 130);
 
         name.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         add(name);
-        name.setBounds(320, 30, 298, 31);
+        name.setBounds(320, 10, 298, 31);
 
         priceLB.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         priceLB.setText("ราคา : ");
