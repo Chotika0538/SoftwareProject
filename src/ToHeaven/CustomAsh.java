@@ -1,26 +1,16 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package ToHeaven;
 
 import java.awt.CardLayout;
-import java.awt.Component;
 import javax.swing.JPanel;
-import javax.swing.JRadioButton;
 
-/**
- *
- * @author LENOVO
- */
-public class CustomCoffin extends javax.swing.JPanel {
-    
-  //  private CardLayout cd;
+
+public class CustomAsh extends javax.swing.JPanel {
+    private CardLayout cd;
     private JPanel mainPanel;
     
-    public CustomCoffin(JPanel mainPanel) {
+    public CustomAsh(JPanel mainPanel) {
         this.mainPanel = mainPanel;
-       // cd = (CardLayout) mainPanel.getLayout();
+        cd = (CardLayout) mainPanel.getLayout();
         initComponents();
     }
     /**
@@ -32,20 +22,16 @@ public class CustomCoffin extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
-        jLabel7 = new javax.swing.JLabel();
         menuCustom = new javax.swing.JPanel();
         coffinStageLB = new javax.swing.JLabel();
         funeralStageLB = new javax.swing.JLabel();
         boneStageLB = new javax.swing.JLabel();
         buttonPanel = new javax.swing.JPanel();
-        confirmBT = new javax.swing.JButton();
-        nextBT = new javax.swing.JButton();
-        coffinPanel = new javax.swing.JPanel();
+        backPanel = new javax.swing.JButton();
+        confirmPanel = new javax.swing.JButton();
+        ashPanel = new javax.swing.JPanel();
 
-        jLabel7.setText("jLabel7");
-
-        setPreferredSize(new java.awt.Dimension(800, 1400));
+        setPreferredSize(new java.awt.Dimension(800, 600));
         setLayout(new java.awt.BorderLayout());
 
         menuCustom.setBackground(new java.awt.Color(0, 204, 204));
@@ -69,71 +55,67 @@ public class CustomCoffin extends javax.swing.JPanel {
 
         add(menuCustom, java.awt.BorderLayout.PAGE_START);
 
-        confirmBT.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
-        confirmBT.setText("ยืนยัน");
-
-        nextBT.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
-        nextBT.setText("หน้าถัดไป>");
-        nextBT.addMouseListener(new java.awt.event.MouseAdapter() {
+        backPanel.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
+        backPanel.setText("<ย้อนกลับ");
+        backPanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                nextBTMouseClicked(evt);
+                backPanelMouseClicked(evt);
             }
         });
+        backPanel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backPanelActionPerformed(evt);
+            }
+        });
+
+        confirmPanel.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
+        confirmPanel.setText("ยืนยัน");
 
         javax.swing.GroupLayout buttonPanelLayout = new javax.swing.GroupLayout(buttonPanel);
         buttonPanel.setLayout(buttonPanelLayout);
         buttonPanelLayout.setHorizontalGroup(
             buttonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(buttonPanelLayout.createSequentialGroup()
-                .addGap(355, 355, 355)
-                .addComponent(confirmBT)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 240, Short.MAX_VALUE)
-                .addComponent(nextBT)
-                .addGap(48, 48, 48))
+                .addGap(91, 91, 91)
+                .addComponent(backPanel)
+                .addGap(265, 265, 265)
+                .addComponent(confirmPanel)
+                .addContainerGap())
         );
         buttonPanelLayout.setVerticalGroup(
             buttonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, buttonPanelLayout.createSequentialGroup()
-                .addContainerGap(40, Short.MAX_VALUE)
+            .addGroup(buttonPanelLayout.createSequentialGroup()
+                .addGap(29, 29, 29)
                 .addGroup(buttonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(confirmBT)
-                    .addComponent(nextBT))
-                .addGap(37, 37, 37))
+                    .addComponent(confirmPanel)
+                    .addComponent(backPanel))
+                .addGap(25, 25, 25))
         );
 
         add(buttonPanel, java.awt.BorderLayout.PAGE_END);
 
-        coffinPanel.setBackground(new java.awt.Color(204, 255, 204));
-
-        javax.swing.GroupLayout coffinPanelLayout = new javax.swing.GroupLayout(coffinPanel);
-        coffinPanel.setLayout(coffinPanelLayout);
-        coffinPanelLayout.setHorizontalGroup(
-            coffinPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
-        );
-        coffinPanelLayout.setVerticalGroup(
-            coffinPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1295, Short.MAX_VALUE)
-        );
-
-        add(coffinPanel, java.awt.BorderLayout.CENTER);
+        ashPanel.setBackground(new java.awt.Color(204, 204, 255));
+        add(ashPanel, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void nextBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nextBTMouseClicked
-        ((CardLayout)mainPanel.getLayout()).show(mainPanel, "funeral");
-    }//GEN-LAST:event_nextBTMouseClicked
+    private void backPanelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backPanelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_backPanelActionPerformed
+
+    private void backPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backPanelMouseClicked
+        // TODO add your handling code here:
+         ((CardLayout)mainPanel.getLayout()).show(mainPanel, "funeral");
+    }//GEN-LAST:event_backPanelMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel ashPanel;
+    private javax.swing.JButton backPanel;
     private javax.swing.JLabel boneStageLB;
-    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JPanel buttonPanel;
-    private javax.swing.JPanel coffinPanel;
     private javax.swing.JLabel coffinStageLB;
-    private javax.swing.JButton confirmBT;
+    private javax.swing.JButton confirmPanel;
     private javax.swing.JLabel funeralStageLB;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel menuCustom;
-    private javax.swing.JButton nextBT;
     // End of variables declaration//GEN-END:variables
 }

@@ -21,10 +21,20 @@ public class Wreathdao {
     private final String FILE_NAME = "StoreStock.xlsx";
     private FileInputStream fileInput;
     private FileOutputStream fos;
-    private ArrayList<List<String>> wreathlist = new ArrayList<>();
+    private ArrayList<List<String>> wreathlist ;
     private String[] nameCol = { "ชื่อ","รายละเอียด" ,"pathรูปภาพ", "วัสดุ",  "ราคา","สี"};
     private ArrayList<WreathDetail> wd;
+    private ArrayList<Wreath> wList;
     private Component[] cmp;
+    String name , pattern, detail, path;
+    String[] material   , color;
+    Double[] price;    
+    
+    public Wreathdao(){
+        wList = new ArrayList<>();
+        wd = new ArrayList<>();
+        wreathlist = new ArrayList<>();
+    }
 
     /*Save data in Excel file*/
     public void save(AddWreath wreath) {
@@ -51,8 +61,6 @@ public class Wreathdao {
                     cell.setCellValue(nameCol[j]);
                 }
             }
-            //wd.size() = all component in scrollPane
-            //add
             for (int a=0; a<wd.size(); a++){
             String pattern = wd.get(a).getPatternTF().getText();
             String detail = wd.get(a).getDetailTA().getText();
@@ -63,8 +71,8 @@ public class Wreathdao {
             String[] dataChecked = {pattern,detail,path,String.join(",", material),String.join(",", price),String.join(",", color)};
             boolean haveData = false ;
             for (Row row : sheet){
-                Cell c = row.getCell(0);//pull the value in the first cell(.getCell(0)) of that row
-                if(c.toString().equals(dataChecked[0])){
+                Cell c = row.getCell(0);
+                if (c != null && c.toString().equals(dataChecked[0])) {
                     haveData = true;
                     break;
                 }
@@ -87,12 +95,14 @@ public class Wreathdao {
             /*write data into StoreStock.xlsx*/
             fos = new FileOutputStream(new File(FILE_NAME));
             wb.write(fos);
+            wb.close();
+            fos.close();
+            fileInput.close();
         } catch (Exception e) {
             e.printStackTrace(); // แสดงข้อผิดพลาด
         } finally {
             // ปิด resource ที่เปิดไว้
             try {
-                //(fos != null) means there's still has some data left in the stream(not empty), So you have to close it. 
                 if (fos != null) {
                     fos.close();
                 }
@@ -108,6 +118,79 @@ public class Wreathdao {
         }
     }
     
+    /*get All Data from excel file*/
+    public ArrayList<Wreath> getAll(){        
+        read();
+        try {
+            if (sheet == null) {
+                System.out.println("Sheet not found");
+            }
+           // String name = 
+            for(Row row : sheet){
+                if(row.getRowNum()==0){
+                    name = row.getCell(0).getStringCellValue();
+                    continue;
+                }
+                for(Cell cell : row){
+                    if (cell == null) {
+                     continue;  // ข้าม cell ที่เป็น null
+                    }                 
+                   switch (cell.getColumnIndex()){
+                       case 0:
+                           pattern = cell.getStringCellValue();
+                           break;
+                       case 1:
+                           detail = cell.getStringCellValue();
+                           break;
+                       case 2:
+                           path = cell.getStringCellValue();
+                           break;
+                       case 3:
+                           material = cell.getStringCellValue().split(",");
+                           break;
+                       case 4:
+                           String[] s = cell.getStringCellValue().split("/");
+                           price = new Double[s.length];
+                           //int i = 0;
+                          for(int i=0; i<s.length; i++){
+                               //price[i] = new Double();
+                                if (s[i] != null && !s[i].isEmpty() && !s[i].equals("null")) {
+                                    price[i] = Double.parseDouble(s[i]);  // แปลงเป็น double
+                                } else {
+                                    price[i] = 0.0;  // กำหนดค่าเริ่มต้นเป็น 0.0 หากข้อมูลไม่ถูกต้อง
+                                }
+                            }
+                            break;      
+                       case 5:
+                           color = cell.getStringCellValue().split(",");
+                           break;
+                   }
+                   if (name != null && pattern != null && detail != null && path != null && material != null && color != null && price != null) {
+                        wList.add(new Wreath(name, pattern, detail, path, material, color, price));
+                    }
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                if (fileInput != null) {
+                    fileInput.close();
+                }
+                if (fos != null) {
+                    fos.close();
+                }
+                if (wb != null) {
+                    wb.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return wList;
+    }
+    
+    
     /*Read Excel file*/
     public void read() {
         wb = null;
@@ -119,5 +202,5 @@ public class Wreathdao {
             System.out.println("can't read file: " + err);
         }
     }
-    
+   
 }

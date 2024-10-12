@@ -17,9 +17,10 @@ public class Main extends javax.swing.JFrame {
         mainPanel = new  JPanel(cardLayout);
         mainPanel.add(new LoginPage(mainPanel),"LoginPage");
         mainPanel.add(new Register(mainPanel),"RegisterPage");
+        mainPanel.add(new MainFrame(mainPanel),"MainPage");
         add(mainPanel);
         cardLayout.show(mainPanel,"LoginPage");
-        setSize(800,500);
+        setSize(800,640);
         setContentPane(mainPanel);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);

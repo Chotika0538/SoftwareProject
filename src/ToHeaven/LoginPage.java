@@ -39,7 +39,7 @@ public class LoginPage extends JPanel {
     }
     private void setReadfile(){
         try{
-            excelPath = "UserInfo.xlsx";
+            excelPath = "User.xlsx";
             fileInput = new FileInputStream(new File(excelPath));
             wb = new XSSFWorkbook(fileInput);
             sheet = wb.getSheetAt(0);
@@ -103,6 +103,11 @@ public class LoginPage extends JPanel {
 
         loginButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         loginButton.setText("Login");
+        loginButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                loginButtonMouseClicked(evt);
+            }
+        });
         loginButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginButtonActionPerformed(evt);
@@ -220,6 +225,7 @@ public class LoginPage extends JPanel {
         // Proceed with the login process (validation, etc.)
         if(checkUserPass(userName,password)){
              // DO SOMETHING
+             card.show(mainPanel, "MainPage");
          }
     } else {
         JOptionPane.showMessageDialog(this, "Please enter both username and password.", "Input Error", JOptionPane.WARNING_MESSAGE);
@@ -230,6 +236,11 @@ public class LoginPage extends JPanel {
         // TODO add your handling code here:
         card.show(mainPanel, "RegisterPage");
     }//GEN-LAST:event_registerButtonActionPerformed
+
+    private void loginButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginButtonMouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_loginButtonMouseClicked
   
    
 

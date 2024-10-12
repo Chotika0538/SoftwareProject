@@ -4,19 +4,18 @@
  */
 package ToHeaven;
 
-/**
- *
- * @author LENOVO
- */
-public class CustomFuneral extends javax.swing.JPanel {
+import java.awt.CardLayout;
+import javax.swing.JPanel;
 
-    /**
-     * Creates new form CustomFuneral
-     */
-    public CustomFuneral() {
+public class CustomFuneral extends javax.swing.JPanel {
+    private CardLayout cd;
+    private JPanel mainPanel;
+    
+    public CustomFuneral(JPanel mainPanel) {
+        this.mainPanel = mainPanel;
+        cd = (CardLayout) mainPanel.getLayout();
         initComponents();
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -26,134 +25,123 @@ public class CustomFuneral extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        menuCustom = new javax.swing.JPanel();
         coffinStageLB = new javax.swing.JLabel();
         funeralStageLB = new javax.swing.JLabel();
         boneStageLB = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        sizeLB = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        buttonPanel = new javax.swing.JPanel();
+        confirmBT = new javax.swing.JButton();
+        nextBT = new javax.swing.JButton();
+        backBT = new javax.swing.JButton();
+        funeralPanel = new javax.swing.JPanel();
 
-        setPreferredSize(new java.awt.Dimension(800, 2000));
+        setPreferredSize(new java.awt.Dimension(800, 1800));
         setLayout(new java.awt.BorderLayout());
 
-        jPanel1.setBackground(new java.awt.Color(0, 204, 204));
-        jPanel1.setPreferredSize(new java.awt.Dimension(800, 80));
-        jPanel1.setLayout(null);
+        menuCustom.setBackground(new java.awt.Color(0, 204, 204));
+        menuCustom.setPreferredSize(new java.awt.Dimension(800, 80));
+        menuCustom.setLayout(null);
 
         coffinStageLB.setFont(new java.awt.Font("MiTNThin", 1, 24)); // NOI18N
         coffinStageLB.setText("สั่งซื้อโลงศพ");
-        jPanel1.add(coffinStageLB);
+        menuCustom.add(coffinStageLB);
         coffinStageLB.setBounds(70, 20, 110, 41);
 
         funeralStageLB.setFont(new java.awt.Font("MiTNThin", 1, 24)); // NOI18N
         funeralStageLB.setText("งานฌาปนกิจ");
-        jPanel1.add(funeralStageLB);
+        menuCustom.add(funeralStageLB);
         funeralStageLB.setBounds(340, 20, 121, 41);
 
         boneStageLB.setFont(new java.awt.Font("MiTNThin", 1, 24)); // NOI18N
         boneStageLB.setText("การจัดการอัฐิ");
-        jPanel1.add(boneStageLB);
+        menuCustom.add(boneStageLB);
         boneStageLB.setBounds(610, 20, 117, 41);
 
-        add(jPanel1, java.awt.BorderLayout.PAGE_START);
+        add(menuCustom, java.awt.BorderLayout.PAGE_START);
 
-        jPanel2.setLayout(null);
+        confirmBT.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
+        confirmBT.setText("ยืนยันสินค้า");
 
-        sizeLB.setFont(new java.awt.Font("MiTNThin", 0, 18)); // NOI18N
-        sizeLB.setText("ของว่าง");
-        jPanel2.add(sizeLB);
-        sizeLB.setBounds(30, 20, 43, 31);
+        nextBT.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
+        nextBT.setText("หน้าถัดไป>");
+        nextBT.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                nextBTMouseClicked(evt);
+            }
+        });
 
-        jLabel1.setText("jLabel1");
-        jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        backBT.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
+        backBT.setText("<ย้อนกลับ");
+        backBT.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                backBTMouseClicked(evt);
+            }
+        });
 
-        jLabel2.setFont(new java.awt.Font("RainyThin", 0, 18)); // NOI18N
-        jLabel2.setText("ชุด A");
-
-        jLabel3.setText("jLabel1");
-        jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        jLabel4.setFont(new java.awt.Font("RainyThin", 0, 18)); // NOI18N
-        jLabel4.setText("ชุด B");
-
-        jLabel5.setFont(new java.awt.Font("RainyThin", 0, 18)); // NOI18N
-        jLabel5.setText("ชุด c");
-
-        jLabel6.setText("jLabel1");
-        jLabel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(120, 120, 120)
-                .addComponent(jLabel2)
-                .addGap(239, 239, 239)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel5)
-                .addGap(122, 122, 122))
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(55, 55, 55)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+        javax.swing.GroupLayout buttonPanelLayout = new javax.swing.GroupLayout(buttonPanel);
+        buttonPanel.setLayout(buttonPanelLayout);
+        buttonPanelLayout.setHorizontalGroup(
+            buttonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(buttonPanelLayout.createSequentialGroup()
+                .addGap(57, 57, 57)
+                .addComponent(backBT)
+                .addGap(212, 212, 212)
+                .addComponent(confirmBT)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 206, Short.MAX_VALUE)
+                .addComponent(nextBT)
+                .addGap(76, 76, 76))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5))
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(204, Short.MAX_VALUE))
+        buttonPanelLayout.setVerticalGroup(
+            buttonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, buttonPanelLayout.createSequentialGroup()
+                .addContainerGap(9, Short.MAX_VALUE)
+                .addGroup(buttonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(confirmBT)
+                    .addComponent(nextBT)
+                    .addComponent(backBT))
+                .addGap(36, 36, 36))
         );
 
-        jScrollPane1.setViewportView(jPanel3);
+        add(buttonPanel, java.awt.BorderLayout.PAGE_END);
 
-        jPanel2.add(jScrollPane1);
-        jScrollPane1.setBounds(50, 60, 690, 230);
+        funeralPanel.setBackground(new java.awt.Color(255, 255, 204));
 
-        add(jPanel2, java.awt.BorderLayout.CENTER);
+        javax.swing.GroupLayout funeralPanelLayout = new javax.swing.GroupLayout(funeralPanel);
+        funeralPanel.setLayout(funeralPanelLayout);
+        funeralPanelLayout.setHorizontalGroup(
+            funeralPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 800, Short.MAX_VALUE)
+        );
+        funeralPanelLayout.setVerticalGroup(
+            funeralPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1647, Short.MAX_VALUE)
+        );
+
+        add(funeralPanel, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void backBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backBTMouseClicked
+         ((CardLayout)mainPanel.getLayout()).show(mainPanel, "coffincustom");
+//         CardLayout cd = (CardLayout) mainPanel.getLayout();
+//         cd.show(mainPanel, "coffincustom");
+    }//GEN-LAST:event_backBTMouseClicked
+
+    private void nextBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nextBTMouseClicked
+        ((CardLayout)mainPanel.getLayout()).show(mainPanel, "ash");
+//         CardLayout cd = (CardLayout) mainPanel.getLayout();
+//         cd.show(mainPanel, "ash");
+    }//GEN-LAST:event_nextBTMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton backBT;
     private javax.swing.JLabel boneStageLB;
+    private javax.swing.JPanel buttonPanel;
     private javax.swing.JLabel coffinStageLB;
+    private javax.swing.JButton confirmBT;
+    private javax.swing.JPanel funeralPanel;
     private javax.swing.JLabel funeralStageLB;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel sizeLB;
+    private javax.swing.JPanel menuCustom;
+    private javax.swing.JButton nextBT;
     // End of variables declaration//GEN-END:variables
 }

@@ -13,14 +13,14 @@ import javax.swing.JPanel;
  *
  * @author LENOVO
  */
-public class Custom extends javax.swing.JPanel {
+public class CustomPage extends javax.swing.JPanel {
     
     private CardLayout cd;
     private JPanel mainPanel;
     /**
      * Creates new form StartPage1
      */
-    public Custom(JPanel mainPanel) {
+    public CustomPage(JPanel mainPanel) {
         this.mainPanel = mainPanel;
         cd = (CardLayout) mainPanel.getLayout();
          initComponents();
@@ -70,11 +70,15 @@ public class Custom extends javax.swing.JPanel {
         customFrameJP.setBackground(new java.awt.Color(255, 51, 51));
         customFrameJP.setLayout(new java.awt.CardLayout());
         CustomCoffin coffin = new CustomCoffin(customFrameJP);
+        CustomFuneral funeral = new CustomFuneral(customFrameJP);
+        CustomAsh ash = new CustomAsh(customFrameJP);
 
-        customFrameJP.add(coffin, "coffin");
+        customFrameJP.add(coffin, "coffincustom");
+        customFrameJP.add(funeral, "funeralcustom");
+        customFrameJP.add(ash, "ashcustom");
 
-        CardLayout  cl = (CardLayout) customFrameJP.getLayout();
-        cl.show(customFrameJP, "coffin");
+        CardLayout  cd = (CardLayout) customFrameJP.getLayout();
+        cd.show(customFrameJP, "coffincustom");
         jScrollPane1.setViewportView(customFrameJP);
 
         add(jScrollPane1, java.awt.BorderLayout.CENTER);
@@ -82,7 +86,7 @@ public class Custom extends javax.swing.JPanel {
 //    /* testing panel*/
 //    public static void main(String[] args){
 //    JFrame f = new JFrame();
-//    f.setContentPane(new Custom());
+//    f.setContentPane(new CustomPage());
 //    f.setSize(1200,700);
 //    f.setResizable(false);
 //    f.setLocationRelativeTo(null);
