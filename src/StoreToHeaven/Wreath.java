@@ -15,9 +15,21 @@ public class Wreath extends Product {
         materialAll = new ArrayList<>();
         colorAll = new ArrayList<>();
         priceAll = new ArrayList<>();
-        materialAll.add(Arrays.toString(material));
-        colorAll.add(Arrays.toString(color));
-        priceAll.add(Double.parseDouble((Arrays.toString(price))));
+        //materialAll.add(Arrays.toString(material));
+        //colorAll.add(Arrays.toString(color));
+        //priceAll.add(Double.parseDouble((Arrays.toString(price))));
+         // เพิ่มแต่ละค่าในอาร์เรย์ material ลงใน materialAll
+        materialAll.addAll(Arrays.asList(material));
+
+        // เพิ่มแต่ละค่าในอาร์เรย์ color ลงใน colorAll
+        colorAll.addAll(Arrays.asList(color));
+
+        // เพิ่มแต่ละค่าในอาร์เรย์ price ลงใน priceAll โดยตรวจสอบว่าค่านั้นไม่เป็น null
+        for (Double p : price) {
+            if (p != null) {
+                priceAll.add(p);
+            }
+        }
     }
     
     
@@ -75,6 +87,5 @@ public class Wreath extends Product {
         return getName()+" : "+getPattern();
     }
 
-    
-    
+
 }

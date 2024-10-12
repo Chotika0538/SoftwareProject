@@ -149,7 +149,7 @@ public class Wreathdao {
                            material = cell.getStringCellValue().split(",");
                            break;
                        case 4:
-                           String[] s = cell.getStringCellValue().split(",");
+                           String[] s = cell.getStringCellValue().split("/");
                            price = new Double[s.length];
                            //int i = 0;
                           for(int i=0; i<s.length; i++){
@@ -159,7 +159,6 @@ public class Wreathdao {
                                 } else {
                                     price[i] = 0.0;  // กำหนดค่าเริ่มต้นเป็น 0.0 หากข้อมูลไม่ถูกต้อง
                                 }
-                                i++;
                             }
                             break;      
                        case 5:
