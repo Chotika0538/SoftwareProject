@@ -175,7 +175,8 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
             if (comp.isVisible()&& comp instanceof AddWreath) {
                 AddWreath aw = (AddWreath) comp;
                 Wreathdao wd = new Wreathdao();
-                wd.save(aw);
+                
+                wd.save(aw);//save to excel
                 for(int i = 0; i<aw.getCountPic_DetailJP(); i++){
                     WreathDetail temp = (WreathDetail) aw.getPic_detailJP().getComponent(i);
                     String name = aw.getNameTF().getText();
@@ -201,7 +202,7 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
                     String detail = temp.getDetailTA().getText();
                     String path = temp.getFilePath();
                     String price = temp.getPriceTF().getText();
-                    snackList.add(new SnackBox(name, pattern, detail,path, price));       
+                    snackList.add(new SnackBox(name, pattern, detail,path, price));   
                 }
                 break;
             }

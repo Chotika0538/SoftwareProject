@@ -46,7 +46,7 @@ public class Snackboxdao {
             System.out.println("can't read file: " + err);
         }
     }
-    
+   
     /*Save data in Excel file*/
     public void save(AddSnackBox boxset) {
         cmp = boxset.getPic_detailJP().getComponents();// get SnackBoxDetail panel
@@ -66,15 +66,21 @@ public class Snackboxdao {
             Row firstRow = sheet.getRow(0);
             if (firstRow == null) {       // this files valid?
                 firstRow = sheet.createRow(0);          // create first row
-                nameCol[0] = boxset.getNameTF().getText();//getText(name) from textfield
+                nameCol[0] = boxset.getNameTF().getText();
                 /*bring all data in Snacklist to create each col in valid sheet*/
                 for(int j=0; j<nameCol.length; j++){
                     Cell cell = firstRow.createCell(j);//create cell in row 0
                     cell.setCellValue(nameCol[j]);
                 }
             }
+            else{
+                nameCol[0] = boxset.getNameTF().getText();
+                Cell cell = sheet.getRow(0).getCell(0);
+                cell.setCellValue(nameCol[0]);
+            }
             //sd.size() = all component in scrollPane
             //add
+
             for (int a=0; a<sd.size(); a++){
                 String pattern = sd.get(a).getPatternTF().getText();
                 String price = sd.get(a).getPriceTF().getText();
@@ -85,12 +91,23 @@ public class Snackboxdao {
                 
                 boolean haveData = false ;
                 
+                
                 for (Row row : sheet){
-                    Cell c = row.getCell(0);//pull the value in the first cell(.getCell(0)) of that row
-                    if(c.toString().equals(dataChecked[0])){
-                        haveData = true;
-                        break;
-                       }
+//                    Cell c = row.getCell(0);//pull the value in the first cell(.getCell(0)) of that row
+//                    if(c.toString().equals(dataChecked[0])){
+//                        haveData = true;
+//                        break;
+//                       }
+
+                    if (row.getCell(0) != null) {
+                        Cell c = row.getCell(0);
+                        String cellValue = c.toString();
+                        if(cellValue.equals(dataChecked[0])){
+                            haveData = true;
+                            break;
+                        }
+                    }
+                    
                 }
                 //if the column in that row is empty
                 if(!haveData){
@@ -108,7 +125,26 @@ public class Snackboxdao {
                         e.printStackTrace();
                     }             
                 }
+                
             }
+            ////remove empty row
+//            int lastRow = sheet.getLastRowNum();
+//            int emptyRowPointer = -1; 
+//            //int rowIndex = 0;
+//            for (int rowIndex = 0; rowIndex <= lastRow; rowIndex++){
+//                Row row = sheet.getRow(rowIndex);
+//                if (row == null) {  
+//                        if (emptyRowPointer == -1) {  
+//                            emptyRowPointer = rowIndex;
+//                        }
+//                }else if (emptyRowPointer != -1) {
+//                    Row targetRow = sheet.createRow(emptyRowPointer);
+//                    copyRow(sheet, row, targetRow);
+//                    sheet.removeRow(row);  
+//                    emptyRowPointer++;
+//                }
+//                
+//            }
             /*write data into StoreStock.xlsx*/
             fos = new FileOutputStream(new File(FILE_NAME));
             wb.write(fos);
@@ -131,6 +167,17 @@ public class Snackboxdao {
                 }
             } catch (Exception e) {
                 e.printStackTrace();
+            }
+        }
+    }
+    private static void copyRow(Sheet sheet, Row sourceRow, Row targetRow) {
+        for (int cellIndex = sourceRow.getFirstCellNum(); cellIndex < sourceRow.getLastCellNum(); cellIndex++) {
+            Cell sourceCell = sourceRow.getCell(cellIndex);
+            Cell targetCell = targetRow.createCell(cellIndex);
+
+            if (sourceCell != null) {
+               targetCell.setCellValue(sourceCell.getStringCellValue());
+               break; 
             }
         }
     }
