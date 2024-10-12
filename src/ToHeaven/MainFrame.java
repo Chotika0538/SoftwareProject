@@ -100,7 +100,7 @@ public class MainFrame extends javax.swing.JPanel {
         CustomFuneral funeral = new CustomFuneral(frameJP);
         CustomAsh ash = new CustomAsh(frameJP);
         PackagePage packagepage = new PackagePage(frameJP);
-
+        FrameProductPage fpp = new FrameProductPage(frameJP);
         /*add each pages into cardlayout on frameJP*/
         frameJP.add(home, "home");
         frameJP.add(product, "product");
@@ -109,7 +109,7 @@ public class MainFrame extends javax.swing.JPanel {
         frameJP.add(funeral, "funeral");
         frameJP.add(ash, "ash");
         frameJP.add(packagepage, "package");
-
+        frameJP.add(fpp, "frameproductpage");
         /*called home page(1st page)*/
         CardLayout cd = (CardLayout) frameJP.getLayout();
         cd.show(frameJP, "home");
