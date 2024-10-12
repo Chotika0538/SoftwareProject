@@ -6,7 +6,8 @@ package StoreToHeaven;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.*;
-import DAO.Wreathdao;
+//import DAO.Wreathdao;
+import DAO.Packagedao;
 import java.util.ArrayList;
 
 public class AddProduct extends javax.swing.JPanel implements CheckPanel{
@@ -38,7 +39,7 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
         setLayout(null);
 
         addChoices.setFont(new java.awt.Font("TH Sarabun New", 0, 24)); // NOI18N
-        addChoices.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "กรุณาเลือกตัวเลือก", "โลงศพ", "พวงหรีด", "ดอกไม้จันทน์", "ชุดไทยธรรม", "ธูป", "เทียน", "ชุดอาหารว่าง", "ของชำร่วย", "กรอบรูป" }));
+        addChoices.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "กรุณาเลือกตัวเลือก", "โลงศพ", "พวงหรีด", "ดอกไม้จันทน์", "ชุดไทยธรรม", "ธูป", "เทียน", "ชุดอาหารว่าง", "ของชำร่วย", "กรอบรูป", "แพ็คเกจ" }));
         addChoices.setAlignmentX(1.0F);
         addChoices.setAlignmentY(1.0F);
         addChoices.addActionListener(new java.awt.event.ActionListener() {
@@ -64,26 +65,34 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
         showAddProduct.setBackground(new java.awt.Color(153, 255, 204));
         showAddProduct.setLayout(new java.awt.CardLayout());
         JPanel emptyPanel = new JPanel();
-        AddWreath wreath = new AddWreath(showAddProduct);
-        AddCoffin coffin = new AddCoffin(showAddProduct);
-        AddFrame frame = new AddFrame(showAddProduct);
-        AddIncense incense = new AddIncense(showAddProduct);
-        AddCandle candle = new AddCandle(showAddProduct);
-        AddOffering offering = new AddOffering(showAddProduct);
-        AddSandalWood sandalwood = new AddSandalWood(showAddProduct);
-        AddSnackBox snackbox = new AddSnackBox(showAddProduct);
-        AddSouvenirs souvenir= new AddSouvenirs(showAddProduct);
+        //AddWreath wreath = new AddWreath(showAddProduct);
+        //AddCoffin coffin = new AddCoffin(showAddProduct);
+        //AddFrame frame = new AddFrame(showAddProduct);
+        //AddIncense incense = new AddIncense(showAddProduct);
+        //AddCandle candle = new AddCandle(showAddProduct);
+        //AddOffering offering = new AddOffering(showAddProduct);
+        //AddSandalWood sandalwood = new AddSandalWood(showAddProduct);
+        //AddSnackBox snackbox = new AddSnackBox(showAddProduct);
+        //AddSouvenirs souvenir= new AddSouvenirs(showAddProduct);
+        AddPackage pk = new AddPackage(showAddProduct);
         emptyPanel.setBackground(new java.awt.Color(153, 255, 204));
+        AddPackage sv = new AddPackage(showAddProduct);
+        emptyPanel.setBackground(new java.awt.Color(153,255,204));
         showAddProduct.add(emptyPanel, "empty");
-        showAddProduct.add(coffin, "coffin");
-        showAddProduct.add(wreath, "wreath");
-        showAddProduct.add(frame, "frame");
-        showAddProduct.add(incense, "incense");
-        showAddProduct.add(candle, "candle");
-        showAddProduct.add(offering, "offering");
-        showAddProduct.add(sandlewood, "sandlewood");
-        showAddProduct.add(snackbox, "snackbox");
-        showAddProduct.add(souvenir, "souvenir");
+        //showAddProduct.add(fm,"frame");
+        //showAddProduct.add(of,"offering");
+        //showAddProduct.add(sw,"sandalWood");
+        //showAddProduct.add(sd,"snackBox");
+        //showAddProduct.add(coffin, "coffin");
+        //showAddProduct.add(wreath, "wreath");
+        //showAddProduct.add(frame, "frame");
+        //showAddProduct.add(incense, "incense");
+        //showAddProduct.add(candle, "candle");
+        //showAddProduct.add(offering, "offering");
+        //showAddProduct.add(sandlewood, "sandlewood");
+        //showAddProduct.add(snackbox, "snackbox");
+        showAddProduct.add(sv, "souvenir");
+        showAddProduct.add(pk, "package");
         add(showAddProduct);
         showAddProduct.setBounds(10, 110, 480, 480);
 
@@ -125,6 +134,8 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
              cd.show(showAddProduct, "souvenir");
         }else if(((String)cb.getSelectedItem()).equals("กรอบรูป")){
              cd.show(showAddProduct, "frame");
+        }else if(((String)cb.getSelectedItem()).equals("แพ็คเกจ")){
+             cd.show(showAddProduct, "package");
         }
     }//GEN-LAST:event_addChoicesActionPerformed
 
