@@ -24,7 +24,7 @@
 
   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="wreathNameLB">
+    <Component class="javax.swing.JLabel" name="frameNameLB">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="cc" green="cc" red="ff" type="rgb"/>
@@ -33,7 +33,7 @@
           <Font name="TH SarabunPSK" size="24" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="&#xe1e;&#xe27;&#xe07;&#xe2b;&#xe23;&#xe35;&#xe14;"/>
+        <Property name="text" type="java.lang.String" value="&#xe01;&#xe23;&#xe2d;&#xe1a;&#xe23;&#xe39;&#xe1b;"/>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[800, 50]"/>
         </Property>
@@ -124,7 +124,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Container class="javax.swing.JPanel" name="wreathProductPanel">
+        <Container class="javax.swing.JPanel" name="frameProductPanel">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="57" green="b4" red="ff" type="rgb"/>

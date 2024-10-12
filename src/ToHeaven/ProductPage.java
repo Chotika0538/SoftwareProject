@@ -53,6 +53,11 @@ public class ProductPage extends javax.swing.JPanel {
                 wreathBTMouseClicked(evt);
             }
         });
+        wreathBT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                wreathBTActionPerformed(evt);
+            }
+        });
         add(wreathBT);
         wreathBT.setBounds(160, 130, 135, 41);
 
@@ -67,6 +72,16 @@ public class ProductPage extends javax.swing.JPanel {
         frameBT.setText("กรอบรูป");
         frameBT.setBorder(null);
         frameBT.setPreferredSize(new java.awt.Dimension(75, 30));
+        frameBT.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                frameBTMouseClicked(evt);
+            }
+        });
+        frameBT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                frameBTActionPerformed(evt);
+            }
+        });
         add(frameBT);
         frameBT.setBounds(160, 250, 135, 41);
 
@@ -118,6 +133,19 @@ public class ProductPage extends javax.swing.JPanel {
         //CardLayout cd = (CardLayout) frameJP.getLayout();
         ((CardLayout)mainPanel.getLayout()).show(mainPanel, "wreathproductpage");
     }//GEN-LAST:event_wreathBTMouseClicked
+
+    private void frameBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_frameBTMouseClicked
+        // TODO add your handling code here:
+        ((CardLayout)mainPanel.getLayout()).show(mainPanel, "frameproductpage");
+    }//GEN-LAST:event_frameBTMouseClicked
+
+    private void wreathBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_wreathBTActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_wreathBTActionPerformed
+
+    private void frameBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_frameBTActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_frameBTActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
