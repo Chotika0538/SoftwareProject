@@ -96,6 +96,7 @@ public class MainFrame extends javax.swing.JPanel {
         Home home = new Home(frameJP);
         ProductPage product = new ProductPage(frameJP);
         WreathProductPage wpp = new WreathProductPage(frameJP);
+        OfferingProductPage ofp = new OfferingProductPage(frameJP);
         CustomCoffin coffincustom = new CustomCoffin(frameJP);
         CustomFuneral funeral = new CustomFuneral(frameJP);
         CustomAsh ash = new CustomAsh(frameJP);
@@ -105,6 +106,7 @@ public class MainFrame extends javax.swing.JPanel {
         frameJP.add(home, "home");
         frameJP.add(product, "product");
         frameJP.add(wpp, "wreathproductpage");
+        frameJP.add(ofp, "offeringproductpage");
         frameJP.add(coffincustom, "coffincustom");
         frameJP.add(funeral, "funeral");
         frameJP.add(ash, "ash");

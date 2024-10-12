@@ -109,6 +109,11 @@ public class ProductPage extends javax.swing.JPanel {
         offeringBT.setText("เครื่องไทยธรรม");
         offeringBT.setBorder(null);
         offeringBT.setPreferredSize(new java.awt.Dimension(75, 30));
+        offeringBT.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                offeringBTMouseClicked(evt);
+            }
+        });
         add(offeringBT);
         offeringBT.setBounds(510, 370, 143, 41);
     }// </editor-fold>//GEN-END:initComponents
@@ -118,6 +123,10 @@ public class ProductPage extends javax.swing.JPanel {
         //CardLayout cd = (CardLayout) frameJP.getLayout();
         ((CardLayout)mainPanel.getLayout()).show(mainPanel, "wreathproductpage");
     }//GEN-LAST:event_wreathBTMouseClicked
+
+    private void offeringBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_offeringBTMouseClicked
+        ((CardLayout)mainPanel.getLayout()).show(mainPanel, "offeringproductpage");
+    }//GEN-LAST:event_offeringBTMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

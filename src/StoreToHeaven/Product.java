@@ -61,5 +61,9 @@ public class Product {
     public void setPath(String path) {
         this.path = path;
     }
+    
+        public String toString(){
+        return getName()+" : "+getPattern();
+    }
   
 }
