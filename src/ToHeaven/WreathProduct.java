@@ -4,8 +4,10 @@
  */
 package ToHeaven;
 
+import DAO.*;
 import StoreToHeaven.*;
 import java.util.*;
+import javax.swing.ImageIcon;
 //import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JRadioButton;
@@ -16,11 +18,10 @@ import javax.swing.JRadioButton;
  */
 public class WreathProduct extends javax.swing.JPanel {
     private ArrayList<Wreath> wList;
-    /**
-     * Creates new form ProductWreath
-     */
-    public WreathProduct() {
+    private Wreath wreathClass;
+    public WreathProduct(Wreath wreath) {
         initComponents();
+        getData(wreath);
     }
 
     /**
@@ -49,31 +50,34 @@ public class WreathProduct extends javax.swing.JPanel {
         typeCB1 = new javax.swing.JComboBox<>();
 
         setBackground(new java.awt.Color(242, 217, 220));
-        setPreferredSize(new java.awt.Dimension(600, 750));
+        setPreferredSize(new java.awt.Dimension(800, 500));
         setLayout(null);
 
         choose.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
         choose.setText("กรุณาเลือกชนิดพวงหรีด");
         add(choose);
-        choose.setBounds(46, 223, 176, 33);
+        choose.setBounds(120, 220, 176, 33);
 
         chooseColor.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
         chooseColor.setText("กรุณาเลือกสีพวงหรีด");
         add(chooseColor);
-        chooseColor.setBounds(330, 220, 155, 41);
+        chooseColor.setBounds(410, 220, 155, 41);
 
         choosePieceWreath.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
         choosePieceWreath.setText("กรุณาเลือกจำนวนสินค้า");
         add(choosePieceWreath);
-        choosePieceWreath.setBounds(50, 440, 172, 33);
+        choosePieceWreath.setBounds(130, 440, 172, 33);
 
         pieceWreath.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
         add(pieceWreath);
-        pieceWreath.setBounds(220, 440, 80, 30);
+        pieceWreath.setBounds(300, 440, 80, 30);
 
         productImage.setPreferredSize(new java.awt.Dimension(180, 180));
         add(productImage);
-        productImage.setBounds(23, 25, 180, 180);
+        productImage.setBounds(100, 20, 180, 180);
+
+        scrollDetail.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        scrollDetail.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
         details.setEditable(false);
         details.setColumns(20);
@@ -82,41 +86,45 @@ public class WreathProduct extends javax.swing.JPanel {
         scrollDetail.setViewportView(details);
 
         add(scrollDetail);
-        scrollDetail.setBounds(246, 79, 330, 91);
+        scrollDetail.setBounds(320, 80, 330, 91);
 
         message.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
         message.setText("กรุณาระบุข้อความบนพวงหรีด");
         add(message);
-        message.setBounds(50, 330, 219, 33);
+        message.setBounds(130, 330, 219, 33);
         add(textMessage);
-        textMessage.setBounds(50, 370, 358, 45);
+        textMessage.setBounds(130, 370, 358, 45);
 
         price.setFont(new java.awt.Font("TH Sarabun New", 1, 18)); // NOI18N
         add(price);
-        price.setBounds(371, 188, 80, 20);
+        price.setBounds(450, 190, 80, 20);
 
         name.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         add(name);
-        name.setBounds(246, 36, 298, 31);
+        name.setBounds(320, 30, 298, 31);
 
         colorCB.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
         colorCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "เลือกสี" }));
         add(colorCB);
-        colorCB.setBounds(340, 270, 120, 30);
+        colorCB.setBounds(420, 270, 120, 30);
 
         typeCB1.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
         typeCB1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "เลือกชนิด" }));
         add(typeCB1);
-        typeCB1.setBounds(60, 270, 120, 30);
+        typeCB1.setBounds(140, 270, 120, 30);
     }// </editor-fold>//GEN-END:initComponents
-public void getData(){
-   
+
+    public void getData(Wreath wreath){
+    this.wreathClass = wreath;
+    name.setText(wreathClass.toString());
+    details.setText(wreathClass.getDetail());
+    productImage.setIcon(new ImageIcon(wreathClass.getPath()));
 }
 
-
-    public ArrayList<Wreath> getwList() {
-        return wList;
+    public Wreath getWreathClass() {
+        return wreathClass;
     }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel choose;

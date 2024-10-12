@@ -1,9 +1,9 @@
-package StoreToHeaven;
-
-
-public class SnackBox extends Product {
-    public SnackBox(){
-        super();
-    }
-    
-}
+//package StoreToHeaven;
+//
+//
+//public class SnackBox extends Product {
+//    public SnackBox(){
+//        super();
+//    }
+//    
+//}

@@ -21,7 +21,7 @@ public class Wreathdao {
     private final String FILE_NAME = "StoreStock.xlsx";
     private FileInputStream fileInput;
     private FileOutputStream fos;
-    private ArrayList<List<String>> wreathlist = new ArrayList<>();
+    private ArrayList<List<String>> wreathlist ;
     private String[] nameCol = { "ชื่อ","รายละเอียด" ,"pathรูปภาพ", "วัสดุ",  "ราคา","สี"};
     private ArrayList<WreathDetail> wd;
     private ArrayList<Wreath> wList;
@@ -29,6 +29,12 @@ public class Wreathdao {
     String name , pattern, detail, path;
     String[] material   , color;
     Double[] price;    
+    
+    public Wreathdao(){
+        wList = new ArrayList<>();
+        wd = new ArrayList<>();
+        wreathlist = new ArrayList<>();
+    }
 
     /*Save data in Excel file*/
     public void save(AddWreath wreath) {
@@ -66,7 +72,7 @@ public class Wreathdao {
             boolean haveData = false ;
             for (Row row : sheet){
                 Cell c = row.getCell(0);
-                if(c.toString().equals(dataChecked[0])){
+                if (c != null && c.toString().equals(dataChecked[0])) {
                     haveData = true;
                     break;
                 }
@@ -126,6 +132,9 @@ public class Wreathdao {
                     continue;
                 }
                 for(Cell cell : row){
+                    if (cell == null) {
+                     continue;  // ข้าม cell ที่เป็น null
+                    }                 
                    switch (cell.getColumnIndex()){
                        case 0:
                            pattern = cell.getStringCellValue();
@@ -142,21 +151,42 @@ public class Wreathdao {
                        case 4:
                            String[] s = cell.getStringCellValue().split(",");
                            price = new Double[s.length];
-                           int i = 0;
-                           for(String t : s){
-                               price[i] = Double.parseDouble(t);
-                               i++;
-                           }
-                           break;        
+                           //int i = 0;
+                          for(int i=0; i<s.length; i++){
+                               //price[i] = new Double();
+                                if (s[i] != null && !s[i].isEmpty() && !s[i].equals("null")) {
+                                    price[i] = Double.parseDouble(s[i]);  // แปลงเป็น double
+                                } else {
+                                    price[i] = 0.0;  // กำหนดค่าเริ่มต้นเป็น 0.0 หากข้อมูลไม่ถูกต้อง
+                                }
+                                i++;
+                            }
+                            break;      
                        case 5:
                            color = cell.getStringCellValue().split(",");
                            break;
                    }
-                   wList.add(new Wreath(name, pattern, detail, path, material, color, price));
+                   if (name != null && pattern != null && detail != null && path != null && material != null && color != null && price != null) {
+                        wList.add(new Wreath(name, pattern, detail, path, material, color, price));
+                    }
                 }
             }
         } catch (Exception e) {
             e.printStackTrace();
+        }finally {
+            try {
+                if (fileInput != null) {
+                    fileInput.close();
+                }
+                if (fos != null) {
+                    fos.close();
+                }
+                if (wb != null) {
+                    wb.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
         return wList;
     }

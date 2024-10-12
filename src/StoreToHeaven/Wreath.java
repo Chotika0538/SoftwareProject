@@ -12,7 +12,9 @@ public class Wreath extends Product {
 
     public Wreath(String name,String pattern,String detail,String path,String[] material,String[] color,Double[] price) {
         super(name,pattern,detail,path);
-        //materialAll = new ArrayList<>();
+        materialAll = new ArrayList<>();
+        colorAll = new ArrayList<>();
+        priceAll = new ArrayList<>();
         materialAll.add(Arrays.toString(material));
         colorAll.add(Arrays.toString(color));
         priceAll.add(Double.parseDouble((Arrays.toString(price))));
@@ -67,6 +69,10 @@ public class Wreath extends Product {
 
     public void setwList(ArrayList<Wreath> wList) {
         this.wList = wList;
+    }
+    
+    public String toString(){
+        return getName()+" : "+getPattern();
     }
 
     

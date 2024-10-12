@@ -29,7 +29,6 @@ public class MainFrame extends javax.swing.JPanel {
         productBT = new javax.swing.JToggleButton();
         homeBT = new javax.swing.JToggleButton();
         jLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
         frameJP = new javax.swing.JPanel();
 
         setPreferredSize(new java.awt.Dimension(800, 600));
@@ -93,25 +92,20 @@ public class MainFrame extends javax.swing.JPanel {
 
         add(menuBar, java.awt.BorderLayout.PAGE_START);
 
-        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-
-        frameJP.setBackground(new java.awt.Color(204, 255, 153));
-        frameJP.setPreferredSize(new java.awt.Dimension(800, 500));
         frameJP.setLayout(new java.awt.CardLayout());
         Home home = new Home(frameJP);
         ProductPage product = new ProductPage(frameJP);
         WreathProductPage wpp = new WreathProductPage(frameJP);
         CustomCoffin coffincustom = new CustomCoffin(frameJP);
-        CustomFuneral funeral = new CustomFuneral(mainPanel);
-        CustomAsh ash = new CustomAsh(mainPanel);
-        PackagePage packagepage = new PackagePage(mainPanel);
+        CustomFuneral funeral = new CustomFuneral(frameJP);
+        CustomAsh ash = new CustomAsh(frameJP);
+        PackagePage packagepage = new PackagePage(frameJP);
 
         /*add each pages into cardlayout on frameJP*/
         frameJP.add(home, "home");
         frameJP.add(product, "product");
         frameJP.add(wpp, "wreathproductpage");
-        frameJP.add(coffincustom, "coffin");
+        frameJP.add(coffincustom, "coffincustom");
         frameJP.add(funeral, "funeral");
         frameJP.add(ash, "ash");
         frameJP.add(packagepage, "package");
@@ -119,9 +113,7 @@ public class MainFrame extends javax.swing.JPanel {
         /*called home page(1st page)*/
         CardLayout cd = (CardLayout) frameJP.getLayout();
         cd.show(frameJP, "home");
-        jScrollPane1.setViewportView(frameJP);
-
-        add(jScrollPane1, java.awt.BorderLayout.CENTER);
+        add(frameJP, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
     private void productBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_productBTMouseClicked
@@ -138,7 +130,7 @@ public class MainFrame extends javax.swing.JPanel {
     private void packageBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_packageBTMouseClicked
         // TODO add your handling code here:
        CardLayout cd = (CardLayout) frameJP.getLayout();
-       cd.show(frameJP, "coffin");
+       cd.show(frameJP, "coffincustom");
     }//GEN-LAST:event_packageBTMouseClicked
 
     private void customBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_customBTMouseClicked
@@ -162,7 +154,6 @@ public class MainFrame extends javax.swing.JPanel {
     private javax.swing.JPanel frameJP;
     private javax.swing.JToggleButton homeBT;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel menuBar;
     private javax.swing.JToggleButton packageBT;
     private javax.swing.JToggleButton productBT;

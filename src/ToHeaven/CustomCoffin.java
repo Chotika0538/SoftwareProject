@@ -38,10 +38,10 @@ public class CustomCoffin extends javax.swing.JPanel {
         coffinStageLB = new javax.swing.JLabel();
         funeralStageLB = new javax.swing.JLabel();
         boneStageLB = new javax.swing.JLabel();
-        coffinPanel = new javax.swing.JPanel();
-        negletBT = new javax.swing.JRadioButton();
+        buttonPanel = new javax.swing.JPanel();
         confirmBT = new javax.swing.JButton();
         nextBT = new javax.swing.JButton();
+        coffinPanel = new javax.swing.JPanel();
 
         jLabel7.setText("jLabel7");
 
@@ -69,82 +69,71 @@ public class CustomCoffin extends javax.swing.JPanel {
 
         add(menuCustom, java.awt.BorderLayout.PAGE_START);
 
-        coffinPanel.setBackground(new java.awt.Color(204, 255, 204));
-        coffinPanel.setPreferredSize(new java.awt.Dimension(800, 900));
+        confirmBT.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
+        confirmBT.setText("ยืนยัน");
 
-        negletBT.setFont(new java.awt.Font("RainyThin", 0, 20)); // NOI18N
-        negletBT.setText("ไม่สนใจสั่งซื้อ");
-        negletBT.addMouseListener(new java.awt.event.MouseAdapter() {
+        nextBT.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
+        nextBT.setText("หน้าถัดไป>");
+        nextBT.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                negletBTMouseClicked(evt);
+                nextBTMouseClicked(evt);
             }
         });
 
-        confirmBT.setFont(new java.awt.Font("MoopaThin", 0, 20)); // NOI18N
-        confirmBT.setText("ยืนยัน");
+        javax.swing.GroupLayout buttonPanelLayout = new javax.swing.GroupLayout(buttonPanel);
+        buttonPanel.setLayout(buttonPanelLayout);
+        buttonPanelLayout.setHorizontalGroup(
+            buttonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(buttonPanelLayout.createSequentialGroup()
+                .addGap(355, 355, 355)
+                .addComponent(confirmBT)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 240, Short.MAX_VALUE)
+                .addComponent(nextBT)
+                .addGap(48, 48, 48))
+        );
+        buttonPanelLayout.setVerticalGroup(
+            buttonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, buttonPanelLayout.createSequentialGroup()
+                .addContainerGap(40, Short.MAX_VALUE)
+                .addGroup(buttonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(confirmBT)
+                    .addComponent(nextBT))
+                .addGap(37, 37, 37))
+        );
 
-        nextBT.setFont(new java.awt.Font("MoopaThin", 0, 20)); // NOI18N
-        nextBT.setText("ถัดไป >");
+        add(buttonPanel, java.awt.BorderLayout.PAGE_END);
+
+        coffinPanel.setBackground(new java.awt.Color(204, 255, 204));
 
         javax.swing.GroupLayout coffinPanelLayout = new javax.swing.GroupLayout(coffinPanel);
         coffinPanel.setLayout(coffinPanelLayout);
         coffinPanelLayout.setHorizontalGroup(
             coffinPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(coffinPanelLayout.createSequentialGroup()
-                .addGap(88, 88, 88)
-                .addComponent(negletBT)
-                .addContainerGap(598, Short.MAX_VALUE))
-            .addGroup(coffinPanelLayout.createSequentialGroup()
-                .addGap(360, 360, 360)
-                .addComponent(confirmBT)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(nextBT)
-                .addGap(72, 72, 72))
+            .addGap(0, 800, Short.MAX_VALUE)
         );
         coffinPanelLayout.setVerticalGroup(
             coffinPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(coffinPanelLayout.createSequentialGroup()
-                .addGap(52, 52, 52)
-                .addComponent(negletBT)
-                .addGap(1234, 1234, 1234)
-                .addGroup(coffinPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(confirmBT)
-                    .addComponent(nextBT))
-                .addContainerGap(38, Short.MAX_VALUE))
+            .addGap(0, 1295, Short.MAX_VALUE)
         );
 
         add(coffinPanel, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void negletBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_negletBTMouseClicked
-        // TODO add your handling code here:
-//        JRadioButton bt = (JRadioButton) evt.getSource();
-//        if(bt.isSelected()){
-//            jPanel3.setEnabled(false);
-//            for(Component cp : jPanel3.getComponents()){
-//                cp.setEnabled(false);
-//            }
-//        } else{
-//            jPanel3.setEnabled(true);
-//            for(Component cp : jPanel3.getComponents()){
-//                cp.setEnabled(true);
-//            }
-//        }
-       
-
-    }//GEN-LAST:event_negletBTMouseClicked
+    private void nextBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nextBTMouseClicked
+        ((CardLayout)mainPanel.getLayout()).show(mainPanel, "funeral");
+    }//GEN-LAST:event_nextBTMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel boneStageLB;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JPanel buttonPanel;
     private javax.swing.JPanel coffinPanel;
     private javax.swing.JLabel coffinStageLB;
     private javax.swing.JButton confirmBT;
     private javax.swing.JLabel funeralStageLB;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel menuCustom;
-    private javax.swing.JRadioButton negletBT;
     private javax.swing.JButton nextBT;
     // End of variables declaration//GEN-END:variables
 }

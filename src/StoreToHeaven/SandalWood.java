@@ -1,7 +1,7 @@
-package StoreToHeaven;
-
-public class SandalWood extends Product {
-    public SandalWood(){
-        super();
-    }
-}
+//package StoreToHeaven;
+//
+//public class SandalWood extends Product {
+//    public SandalWood(){
+//        super();
+//    }
+//}
