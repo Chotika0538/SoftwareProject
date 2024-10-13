@@ -107,7 +107,7 @@ public class FrameProductPage extends javax.swing.JPanel {
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
         frameProductPanel.setBackground(new java.awt.Color(255, 180, 87));
-        frameProductPanel.setPreferredSize(new java.awt.Dimension(798, 900));
+        frameProductPanel.setPreferredSize(new java.awt.Dimension(798, 1100));
         frameProductPanel.setLayout(new java.awt.GridLayout(0, 1, 0, 5));
         //wreathList.add(new WreathProduct().getData(wreath));
         //wreathProductPanel.add(wreathList.get(0));
@@ -139,7 +139,10 @@ public class FrameProductPage extends javax.swing.JPanel {
     public void showData(){
         for (Frame frame : frameClassList){
             frameProduct.add(new FrameProduct(frame));
-            //frameProductPanel.setPreferredSize(new Dimension(800, frameProductPanel.getHeight()+500));
+            if (frameClassList.size()>1){
+                frameProductPanel.setPreferredSize(new Dimension(800, frameProductPanel.getHeight()+1000));
+
+            }
             frameProductPanel.add(frameProduct.getLast());
             frameProductPanel.revalidate();
             frameProductPanel.repaint();

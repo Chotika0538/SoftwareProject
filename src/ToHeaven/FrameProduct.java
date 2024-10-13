@@ -52,7 +52,7 @@ public class FrameProduct extends javax.swing.JPanel {
         name = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 204, 204));
-        setPreferredSize(new java.awt.Dimension(800, 220));
+        setPreferredSize(new java.awt.Dimension(800, 235));
         setLayout(null);
 
         productImage.setPreferredSize(new java.awt.Dimension(180, 180));

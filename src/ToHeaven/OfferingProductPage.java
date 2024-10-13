@@ -137,6 +137,9 @@ public class OfferingProductPage extends javax.swing.JPanel {
          //offeringProductPanel.removeAll();
          for(int i=0; i<offeringClassList.size(); i++){
              offeringProduct.add(new OfferingProduct(offeringClassList.get(i)));
+              if (offeringClassList.size()>1){
+                    offeringProductPanel.setPreferredSize(new Dimension(800, offeringProductPanel.getHeight()+1000));
+              }
              //offeringProductPanel.setPreferredSize(new Dimension(800, offeringProductPanel.getHeight()+250));
             offeringProductPanel.add(offeringProduct.get(i));
             offeringProductPanel.revalidate();
