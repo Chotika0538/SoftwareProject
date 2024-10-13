@@ -8,7 +8,7 @@ import java.util.zip.Checksum;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class AddFrame extends javax.swing.JPanel{
+public class AddFrame extends javax.swing.JPanel implements CheckPanel{
     private ArrayList<FrameDetail> fdList;
     private CardLayout cd;
     private JPanel mainPanel;
@@ -28,12 +28,8 @@ public class AddFrame extends javax.swing.JPanel{
     private void initComponents() {
 
         name = new javax.swing.JLabel();
-        material = new javax.swing.JLabel();
         deleteListBT = new javax.swing.JButton();
-        priceTF = new javax.swing.JTextField();
         nameTF = new javax.swing.JTextField();
-        materialTF = new javax.swing.JTextField();
-        price = new javax.swing.JLabel();
         pic_detail = new javax.swing.JLabel();
         pic_detailSP = new javax.swing.JScrollPane();
         pic_detailJP = new javax.swing.JPanel();
@@ -43,9 +39,6 @@ public class AddFrame extends javax.swing.JPanel{
 
         name.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
         name.setText("ชื่อสินค้า : ");
-
-        material.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
-        material.setText("วัสดุ  : ");
 
         deleteListBT.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
         deleteListBT.setText("- ลบรายการ");
@@ -60,19 +53,12 @@ public class AddFrame extends javax.swing.JPanel{
             }
         });
 
-        priceTF.setFont(new java.awt.Font("TH SarabunPSK", 0, 20)); // NOI18N
-
         nameTF.setFont(new java.awt.Font("TH SarabunPSK", 0, 20)); // NOI18N
         nameTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nameTFActionPerformed(evt);
             }
         });
-
-        materialTF.setFont(new java.awt.Font("TH SarabunPSK", 0, 20)); // NOI18N
-
-        price.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
-        price.setText("ราคาสินค้าแต่ละแบบ  : ");
 
         pic_detail.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
         pic_detail.setText("รูปและรายละเอียดของสินค้า");
@@ -111,18 +97,9 @@ public class AddFrame extends javax.swing.JPanel{
                             .addComponent(pic_detailSP, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(pic_detail)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(price)
+                                .addComponent(name)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(priceTF, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(name)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(nameTF))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(material)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(materialTF, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(nameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(121, 121, 121)
                         .addComponent(deleteListBT)
@@ -137,19 +114,11 @@ public class AddFrame extends javax.swing.JPanel{
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(name)
                     .addComponent(nameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(material, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(materialTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(price, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(priceTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(26, 26, 26)
                 .addComponent(pic_detail, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(32, 32, 32)
                 .addComponent(pic_detailSP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addListBT)
                     .addComponent(deleteListBT))
@@ -187,22 +156,6 @@ public class AddFrame extends javax.swing.JPanel{
         // TODO add your handling code here:
     }//GEN-LAST:event_deleteListBTActionPerformed
 
-    public JTextField getMaterialTF() {
-        return materialTF;
-    }
-
-    public void setMaterialTF(JTextField materialTF) {
-        this.materialTF = materialTF;
-    }
-
-    public JTextField getPriceTF() {
-        return priceTF;
-    }
-
-    public void setPriceTF(JTextField priceTF) {
-        this.priceTF = priceTF;
-    }
-
     public JTextField getNameTF() {
         return nameTF;
     }
@@ -218,24 +171,19 @@ public class AddFrame extends javax.swing.JPanel{
     public int getCountPic_DetailJP() {
         return countPic_DetailJP;
     }
-
-    
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addListBT;
     private javax.swing.JButton deleteListBT;
-    private javax.swing.JLabel material;
-    private javax.swing.JTextField materialTF;
     private javax.swing.JLabel name;
     private javax.swing.JTextField nameTF;
     private javax.swing.JLabel pic_detail;
     private javax.swing.JPanel pic_detailJP;
     private javax.swing.JScrollPane pic_detailSP;
-    private javax.swing.JLabel price;
-    private javax.swing.JTextField priceTF;
     // End of variables declaration//GEN-END:variables
 
-    public void CheckCurentCard() {
+    @Override
+    public void checkCurrentCard() {
         countPic_DetailJP = 0;
         for(Component c : pic_detailJP.getComponents()){
             countPic_DetailJP+=1;

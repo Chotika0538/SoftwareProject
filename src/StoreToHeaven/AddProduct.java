@@ -8,8 +8,6 @@ import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.*;
 import java.util.ArrayList;
-import DAO.Wreathdao;
-import DAO.Snackboxdao;
 public class AddProduct extends javax.swing.JPanel implements CheckPanel{
     
     private ArrayList<Wreath> wList;
@@ -68,23 +66,23 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
         JPanel emptyPanel = new JPanel();
         AddWreath wreath = new AddWreath(showAddProduct);
         //AddCoffin coffin = new AddCoffin(showAddProduct);
-        //AddFrame frame = new AddFrame(showAddProduct);
+        AddFrame frame = new AddFrame(showAddProduct);
         //AddIncense incense = new AddIncense(showAddProduct);
         //AddCandle candle = new AddCandle(showAddProduct);
         AddOffering offering = new AddOffering(showAddProduct);
         //AddSandalWood sandalwood = new AddSandalWood(showAddProduct);
-        //AddSnackBox snackbox = new AddSnackBox(showAddProduct);
+        AddSnackBox snackbox = new AddSnackBox(showAddProduct);
         //AddSouvenirs souvenir= new AddSouvenirs(showAddProduct);
         emptyPanel.setBackground(new java.awt.Color(153, 255, 204));
         showAddProduct.add(emptyPanel, "empty");
         //showAddProduct.add(coffin, "coffin");
         showAddProduct.add(wreath, "wreath");
-        //showAddProduct.add(frame, "frame");
+        showAddProduct.add(frame, "frame");
         //showAddProduct.add(incense, "incense");
         //showAddProduct.add(candle, "candle");
         showAddProduct.add(offering, "offering");
         //showAddProduct.add(sandlewood, "sandlewood");
-        //showAddProduct.add(snackbox, "snackbox");
+        showAddProduct.add(snackbox, "snackbox");
         //showAddProduct.add(souvenir, "souvenir");
         add(showAddProduct);
         showAddProduct.setBounds(10, 110, 480, 480);
@@ -199,7 +197,7 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
             }
             if (comp.isVisible()&& comp instanceof AddSnackBox){
                 AddSnackBox as = (AddSnackBox)comp;
-                Snackboxdao sd = new Snackboxdao();
+                SnackBoxdao sd = new SnackBoxdao();
                 sd.save(as);
                 break;
             }
@@ -218,26 +216,26 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
                 cand.save((AddCandle) comp);
                 break; // หยุดหลังจากเจอหน้าแรกที่แสดงอยู่
             }
-            else if (comp.isVisible()&& comp instanceof AddIncense) {
-                Incensedao ind = new Incensedao();
-                ind.save((AddIncense) comp);
-                break; // หยุดหลังจากเจอหน้าแรกที่แสดงอยู่
-            }
-            else if (comp.isVisible()&& comp instanceof AddSandleWood) {
-                SandleWoodgdao sand = new SandleWooddao();
-                sand.save((AddSandleWood) comp);
-                break; // หยุดหลังจากเจอหน้าแรกที่แสดงอยู่
-            }
-            else if (comp.isVisible()&& comp instanceof AddSouvenir) {
-                Souvenirdao soud = new Souvenirdao();
-                soud.save((AddSouvenir) comp);
-                break; // หยุดหลังจากเจอหน้าแรกที่แสดงอยู่
-            }
-            else if (comp.isVisible()&& comp instanceof AddPackage) {
-                Packagedao packd = new Packagedao();
-                packd.save((AddPackage) comp);
-                break; // หยุดหลังจากเจอหน้าแรกที่แสดงอยู่
-            }
+//            else if (comp.isVisible()&& comp instanceof AddIncense) {
+//                Incensedao ind = new Incensedao();
+//                ind.save((AddIncense) comp);
+//                break; // หยุดหลังจากเจอหน้าแรกที่แสดงอยู่
+//            }
+//            else if (comp.isVisible()&& comp instanceof AddSandleWood) {
+//                SandleWoodgdao sand = new SandleWooddao();
+//                sand.save((AddSandleWood) comp);
+//                break; // หยุดหลังจากเจอหน้าแรกที่แสดงอยู่
+//            }
+//            else if (comp.isVisible()&& comp instanceof AddSouvenir) {
+//                Souvenirdao soud = new Souvenirdao();
+//                soud.save((AddSouvenir) comp);
+//                break; // หยุดหลังจากเจอหน้าแรกที่แสดงอยู่
+//            }
+//            else if (comp.isVisible()&& comp instanceof AddPackage) {
+//                Packagedao packd = new Packagedao();
+//                packd.save((AddPackage) comp);
+//                break; // หยุดหลังจากเจอหน้าแรกที่แสดงอยู่
+//            }
             else if (comp.isVisible()&& comp instanceof AddFrame) {
                 Framedao framed = new Framedao();
                 framed.save((AddFrame) comp);

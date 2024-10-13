@@ -69,6 +69,7 @@ public class FrameDetail extends javax.swing.JPanel {
         add(bathLB);
         bathLB.setBounds(322, 80, 55, 21);
 
+        deleteCB.setBackground(new java.awt.Color(255, 204, 204));
         deleteCB.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         deleteCB.setText("เลือกเพื่อลบ");
         deleteCB.addItemListener(new java.awt.event.ItemListener() {

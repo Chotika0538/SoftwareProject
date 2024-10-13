@@ -101,10 +101,10 @@ public class MainFrame extends javax.swing.JPanel {
         //CoffinProductPage cofpp = new CoffinProductPage(frameJP);
         //CandleProductPage canpp = new CandleProductPage(frameJP);
         //IncenseProductPage inpp = new IncenseProductPage(frameJP);
-        //SanckBoxProductPage snackpp = new SnackBoxProductPage(frameJP);
+        SnackBoxProductPage snackpp = new SnackBoxProductPage(frameJP);
         //SouvenirProductPage soupp = new SouvenirProductPackage(frameJP);
         //SandleWoodProductPackage sandpp = new SandleWoodProductPackage(frameJP);
-        //FrameProductPage framepp = new FrameProductPage(frameJP);
+        FrameProductPage framepp = new FrameProductPage(frameJP);
 
         CustomCoffin coffincustom = new CustomCoffin(frameJP);
         CustomFuneral funeral = new CustomFuneral(frameJP);
@@ -119,10 +119,10 @@ public class MainFrame extends javax.swing.JPanel {
         //framepp.add(cofpp, "coffinproductpage");
         //frameJP.add(canpp ,"candleproductpage");
         //frameJP.add(inpp, "incenseproductpage");
-        //frameJP.add(snackpp, "snackproductpage");
+        frameJP.add(snackpp, "snackboxproductpage");
         //frameJP.add(soupp, "souvenirproductpage");
         //frameJP.add(sandpp, "sandlewoodproductpage");
-        //frameJP.add(framepp, "frameproductpage");
+        frameJP.add(framepp, "frameproductpage");
 
         frameJP.add(coffincustom, "coffincustom");
         frameJP.add(funeral, "funeral");

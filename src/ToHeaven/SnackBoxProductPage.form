@@ -33,7 +33,7 @@
           <Font name="TH SarabunPSK" size="24" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="&#xe1e;&#xe27;&#xe07;&#xe2b;&#xe23;&#xe35;&#xe14;"/>
+        <Property name="text" type="java.lang.String" value="&#xe0a;&#xe38;&#xe14;&#xe02;&#xe2d;&#xe07;&#xe27;&#xe48;&#xe32;&#xe07;"/>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[800, 50]"/>
         </Property>
@@ -96,7 +96,7 @@
             <Property name="text" type="java.lang.String" value="&lt;&#xe22;&#xe49;&#xe2d;&#xe19;&#xe01;&#xe25;&#xe31;&#xe1a;"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="backBTMouseClicked"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backBTActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButton1">
@@ -121,13 +121,13 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Container class="javax.swing.JPanel" name="wreathProductPanel">
+        <Container class="javax.swing.JPanel" name="SnackProductPanel">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="57" green="b4" red="ff" type="rgb"/>
             </Property>
             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[798, 600]"/>
+              <Dimension value="[798, 1400]"/>
             </Property>
           </Properties>
           <AuxValues>
