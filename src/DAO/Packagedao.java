@@ -1,16 +1,27 @@
 package DAO;
 
+import java.io.BufferedInputStream;
 import org.apache.poi.ss.usermodel.*;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;  // สำหรับไฟล์ .xlsx
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;  // Allows working with .xlsx files
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import StoreToHeaven.*;
+import StoreToHeaven.Package;
+//import StoreToHeaven.IncenseDetail;
+import java.awt.Component;
+import java.io.FileOutputStream;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.*;
+
+import java.awt.Component;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.List;
-import StoreToHeaven.AddPackage;
-import StoreToHeaven.PackageDetail;
-import java.awt.Component;
-import StoreToHeaven.*;
+
 
 public class Packagedao {
     private Workbook wb;
@@ -18,22 +29,30 @@ public class Packagedao {
     private final String FILE_NAME = "StoreStock.xlsx";
     private FileInputStream fileInput;
     private FileOutputStream fos;
-    private ArrayList<List<String>> Packagelist = new ArrayList<>();
-    private String[] nameCol = { "ชื่อแพ็คเกจ","รายละเอียด" ,"pathรูปภาพ",  "ราคา"};
-    private ArrayList<PackageDetail> pg;
-    private Component[] cmp;
-
+    private ArrayList<List<String>> packagelist = new ArrayList<>();
+    private String[] nameCol = { "ชื่อ","รายละเอียด" ,"pathรูปภาพ", "ราคา"};
+    private ArrayList<PackageDetail> pcd;
+    private ArrayList<Package> pgList;
+    //private Component[] cmp;
+    String name,pattern, detail, path, price;
+    
+    
+    public Packagedao(){
+        pgList = new ArrayList<>();
+        pcd = new ArrayList<>();
+        packagelist = new ArrayList<>();
+    }
     /*Save data in Excel file*/
     public void save(AddPackage pack) {
-        cmp = pack.getPic_detailJP().getComponents();   // get WreathDetail panel
-        pg = new ArrayList<>();
+        Component[] cmp = pack.getPic_detailJP().getComponents();    // get IncenseDetail panel
+        pcd = new ArrayList<>();
+        pcd.clear();
         for (Component c : cmp){
-                pg.add((PackageDetail) c);
-            
+            pcd.add((PackageDetail) c);
         }
     
         /*Excel*/    
-        read();             // read StoreStock.xlsx
+        read();             // read StroeStock.xlsx
         try {           // check that StoreStock.xlsx was found
             if (sheet == null) {
                 System.out.println("Sheet not found");
@@ -49,16 +68,17 @@ public class Packagedao {
                     cell.setCellValue(nameCol[j]);
                 }
             }
-            for (int a=0; a<pg.size(); a++){
-            String pattern = pg.get(a).getPatternTF().getText();
-            String detail = pg.get(a).getDetailTA().getText();
-            String path = pg.get(a).getFilePath();
-            String[] price = pg.getPriceTF().getText().split(",");
-            String[] dataChecked = {pattern,detail,path,String.join(",", price)};
+            for (int a=0; a<pcd.size(); a++){
+            String pattern = pcd.get(a).getPatternTF().getText();
+            String detail = pcd.get(a).getDetailTA().getText();
+            String path = pcd.get(a).getFilePath();
+            double price = Double.parseDouble(pcd.get(a).getPriceTF().getText());
+            String[] dataChecked = {pattern,detail,path,Double.toString(price)};
             boolean haveData = false ;
+            
             for (Row row : sheet){
-                Cell c = row.getCell(0);
-                if(c.toString().equals(dataChecked[0])){
+                Cell cell = row.getCell(0);
+                if(cell.toString().equals(dataChecked[0])){
                     haveData = true;
                     break;
                 }
@@ -70,9 +90,8 @@ public class Packagedao {
                 newRow.createCell(0).setCellValue(pattern);
                 newRow.createCell(1).setCellValue(detail);
                 newRow.createCell(2).setCellValue(path);
-                //newRow.createCell(3).setCellValue(wreath.getMaterialTF().getText());
-                newRow.createCell(3).setCellValue(String.join(",", price));
-                //newRow.createCell(5).setCellValue(wreath.getColorTF().getText());
+                newRow.createCell(3).setCellValue(price);
+                //newRow.createCell(4).setCellValue(incense.getPriceTF().getText());
                } catch (Exception e) {
                     e.printStackTrace();
                }             
@@ -95,24 +114,89 @@ public class Packagedao {
                 if (fileInput != null) {
                     fileInput.close();
                 }
-            } catch (Exception e) {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
     }
     
+public ArrayList<Package> getAll() {        
+    pgList = new ArrayList<>();
+    pgList.clear();
+    read();
+    try {
+        if (sheet == null) {
+            System.out.println("Sheet not found");
+            return pgList; // หรือทำการรีเทิร์นอย่างอื่นหากไม่มีชีต
+        }
+
+        for (Row row : sheet) {
+            if (row.getRowNum() == 0) {
+                name = row.getCell(0).getStringCellValue();
+                continue;
+            }
+            String pattern = null, detail = null, path = null;
+            double price = 0.0;
+
+            for (Cell cell : row) {
+                if (cell == null) {
+                    continue; // ข้าม cell ที่เป็น null
+                }
+                switch (cell.getColumnIndex()) {
+                    case 0:
+                        pattern = cell.getStringCellValue();
+                        break;
+                    case 1:
+                        detail = cell.getStringCellValue();
+                        break;
+                    case 2:
+                        path = cell.getStringCellValue();
+                        break;
+                    case 3:
+                        price = cell.getNumericCellValue();
+                        break;
+                }
+            }
+
+            // ตรวจสอบค่าที่ได้ก่อนเพิ่มลง oList
+            if (name != null && pattern != null && detail != null && path != null && price > 0.0) {
+                Package newPackage = new Package(name, pattern, detail, path, price);
+                // ตรวจสอบไม่ให้มีการเพิ่มซ้ำ
+                if (!pgList.contains(newPackage)) {
+                    pgList.add(newPackage);
+                }
+            }
+        }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                if (fileInput != null) {
+                    fileInput.close();
+                }
+                if (fos != null) {
+                    fos.close();
+                }
+                if (wb != null) {
+                    wb.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return pgList;
+    }
     /*Read Excel file*/
     public void read() {
         wb = null;
         try {
             fileInput = new FileInputStream(new File(FILE_NAME));
             wb = new XSSFWorkbook(fileInput);
-            sheet = wb.getSheetAt(8); // เปลี่ยนไปที่ชีตแรก
-        } catch (Exception err) {
+            sheet = wb.getSheetAt(8); // เปลี่ยนไปที่ชีต 8
+        } catch (IOException err) {
             System.out.println("can't read file: " + err);
         }
     }
-   public static void main(String[] args){
-        //new Wreathdao().save();
-    }
+  
 }
+
