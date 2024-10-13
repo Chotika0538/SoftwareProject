@@ -10,17 +10,17 @@ import javax.swing.JPanel;
 
 public class CandleProductPage extends javax.swing.JPanel {
     
-    private ArrayList<Wreath> wreathClassList;
-    private ArrayList<WreathProduct> wreathProduct;
+    private ArrayList<Candle> candleClassList;
+    private ArrayList<CandleProduct> candleProduct;
     private CardLayout cd;
     private JPanel mainPanel;
     int i = 1;
-    private Wreathdao wreathdao;
+    private Candledao candledao;
     
     public CandleProductPage(JPanel mainPanel) {
-        wreathdao = new Wreathdao();
-        wreathClassList = wreathdao.getAll();
-        wreathProduct = new ArrayList<>();
+        candledao = new Candledao();
+        candleClassList = candledao.getAll();
+        candleProduct = new ArrayList<>();
         this.mainPanel = mainPanel;
         cd = (CardLayout) mainPanel.getLayout();
         initComponents();
@@ -36,25 +36,24 @@ public class CandleProductPage extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        wreathNameLB = new javax.swing.JLabel();
+        candleNameLB = new javax.swing.JLabel();
         menuPanel = new javax.swing.JPanel();
         addBT = new javax.swing.JButton();
         backBT = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        wreathProductPanel = new javax.swing.JPanel();
+        candleProductPanel = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(201, 156, 99));
         setPreferredSize(new java.awt.Dimension(800, 500));
-        setLayout(null);
+        setLayout(new java.awt.BorderLayout());
 
-        wreathNameLB.setBackground(new java.awt.Color(255, 204, 204));
-        wreathNameLB.setFont(new java.awt.Font("TH SarabunPSK", 1, 24)); // NOI18N
-        wreathNameLB.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        wreathNameLB.setText("เทียน");
-        wreathNameLB.setPreferredSize(new java.awt.Dimension(800, 50));
-        add(wreathNameLB);
-        wreathNameLB.setBounds(0, 0, 800, 50);
+        candleNameLB.setBackground(new java.awt.Color(255, 204, 204));
+        candleNameLB.setFont(new java.awt.Font("TH SarabunPSK", 1, 24)); // NOI18N
+        candleNameLB.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        candleNameLB.setText("ธูป");
+        candleNameLB.setPreferredSize(new java.awt.Dimension(800, 50));
+        add(candleNameLB, java.awt.BorderLayout.PAGE_START);
 
         addBT.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         addBT.setText("เพิ่มสินค้า");
@@ -98,20 +97,18 @@ public class CandleProductPage extends javax.swing.JPanel {
                 .addGap(18, 18, 18))
         );
 
-        add(menuPanel);
-        menuPanel.setBounds(0, 437, 800, 63);
+        add(menuPanel, java.awt.BorderLayout.PAGE_END);
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
-        wreathProductPanel.setBackground(new java.awt.Color(255, 180, 87));
-        wreathProductPanel.setPreferredSize(new java.awt.Dimension(798, 500));
-        wreathProductPanel.setLayout(new javax.swing.BoxLayout(wreathProductPanel, javax.swing.BoxLayout.Y_AXIS));
+        candleProductPanel.setBackground(new java.awt.Color(255, 180, 87));
+        candleProductPanel.setPreferredSize(new java.awt.Dimension(798, 500));
+        candleProductPanel.setLayout(new java.awt.GridLayout(0, 1, 0, 5));
         //wreathList.add(new WreathProduct().getData(wreath));
         //wreathProductPanel.add(wreathList.get(0));
-        jScrollPane1.setViewportView(wreathProductPanel);
+        jScrollPane1.setViewportView(candleProductPanel);
 
-        add(jScrollPane1);
-        jScrollPane1.setBounds(0, 50, 800, 387);
+        add(jScrollPane1, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
     private void backBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBTActionPerformed
@@ -119,24 +116,23 @@ public class CandleProductPage extends javax.swing.JPanel {
     }//GEN-LAST:event_backBTActionPerformed
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-//        for(int j = 1; j<5; j++){
-//           wreathList.add(new WreathProduct());
-//           wreathProductPanel.setPreferredSize(new Dimension(800, wreathProductPanel.getHeight()+500));
-//           wreathProductPanel.add(wreathList.get(j));
-//           wreathProductPanel.revalidate();
-//        }
-  
+        //        for(int j = 1; j<5; j++){
+            //           wreathList.add(new WreathProduct());
+            //           wreathProductPanel.setPreferredSize(new Dimension(800, wreathProductPanel.getHeight()+500));
+            //           wreathProductPanel.add(wreathList.get(j));
+            //           wreathProductPanel.revalidate();
+            //        }
     }//GEN-LAST:event_jButton1MouseClicked
 //    public void getWreathData(){
 //         wreathClassList = wreathdao.getAll();
 //    }
     public void showData(){
-        for (Wreath wreath : wreathClassList){
-            wreathProduct.add(new WreathProduct(wreath));
-            wreathProductPanel.setPreferredSize(new Dimension(800, wreathProductPanel.getHeight()+500));
-            wreathProductPanel.add(wreathProduct.getLast());
-            wreathProductPanel.revalidate();
-            wreathProductPanel.repaint();
+        for (Candle candle : candleClassList){
+            candleProduct.add(new CandleProduct(candle));
+            //candleProductPanel.setPreferredSize(new Dimension(800, candleProductPanel.getHeight()+500));
+            candleProductPanel.add(candleProduct.getLast());
+            candleProductPanel.revalidate();
+            candleProductPanel.repaint();
         }
     }
     
@@ -144,10 +140,10 @@ public class CandleProductPage extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addBT;
     private javax.swing.JButton backBT;
+    private javax.swing.JLabel candleNameLB;
+    private javax.swing.JPanel candleProductPanel;
     private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel menuPanel;
-    private javax.swing.JLabel wreathNameLB;
-    private javax.swing.JPanel wreathProductPanel;
     // End of variables declaration//GEN-END:variables
 }

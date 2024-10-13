@@ -35,7 +35,7 @@ public class IncenseProductPage extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        wreathNameLB = new javax.swing.JLabel();
+        incenseNameLB = new javax.swing.JLabel();
         menuPanel = new javax.swing.JPanel();
         addBT = new javax.swing.JButton();
         backBT = new javax.swing.JButton();
@@ -45,15 +45,14 @@ public class IncenseProductPage extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(201, 156, 99));
         setPreferredSize(new java.awt.Dimension(800, 500));
-        setLayout(null);
+        setLayout(new java.awt.BorderLayout());
 
-        wreathNameLB.setBackground(new java.awt.Color(255, 204, 204));
-        wreathNameLB.setFont(new java.awt.Font("TH SarabunPSK", 1, 24)); // NOI18N
-        wreathNameLB.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        wreathNameLB.setText("ธูป");
-        wreathNameLB.setPreferredSize(new java.awt.Dimension(800, 50));
-        add(wreathNameLB);
-        wreathNameLB.setBounds(0, 0, 800, 50);
+        incenseNameLB.setBackground(new java.awt.Color(255, 204, 204));
+        incenseNameLB.setFont(new java.awt.Font("TH SarabunPSK", 1, 24)); // NOI18N
+        incenseNameLB.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        incenseNameLB.setText("ธูป");
+        incenseNameLB.setPreferredSize(new java.awt.Dimension(800, 50));
+        add(incenseNameLB, java.awt.BorderLayout.PAGE_START);
 
         addBT.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         addBT.setText("เพิ่มสินค้า");
@@ -97,21 +96,18 @@ public class IncenseProductPage extends javax.swing.JPanel {
                 .addGap(18, 18, 18))
         );
 
-        add(menuPanel);
-        menuPanel.setBounds(0, 437, 800, 63);
+        add(menuPanel, java.awt.BorderLayout.PAGE_END);
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        jScrollPane1.setPreferredSize(new java.awt.Dimension(798, 502));
 
         incenseProductPanel.setBackground(new java.awt.Color(255, 180, 87));
-        incenseProductPanel.setPreferredSize(new java.awt.Dimension(789, 500));
+        incenseProductPanel.setPreferredSize(new java.awt.Dimension(798, 500));
         incenseProductPanel.setLayout(new java.awt.GridLayout(0, 1, 0, 5));
         //wreathList.add(new WreathProduct().getData(wreath));
         //wreathProductPanel.add(wreathList.get(0));
         jScrollPane1.setViewportView(incenseProductPanel);
 
-        add(jScrollPane1);
-        jScrollPane1.setBounds(0, 50, 798, 387);
+        add(jScrollPane1, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
     private void backBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBTActionPerformed
@@ -119,13 +115,13 @@ public class IncenseProductPage extends javax.swing.JPanel {
     }//GEN-LAST:event_backBTActionPerformed
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-//        for(int j = 1; j<5; j++){
-//           wreathList.add(new WreathProduct());
-//           wreathProductPanel.setPreferredSize(new Dimension(800, wreathProductPanel.getHeight()+500));
-//           wreathProductPanel.add(wreathList.get(j));
-//           wreathProductPanel.revalidate();
-//        }
-  
+        //        for(int j = 1; j<5; j++){
+            //           wreathList.add(new WreathProduct());
+            //           wreathProductPanel.setPreferredSize(new Dimension(800, wreathProductPanel.getHeight()+500));
+            //           wreathProductPanel.add(wreathList.get(j));
+            //           wreathProductPanel.revalidate();
+            //        }
+
     }//GEN-LAST:event_jButton1MouseClicked
 //    public void getWreathData(){
 //         wreathClassList = wreathdao.getAll();
@@ -144,10 +140,10 @@ public class IncenseProductPage extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addBT;
     private javax.swing.JButton backBT;
+    private javax.swing.JLabel incenseNameLB;
     private javax.swing.JPanel incenseProductPanel;
     private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel menuPanel;
-    private javax.swing.JLabel wreathNameLB;
     // End of variables declaration//GEN-END:variables
 }
