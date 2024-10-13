@@ -26,11 +26,6 @@ public class AddSandalWood extends javax.swing.JPanel implements  CheckPanel{
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        material = new javax.swing.JLabel();
-        priceTF = new javax.swing.JTextField();
-        materialTF = new javax.swing.JTextField();
-        color = new javax.swing.JLabel();
-        colorTF = new javax.swing.JTextField();
         pic_detail = new javax.swing.JLabel();
         pic_detailSP = new javax.swing.JScrollPane();
         pic_detailJP = new javax.swing.JPanel();
@@ -38,21 +33,8 @@ public class AddSandalWood extends javax.swing.JPanel implements  CheckPanel{
         name = new javax.swing.JLabel();
         deleteListBT = new javax.swing.JButton();
         nameTF = new javax.swing.JTextField();
-        price = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(480, 480));
-
-        material.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
-        material.setText("วัสดุ  : ");
-
-        priceTF.setFont(new java.awt.Font("TH SarabunPSK", 0, 20)); // NOI18N
-
-        materialTF.setFont(new java.awt.Font("TH SarabunPSK", 0, 20)); // NOI18N
-
-        color.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
-        color.setText("สีสินค้า  : ");
-
-        colorTF.setFont(new java.awt.Font("TH SarabunPSK", 0, 20)); // NOI18N
 
         pic_detail.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
         pic_detail.setText("รูปและรายละเอียดของสินค้า");
@@ -92,64 +74,34 @@ public class AddSandalWood extends javax.swing.JPanel implements  CheckPanel{
 
         nameTF.setFont(new java.awt.Font("TH SarabunPSK", 0, 20)); // NOI18N
 
-        price.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
-        price.setText("ราคาสินค้าแต่ละแบบ  : ");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(pic_detailSP, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pic_detail)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(pic_detailSP, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(color)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(colorTF, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(pic_detail)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(price)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(priceTF, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(name)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(nameTF))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(material)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(materialTF, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(121, 121, 121)
+                        .addGap(87, 87, 87)
                         .addComponent(deleteListBT)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(addListBT)))
+                        .addComponent(addListBT))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(name)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(38, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(name)
                     .addComponent(nameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(material, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(materialTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(price, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(priceTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(color, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(colorTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(30, 30, 30)
                 .addComponent(pic_detail, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pic_detailSP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -157,7 +109,7 @@ public class AddSandalWood extends javax.swing.JPanel implements  CheckPanel{
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addListBT)
                     .addComponent(deleteListBT))
-                .addGap(14, 14, 14))
+                .addContainerGap(71, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -183,19 +135,13 @@ public class AddSandalWood extends javax.swing.JPanel implements  CheckPanel{
         // TODO add your handling code here:
 
     }//GEN-LAST:event_deleteListBTMouseClicked
-    public JTextField getMaterialTF() {
-        return materialTF;
+
+    public JPanel getPic_detailJP() {
+        return pic_detailJP;
     }
 
-    public void setMaterialTF(JTextField materialTF) {
-        this.materialTF = materialTF;
-    }
-    public JTextField getColorTF() {
-        return colorTF;
-    }
-
-    public void setColorTF(JTextField colorTF) {
-        this.colorTF = colorTF;
+    public void setPic_detailJP(JPanel pic_detailJP) {
+        this.pic_detailJP = pic_detailJP;
     }
 
     public JTextField getNameTF() {
@@ -206,44 +152,14 @@ public class AddSandalWood extends javax.swing.JPanel implements  CheckPanel{
         this.nameTF = nameTF;
     }
 
-    public JTextField getPatternTF() {
-        return materialTF;
-    }
-
-    public void setPatternTF(JTextField patternTF) {
-        this.materialTF = patternTF;
-    }
-
-    public JTextField getPriceTF() {
-        return priceTF;
-    }
-
-    public void setPriceTF(JTextField priceTF) {
-        this.priceTF = priceTF;
-    }
-
-    public JPanel getPic_detailJP() {
-        return pic_detailJP;
-    }
-
-    public void setPic_detailJP(JPanel pic_detailJP) {
-        this.pic_detailJP = pic_detailJP;
-    }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addListBT;
-    private javax.swing.JLabel color;
-    private javax.swing.JTextField colorTF;
     private javax.swing.JButton deleteListBT;
-    private javax.swing.JLabel material;
-    private javax.swing.JTextField materialTF;
     private javax.swing.JLabel name;
     private javax.swing.JTextField nameTF;
     private javax.swing.JLabel pic_detail;
     private javax.swing.JPanel pic_detailJP;
     private javax.swing.JScrollPane pic_detailSP;
-    private javax.swing.JLabel price;
-    private javax.swing.JTextField priceTF;
     // End of variables declaration//GEN-END:variables
     
      @Override

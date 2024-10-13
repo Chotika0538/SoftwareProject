@@ -70,7 +70,7 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
         //AddIncense incense = new AddIncense(showAddProduct);
         //AddCandle candle = new AddCandle(showAddProduct);
         AddOffering offering = new AddOffering(showAddProduct);
-        //AddSandalWood sandalwood = new AddSandalWood(showAddProduct);
+        AddSandalWood sandalwood = new AddSandalWood(showAddProduct);
         AddSnackBox snackbox = new AddSnackBox(showAddProduct);
         //AddSouvenirs souvenir= new AddSouvenirs(showAddProduct);
         emptyPanel.setBackground(new java.awt.Color(153, 255, 204));
@@ -81,7 +81,7 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
         //showAddProduct.add(incense, "incense");
         //showAddProduct.add(candle, "candle");
         showAddProduct.add(offering, "offering");
-        //showAddProduct.add(sandlewood, "sandlewood");
+        showAddProduct.add(sandalwood, "sandalwood");
         showAddProduct.add(snackbox, "snackbox");
         //showAddProduct.add(souvenir, "souvenir");
         add(showAddProduct);
@@ -116,7 +116,7 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
         //choose sandalwood
         else if (((String)cb.getSelectedItem()).equals("ดอกไม้จันทน์")){
             cd = (CardLayout) showAddProduct.getLayout();
-            cd.show(showAddProduct, "sandalW");
+            cd.show(showAddProduct, "sandalwood");
         }
         //choose coffin
         else if(((String)cb.getSelectedItem()).equals("โลงศพ")){
@@ -221,11 +221,11 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
 //                ind.save((AddIncense) comp);
 //                break; // หยุดหลังจากเจอหน้าแรกที่แสดงอยู่
 //            }
-//            else if (comp.isVisible()&& comp instanceof AddSandleWood) {
-//                SandleWoodgdao sand = new SandleWooddao();
-//                sand.save((AddSandleWood) comp);
-//                break; // หยุดหลังจากเจอหน้าแรกที่แสดงอยู่
-//            }
+            else if (comp.isVisible()&& comp instanceof AddSandalWood) {
+                SandalWooddao sand = new SandalWooddao();
+                sand.save((AddSandalWood) comp);
+                break; // หยุดหลังจากเจอหน้าแรกที่แสดงอยู่
+            }
 //            else if (comp.isVisible()&& comp instanceof AddSouvenir) {
 //                Souvenirdao soud = new Souvenirdao();
 //                soud.save((AddSouvenir) comp);

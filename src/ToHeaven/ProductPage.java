@@ -170,7 +170,7 @@ public class ProductPage extends javax.swing.JPanel {
     }//GEN-LAST:event_frameBTMouseClicked
 
     private void sandalWoodBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sandalWoodBTMouseClicked
-        ((CardLayout)mainPanel.getLayout()).show(mainPanel, "sandlewoodproductpage");
+        ((CardLayout)mainPanel.getLayout()).show(mainPanel, "sandalwoodproductpage");
     }//GEN-LAST:event_sandalWoodBTMouseClicked
 
     private void SouvenirBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SouvenirBTMouseClicked
