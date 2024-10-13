@@ -130,7 +130,7 @@ public class CandleProductPage extends javax.swing.JPanel {
         for (Candle candle : candleClassList){
             candleProduct.add(new CandleProduct(candle));
             if(candleClassList.size()>1)
-                candleProductPanel.setPreferredSize(new Dimension(800, candleProductPanel.getHeight()+3000));
+//                candleProductPanel.setPreferredSize(new Dimension(800, candleProductPanel.getHeight()+3000));
             candleProductPanel.add(candleProduct.getLast());
             candleProductPanel.revalidate();
             candleProductPanel.repaint();

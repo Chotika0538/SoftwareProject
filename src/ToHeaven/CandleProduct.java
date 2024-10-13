@@ -7,6 +7,7 @@ package ToHeaven;
 import StoreToHeaven.*;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
+import javax.swing.JPanel;
 
 /**
  *
@@ -33,6 +34,11 @@ public class CandleProduct extends javax.swing.JPanel {
         public Candle getFrameClass() {
         return candleClass;
     }
+        
+        public JPanel gertPanel(){
+            return this;
+        }
+        
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -45,6 +51,7 @@ public class CandleProduct extends javax.swing.JPanel {
         name = new javax.swing.JLabel();
         priceLB = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 255, 204));
         setPreferredSize(new java.awt.Dimension(600, 220));
 
         choosePieceCandle.setFont(new java.awt.Font("TH Sarabun New", 1, 18)); // NOI18N

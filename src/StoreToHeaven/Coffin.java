@@ -14,6 +14,17 @@ public class Coffin extends Product {
     public ArrayList<Coffin> getcList() {
         return cList;
     }
+    public int getSize20price() {
+        return size20;
+    }
+
+    public int getSize22price() {
+        return size22;
+    }
+
+    public int getSize24price() {
+        return size24;
+    }
 
     public void setwList(ArrayList<Coffin> cList) {
         this.cList = cList;

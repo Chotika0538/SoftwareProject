@@ -142,15 +142,15 @@ public class CoffinProduct extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
-       //priceLB.setText(Double.toString(coffinClass.getSize20price()));
+        priceLB.setText("ราคา: " + coffinClass.getSize20price() + " บาท");
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
-        // TODO add your handling code here:
+        priceLB.setText("ราคา: " + coffinClass.getSize22price() + " บาท");
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
     private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
-        // TODO add your handling code here:
+        priceLB.setText("ราคา: " + coffinClass.getSize24price() + " บาท");
     }//GEN-LAST:event_jRadioButton3ActionPerformed
 
     public Coffin getCoffinClass() {

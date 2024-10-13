@@ -54,6 +54,7 @@ public class AddCoffin extends javax.swing.JPanel {
         pic_detail.setBounds(30, 50, 157, 27);
 
         pic_detailSP.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        pic_detailSP.setPreferredSize(new java.awt.Dimension(400, 300));
 
         pic_detailJP.setBackground(new java.awt.Color(255, 204, 204));
         pic_detailJP.setPreferredSize(new java.awt.Dimension(400, 300));

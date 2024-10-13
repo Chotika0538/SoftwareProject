@@ -200,6 +200,6 @@ public ArrayList<Incense> getAll() {
             System.out.println("can't read file: " + err);
         }
     }
-  
+ 
 }
 
