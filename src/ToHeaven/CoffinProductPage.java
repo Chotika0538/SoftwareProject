@@ -106,7 +106,7 @@ public class CoffinProductPage extends javax.swing.JPanel {
 
         coffinProductPanel.setBackground(new java.awt.Color(255, 180, 87));
         coffinProductPanel.setPreferredSize(new java.awt.Dimension(798, 500));
-        coffinProductPanel.setLayout(new javax.swing.BoxLayout(coffinProductPanel, javax.swing.BoxLayout.Y_AXIS));
+        coffinProductPanel.setLayout(new java.awt.GridLayout(0, 1, 0, 5));
         //wreathList.add(new WreathProduct().getData(wreath));
         //wreathProductPanel.add(wreathList.get(0));
         jScrollPane1.setViewportView(coffinProductPanel);
@@ -134,7 +134,9 @@ public class CoffinProductPage extends javax.swing.JPanel {
     public void showData(){
          for(int i=0; i<coffinClassList.size(); i++){
              coffinProduct.add(new CoffinProduct(coffinClassList.get(i)));
-             //offeringProductPanel.setPreferredSize(new Dimension(800, offeringProductPanel.getHeight()+250));
+             if(coffinClassList.size()>1){
+                 coffinProductPanel.setPreferredSize(new Dimension(800, coffinProductPanel.getHeight()+250));
+             }
              coffinProductPanel.add(coffinProduct.get(i));
              coffinProductPanel.revalidate();
              coffinProductPanel.repaint();

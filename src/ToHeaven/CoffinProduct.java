@@ -32,7 +32,8 @@ public class CoffinProduct extends javax.swing.JPanel {
         name.setText(coffinClass.toString());
         details.setText(coffinClass.getDetail());
         productImage.setIcon(new ImageIcon(coffinClass.getPath()));
-        priceLB.setText(Double.toString(coffinClass.getPrice()));
+        //priceLB.setText(Double.toString(coffinClass.getSize20price()));
+        
 }
 
         public Coffin getFrameClass() {
@@ -49,6 +50,7 @@ public class CoffinProduct extends javax.swing.JPanel {
 
         groupWreath = new javax.swing.ButtonGroup();
         groupColors = new javax.swing.ButtonGroup();
+        groupSize = new javax.swing.ButtonGroup();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
         jRadioButton3 = new javax.swing.JRadioButton();
@@ -65,7 +67,9 @@ public class CoffinProduct extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(800, 240));
         setLayout(null);
 
+        groupSize.add(jRadioButton1);
         jRadioButton1.setFont(new java.awt.Font("TH Sarabun New", 1, 20)); // NOI18N
+        jRadioButton1.setSelected(true);
         jRadioButton1.setText("20 นิ้ว");
         jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -75,6 +79,7 @@ public class CoffinProduct extends javax.swing.JPanel {
         add(jRadioButton1);
         jRadioButton1.setBounds(87, 28, 63, 32);
 
+        groupSize.add(jRadioButton2);
         jRadioButton2.setFont(new java.awt.Font("TH Sarabun New", 1, 20)); // NOI18N
         jRadioButton2.setText("24 นิ้ว");
         jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -85,6 +90,7 @@ public class CoffinProduct extends javax.swing.JPanel {
         add(jRadioButton2);
         jRadioButton2.setBounds(245, 28, 64, 32);
 
+        groupSize.add(jRadioButton3);
         jRadioButton3.setFont(new java.awt.Font("TH Sarabun New", 1, 20)); // NOI18N
         jRadioButton3.setText("22 นิ้ว");
         jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -136,7 +142,7 @@ public class CoffinProduct extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
-        // TODO add your handling code here:
+       //priceLB.setText(Double.toString(coffinClass.getSize20price()));
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
@@ -158,6 +164,7 @@ public class CoffinProduct extends javax.swing.JPanel {
     private javax.swing.JLabel choosePieceCoffin;
     private javax.swing.JTextArea details;
     private javax.swing.ButtonGroup groupColors;
+    private javax.swing.ButtonGroup groupSize;
     private javax.swing.ButtonGroup groupWreath;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JRadioButton jRadioButton1;

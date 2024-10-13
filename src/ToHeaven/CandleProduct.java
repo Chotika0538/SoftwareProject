@@ -37,8 +37,8 @@ public class CandleProduct extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        choosePieceCoffin = new javax.swing.JLabel();
-        pieceCoffin = new javax.swing.JSpinner();
+        choosePieceCandle = new javax.swing.JLabel();
+        pieceCandle = new javax.swing.JSpinner();
         productImage = new javax.swing.JLabel();
         scrollDetail = new javax.swing.JScrollPane();
         details = new javax.swing.JTextArea();
@@ -47,10 +47,10 @@ public class CandleProduct extends javax.swing.JPanel {
 
         setPreferredSize(new java.awt.Dimension(600, 220));
 
-        choosePieceCoffin.setFont(new java.awt.Font("TH Sarabun New", 1, 18)); // NOI18N
-        choosePieceCoffin.setText("เลือกจำนวนสินค้า");
+        choosePieceCandle.setFont(new java.awt.Font("TH Sarabun New", 1, 18)); // NOI18N
+        choosePieceCandle.setText("เลือกจำนวนสินค้า");
 
-        pieceCoffin.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+        pieceCandle.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
 
         productImage.setPreferredSize(new java.awt.Dimension(180, 180));
 
@@ -84,9 +84,9 @@ public class CandleProduct extends javax.swing.JPanel {
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(priceLB, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(60, 60, 60)
-                            .addComponent(choosePieceCoffin, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(choosePieceCandle, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(0, 0, 0)
-                            .addComponent(pieceCoffin, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(pieceCandle, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
@@ -108,18 +108,18 @@ public class CandleProduct extends javax.swing.JPanel {
                                 .addComponent(priceLB, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(layout.createSequentialGroup()
                                     .addGap(1, 1, 1)
-                                    .addComponent(choosePieceCoffin, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(pieceCoffin, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(choosePieceCandle, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(pieceCandle, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel choosePieceCoffin;
+    private javax.swing.JLabel choosePieceCandle;
     private javax.swing.JTextArea details;
     private javax.swing.JLabel name;
-    private javax.swing.JSpinner pieceCoffin;
+    private javax.swing.JSpinner pieceCandle;
     private javax.swing.JLabel priceLB;
     private javax.swing.JLabel productImage;
     private javax.swing.JScrollPane scrollDetail;
