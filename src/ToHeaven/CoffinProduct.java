@@ -77,7 +77,7 @@ public class CoffinProduct extends javax.swing.JPanel {
             }
         });
         add(jRadioButton1);
-        jRadioButton1.setBounds(87, 28, 63, 32);
+        jRadioButton1.setBounds(130, 160, 63, 32);
 
         groupSize.add(jRadioButton2);
         jRadioButton2.setFont(new java.awt.Font("TH Sarabun New", 1, 20)); // NOI18N
@@ -88,7 +88,7 @@ public class CoffinProduct extends javax.swing.JPanel {
             }
         });
         add(jRadioButton2);
-        jRadioButton2.setBounds(245, 28, 64, 32);
+        jRadioButton2.setBounds(290, 160, 64, 32);
 
         groupSize.add(jRadioButton3);
         jRadioButton3.setFont(new java.awt.Font("TH Sarabun New", 1, 20)); // NOI18N
@@ -99,25 +99,25 @@ public class CoffinProduct extends javax.swing.JPanel {
             }
         });
         add(jRadioButton3);
-        jRadioButton3.setBounds(166, 28, 64, 32);
+        jRadioButton3.setBounds(210, 160, 64, 32);
 
         jLabel1.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
         jLabel1.setText("ขนาด");
         add(jLabel1);
-        jLabel1.setBounds(20, 26, 40, 33);
+        jLabel1.setBounds(70, 160, 40, 33);
 
         productImage.setPreferredSize(new java.awt.Dimension(272, 139));
         add(productImage);
-        productImage.setBounds(90, 70, 280, 110);
+        productImage.setBounds(90, 30, 280, 110);
 
         choosePieceCoffin.setFont(new java.awt.Font("TH Sarabun New", 1, 18)); // NOI18N
         choosePieceCoffin.setText("เลือกจำนวนสินค้า");
         add(choosePieceCoffin);
-        choosePieceCoffin.setBounds(570, 190, 110, 30);
+        choosePieceCoffin.setBounds(540, 150, 110, 30);
 
         pieceCoffin.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
         add(pieceCoffin);
-        pieceCoffin.setBounds(680, 190, 80, 30);
+        pieceCoffin.setBounds(660, 150, 80, 30);
 
         scrollDetail.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         scrollDetail.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
@@ -129,7 +129,7 @@ public class CoffinProduct extends javax.swing.JPanel {
         scrollDetail.setViewportView(details);
 
         add(scrollDetail);
-        scrollDetail.setBounds(410, 70, 330, 110);
+        scrollDetail.setBounds(410, 30, 330, 110);
 
         name.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         add(name);
@@ -138,7 +138,7 @@ public class CoffinProduct extends javax.swing.JPanel {
         priceLB.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         priceLB.setText("ราคา : ");
         add(priceLB);
-        priceLB.setBounds(410, 190, 100, 30);
+        priceLB.setBounds(410, 150, 100, 30);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
