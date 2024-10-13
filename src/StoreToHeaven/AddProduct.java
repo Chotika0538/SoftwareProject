@@ -11,12 +11,12 @@ import DAO.Wreathdao;
 import java.util.ArrayList;
 
 public class AddProduct extends javax.swing.JPanel implements CheckPanel{
-    private ArrayList<Wreath> wList;  //keep data to show at wreath template of user
+    private ArrayList<Frame> fList;  //keep data to show at wreath template of user
     /**
      * Creates new form AddProduct
      */
     public AddProduct() {
-        wList = new ArrayList<>();
+        fList = new ArrayList<>();
         initComponents();
     }
 

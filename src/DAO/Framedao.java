@@ -23,13 +23,12 @@ public class Framedao {
     private FileInputStream fileInput;
     private FileOutputStream fos;
     private ArrayList<List<String>> framelist ;
-    private String[] nameCol = { "ชื่อ","รายละเอียด" ,"pathรูปภาพ", "วัสดุ",  "ราคา"};
+    private String[] nameCol = { "ชื่อ","รายละเอียด" ,"pathรูปภาพ", "ราคา"};
     private ArrayList<FrameDetail> fd;
     private ArrayList<Frame> fList;
     private Component[] cmp;
     String name , pattern, detail, path;
-    String[] material;
-    Double[] price;
+    double price;
     
     public Framedao(){
         fList = new ArrayList<>();
@@ -63,18 +62,20 @@ public class Framedao {
             String pattern = fd.get(a).getPatternTF().getText();
             String detail = fd.get(a).getDetailTA().getText();
             String path = fd.get(a).getFilePath();
-            String[] material = frame.getMaterialTF().getText().split(",");
-            String[] pricel = frame.getPriceTF().getText().split(",");
             double price = Double.parseDouble(fd.get(a).getPriceTF().getText());
-            String[] dataChecked = {pattern,detail,path,String.join(",", material),Double.toString(price)};
+            String[] dataChecked = {pattern,detail,path,Double.toString(price)};
             boolean haveData = false ;
+            
             for (Row row : sheet){
-                Cell c = row.getCell(0);
+                if(row.getCell(0)!=null){
+                    Cell c = row.getCell(0);
                 if(c.toString().equals(dataChecked[0])){
                     haveData = true;
                     break;
                 }
             }
+                
+         }
             if(!haveData){
                try {
                 int lastRow = sheet.getLastRowNum();
@@ -82,16 +83,38 @@ public class Framedao {
                 newRow.createCell(0).setCellValue(pattern);
                 newRow.createCell(1).setCellValue(detail);
                 newRow.createCell(2).setCellValue(path);
-                newRow.createCell(3).setCellValue(frame.getMaterialTF().getText());
-                newRow.createCell(4).setCellValue(frame.getPriceTF().getText());
+                newRow.createCell(3).setCellValue(price);
+                
+                
+                
                } catch (Exception e) {
                     e.printStackTrace();
                }             
            }
         }
+//            //remove empty row
+//            int lastRow = sheet.getLastRowNum();
+//            int emptyRowPointer = -1;
+//            //int rowIndex = 0;
+//            for (int rowIndex = 0; rowIndex <= lastRow; rowIndex++){
+//                Row row = sheet.getRow(rowIndex);
+//                if (row == null) {  
+//                        if (emptyRowPointer == -1) {  
+//                            emptyRowPointer = rowIndex;
+//                        }
+//                }else if (emptyRowPointer != -1) {
+//                    Row targetRow = sheet.createRow(emptyRowPointer);
+//                    copyRow(sheet, row, targetRow);
+//                    sheet.removeRow(row);  
+//                    emptyRowPointer++;
+//                }
+//               
+//            }
             /*write data into StoreStock.xlsx*/
             fos = new FileOutputStream(new File(FILE_NAME));
             wb.write(fos);
+            
+            
         } catch (Exception e) {
             e.printStackTrace(); // แสดงexception
         } finally {
@@ -113,7 +136,10 @@ public class Framedao {
     }
 
         /*get All Data from excel file*/
-    public ArrayList<Frame> getAll(){        
+    public ArrayList<Frame> getAll(){    
+        
+        String name=null, pattern = null, detail=null, path=null;
+        price = 0;
         read();
         try {
             if (sheet == null) {
@@ -140,24 +166,22 @@ public class Framedao {
                            path = cell.getStringCellValue();
                            break;
                        case 3:
-                           material = cell.getStringCellValue().split(",");
-                           break;
-                       case 4:
-                           String[] s = cell.getStringCellValue().split("/");
-                           price = new Double[s.length];
-                           //int i = 0;
-                          for(int i=0; i<s.length; i++){
-                               //price[i] = new Double();
-                                if (s[i] != null && !s[i].isEmpty() && !s[i].equals("null")) {
-                                    price[i] = Double.parseDouble(s[i]);  // แปลงเป็น double
-                                } else {
-                                    price[i] = 0.0;  // กำหนดค่าเริ่มต้นเป็น 0.0 หากข้อมูลไม่ถูกต้อง
-                                }
-                            }
+//                           String[] s = cell.getStringCellValue().split("/");
+//                           price = new Double[s.length];
+//                           //int i = 0;
+//                          for(int i=0; i<s.length; i++){
+//                               //price[i] = new Double();
+//                                if (s[i] != null && !s[i].isEmpty() && !s[i].equals("null")) {
+//                                    price[i] = Double.parseDouble(s[i]);  // แปลงเป็น double
+//                                } else {
+//                                    price[i] = 0.0;  // กำหนดค่าเริ่มต้นเป็น 0.0 หากข้อมูลไม่ถูกต้อง
+//                                }
+//                            }
+                           price = cell.getNumericCellValue();
                             break;
                    }
-                   if (name != null && pattern != null && detail != null && path != null && material != null &&  price != null) {
-                        fList.add(new Frame(name, pattern, detail, path, material, price));
+                   if (name != null && pattern != null && detail != null && path != null &&  price > 0l) {
+                        fList.add(new Frame(name, pattern, detail, path, price));
                     }
                 }
             }
@@ -180,13 +204,24 @@ public class Framedao {
         }
         return fList;
     }
+//    private static void copyRow(Sheet sheet, Row sourceRow, Row targetRow) {
+//        for (int cellIndex = sourceRow.getFirstCellNum(); cellIndex < sourceRow.getLastCellNum(); cellIndex++) {
+//            Cell sourceCell = sourceRow.getCell(cellIndex);
+//            Cell targetCell = targetRow.createCell(cellIndex);
+//
+//            if (sourceCell != null) {
+//               targetCell.setCellValue(sourceCell.getStringCellValue());
+//               break;
+//            }
+//        }
+//    }
     
     private void read() {
         wb = null;
         try {
             fileInput = new FileInputStream(new File(FILE_NAME));
             wb = new XSSFWorkbook(fileInput);
-            sheet = wb.getSheetAt(3); // เปลี่ยนไปที่ชีตแรก
+            sheet = wb.getSheetAt(3); // เปลี่ยนไปที่ชีต3
         } catch (Exception err) {
             System.out.println("can't read file: " + err);
         }

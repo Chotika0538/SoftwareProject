@@ -29,7 +29,7 @@ public class FrameProduct extends javax.swing.JPanel {
         name.setText(frameClass.toString());
         detailProduct.setText(frameClass.getDetail());
         productImage.setIcon(new ImageIcon(frameClass.getPath()));
-        priceLB.setText(frameClass.getPriceAll().toString());
+        priceLB.setText(Double.toString(frameClass.getPrice()));
 }
 
         public Frame getFrameClass() {
