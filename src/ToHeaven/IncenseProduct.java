@@ -52,6 +52,8 @@ public class IncenseProduct extends javax.swing.JPanel {
         name1 = new javax.swing.JLabel();
         priceLB = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 204, 204));
+        setOpaque(false);
         setPreferredSize(new java.awt.Dimension(600, 220));
         setLayout(null);
 

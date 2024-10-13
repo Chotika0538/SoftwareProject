@@ -4,30 +4,18 @@ package StoreToHeaven;
 import java.util.*;
 public class Coffin extends Product {
     private ArrayList<Coffin> cList;
-    private String size;
+    private ArrayList<Double> priceAll;
+    private int size20, size22, size24;
     private double price;
     
-    public Coffin(String name,String pattern,String size,String detail,String path, double price){
+    public Coffin(String name,String pattern,String detail,int size20,int size22,int size24,String path){
        super(name,pattern,detail,path);
-       this.size=size;
-       this.price=price;
     }
-
-    public String getSize() {
-        return size;
-    }
-
-    public void setSize(String size) {
-        this.size = size;
-    }
-    public ArrayList<Coffin> getwList() {
+    public ArrayList<Coffin> getcList() {
         return cList;
     }
 
     public void setwList(ArrayList<Coffin> cList) {
         this.cList = cList;
     }
-
-    
-    
 }

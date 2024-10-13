@@ -51,7 +51,7 @@ public class CoffinProductPage extends javax.swing.JPanel {
         coffinNameLB.setBackground(new java.awt.Color(255, 204, 204));
         coffinNameLB.setFont(new java.awt.Font("TH SarabunPSK", 1, 24)); // NOI18N
         coffinNameLB.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        coffinNameLB.setText("เทียน");
+        coffinNameLB.setText("โลงศพ");
         coffinNameLB.setPreferredSize(new java.awt.Dimension(800, 50));
         add(coffinNameLB);
         coffinNameLB.setBounds(0, 0, 800, 50);
@@ -102,6 +102,7 @@ public class CoffinProductPage extends javax.swing.JPanel {
         menuPanel.setBounds(0, 437, 800, 63);
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane1.setPreferredSize(new java.awt.Dimension(800, 502));
 
         coffinProductPanel.setBackground(new java.awt.Color(255, 180, 87));
         coffinProductPanel.setPreferredSize(new java.awt.Dimension(798, 500));

@@ -1,7 +1,8 @@
 package DAO;
+
 import java.io.BufferedInputStream;
 import org.apache.poi.ss.usermodel.*;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;  // Allows working with .xlsx files
+import org.apache.poi.xssf.usermodel.XSSFWorkbook; // Allows working with .xlsx files
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -11,9 +12,7 @@ import StoreToHeaven.*;
 import java.awt.Component;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.*;
-
+import java.util.List;
 
 public class Coffindao {
     private Workbook wb;
@@ -22,72 +21,90 @@ public class Coffindao {
     private FileInputStream fileInput;
     private FileOutputStream fos;
     private ArrayList<List<String>> coffinlist = new ArrayList<>();
-    private String[] nameCol = { "ชื่อ","ขนาด","รายละเอียด" ,"pathรูปภาพ", "ราคา"};
+    private String[] nameCol = { "ชื่อ", "รายละเอียด", "ขนาด 20 นิ้ว", "ขนาด 22 นิ้ว", "ขนาด 24 นิ้ว", "pathรูปภาพ"};
     private ArrayList<CoffinDetail> cfd;
     private Component[] cmp;
     private ArrayList<Coffin> cList;
-    String name , size, pattern, detail, path;
-    double price;  
+    String name, pattern, detail, path;
 
-    /*Save data in Excel file*/
+    /* Save data in Excel file */
     public void save(AddCoffin coffin) {
-        cmp = coffin.getPic_detailJP().getComponents();    // get CoffinDetail panel
+        cmp = coffin.getPic_detailJP().getComponents(); // get CoffinDetail panel
         cfd = new ArrayList<>();
-        for (Component c : cmp){
+        for (Component c : cmp) {
             cfd.add((CoffinDetail) c);
         }
-    
-        /*Excel*/    
-        read();             // read StroeStock.xlsx
-        try {           // check that StoreStock.xlsx was found
+
+        // Excel
+        read(); // read StoreStock.xlsx
+        try { // check that StoreStock.xlsx was found
             if (sheet == null) {
                 System.out.println("Sheet not found");
                 return;
             }
             Row firstRow = sheet.getRow(0);
-            if (firstRow == null) {       // this files valid?
-                firstRow = sheet.createRow(0);          // create first row
-                nameCol[0] = coffin.getNameTF().getText();
-                /*bring all data in wreathlist to create each col in valid sheet*/
-                for(int j=0; j<nameCol.length; j++){
+            if (firstRow == null) { // this files valid?
+                firstRow = sheet.createRow(0); // create first row
+                for (int j = 0; j < nameCol.length; j++) {
                     Cell cell = firstRow.createCell(j);
                     cell.setCellValue(nameCol[j]);
                 }
             }
-            for (int a=0; a<cfd.size(); a++){
-            String pattern = cfd.get(a).getPatternTF().getText();    
-            String detail = cfd.get(a).getDetailTA().getText();
-            String path = cfd.get(a).getFilePath();
-            String size = coffin.getSizeTF().getText();
-            //double price = Double.parseDouble(cfd.get(a).getPriceTF().getText());
-            //String[] dataChecked = {pattern,detail,path,Double.toString(price)};
-            double price = Double.parseDouble(cfd.get(a).getPriceTF().getText());
-            String[] dataChecked = {pattern, detail, path, Double.toString(price)};
 
-   
-            boolean haveData = false ;
-            for (Row row : sheet){
-                Cell c = row.getCell(0);
-                if(c.toString().equals(dataChecked[0])){
-                    haveData = true;
-                    break;
+            for (int a = 0; a < cfd.size(); a++) {
+                String pattern = cfd.get(a).getPatternTF1().getText();
+                String detail = cfd.get(a).getDetailTA().getText();
+                String path = cfd.get(a).getFilePath();
+                int size20 = 0, size22 = 0, size24 = 0;
+
+                // แปลงราคาขนาด 20, 22, 24 พร้อมตรวจสอบความถูกต้อง
+                try {
+                    String size20Str = cfd.get(a).getPricesize20().getText().trim();
+                    String size22Str = cfd.get(a).getPricesize22().getText().trim();
+                    String size24Str = cfd.get(a).getPricesize24().getText().trim();
+
+                    // ตรวจสอบว่าค่าไม่เป็นค่าว่าง
+                    if (!size20Str.isEmpty()) {
+                        size20 = Integer.parseInt(size20Str);
+                    }
+                    if (!size22Str.isEmpty()) {
+                        size22 = Integer.parseInt(size22Str);
+                    }
+                    if (!size24Str.isEmpty()) {
+                        size24 = Integer.parseInt(size24Str);
+                    }
+                } catch (NumberFormatException e) {
+                    System.out.println("Invalid size format: " + e.getMessage());
+                    continue; // ข้ามไปยังรายการถัดไป
+                }
+
+                String[] dataChecked = { pattern, detail, path, String.valueOf(size20), String.valueOf(size22), String.valueOf(size24) };
+
+                boolean haveData = false;
+                for (Row row : sheet) {
+                    Cell c = row.getCell(0);
+                    if (c.toString().equals(dataChecked[0])) {
+                        haveData = true;
+                        break;
+                    }
+                }
+                if (!haveData) {
+                    try {
+                        int lastRow = sheet.getLastRowNum();
+                        Row newRow = sheet.createRow(lastRow + 1);
+                        newRow.createCell(0).setCellValue(pattern);
+                        newRow.createCell(1).setCellValue(detail);
+                        newRow.createCell(2).setCellValue(path);
+                        newRow.createCell(3).setCellValue(size20);
+                        newRow.createCell(4).setCellValue(size22);
+                        newRow.createCell(5).setCellValue(size24);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                 }
             }
-            if(!haveData){
-               try {
-                int lastRow = sheet.getLastRowNum();
-                Row newRow = sheet.createRow(lastRow+1);
-                newRow.createCell(0).setCellValue(pattern);
-                newRow.createCell(1).setCellValue(size);
-                newRow.createCell(2).setCellValue(detail);
-                newRow.createCell(3).setCellValue(path);
-                newRow.createCell(4).setCellValue(price);
-               } catch (Exception e) {
-                    e.printStackTrace();
-               }             
-           }
-        }
-            /*write data into StoreStock.xlsx*/
+
+            // Write data into StoreStock.xlsx
             fos = new FileOutputStream(new File(FILE_NAME));
             wb.write(fos);
         } catch (Exception e) {
@@ -109,58 +126,63 @@ public class Coffindao {
             }
         }
     }
-    public ArrayList<Coffin> getAll() {        
-    cList = new ArrayList<>();
-    read();
-    try {
-        if (sheet == null) {
-            System.out.println("Sheet not found");
-            return cList; // หรือทำการรีเทิร์นอย่างอื่นหากไม่มีชีต
-        }
 
-        for (Row row : sheet) {
-            if (row.getRowNum() == 0) {
-                name = row.getCell(0).getStringCellValue();
-                continue;
-            }
-            String pattern = null, size= null, detail = null, path = null;
-            double price = 0.0;
-
-            for (Cell cell : row) {
-                if (cell == null) {
-                    continue; // ข้าม cell ที่เป็น null
-                }
-                switch (cell.getColumnIndex()) {
-                    case 0:
-                        pattern = cell.getStringCellValue();
-                        break;
-                    case 1:
-                        size = cell.getStringCellValue();
-                        break;
-                    case 2:
-                        detail = cell.getStringCellValue();
-                        break;
-                    case 3:
-                        path = cell.getStringCellValue();
-                        break;
-                    case 4:
-                        price = cell.getNumericCellValue();
-                        break;
-                }
+    public ArrayList<Coffin> getAll() {
+        cList = new ArrayList<>();
+        read();
+        try {
+            if (sheet == null) {
+                System.out.println("Sheet not found");
+                return cList; // หรือทำการรีเทิร์นอย่างอื่นหากไม่มีชีต
             }
 
-            // ตรวจสอบค่าที่ได้ก่อนเพิ่มลง oList
-            if (name != null && pattern != null && detail != null && path != null && price > 0.0) {
-                Coffin newCoffin = new Coffin(name, pattern, size, detail, path, price);
-                // ตรวจสอบไม่ให้มีการเพิ่มซ้ำ
-                if (!cList.contains(newCoffin)) {
-                    cList.add(newCoffin);
+            for (Row row : sheet) {
+                if (row.getRowNum() == 0) {
+                    name = row.getCell(0).getStringCellValue();
+                    continue;
+                }
+                String pattern = null, detail = null, path = null;
+                int size20 = 0;
+                int size22 = 0;
+                int size24 = 0;
+                for (Cell cell : row) {
+                    if (cell == null) {
+                        continue; // ข้าม cell ที่เป็น null
+                    }
+                    switch (cell.getColumnIndex()) {
+                        case 0:
+                            pattern = cell.getStringCellValue();
+                            break;
+                        case 1:
+                            detail = cell.getStringCellValue();
+                            break;
+                        case 2:
+                            path = cell.getStringCellValue();
+                            break;
+                        case 3:
+                            size20 = (int) cell.getNumericCellValue();
+                            break;
+                        case 4:
+                            size22 = (int) cell.getNumericCellValue();
+                            break;
+                        case 5:
+                            size24 = (int) cell.getNumericCellValue();
+                            break;
+                    }
+                }
+
+                // ตรวจสอบค่าที่ได้ก่อนเพิ่มลง cList
+                if (name != null && pattern != null && detail != null && path != null && size20 > 0 && size22 > 0 && size24 > 0) {
+                    Coffin newCoffin = new Coffin(name, pattern, detail, size20, size22, size24, path);
+                    // ตรวจสอบไม่ให้มีการเพิ่มซ้ำ
+                    if (!cList.contains(newCoffin)) {
+                        cList.add(newCoffin);
+                    }
                 }
             }
-        }
         } catch (Exception e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             try {
                 if (fileInput != null) {
                     fileInput.close();
@@ -177,7 +199,8 @@ public class Coffindao {
         }
         return cList;
     }
-    /*Read Excel file*/
+
+    /* Read Excel file */
     public void read() {
         wb = null;
         try {
@@ -188,5 +211,4 @@ public class Coffindao {
             System.out.println("can't read file: " + err);
         }
     }
-   
 }

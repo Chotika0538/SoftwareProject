@@ -36,7 +36,7 @@ public class Incensedao {
     private FileInputStream fileInput;
     private FileOutputStream fos;
     private ArrayList<List<String>> incenselist = new ArrayList<>();
-    private String[] nameCol = { "ชื่อ","ขนาด","รายละเอียด" ,"pathรูปภาพ", "ราคา"};
+    private String[] nameCol = { "ชื่อ","รายละเอียด" ,"pathรูปภาพ", "ราคา"};
     private ArrayList<IncenseDetail> icd;
     private ArrayList<Incense> iList;
     private Component[] cmp;

@@ -46,15 +46,19 @@ private String filePath;
         detailLB = new javax.swing.JLabel();
         detailSP = new javax.swing.JScrollPane();
         detailTA = new javax.swing.JTextArea();
-        priceLB = new javax.swing.JLabel();
-        priceTF = new javax.swing.JTextField();
-        bathLB = new javax.swing.JLabel();
         deleteCB = new javax.swing.JCheckBox();
+        size = new javax.swing.JLabel();
+        patternTF1 = new javax.swing.JTextField();
+        priceSize24 = new javax.swing.JTextField();
         pattern = new javax.swing.JLabel();
-        patternTF = new javax.swing.JTextField();
+        priceSize20 = new javax.swing.JTextField();
+        priceSize22 = new javax.swing.JTextField();
+        detailLB1 = new javax.swing.JLabel();
+        detailLB2 = new javax.swing.JLabel();
+        detailLB3 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 204, 204));
-        setPreferredSize(new java.awt.Dimension(400, 230));
+        setPreferredSize(new java.awt.Dimension(400, 300));
         setLayout(null);
 
         choosePicBT.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
@@ -65,18 +69,18 @@ private String filePath;
             }
         });
         add(choosePicBT);
-        choosePicBT.setBounds(12, 50, 106, 26);
+        choosePicBT.setBounds(10, 130, 106, 26);
 
         showPicName.setBackground(new java.awt.Color(204, 255, 255));
         showPicName.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
         add(showPicName);
-        showPicName.setBounds(132, 50, 160, 30);
+        showPicName.setBounds(130, 130, 160, 30);
 
         detailLB.setBackground(new java.awt.Color(204, 255, 255));
         detailLB.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
-        detailLB.setText("รายละเอียด ");
+        detailLB.setText("24 นิ้ว ");
         add(detailLB);
-        detailLB.setBounds(12, 80, 66, 22);
+        detailLB.setBounds(310, 100, 37, 22);
 
         detailSP.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
 
@@ -86,23 +90,7 @@ private String filePath;
         detailSP.setViewportView(detailTA);
 
         add(detailSP);
-        detailSP.setBounds(12, 110, 347, 110);
-
-        priceLB.setBackground(new java.awt.Color(204, 255, 255));
-        priceLB.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
-        priceLB.setText("ราคา");
-        add(priceLB);
-        priceLB.setBounds(190, 80, 27, 21);
-
-        priceTF.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
-        add(priceTF);
-        priceTF.setBounds(220, 80, 76, 31);
-
-        bathLB.setBackground(new java.awt.Color(204, 255, 255));
-        bathLB.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
-        bathLB.setText("บาทต่อชิ้น");
-        add(bathLB);
-        bathLB.setBounds(300, 80, 55, 21);
+        detailSP.setBounds(10, 190, 347, 110);
 
         deleteCB.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         deleteCB.setText("เลือกเพื่อลบ");
@@ -117,16 +105,51 @@ private String filePath;
             }
         });
         add(deleteCB);
-        deleteCB.setBounds(280, 10, 85, 20);
+        deleteCB.setBounds(280, 30, 85, 20);
+
+        size.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
+        size.setText("ราคาสินค้าตามขนาด : ");
+        add(size);
+        size.setBounds(10, 70, 120, 21);
+
+        patternTF1.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
+        add(patternTF1);
+        patternTF1.setBounds(100, 30, 160, 27);
+
+        priceSize24.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
+        add(priceSize24);
+        priceSize24.setBounds(290, 70, 70, 27);
 
         pattern.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
         pattern.setText("รูปแบบสินค้า : ");
         add(pattern);
-        pattern.setBounds(12, 10, 90, 21);
+        pattern.setBounds(10, 30, 90, 21);
 
-        patternTF.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
-        add(patternTF);
-        patternTF.setBounds(102, 10, 160, 27);
+        priceSize20.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
+        add(priceSize20);
+        priceSize20.setBounds(130, 70, 70, 27);
+
+        priceSize22.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
+        add(priceSize22);
+        priceSize22.setBounds(210, 70, 70, 27);
+
+        detailLB1.setBackground(new java.awt.Color(204, 255, 255));
+        detailLB1.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
+        detailLB1.setText("รายละเอียด ");
+        add(detailLB1);
+        detailLB1.setBounds(20, 160, 66, 22);
+
+        detailLB2.setBackground(new java.awt.Color(204, 255, 255));
+        detailLB2.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
+        detailLB2.setText("20 นิ้ว ");
+        add(detailLB2);
+        detailLB2.setBounds(150, 100, 37, 22);
+
+        detailLB3.setBackground(new java.awt.Color(204, 255, 255));
+        detailLB3.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
+        detailLB3.setText("22 นิ้ว ");
+        add(detailLB3);
+        detailLB3.setBounds(230, 100, 37, 22);
     }// </editor-fold>//GEN-END:initComponents
 
     private void choosePicBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_choosePicBTActionPerformed
@@ -155,8 +178,8 @@ private String filePath;
         // TODO add your handling code here:
     }//GEN-LAST:event_deleteCBActionPerformed
 
-     public JTextField getPatternTF() {
-        return patternTF;
+     public JTextField getPatternTF1() {
+        return patternTF1;
     }
     public JTextArea getDetailTA() {
         return detailTA;
@@ -165,22 +188,38 @@ private String filePath;
     public String getFilePath() {
         return filePath;
     }
-     public JTextField getPriceTF() {
-        return priceTF;
-    }
-  
 
+    public JTextField getPricesize20() {
+        return priceSize20;
+    }
+
+    public JTextField getPricesize22() {
+        return priceSize22;
+    }
+
+    public JTextField getPricesize24() {
+        return priceSize24;
+    }
+ 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel bathLB;
     private javax.swing.JButton choosePicBT;
     private javax.swing.JCheckBox deleteCB;
     private javax.swing.JLabel detailLB;
+    private javax.swing.JLabel detailLB1;
+    private javax.swing.JLabel detailLB2;
+    private javax.swing.JLabel detailLB3;
     private javax.swing.JScrollPane detailSP;
     private javax.swing.JTextArea detailTA;
     private javax.swing.JLabel pattern;
-    private javax.swing.JTextField patternTF;
-    private javax.swing.JLabel priceLB;
-    private javax.swing.JTextField priceTF;
+    private javax.swing.JTextField patternTF1;
+    private javax.swing.JTextField priceSize20;
+    private javax.swing.JTextField priceSize22;
+    private javax.swing.JTextField priceSize24;
     private javax.swing.JLabel showPicName;
+    private javax.swing.JLabel size;
     // End of variables declaration//GEN-END:variables
+
+    public Object getPatternTF() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

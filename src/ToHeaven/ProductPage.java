@@ -122,6 +122,16 @@ public class ProductPage extends javax.swing.JPanel {
         coffinBT.setText("โลงศพ");
         coffinBT.setBorder(null);
         coffinBT.setPreferredSize(new java.awt.Dimension(75, 30));
+        coffinBT.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                coffinBTMouseClicked(evt);
+            }
+        });
+        coffinBT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                coffinBTActionPerformed(evt);
+            }
+        });
         add(coffinBT);
         coffinBT.setBounds(510, 310, 135, 41);
 
@@ -154,6 +164,14 @@ public class ProductPage extends javax.swing.JPanel {
     private void candleBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_candleBTMouseClicked
        ((CardLayout)mainPanel.getLayout()).show(mainPanel, "candleproductpage");
     }//GEN-LAST:event_candleBTMouseClicked
+
+    private void coffinBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_coffinBTMouseClicked
+        ((CardLayout)mainPanel.getLayout()).show(mainPanel, "coffinproductpage");
+    }//GEN-LAST:event_coffinBTMouseClicked
+
+    private void coffinBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_coffinBTActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_coffinBTActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

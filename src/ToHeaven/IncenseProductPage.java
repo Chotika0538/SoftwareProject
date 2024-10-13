@@ -101,16 +101,17 @@ public class IncenseProductPage extends javax.swing.JPanel {
         menuPanel.setBounds(0, 437, 800, 63);
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane1.setPreferredSize(new java.awt.Dimension(798, 502));
 
         incenseProductPanel.setBackground(new java.awt.Color(255, 180, 87));
-        incenseProductPanel.setPreferredSize(new java.awt.Dimension(798, 500));
-        incenseProductPanel.setLayout(new javax.swing.BoxLayout(incenseProductPanel, javax.swing.BoxLayout.Y_AXIS));
+        incenseProductPanel.setPreferredSize(new java.awt.Dimension(789, 500));
+        incenseProductPanel.setLayout(new java.awt.GridLayout(0, 1, 0, 5));
         //wreathList.add(new WreathProduct().getData(wreath));
         //wreathProductPanel.add(wreathList.get(0));
         jScrollPane1.setViewportView(incenseProductPanel);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(0, 50, 800, 387);
+        jScrollPane1.setBounds(0, 50, 798, 387);
     }// </editor-fold>//GEN-END:initComponents
 
     private void backBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBTActionPerformed
