@@ -29,7 +29,7 @@ public class Candledao {
     private FileInputStream fileInput;
     private FileOutputStream fos;
     private ArrayList<List<String>> candlelist = new ArrayList<>();
-    private String[] nameCol = { "ชื่อ","ขนาด","รายละเอียด" ,"pathรูปภาพ", "ราคา"};
+    private String[] nameCol = { "ชื่อ","รายละเอียด" ,"pathรูปภาพ", "ราคา"};
     private ArrayList<CandleDetail> cnd;
     private ArrayList<Candle> cnList;
     private Component[] cmp;
@@ -81,9 +81,9 @@ public class Candledao {
                 int lastRow = sheet.getLastRowNum();
                 Row newRow = sheet.createRow(lastRow+1);
                 newRow.createCell(0).setCellValue(pattern);
-                newRow.createCell(2).setCellValue(detail);
-                newRow.createCell(3).setCellValue(path);
-                newRow.createCell(4).setCellValue(price);
+                newRow.createCell(1).setCellValue(detail);
+                newRow.createCell(2).setCellValue(path);
+                newRow.createCell(3).setCellValue(price);
                } catch (Exception e) {
                     e.printStackTrace();
                }             
