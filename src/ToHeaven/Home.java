@@ -33,19 +33,17 @@ public class Home extends javax.swing.JPanel {
         HomeBackGround = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(242, 245, 231));
-        setPreferredSize(new java.awt.Dimension(800, 400));
+        setPreferredSize(new java.awt.Dimension(800, 500));
 
         HomeBackGround.setFont(new java.awt.Font("TH Sarabun New", 0, 12)); // NOI18N
         HomeBackGround.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Desktop\\SoftwareProjectKhim\\src\\to_heaven.jpg")); // NOI18N
-        HomeBackGround.setMinimumSize(new java.awt.Dimension(800, 400));
-        HomeBackGround.setPreferredSize(new java.awt.Dimension(800, 400));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(HomeBackGround, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(HomeBackGround)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
