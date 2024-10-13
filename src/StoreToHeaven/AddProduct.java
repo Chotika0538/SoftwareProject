@@ -9,11 +9,17 @@ import javax.swing.*;
 
 
 public class AddProduct extends javax.swing.JPanel implements CheckPanel{
+
+    private JPanel mainPanel;
     
     public AddProduct() {
         initComponents();
     }
-    
+    public AddProduct(JPanel mainPanel) {
+        this.mainPanel = mainPanel;
+        CardLayout cd = (CardLayout) mainPanel.getLayout();
+        initComponents();
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
