@@ -264,8 +264,8 @@ public class Register extends javax.swing.JPanel {
     private void setReadfile(){
         wb=null;
          try{
-            excelPath = "UserInfo.xlsx";
-            fileInput = new FileInputStream(new File("./UserInfo.xlsx"));
+            excelPath = "User.xlsx";
+            fileInput = new FileInputStream(new File("./User.xlsx"));
             wb = new XSSFWorkbook(fileInput);
             sheet = wb.getSheetAt(0);
         }catch(Exception err){

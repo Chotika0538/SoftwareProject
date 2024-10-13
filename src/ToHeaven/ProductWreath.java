@@ -147,13 +147,13 @@ public class ProductWreath extends javax.swing.JPanel {
     private void greenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_greenActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_greenActionPerformed
-public static void main(String[] args){
-    JFrame f = new JFrame();
-    f.setContentPane(new ProductWreath());
-    f.setSize(600, 750);
-    f.setVisible(true);
-    f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-}
+//public static void main(String[] args){
+//    JFrame f = new JFrame();
+//    f.setContentPane(new ProductWreath());
+//    f.setSize(600, 750);
+//    f.setVisible(true);
+//    f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton artiflower;

@@ -39,7 +39,7 @@ public class LoginPage extends JPanel {
     }
     private void setReadfile(){
         try{
-            excelPath = "UserInfo.xlsx";
+            excelPath = "User.xlsx";
             fileInput = new FileInputStream(new File(excelPath));
             wb = new XSSFWorkbook(fileInput);
             sheet = wb.getSheetAt(0);
@@ -220,6 +220,7 @@ public class LoginPage extends JPanel {
         // Proceed with the login process (validation, etc.)
         if(checkUserPass(userName,password)){
              // DO SOMETHING
+             card.show(mainPanel, "MainPage");
          }
     } else {
         JOptionPane.showMessageDialog(this, "Please enter both username and password.", "Input Error", JOptionPane.WARNING_MESSAGE);

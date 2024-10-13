@@ -17,6 +17,7 @@ public class Main extends javax.swing.JFrame {
         mainPanel = new  JPanel(cardLayout);
         mainPanel.add(new LoginPage(mainPanel),"LoginPage");
         mainPanel.add(new Register(mainPanel),"RegisterPage");
+        mainPanel.add(new MainFrame(mainPanel),"MainPage");
         add(mainPanel);
         cardLayout.show(mainPanel,"LoginPage");
         setSize(800,500);
@@ -31,7 +32,8 @@ public class Main extends javax.swing.JFrame {
     private void initComponents() {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(700, 500));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setPreferredSize(new java.awt.Dimension(800, 640));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

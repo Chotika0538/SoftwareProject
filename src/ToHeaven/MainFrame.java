@@ -1,22 +1,16 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package ToHeaven;
 
 import java.awt.CardLayout;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
-/**
- *
- * @author LENOVO
- */
 public class MainFrame extends javax.swing.JPanel {
-
-    /**
-     * Creates new form MainFrame
-     */
-    public MainFrame() {
+    private CardLayout cd;
+    private JPanel mainPanel;
+    
+    public MainFrame(JPanel mainPanel) {
+        this.mainPanel = mainPanel;
+        cd = (CardLayout) mainPanel.getLayout();
         initComponents();
     }
 
@@ -30,10 +24,10 @@ public class MainFrame extends javax.swing.JPanel {
     private void initComponents() {
 
         menuBar = new javax.swing.JPanel();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jToggleButton2 = new javax.swing.JToggleButton();
-        jToggleButton3 = new javax.swing.JToggleButton();
-        jToggleButton4 = new javax.swing.JToggleButton();
+        customBT = new javax.swing.JToggleButton();
+        packageBT = new javax.swing.JToggleButton();
+        prooductBT = new javax.swing.JToggleButton();
+        homeBT = new javax.swing.JToggleButton();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         frameJP = new javax.swing.JPanel();
@@ -44,33 +38,48 @@ public class MainFrame extends javax.swing.JPanel {
         menuBar.setPreferredSize(new java.awt.Dimension(800, 100));
         menuBar.setLayout(null);
 
-        jToggleButton1.setBackground(new java.awt.Color(255, 204, 204));
-        jToggleButton1.setFont(new java.awt.Font("MiTNThin", 0, 18)); // NOI18N
-        jToggleButton1.setText("ปรับแต่ง");
-        jToggleButton1.setBorder(null);
-        menuBar.add(jToggleButton1);
-        jToggleButton1.setBounds(650, 0, 110, 100);
+        customBT.setBackground(new java.awt.Color(255, 204, 204));
+        customBT.setFont(new java.awt.Font("MiTNThin", 0, 18)); // NOI18N
+        customBT.setText("ปรับแต่ง");
+        customBT.setBorder(null);
+        menuBar.add(customBT);
+        customBT.setBounds(650, 0, 110, 100);
 
-        jToggleButton2.setBackground(new java.awt.Color(255, 204, 204));
-        jToggleButton2.setFont(new java.awt.Font("MiTNThin", 0, 18)); // NOI18N
-        jToggleButton2.setText("แพ็คเกจ\n");
-        jToggleButton2.setBorder(null);
-        menuBar.add(jToggleButton2);
-        jToggleButton2.setBounds(530, 0, 110, 100);
+        packageBT.setBackground(new java.awt.Color(255, 204, 204));
+        packageBT.setFont(new java.awt.Font("MiTNThin", 0, 18)); // NOI18N
+        packageBT.setText("แพ็คเกจ\n");
+        packageBT.setBorder(null);
+        menuBar.add(packageBT);
+        packageBT.setBounds(530, 0, 110, 100);
 
-        jToggleButton3.setBackground(new java.awt.Color(255, 204, 204));
-        jToggleButton3.setFont(new java.awt.Font("MiTNThin", 0, 18)); // NOI18N
-        jToggleButton3.setText("ผลิตภัณฑ์");
-        jToggleButton3.setBorder(null);
-        menuBar.add(jToggleButton3);
-        jToggleButton3.setBounds(410, 0, 110, 100);
+        prooductBT.setBackground(new java.awt.Color(255, 204, 204));
+        prooductBT.setFont(new java.awt.Font("MiTNThin", 0, 18)); // NOI18N
+        prooductBT.setText("ผลิตภัณฑ์");
+        prooductBT.setBorder(null);
+        prooductBT.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                prooductBTMouseClicked(evt);
+            }
+        });
+        prooductBT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                prooductBTActionPerformed(evt);
+            }
+        });
+        menuBar.add(prooductBT);
+        prooductBT.setBounds(410, 0, 110, 100);
 
-        jToggleButton4.setBackground(new java.awt.Color(255, 204, 204));
-        jToggleButton4.setFont(new java.awt.Font("MiTNThin", 0, 18)); // NOI18N
-        jToggleButton4.setText("เกี่ยวกับเรา");
-        jToggleButton4.setBorder(null);
-        menuBar.add(jToggleButton4);
-        jToggleButton4.setBounds(280, 0, 120, 100);
+        homeBT.setBackground(new java.awt.Color(255, 204, 204));
+        homeBT.setFont(new java.awt.Font("MiTNThin", 0, 18)); // NOI18N
+        homeBT.setText("เกี่ยวกับเรา");
+        homeBT.setBorder(null);
+        homeBT.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                homeBTMouseClicked(evt);
+            }
+        });
+        menuBar.add(homeBT);
+        homeBT.setBounds(280, 0, 120, 100);
 
         jLabel1.setText("LOGO");
         menuBar.add(jLabel1);
@@ -82,45 +91,52 @@ public class MainFrame extends javax.swing.JPanel {
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
         frameJP.setBackground(new java.awt.Color(204, 255, 102));
+        frameJP.setLayout(new java.awt.CardLayout());
         ProductPage pp = new ProductPage(frameJP);
         frameJP.add(pp,"propage");
+        Home h = new Home(frameJP);
+        frameJP.add(h,"home");
         CardLayout cd =(CardLayout)frameJP.getLayout();
-        cd.show(frameJP,"propage");
-
-        javax.swing.GroupLayout frameJPLayout = new javax.swing.GroupLayout(frameJP);
-        frameJP.setLayout(frameJPLayout);
-        frameJPLayout.setHorizontalGroup(
-            frameJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 945, Short.MAX_VALUE)
-        );
-        frameJPLayout.setVerticalGroup(
-            frameJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 879, Short.MAX_VALUE)
-        );
-
+        cd.show(frameJP,"home");
         jScrollPane1.setViewportView(frameJP);
 
         add(jScrollPane1, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void homeBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeBTMouseClicked
+        // TODO add your handling code here:
+        CardLayout cd = (CardLayout) frameJP.getLayout();
+        cd.show(frameJP, "home");
+    }//GEN-LAST:event_homeBTMouseClicked
+
+    private void prooductBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prooductBTActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_prooductBTActionPerformed
+
+    private void prooductBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_prooductBTMouseClicked
+        // TODO add your handling code here:
+        CardLayout cd = (CardLayout) frameJP.getLayout();
+        cd.show(frameJP, "propage");
+    }//GEN-LAST:event_prooductBTMouseClicked
  /* testing panel*/
-    public static void main(String[] args){
-        JFrame f = new JFrame();
-        f.setContentPane(new MainFrame());
-        f.setSize(800,500);
-        f.setResizable(false);
-        f.setLocationRelativeTo(null);
-        f.setVisible(true);
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    }
+//    public static void main(String[] args){
+//        JFrame f = new JFrame();
+//        f.setContentPane(new MainFrame());
+//        f.setSize(800,500);
+//        f.setResizable(false);
+//        f.setLocationRelativeTo(null);
+//        f.setVisible(true);
+//        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton customBT;
     private javax.swing.JPanel frameJP;
+    private javax.swing.JToggleButton homeBT;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JToggleButton jToggleButton3;
-    private javax.swing.JToggleButton jToggleButton4;
     private javax.swing.JPanel menuBar;
+    private javax.swing.JToggleButton packageBT;
+    private javax.swing.JToggleButton prooductBT;
     // End of variables declaration//GEN-END:variables
 }
