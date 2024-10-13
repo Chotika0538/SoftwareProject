@@ -21,7 +21,7 @@ public class Wreathdao {
     private final String FILE_NAME = "StoreStock.xlsx";
     private FileInputStream fileInput;
     private FileOutputStream fos;
-    private ArrayList<List<String>> wreathlist ;
+    //private ArrayList<List<String>> wreathlist ;
     private String[] nameCol = { "ชื่อ","รายละเอียด" ,"pathรูปภาพ", "วัสดุ",  "ราคา","สี"};
     private ArrayList<WreathDetail> wd;
     private ArrayList<Wreath> wList;
@@ -33,7 +33,7 @@ public class Wreathdao {
     public Wreathdao(){
         wList = new ArrayList<>();
         wd = new ArrayList<>();
-        wreathlist = new ArrayList<>();
+        //wreathlist = new ArrayList<>();
     }
 
     /*Save data in Excel file*/
@@ -65,9 +65,9 @@ public class Wreathdao {
             String pattern = wd.get(a).getPatternTF().getText();
             String detail = wd.get(a).getDetailTA().getText();
             String path = wd.get(a).getFilePath();
-            String[] material = wreath.getMaterialTF().getText().split(",");
-            String[] price = wreath.getPriceTF().getText().split(",");
-            String[] color = wreath.getColorTF().getText().split(",");
+            String material = wreath.getMaterialTF().getText();
+            String price = wreath.getPriceTF().getText();
+            String color = wreath.getColorTF().getText();
             String[] dataChecked = {pattern,detail,path,String.join(",", material),String.join(",", price),String.join(",", color)};
             boolean haveData = false ;
             for (Row row : sheet){
@@ -84,9 +84,9 @@ public class Wreathdao {
                 newRow.createCell(0).setCellValue(pattern);
                 newRow.createCell(1).setCellValue(detail);
                 newRow.createCell(2).setCellValue(path);
-                newRow.createCell(3).setCellValue(wreath.getMaterialTF().getText());
-                newRow.createCell(4).setCellValue(wreath.getPriceTF().getText());
-                newRow.createCell(5).setCellValue(wreath.getColorTF().getText());
+                newRow.createCell(3).setCellValue(material);
+                newRow.createCell(4).setCellValue(price);
+                newRow.createCell(5).setCellValue(color);
                } catch (Exception e) {
                     e.printStackTrace();
                }             
@@ -95,9 +95,6 @@ public class Wreathdao {
             /*write data into StoreStock.xlsx*/
             fos = new FileOutputStream(new File(FILE_NAME));
             wb.write(fos);
-            wb.close();
-            fos.close();
-            fileInput.close();
         } catch (Exception e) {
             e.printStackTrace(); // แสดงข้อผิดพลาด
         } finally {
@@ -149,7 +146,7 @@ public class Wreathdao {
                            material = cell.getStringCellValue().split(",");
                            break;
                        case 4:
-                           String[] s = cell.getStringCellValue().split(",");
+                           String[] s = cell.getStringCellValue().split("/");
                            price = new Double[s.length];
                            //int i = 0;
                           for(int i=0; i<s.length; i++){
@@ -159,7 +156,6 @@ public class Wreathdao {
                                 } else {
                                     price[i] = 0.0;  // กำหนดค่าเริ่มต้นเป็น 0.0 หากข้อมูลไม่ถูกต้อง
                                 }
-                                i++;
                             }
                             break;      
                        case 5:

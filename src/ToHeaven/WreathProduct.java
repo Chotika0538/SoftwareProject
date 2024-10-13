@@ -44,10 +44,10 @@ public class WreathProduct extends javax.swing.JPanel {
         details = new javax.swing.JTextArea();
         message = new javax.swing.JLabel();
         textMessage = new javax.swing.JTextField();
-        price = new javax.swing.JLabel();
         name = new javax.swing.JLabel();
         colorCB = new javax.swing.JComboBox<>();
         typeCB1 = new javax.swing.JComboBox<>();
+        priceLB = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(242, 217, 220));
         setPreferredSize(new java.awt.Dimension(800, 500));
@@ -95,10 +95,6 @@ public class WreathProduct extends javax.swing.JPanel {
         add(textMessage);
         textMessage.setBounds(130, 370, 358, 45);
 
-        price.setFont(new java.awt.Font("TH Sarabun New", 1, 18)); // NOI18N
-        add(price);
-        price.setBounds(450, 190, 80, 20);
-
         name.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         add(name);
         name.setBounds(320, 30, 298, 31);
@@ -112,6 +108,11 @@ public class WreathProduct extends javax.swing.JPanel {
         typeCB1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "เลือกชนิด" }));
         add(typeCB1);
         typeCB1.setBounds(140, 270, 120, 30);
+
+        priceLB.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
+        priceLB.setText("ราคา : ");
+        add(priceLB);
+        priceLB.setBounds(320, 190, 280, 30);
     }// </editor-fold>//GEN-END:initComponents
 
     public void getData(Wreath wreath){
@@ -119,6 +120,7 @@ public class WreathProduct extends javax.swing.JPanel {
     name.setText(wreathClass.toString());
     details.setText(wreathClass.getDetail());
     productImage.setIcon(new ImageIcon(wreathClass.getPath()));
+    priceLB.setText(wreathClass.getPriceAll().toString());
 }
 
     public Wreath getWreathClass() {
@@ -137,7 +139,7 @@ public class WreathProduct extends javax.swing.JPanel {
     private javax.swing.JLabel message;
     private javax.swing.JLabel name;
     private javax.swing.JSpinner pieceWreath;
-    private javax.swing.JLabel price;
+    private javax.swing.JLabel priceLB;
     private javax.swing.JLabel productImage;
     private javax.swing.JScrollPane scrollDetail;
     private javax.swing.JTextField textMessage;

@@ -52,39 +52,39 @@
         <Component class="javax.swing.JLabel" name="coffinStageLB">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="MiTNThin" size="24" style="1"/>
+              <Font name="Tahoma" size="24" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="&#xe2a;&#xe31;&#xe48;&#xe07;&#xe0b;&#xe37;&#xe49;&#xe2d;&#xe42;&#xe25;&#xe07;&#xe28;&#xe1e;"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="70" y="20" width="-1" height="-1"/>
+              <AbsoluteConstraints x="70" y="20" width="140" height="40"/>
             </Constraint>
           </Constraints>
         </Component>
         <Component class="javax.swing.JLabel" name="funeralStageLB">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="MiTNThin" size="24" style="1"/>
+              <Font name="Tahoma" size="24" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="&#xe07;&#xe32;&#xe19;&#xe0c;&#xe32;&#xe1b;&#xe19;&#xe01;&#xe34;&#xe08;"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="340" y="20" width="121" height="-1"/>
+              <AbsoluteConstraints x="340" y="20" width="160" height="40"/>
             </Constraint>
           </Constraints>
         </Component>
         <Component class="javax.swing.JLabel" name="boneStageLB">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="MiTNThin" size="24" style="1"/>
+              <Font name="Tahoma" size="24" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="&#xe01;&#xe32;&#xe23;&#xe08;&#xe31;&#xe14;&#xe01;&#xe32;&#xe23;&#xe2d;&#xe31;&#xe10;&#xe34;"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="610" y="20" width="117" height="-1"/>
+              <AbsoluteConstraints x="610" y="20" width="150" height="40"/>
             </Constraint>
           </Constraints>
         </Component>

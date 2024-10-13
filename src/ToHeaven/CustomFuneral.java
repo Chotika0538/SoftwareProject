@@ -42,20 +42,20 @@ public class CustomFuneral extends javax.swing.JPanel {
         menuCustom.setPreferredSize(new java.awt.Dimension(800, 80));
         menuCustom.setLayout(null);
 
-        coffinStageLB.setFont(new java.awt.Font("MiTNThin", 1, 24)); // NOI18N
+        coffinStageLB.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         coffinStageLB.setText("สั่งซื้อโลงศพ");
         menuCustom.add(coffinStageLB);
-        coffinStageLB.setBounds(70, 20, 110, 41);
+        coffinStageLB.setBounds(70, 20, 150, 40);
 
-        funeralStageLB.setFont(new java.awt.Font("MiTNThin", 1, 24)); // NOI18N
+        funeralStageLB.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         funeralStageLB.setText("งานฌาปนกิจ");
         menuCustom.add(funeralStageLB);
-        funeralStageLB.setBounds(340, 20, 121, 41);
+        funeralStageLB.setBounds(311, 20, 180, 40);
 
-        boneStageLB.setFont(new java.awt.Font("MiTNThin", 1, 24)); // NOI18N
+        boneStageLB.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         boneStageLB.setText("การจัดการอัฐิ");
         menuCustom.add(boneStageLB);
-        boneStageLB.setBounds(610, 20, 117, 41);
+        boneStageLB.setBounds(577, 20, 150, 40);
 
         add(menuCustom, java.awt.BorderLayout.PAGE_START);
 
