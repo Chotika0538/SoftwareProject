@@ -47,7 +47,7 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
         setLayout(null);
 
         addChoices.setFont(new java.awt.Font("TH Sarabun New", 0, 24)); // NOI18N
-        addChoices.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "กรุณาเลือกตัวเลือก", "โลงศพ", "พวงหรีด", "ดอกไม้จันทน์", "ชุดไทยธรรม", "ธูปและเทียน", "ชุดอาหารว่าง", "ของชำร่วย", "กรอบรูป", "เพิ่มสินค้า" }));
+        addChoices.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "กรุณาเลือกตัวเลือก", "โลงศพ", "พวงหรีด", "ดอกไม้จันทน์", "ชุดไทยธรรม", "ธูปและเทียน", "ชุดอาหารว่าง", "ของชำร่วย", "กรอบรูป", "แพ็คเกจ", "เพิ่มสินค้า" }));
         addChoices.setAlignmentX(1.0F);
         addChoices.setAlignmentY(1.0F);
         addChoices.addActionListener(new java.awt.event.ActionListener() {
@@ -82,6 +82,7 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
         AddCoffin coffin = new AddCoffin(showAddProduct);
         AddIncense incense = new AddIncense(showAddProduct);
         AddSouvenir souvenir = new AddSouvenir(showAddProduct);
+        AddPackage pack = new AddPackage(showAddProduct);
 
         emptyPanel.setBackground(new java.awt.Color(153, 255, 204));
         showAddProduct.add(emptyPanel, "empty");
@@ -94,6 +95,7 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
         showAddProduct.add(coffin, "coffin");
         showAddProduct.add(incense, "incense");
         showAddProduct.add(souvenir, "souvenir");
+        showAddProduct.add(pack, "pack");
         add(showAddProduct);
         showAddProduct.setBounds(10, 110, 480, 480);
 
@@ -157,6 +159,11 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
         else if(((String)cb.getSelectedItem()).equals("กรอบรูป")){
             cd = (CardLayout) showAddProduct.getLayout();
             cd.show(showAddProduct, "frame");
+        }
+        //choose package
+        else if(((String)cb.getSelectedItem()).equals("แพ็คเกจ")){
+            cd = (CardLayout) showAddProduct.getLayout();
+            cd.show(showAddProduct, "pack");
         }
         //choose add product
         else if(((String)cb.getSelectedItem()).equals("เพิ่มสินค้า")){
@@ -252,6 +259,12 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
 //                    String price = temp.getPriceTF().getText();
 //                    candList.add(new Candle(name, size, detail,path, price));   
 //                }
+                break;
+            }
+            else if (comp.isVisible()&& comp instanceof AddPackage){
+                AddPackage ap = (AddPackage)comp;
+                Packagedao pd = new Packagedao();
+                pd.save(ap);
                 break;
             }
 //            else if (comp.isVisible()&& comp instanceof AddCoffin) {

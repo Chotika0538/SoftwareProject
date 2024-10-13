@@ -15,19 +15,27 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-public class WreathDetail extends javax.swing.JPanel {
-    final JFileChooser fc = new JFileChooser();
-    private ArrayList<WreathDetail> wdList;
-    private JPanel jp;
-    private String filePath;
-
-    public WreathDetail(ArrayList l, JPanel jp) {
-        wdList = l; 
+/**
+ *
+ * @author LENOVO
+ */
+public class PackageDetail extends javax.swing.JPanel {
+final JFileChooser fc = new JFileChooser();
+private ArrayList<PackageDetail> pgList;
+private JPanel jp;
+private String filePath;
+    /**
+     * Creates new form WreathDetail
+     */
+    public PackageDetail(ArrayList<PackageDetail> l, JPanel jp) {
+        pgList = l; 
         this.jp = jp;
         fc.setMultiSelectionEnabled(false);
         fc.setCurrentDirectory(new File(System.getProperty("user.home")));
         initComponents();
     }
+
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -51,6 +59,7 @@ public class WreathDetail extends javax.swing.JPanel {
         patternTF = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(255, 241, 211));
+        setMinimumSize(new java.awt.Dimension(400, 230));
         setLayout(null);
 
         choosePicBT.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
@@ -61,7 +70,7 @@ public class WreathDetail extends javax.swing.JPanel {
             }
         });
         add(choosePicBT);
-        choosePicBT.setBounds(10, 50, 106, 26);
+        choosePicBT.setBounds(20, 50, 106, 26);
 
         showPicName.setBackground(new java.awt.Color(204, 255, 255));
         showPicName.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
@@ -75,18 +84,24 @@ public class WreathDetail extends javax.swing.JPanel {
         detailLB.setBounds(10, 80, 66, 22);
 
         detailTA.setColumns(20);
-        detailTA.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
+        detailTA.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
         detailTA.setRows(5);
         detailSP.setViewportView(detailTA);
 
         add(detailSP);
-        detailSP.setBounds(10, 110, 347, 110);
+        detailSP.setBounds(20, 110, 350, 110);
 
         priceLB.setBackground(new java.awt.Color(204, 255, 255));
         priceLB.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
         priceLB.setText("ราคา");
         add(priceLB);
         priceLB.setBounds(210, 80, 27, 21);
+
+        priceTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                priceTFActionPerformed(evt);
+            }
+        });
         add(priceTF);
         priceTF.setBounds(240, 80, 76, 22);
 
@@ -98,19 +113,9 @@ public class WreathDetail extends javax.swing.JPanel {
 
         deleteCB.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         deleteCB.setText("เลือกเพื่อลบ");
-        deleteCB.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                deleteCBItemStateChanged(evt);
-            }
-        });
         deleteCB.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 deleteCBMouseClicked(evt);
-            }
-        });
-        deleteCB.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deleteCBActionPerformed(evt);
             }
         });
         add(deleteCB);
@@ -119,14 +124,18 @@ public class WreathDetail extends javax.swing.JPanel {
         pattern.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
         pattern.setText("รูปแบบสินค้า : ");
         add(pattern);
-        pattern.setBounds(10, 10, 90, 21);
+        pattern.setBounds(30, 10, 90, 21);
 
         patternTF.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
+        patternTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                patternTFActionPerformed(evt);
+            }
+        });
         add(patternTF);
-        patternTF.setBounds(100, 10, 160, 27);
+        patternTF.setBounds(120, 10, 160, 27);
     }// </editor-fold>//GEN-END:initComponents
 
-    //
     private void choosePicBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_choosePicBTActionPerformed
         // TODO add your handling code here:
         int returnVal = fc.showDialog(null, "Choose");//set null to show dialog in the middle of monitor
@@ -142,37 +151,27 @@ public class WreathDetail extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_choosePicBTActionPerformed
 
-    private void deleteCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteCBActionPerformed
+    private void priceTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_priceTFActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_deleteCBActionPerformed
+    }//GEN-LAST:event_priceTFActionPerformed
 
-    private void deleteCBItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_deleteCBItemStateChanged
+    private void patternTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_patternTFActionPerformed
         // TODO add your handling code here:
-//        if (evt.getStateChange() == ItemEvent.SELECTED){
-//           wdList.remove(  getPanelIndex());
-//        }
-    }//GEN-LAST:event_deleteCBItemStateChanged
+    }//GEN-LAST:event_patternTFActionPerformed
 
     private void deleteCBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteCBMouseClicked
-        // TODO add your handling code here:
         int result = JOptionPane.showConfirmDialog(null,"Are you sure to delete?","Confirm", JOptionPane.YES_NO_OPTION);
         if(result == JOptionPane.YES_OPTION){
-            wdList.remove(this);
+            pgList.remove(this);
             jp.remove(this);
             jp.setPreferredSize(new Dimension(408, jp.getHeight()-235));
             jp.revalidate();
             jp.repaint(); 
         }
-//        wdList.remove(this);
-//        jp.remove(this);
-//        jp.setPreferredSize(new Dimension(408, jp.getHeight()-235));
-//        jp.revalidate();
-//        jp.repaint();
     }//GEN-LAST:event_deleteCBMouseClicked
-
-//private int getPanelIndex(){
-//    return wdList.indexOf(this);
-//}
+//    private int getPanelIndex(){
+//        return pgList.indexOf(this);
+//    }
 // /* testing panel*/
 //    public static void main(String[] args){
 //        JFrame f = new JFrame();
@@ -183,42 +182,7 @@ public class WreathDetail extends javax.swing.JPanel {
 //        f.setVisible(true);
 //        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 //    }
-    public String getFilePath() {
-        return filePath;
-    }
-     
-    public JCheckBox getDeleteCB() {
-        return deleteCB;
-    }
 
-    public void setDeleteCB(JCheckBox deleteCB) {
-        this.deleteCB = deleteCB;
-    }
-
-    public JTextArea getDetailTA() {
-        return detailTA;
-    }
-
-    public void setDetailTA(JTextArea detailTA) {
-        this.detailTA = detailTA;
-    }
-
-    public JTextField getPatternTF() {
-        return patternTF;
-    }
-
-    public void setPatternTF(JTextField patternTF) {
-        this.patternTF = patternTF;
-    }
-
-    public JTextField getPriceTF() {
-        return priceTF;
-    }
-
-    public void setPriceTF(JTextField priceTF) {
-        this.priceTF = priceTF;
-    }
-    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel bathLB;
     private javax.swing.JButton choosePicBT;
@@ -233,5 +197,30 @@ public class WreathDetail extends javax.swing.JPanel {
     private javax.swing.JLabel showPicName;
     // End of variables declaration//GEN-END:variables
 
+    public JCheckBox getDeleteCB() {
+        return deleteCB;
+    }
 
+    public void setDeleteCB(JCheckBox deleteCB) {
+        this.deleteCB = deleteCB;
+    }
+
+    public JTextArea getDetailTA() {
+        return detailTA;
+    }
+
+    public JTextField getPackagePatternTF() {
+        return patternTF;
+    }
+
+    public void setPackagePatternTF(JTextField patternTF) {
+        this.patternTF = patternTF;
+    }
+    public JTextField getPriceTF() {
+        return priceTF;
+    }
+
+    public String getFilePath() {
+       return filePath;
+    }
 }

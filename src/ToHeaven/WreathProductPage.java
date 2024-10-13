@@ -14,7 +14,7 @@ public class WreathProductPage extends javax.swing.JPanel {
     private ArrayList<WreathProduct> wreathProduct;
     private CardLayout cd;
     private JPanel mainPanel;
-    int i = 1;
+//    int i = 1;
     private Wreathdao wreathdao;
     
     public WreathProductPage(JPanel mainPanel) {
@@ -103,7 +103,7 @@ public class WreathProductPage extends javax.swing.JPanel {
 
         wreathProductPanel.setBackground(new java.awt.Color(255, 180, 87));
         wreathProductPanel.setPreferredSize(new java.awt.Dimension(798, 500));
-        wreathProductPanel.setLayout(new javax.swing.BoxLayout(wreathProductPanel, javax.swing.BoxLayout.Y_AXIS));
+        wreathProductPanel.setLayout(new java.awt.GridLayout(0, 1, 0, 5));
         //wreathList.add(new WreathProduct().getData(wreath));
         //wreathProductPanel.add(wreathList.get(0));
         jScrollPane1.setViewportView(wreathProductPanel);
@@ -124,19 +124,33 @@ public class WreathProductPage extends javax.swing.JPanel {
 //        }
   
     }//GEN-LAST:event_jButton1MouseClicked
-//    public void getWreathData(){
-//         wreathClassList = wreathdao.getAll();
-//    }
+    public void getWreathData(){
+         wreathClassList = wreathdao.getAll();
+    }
     public void showData(){
         for (Wreath wreath : wreathClassList){
             wreathProduct.add(new WreathProduct(wreath));
-            wreathProductPanel.setPreferredSize(new Dimension(800, wreathProductPanel.getHeight()+500));
+            if(wreathClassList.size()>1){
+                wreathProductPanel.setPreferredSize(new Dimension(800, wreathProductPanel.getHeight()+850));
+
+            }
             wreathProductPanel.add(wreathProduct.getLast());
             wreathProductPanel.revalidate();
             wreathProductPanel.repaint();
         }
     }
-    
+//    public void showData(){
+//        for(Wreath wreath : wreathClassList){
+//            WreathProduct product = new WreathProduct (wreath);
+//            wreathProduct.add(product);  // เพิ่มเข้าไปในลิสต์ packageProduct
+//        
+//            wreathProductPanel.add(product);  // เพิ่มคอมโพเนนต์ product ลงใน jPanel1
+//        }
+//    
+//        wreathProductPanel.revalidate();  // ปรับขนาดใหม่ของ Panel
+//        wreathProductPanel.repaint();     // รีเฟรชหน้าจอ
+//    }
+//    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addBT;

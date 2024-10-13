@@ -53,66 +53,67 @@ public class WreathProduct extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(800, 500));
         setLayout(null);
 
-        choose.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
+        choose.setFont(new java.awt.Font("TH Sarabun New", 1, 22)); // NOI18N
         choose.setText("กรุณาเลือกชนิดพวงหรีด");
         add(choose);
-        choose.setBounds(120, 220, 176, 33);
+        choose.setBounds(50, 250, 176, 30);
 
-        chooseColor.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
+        chooseColor.setFont(new java.awt.Font("TH Sarabun New", 1, 22)); // NOI18N
         chooseColor.setText("กรุณาเลือกสีพวงหรีด");
         add(chooseColor);
-        chooseColor.setBounds(410, 220, 155, 41);
+        chooseColor.setBounds(50, 310, 155, 41);
 
-        choosePieceWreath.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
-        choosePieceWreath.setText("กรุณาเลือกจำนวนสินค้า");
+        choosePieceWreath.setFont(new java.awt.Font("TH Sarabun New", 1, 22)); // NOI18N
+        choosePieceWreath.setText("ระบุจำนวนสินค้า");
         add(choosePieceWreath);
-        choosePieceWreath.setBounds(130, 440, 172, 33);
+        choosePieceWreath.setBounds(460, 350, 120, 33);
 
         pieceWreath.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
         add(pieceWreath);
-        pieceWreath.setBounds(300, 440, 80, 30);
+        pieceWreath.setBounds(580, 350, 80, 30);
 
         productImage.setPreferredSize(new java.awt.Dimension(180, 180));
         add(productImage);
-        productImage.setBounds(100, 20, 180, 180);
+        productImage.setBounds(70, 60, 180, 180);
 
         scrollDetail.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         scrollDetail.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
         details.setEditable(false);
+        details.setBackground(new java.awt.Color(253, 243, 243));
         details.setColumns(20);
         details.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         details.setRows(5);
         scrollDetail.setViewportView(details);
 
         add(scrollDetail);
-        scrollDetail.setBounds(320, 80, 330, 91);
+        scrollDetail.setBounds(330, 100, 410, 130);
 
-        message.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
+        message.setFont(new java.awt.Font("TH Sarabun New", 1, 22)); // NOI18N
         message.setText("กรุณาระบุข้อความบนพวงหรีด");
         add(message);
-        message.setBounds(130, 330, 219, 33);
+        message.setBounds(330, 250, 219, 30);
         add(textMessage);
-        textMessage.setBounds(130, 370, 358, 45);
+        textMessage.setBounds(330, 280, 330, 45);
 
-        name.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
+        name.setFont(new java.awt.Font("TH SarabunPSK", 1, 24)); // NOI18N
         add(name);
-        name.setBounds(320, 30, 298, 31);
+        name.setBounds(40, 20, 270, 31);
 
         colorCB.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
         colorCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "เลือกสี" }));
         add(colorCB);
-        colorCB.setBounds(420, 270, 120, 30);
+        colorCB.setBounds(50, 350, 220, 30);
 
         typeCB1.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
         typeCB1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "เลือกชนิด" }));
         add(typeCB1);
-        typeCB1.setBounds(140, 270, 120, 30);
+        typeCB1.setBounds(50, 280, 220, 30);
 
         priceLB.setFont(new java.awt.Font("TH SarabunPSK", 0, 24)); // NOI18N
         priceLB.setText("ราคา : ");
         add(priceLB);
-        priceLB.setBounds(320, 190, 280, 30);
+        priceLB.setBounds(330, 60, 280, 30);
     }// </editor-fold>//GEN-END:initComponents
 
     public void getData(Wreath wreath){

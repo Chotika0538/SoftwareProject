@@ -1,19 +1,74 @@
 package ToHeaven;
 
 import java.awt.CardLayout;
+import java.awt.Color;
+import java.awt.Dimension;
 import javax.swing.JPanel;
-
+import java.util.*;
+import DAO.*;
+import StoreToHeaven.*;
 public class PackagePage extends javax.swing.JPanel {
 
-   // private CardLayout cd;
+    private Packagedao packdao;
+    private ArrayList<Packages> packageClassList;
+    private ArrayList<PackageProduct> packageProduct;
+    private CardLayout cd;
     private JPanel mainPanel;
+//    int i = 1;
+    
     
     public PackagePage(JPanel mainPanel) {
+        packdao = new Packagedao();
+        packageProduct = new ArrayList<>();
+//      packageClassList = new ArrayList<>();
+        packageClassList = packdao.getAll();
+        
         this.mainPanel = mainPanel;
-        //cd = (CardLayout) mainPanel.getLayout();
+        cd = (CardLayout) mainPanel.getLayout();
         initComponents();
+        showData();
+    }
+    
+    public void showData(){
+    for(Packages pack : packageClassList){
+        PackageProduct product = new PackageProduct(pack);
+        packageProduct.add(product);  // เพิ่มเข้าไปในลิสต์ packageProduct
+        
+        jPanel1.add(product);  // เพิ่มคอมโพเนนต์ product ลงใน jPanel1
     }
 
+    // ตั้งค่า preferredSize ใหม่หลังจากเพิ่มข้อมูลลงไป
+    int panelHeight = 300 * packageClassList.size();  // กำหนดความสูงใหม่ตามจำนวนแพ็กเกจ
+    jPanel1.setPreferredSize(new Dimension(800, panelHeight));
+
+    jPanel1.revalidate();  // ปรับขนาดใหม่ของ Panel
+    jPanel1.repaint();     // รีเฟรชหน้าจอ
+}
+
+
+//    public void showData(){
+//        for(Packages pack : packageClassList){
+//            packageProduct.add(new PackageProduct(pack));
+//            if(packageClassList.size()>1){
+//                jPanel1.setPreferredSize(new Dimension(800, jPanel1.getHeight()+700));
+//            }
+////            jPanel1.add(packageProduct.get(packageProduct.size() - 1));
+//            jPanel1.add(packageProduct.getLast());
+//            jPanel1.revalidate();
+//            jPanel1.repaint();
+//        }
+//    }
+//    public void showData(){
+//        for(Packages pack : packageClassList){
+//            PackageProduct product = new PackageProduct(pack);  // สร้าง PackageProduct ใหม่สำหรับแต่ละแพ็กเกจ
+//            packageProduct.add(product);  // เพิ่มเข้าไปในลิสต์ packageProduct
+//        
+//            jPanel1.add(product);  // เพิ่มคอมโพเนนต์ product ลงใน jPanel1
+//        }
+//    
+//        jPanel1.revalidate();  // ปรับขนาดใหม่ของ Panel
+//        jPanel1.repaint();     // รีเฟรชหน้าจอ
+//    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -23,21 +78,54 @@ public class PackagePage extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setPreferredSize(new java.awt.Dimension(800, 500));
+        jPanel3 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jPanel1 = new javax.swing.JPanel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
+        setBackground(new java.awt.Color(189, 172, 142));
+        setPreferredSize(new java.awt.Dimension(800, 500));
+        setLayout(new java.awt.BorderLayout());
+
+        jPanel3.setPreferredSize(new java.awt.Dimension(800, 50));
+
+        jLabel1.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
+        jLabel1.setText("แพ็คเกจ");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(374, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(354, 354, 354))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
+
+        add(jPanel3, java.awt.BorderLayout.PAGE_START);
+
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+
+        jPanel1.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel1.setLayout(new java.awt.GridLayout(0, 1, 0, 5));
+        jScrollPane1.setViewportView(jPanel1);
+
+        add(jScrollPane1, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

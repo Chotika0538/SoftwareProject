@@ -83,9 +83,9 @@ public class Wreath extends Product {
         this.wList = wList;
     }
     
-    public String toString(){
-        return getName()+" : "+getPattern();
-    }
+//    public String toString(){
+//        return getName()+" : "+getPattern();
+//    }
 
 
 }
