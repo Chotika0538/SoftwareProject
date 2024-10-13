@@ -47,21 +47,31 @@ public class OfferingDetail extends javax.swing.JPanel {
         detailLB = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 128, 178));
+        setLayout(null);
 
         detailTA.setColumns(20);
         detailTA.setFont(new java.awt.Font("TH SarabunPSK", 0, 20)); // NOI18N
         detailTA.setRows(5);
         detailSP.setViewportView(detailTA);
 
+        add(detailSP);
+        detailSP.setBounds(12, 110, 347, 110);
+
         priceLB.setBackground(new java.awt.Color(204, 255, 255));
         priceLB.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
         priceLB.setText("ราคา");
+        add(priceLB);
+        priceLB.setBounds(212, 80, 27, 21);
 
         priceTF.setFont(new java.awt.Font("TH SarabunPSK", 0, 12)); // NOI18N
+        add(priceTF);
+        priceTF.setBounds(242, 80, 76, 21);
 
         bathLB.setBackground(new java.awt.Color(204, 255, 255));
         bathLB.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
         bathLB.setText("บาทต่อชิ้น");
+        add(bathLB);
+        bathLB.setBounds(322, 80, 55, 21);
 
         deleteCB.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         deleteCB.setText("เลือกเพื่อลบ");
@@ -75,11 +85,17 @@ public class OfferingDetail extends javax.swing.JPanel {
                 deleteCBActionPerformed(evt);
             }
         });
+        add(deleteCB);
+        deleteCB.setBounds(302, 10, 85, 20);
 
         pattern.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
         pattern.setText("รูปแบบสินค้า : ");
+        add(pattern);
+        pattern.setBounds(12, 10, 90, 21);
 
         patternTF.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
+        add(patternTF);
+        patternTF.setBounds(102, 10, 160, 27);
 
         choosePicBT.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
         choosePicBT.setText("กดแนบรูปภาพ");
@@ -88,67 +104,19 @@ public class OfferingDetail extends javax.swing.JPanel {
                 choosePicBTActionPerformed(evt);
             }
         });
+        add(choosePicBT);
+        choosePicBT.setBounds(12, 50, 106, 26);
 
         showPicName.setBackground(new java.awt.Color(204, 255, 255));
         showPicName.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
+        add(showPicName);
+        showPicName.setBounds(132, 50, 160, 30);
 
         detailLB.setBackground(new java.awt.Color(204, 255, 255));
         detailLB.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
         detailLB.setText("รายละเอียด ");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(pattern, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(0, 0, 0)
-                            .addComponent(patternTF, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(40, 40, 40)
-                            .addComponent(deleteCB, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(choosePicBT, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(14, 14, 14)
-                            .addComponent(showPicName, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(detailLB, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(134, 134, 134)
-                            .addComponent(priceLB, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(3, 3, 3)
-                            .addComponent(priceTF, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(4, 4, 4)
-                            .addComponent(bathLB, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(detailSP, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 230, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(pattern)
-                        .addComponent(patternTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(deleteCB, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(13, 13, 13)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(choosePicBT, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(showPicName, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(detailLB, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(priceLB)
-                        .addComponent(priceTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(bathLB))
-                    .addGap(8, 8, 8)
-                    .addComponent(detailSP, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+        add(detailLB);
+        detailLB.setBounds(12, 80, 66, 22);
     }// </editor-fold>//GEN-END:initComponents
 
     private void deleteCBItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_deleteCBItemStateChanged

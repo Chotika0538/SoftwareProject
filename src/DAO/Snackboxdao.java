@@ -93,15 +93,15 @@ public class Snackboxdao {
                 
                 
                 for (Row row : sheet){
-//                    Cell c = row.getCell(0);//pull the value in the first cell(.getCell(0)) of that row
-//                    if(c.toString().equals(dataChecked[0])){
-//                        haveData = true;
-//                        break;
-//                       }
+                    Cell c = row.getCell(0);//pull the value in the first cell(.getCell(0)) of that row
+                    if(c.toString().equals(dataChecked[0])){
+                        haveData = true;
+                        break;
+                       }
 
                     if (row.getCell(0) != null) {
-                        Cell c = row.getCell(0);
-                        String cellValue = c.toString();
+                        Cell cell= row.getCell(0);
+                        String cellValue = cell.toString();
                         if(cellValue.equals(dataChecked[0])){
                             haveData = true;
                             break;

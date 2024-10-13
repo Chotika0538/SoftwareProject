@@ -60,6 +60,11 @@ public class ProductPage extends javax.swing.JPanel {
         snackBoxBT.setText("ชุดอาหารว่าง");
         snackBoxBT.setBorder(null);
         snackBoxBT.setPreferredSize(new java.awt.Dimension(75, 30));
+        snackBoxBT.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                snackBoxBTMouseClicked(evt);
+            }
+        });
         add(snackBoxBT);
         snackBoxBT.setBounds(160, 190, 135, 41);
 
@@ -67,6 +72,11 @@ public class ProductPage extends javax.swing.JPanel {
         frameBT.setText("กรอบรูป");
         frameBT.setBorder(null);
         frameBT.setPreferredSize(new java.awt.Dimension(75, 30));
+        frameBT.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                frameBTMouseClicked(evt);
+            }
+        });
         add(frameBT);
         frameBT.setBounds(160, 250, 135, 41);
 
@@ -74,6 +84,11 @@ public class ProductPage extends javax.swing.JPanel {
         sandalWoodBT.setText("ดอกไม้จันทน์");
         sandalWoodBT.setBorder(null);
         sandalWoodBT.setPreferredSize(new java.awt.Dimension(75, 30));
+        sandalWoodBT.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                sandalWoodBTMouseClicked(evt);
+            }
+        });
         add(sandalWoodBT);
         sandalWoodBT.setBounds(160, 310, 135, 41);
 
@@ -81,6 +96,11 @@ public class ProductPage extends javax.swing.JPanel {
         SouvenirBT.setText("ของชำร่วย");
         SouvenirBT.setBorder(null);
         SouvenirBT.setPreferredSize(new java.awt.Dimension(75, 30));
+        SouvenirBT.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SouvenirBTMouseClicked(evt);
+            }
+        });
         add(SouvenirBT);
         SouvenirBT.setBounds(510, 130, 135, 41);
 
@@ -88,6 +108,11 @@ public class ProductPage extends javax.swing.JPanel {
         incenseBT.setText("ธูป");
         incenseBT.setBorder(null);
         incenseBT.setPreferredSize(new java.awt.Dimension(75, 30));
+        incenseBT.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                incenseBTMouseClicked(evt);
+            }
+        });
         add(incenseBT);
         incenseBT.setBounds(510, 190, 135, 41);
 
@@ -95,6 +120,11 @@ public class ProductPage extends javax.swing.JPanel {
         candleBT.setText("เทียน");
         candleBT.setBorder(null);
         candleBT.setPreferredSize(new java.awt.Dimension(75, 30));
+        candleBT.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                candleBTMouseClicked(evt);
+            }
+        });
         add(candleBT);
         candleBT.setBounds(510, 250, 135, 41);
 
@@ -102,6 +132,11 @@ public class ProductPage extends javax.swing.JPanel {
         coffinBT.setText("โลงศพ");
         coffinBT.setBorder(null);
         coffinBT.setPreferredSize(new java.awt.Dimension(75, 30));
+        coffinBT.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                coffinBTMouseClicked(evt);
+            }
+        });
         add(coffinBT);
         coffinBT.setBounds(510, 310, 135, 41);
 
@@ -109,15 +144,50 @@ public class ProductPage extends javax.swing.JPanel {
         offeringBT.setText("เครื่องไทยธรรม");
         offeringBT.setBorder(null);
         offeringBT.setPreferredSize(new java.awt.Dimension(75, 30));
+        offeringBT.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                offeringBTMouseClicked(evt);
+            }
+        });
         add(offeringBT);
         offeringBT.setBounds(510, 370, 143, 41);
     }// </editor-fold>//GEN-END:initComponents
 
     private void wreathBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_wreathBTMouseClicked
-        // TODO add your handling code here:
-        //CardLayout cd = (CardLayout) frameJP.getLayout();
-        ((CardLayout)mainPanel.getLayout()).show(mainPanel, "wreathproductpage");
+         ((CardLayout)mainPanel.getLayout()).show(mainPanel, "wreathproductpage");
     }//GEN-LAST:event_wreathBTMouseClicked
+
+    private void offeringBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_offeringBTMouseClicked
+         ((CardLayout)mainPanel.getLayout()).show(mainPanel, "offeringproductpage");
+    }//GEN-LAST:event_offeringBTMouseClicked
+
+    private void snackBoxBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_snackBoxBTMouseClicked
+        ((CardLayout)mainPanel.getLayout()).show(mainPanel, "snackboxproductpage");
+    }//GEN-LAST:event_snackBoxBTMouseClicked
+
+    private void frameBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_frameBTMouseClicked
+        ((CardLayout)mainPanel.getLayout()).show(mainPanel, "frameproductpage");
+    }//GEN-LAST:event_frameBTMouseClicked
+
+    private void sandalWoodBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sandalWoodBTMouseClicked
+        ((CardLayout)mainPanel.getLayout()).show(mainPanel, "sandlewoodproductpage");
+    }//GEN-LAST:event_sandalWoodBTMouseClicked
+
+    private void SouvenirBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SouvenirBTMouseClicked
+        ((CardLayout)mainPanel.getLayout()).show(mainPanel, "souvenirproductpage");
+    }//GEN-LAST:event_SouvenirBTMouseClicked
+
+    private void incenseBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_incenseBTMouseClicked
+        ((CardLayout)mainPanel.getLayout()).show(mainPanel, "incenseproductpage");
+    }//GEN-LAST:event_incenseBTMouseClicked
+
+    private void candleBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_candleBTMouseClicked
+        ((CardLayout)mainPanel.getLayout()).show(mainPanel, "candleproductpage");
+    }//GEN-LAST:event_candleBTMouseClicked
+
+    private void coffinBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_coffinBTMouseClicked
+        ((CardLayout)mainPanel.getLayout()).show(mainPanel, "coffinproductpage");
+    }//GEN-LAST:event_coffinBTMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

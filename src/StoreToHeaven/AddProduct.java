@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package StoreToHeaven;
+import DAO.*;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.*;
@@ -39,7 +40,7 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
         setLayout(null);
 
         addChoices.setFont(new java.awt.Font("TH Sarabun New", 0, 24)); // NOI18N
-        addChoices.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "กรุณาเลือกตัวเลือก", "โลงศพ", "พวงหรีด", "ดอกไม้จันทน์", "ชุดไทยธรรม", "ธูปและเทียน", "ชุดอาหารว่าง", "ของชำร่วย", "กรอบรูป", "เพิ่มสินค้า" }));
+        addChoices.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "กรุณาเลือกตัวเลือก", "โลงศพ", "พวงหรีด", "ดอกไม้จันทน์", "ชุดไทยธรรม", "ธูป", "เทียน", "ชุดอาหารว่าง", "ของชำร่วย", "กรอบรูป", "แพ็คเกจ" }));
         addChoices.setAlignmentX(1.0F);
         addChoices.setAlignmentY(1.0F);
         addChoices.addActionListener(new java.awt.event.ActionListener() {
@@ -66,18 +67,25 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
         showAddProduct.setLayout(new java.awt.CardLayout());
         JPanel emptyPanel = new JPanel();
         AddWreath wreath = new AddWreath(showAddProduct);
-        AddSnackBox boxset = new AddSnackBox(showAddProduct);
-        AddFrame frame = new AddFrame(showAddProduct);
-        AddOffering offerings = new AddOffering(showAddProduct);
-        AddSandalWood sandalW = new AddSandalWood(showAddProduct);
-
+        //AddCoffin coffin = new AddCoffin(showAddProduct);
+        //AddFrame frame = new AddFrame(showAddProduct);
+        //AddIncense incense = new AddIncense(showAddProduct);
+        //AddCandle candle = new AddCandle(showAddProduct);
+        AddOffering offering = new AddOffering(showAddProduct);
+        //AddSandalWood sandalwood = new AddSandalWood(showAddProduct);
+        //AddSnackBox snackbox = new AddSnackBox(showAddProduct);
+        //AddSouvenirs souvenir= new AddSouvenirs(showAddProduct);
         emptyPanel.setBackground(new java.awt.Color(153, 255, 204));
         showAddProduct.add(emptyPanel, "empty");
+        //showAddProduct.add(coffin, "coffin");
         showAddProduct.add(wreath, "wreath");
-        showAddProduct.add(boxset, "snackbox");
-        showAddProduct.add(frame, "frame");
-        showAddProduct.add(offerings, "offerings");
-        showAddProduct.add(sandalW, "sandalW");
+        //showAddProduct.add(frame, "frame");
+        //showAddProduct.add(incense, "incense");
+        //showAddProduct.add(candle, "candle");
+        showAddProduct.add(offering, "offering");
+        //showAddProduct.add(sandlewood, "sandlewood");
+        //showAddProduct.add(snackbox, "snackbox");
+        //showAddProduct.add(souvenir, "souvenir");
         add(showAddProduct);
         showAddProduct.setBounds(10, 110, 480, 480);
 
@@ -183,45 +191,58 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
     @Override
     public void checkCurrentCard() {
         for (Component comp : showAddProduct.getComponents()) {
-//            if (comp.isVisible()&& comp instanceof AddWreath) {
-//                AddWreath aw = (AddWreath) comp;
-//                Wreathdao wd = new Wreathdao();
-//                
-//                wd.save(aw);//save to excel
-//                for(int i = 0; i<aw.getCountPic_DetailJP(); i++){
-//                    WreathDetail temp = (WreathDetail) aw.getPic_detailJP().getComponent(i);
-//                    String name = aw.getNameTF().getText();
-//                    String pattern = temp.getPatternTF().getText();
-//                    String detail = temp.getDetailTA().getText();
-//                    String path = temp.getFilePath();
-//                    String material = aw.getMaterialTF().getText();
-//                    String color = aw.getColorTF().getText();
-//                    String price = aw.getPriceTF().getText();
-//                    wList.add(new Wreath(name,pattern,detail,path,material,color,price));       
-//                }
-//                break; // หยุดหลังจากเจอหน้าแรกที่แสดงอยู่String pattern = wd.get(a).getPatternTF().getText();
-//            }
+            if (comp.isVisible()&& comp instanceof AddWreath) {
+                AddWreath aw = (AddWreath) comp;
+                Wreathdao wd = new Wreathdao();      
+                wd.save(aw);//save to excel
+               break; // หยุดหลังจากเจอหน้าแรกที่แสดงอยู่String pattern = wd.get(a).getPatternTF().getText();
+            }
             if (comp.isVisible()&& comp instanceof AddSnackBox){
                 AddSnackBox as = (AddSnackBox)comp;
                 Snackboxdao sd = new Snackboxdao();
                 sd.save(as);
-                for(int i = 0; i<as.getCountPic_DetailJP(); i++){
-                    SnackBoxDetail temp = (SnackBoxDetail) as.getPic_detailJP().getComponent(i);
-                    
-                    String name = as.getNameTF().getText();
-                    String pattern = temp.getPatternTF().getText();
-                    String detail = temp.getDetailTA().getText();
-                    String path = temp.getFilePath();
-                    String price = temp.getPriceTF().getText();
-                    snackList.add(new SnackBox(name, pattern, detail,path, price));   
-                }
                 break;
             }
-//            else if (comp.isVisible()&& comp instanceof AddCoffin) {
-//                Wreathdao wd = new Wreathdao();
-//                wd.save((AddWreath) comp);
-//                break; // หยุดหลังจากเจอหน้าแรกที่แสดงอยู่
-//            }
+            else if (comp.isVisible()&& comp instanceof AddOffering) {
+                Offeringdao od = new Offeringdao();
+                od.save((AddOffering) comp);
+                break; // หยุดหลังจากเจอหน้าแรกที่แสดงอยู่
+            }
+            else if (comp.isVisible()&& comp instanceof AddCoffin) {
+                Coffindao cd = new Coffindao();
+                cd.save((AddCoffin) comp);
+                break; // หยุดหลังจากเจอหน้าแรกที่แสดงอยู่
+            }
+            else if (comp.isVisible()&& comp instanceof AddCandle) {
+                Candledao cand = new Candledao();
+                cand.save((AddCandle) comp);
+                break; // หยุดหลังจากเจอหน้าแรกที่แสดงอยู่
+            }
+            else if (comp.isVisible()&& comp instanceof AddIncense) {
+                Incensedao ind = new Incensedao();
+                ind.save((AddIncense) comp);
+                break; // หยุดหลังจากเจอหน้าแรกที่แสดงอยู่
+            }
+            else if (comp.isVisible()&& comp instanceof AddSandleWood) {
+                SandleWoodgdao sand = new SandleWooddao();
+                sand.save((AddSandleWood) comp);
+                break; // หยุดหลังจากเจอหน้าแรกที่แสดงอยู่
+            }
+            else if (comp.isVisible()&& comp instanceof AddSouvenir) {
+                Souvenirdao soud = new Souvenirdao();
+                soud.save((AddSouvenir) comp);
+                break; // หยุดหลังจากเจอหน้าแรกที่แสดงอยู่
+            }
+            else if (comp.isVisible()&& comp instanceof AddPackage) {
+                Packagedao packd = new Packagedao();
+                packd.save((AddPackage) comp);
+                break; // หยุดหลังจากเจอหน้าแรกที่แสดงอยู่
+            }
+            else if (comp.isVisible()&& comp instanceof AddFrame) {
+                Framedao framed = new Framedao();
+                framed.save((AddFrame) comp);
+                break; // หยุดหลังจากเจอหน้าแรกที่แสดงอยู่
+            }            
         }
     }
 }

@@ -97,6 +97,15 @@ public class MainFrame extends javax.swing.JPanel {
         Home home = new Home(frameJP);
         ProductPage product = new ProductPage(frameJP);
         WreathProductPage wpp = new WreathProductPage(frameJP);
+        OfferingProductPage ofp = new OfferingProductPage(frameJP);
+        //CoffinProductPage cofpp = new CoffinProductPage(frameJP);
+        //CandleProductPage canpp = new CandleProductPage(frameJP);
+        //IncenseProductPage inpp = new IncenseProductPage(frameJP);
+        //SanckBoxProductPage snackpp = new SnackBoxProductPage(frameJP);
+        //SouvenirProductPage soupp = new SouvenirProductPackage(frameJP);
+        //SandleWoodProductPackage sandpp = new SandleWoodProductPackage(frameJP);
+        //FrameProductPage framepp = new FrameProductPage(frameJP);
+
         CustomCoffin coffincustom = new CustomCoffin(frameJP);
         CustomFuneral funeral = new CustomFuneral(frameJP);
         CustomAsh ash = new CustomAsh(frameJP);
@@ -104,8 +113,17 @@ public class MainFrame extends javax.swing.JPanel {
 
         /*add each pages into cardlayout on frameJP*/
         frameJP.add(home, "home");
-        frameJP.add(product, "product");
+        frameJP.add(product, "productpage");
         frameJP.add(wpp, "wreathproductpage");
+        frameJP.add(ofp, "offeringproductpage");
+        //framepp.add(cofpp, "coffinproductpage");
+        //frameJP.add(canpp ,"candleproductpage");
+        //frameJP.add(inpp, "incenseproductpage");
+        //frameJP.add(snackpp, "snackproductpage");
+        //frameJP.add(soupp, "souvenirproductpage");
+        //frameJP.add(sandpp, "sandlewoodproductpage");
+        //frameJP.add(framepp, "frameproductpage");
+
         frameJP.add(coffincustom, "coffincustom");
         frameJP.add(funeral, "funeral");
         frameJP.add(ash, "ash");
@@ -119,7 +137,7 @@ public class MainFrame extends javax.swing.JPanel {
 
     private void productBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_productBTMouseClicked
         CardLayout cd = (CardLayout) frameJP.getLayout();
-        cd.show(frameJP, "product");
+        cd.show(frameJP, "productpage");
     }//GEN-LAST:event_productBTMouseClicked
 
     private void homeBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeBTMouseClicked

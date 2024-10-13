@@ -271,6 +271,7 @@ public class Register extends javax.swing.JPanel {
         new Userdao().save(this);
         if(Userdao.complete){
             JOptionPane.showMessageDialog(this, "Registered successed", "Registered", JOptionPane.INFORMATION_MESSAGE);
+            Userdao.complete = false;
             nameField.setText("");
             surnameField.setText("");
             userNamefield.setText("");

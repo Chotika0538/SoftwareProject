@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import StoreToHeaven.AddWreath;
+import StoreToHeaven.Offering;
 import StoreToHeaven.WreathDetail;
 import StoreToHeaven.Wreath;
 import java.awt.Component;
@@ -65,10 +66,10 @@ public class Wreathdao {
             String pattern = wd.get(a).getPatternTF().getText();
             String detail = wd.get(a).getDetailTA().getText();
             String path = wd.get(a).getFilePath();
-            String[] material = wreath.getMaterialTF().getText().split(",");
-            String[] price = wreath.getPriceTF().getText().split(",");
-            String[] color = wreath.getColorTF().getText().split(",");
-            String[] dataChecked = {pattern,detail,path,String.join(",", material),String.join(",", price),String.join(",", color)};
+            String material = wreath.getMaterialTF().getText();
+            String price = wreath.getPriceTF().getText();
+            String color = wreath.getColorTF().getText();
+            String[] dataChecked = {pattern,detail,path,String.join(",", material),String.join("/", price),String.join(",", color)};
             boolean haveData = false ;
             for (Row row : sheet){
                 Cell c = row.getCell(0);
@@ -84,9 +85,9 @@ public class Wreathdao {
                 newRow.createCell(0).setCellValue(pattern);
                 newRow.createCell(1).setCellValue(detail);
                 newRow.createCell(2).setCellValue(path);
-                newRow.createCell(3).setCellValue(wreath.getMaterialTF().getText());
-                newRow.createCell(4).setCellValue(wreath.getPriceTF().getText());
-                newRow.createCell(5).setCellValue(wreath.getColorTF().getText());
+                newRow.createCell(3).setCellValue(material);
+                newRow.createCell(4).setCellValue(price);
+                newRow.createCell(5).setCellValue(color);
                } catch (Exception e) {
                     e.printStackTrace();
                }             
@@ -102,19 +103,27 @@ public class Wreathdao {
             e.printStackTrace(); // แสดงข้อผิดพลาด
         } finally {
             // ปิด resource ที่เปิดไว้
-            try {
-                if (fos != null) {
-                    fos.close();
-                }
-                if (wb != null) {
+            if(wb!=null){
+                try{
                     wb.close();
+                }catch(Exception err){
+                    System.out.println(err);
                 }
-                if (fileInput != null) {
-                    fileInput.close();
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
             }
+            if(fos!=null){
+                try{
+                    fos.close();
+                }catch(Exception err){
+                    System.out.println(err);
+                }
+            }
+             if(fileInput!=null){
+                try{
+                    fileInput.close();
+                }catch(Exception err){
+                    System.out.println(err);
+                }
+            } 
         }
     }
     
@@ -151,9 +160,7 @@ public class Wreathdao {
                        case 4:
                            String[] s = cell.getStringCellValue().split("/");
                            price = new Double[s.length];
-                           //int i = 0;
                           for(int i=0; i<s.length; i++){
-                               //price[i] = new Double();
                                 if (s[i] != null && !s[i].isEmpty() && !s[i].equals("null")) {
                                     price[i] = Double.parseDouble(s[i]);  // แปลงเป็น double
                                 } else {
@@ -165,27 +172,38 @@ public class Wreathdao {
                            color = cell.getStringCellValue().split(",");
                            break;
                    }
-                   if (name != null && pattern != null && detail != null && path != null && material != null && color != null && price != null) {
-                        wList.add(new Wreath(name, pattern, detail, path, material, color, price));
+//                   if (name != null && pattern != null && detail != null && path != null && material != null && color != null && price != null) {
+//                        wList.add(new Wreath(name, pattern, detail, path, material, color, price));
+//                    }
+
+                }
+                
+                // ตรวจสอบค่าที่ได้ก่อนเพิ่มลง oList
+                if (name != null && pattern != null && detail != null && path != null && material != null && color != null && price != null) {
+                    Wreath newWreath = new Wreath(name, pattern, detail, path, material, color, price);
+                    // ตรวจสอบไม่ให้มีการเพิ่มซ้ำ
+                    if (!wList.contains(newWreath)) {
+                        wList.add(newWreath);
                     }
                 }
             }
         } catch (Exception e) {
             e.printStackTrace();
         }finally {
-            try {
-                if (fileInput != null) {
-                    fileInput.close();
-                }
-                if (fos != null) {
-                    fos.close();
-                }
-                if (wb != null) {
+            if(wb!=null){
+                try{
                     wb.close();
+                }catch(Exception err){
+                    System.out.println(err);
                 }
-            } catch (IOException e) {
-                e.printStackTrace();
             }
+             if(fileInput!=null){
+                try{
+                    fileInput.close();
+                }catch(Exception err){
+                    System.out.println(err);
+                }
+            } 
         }
         return wList;
     }

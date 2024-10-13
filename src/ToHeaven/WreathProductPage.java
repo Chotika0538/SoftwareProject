@@ -60,9 +60,9 @@ public class WreathProductPage extends javax.swing.JPanel {
 
         backBT.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         backBT.setText("<ย้อนกลับ");
-        backBT.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backBTActionPerformed(evt);
+        backBT.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                backBTMouseClicked(evt);
             }
         });
 
@@ -103,17 +103,13 @@ public class WreathProductPage extends javax.swing.JPanel {
 
         wreathProductPanel.setBackground(new java.awt.Color(255, 180, 87));
         wreathProductPanel.setPreferredSize(new java.awt.Dimension(798, 500));
-        wreathProductPanel.setLayout(new javax.swing.BoxLayout(wreathProductPanel, javax.swing.BoxLayout.Y_AXIS));
+        wreathProductPanel.setLayout(new java.awt.GridLayout(0, 1, 0, 5));
         //wreathList.add(new WreathProduct().getData(wreath));
         //wreathProductPanel.add(wreathList.get(0));
         jScrollPane1.setViewportView(wreathProductPanel);
 
         add(jScrollPane1, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void backBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBTActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_backBTActionPerformed
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
 //        for(int j = 1; j<5; j++){
@@ -124,13 +120,17 @@ public class WreathProductPage extends javax.swing.JPanel {
 //        }
   
     }//GEN-LAST:event_jButton1MouseClicked
+
+    private void backBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backBTMouseClicked
+        ((CardLayout)mainPanel.getLayout()).show(mainPanel, "productpage");
+    }//GEN-LAST:event_backBTMouseClicked
 //    public void getWreathData(){
 //         wreathClassList = wreathdao.getAll();
 //    }
     public void showData(){
         for (Wreath wreath : wreathClassList){
             wreathProduct.add(new WreathProduct(wreath));
-            wreathProductPanel.setPreferredSize(new Dimension(800, wreathProductPanel.getHeight()+500));
+            //wreathProductPanel.setPreferredSize(new Dimension(800, wreathProductPanel.getHeight()+500));
             wreathProductPanel.add(wreathProduct.getLast());
             wreathProductPanel.revalidate();
             wreathProductPanel.repaint();

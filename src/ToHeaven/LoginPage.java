@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package ToHeaven;
+import DAO.Userdao;
 import java.util.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -29,24 +30,24 @@ public class LoginPage extends JPanel {
      */
     public LoginPage() {
         initComponents();
-        setReadfile();
+        //setReadfile();
     }
     public LoginPage(JPanel mainpanel){
         this.mainPanel=mainpanel;
         this.card= (CardLayout) mainPanel.getLayout();
         initComponents();
-        setReadfile();
+        //setReadfile();
     }
-    private void setReadfile(){
-        try{
-            excelPath = "User.xlsx";
-            fileInput = new FileInputStream(new File(excelPath));
-            wb = new XSSFWorkbook(fileInput);
-            sheet = wb.getSheetAt(0);
-        }catch(Exception err){
-            System.out.print(err);
-        }
-    }
+//    private void setReadfile(){
+//        try{
+//            excelPath = "User.xlsx";
+//            fileInput = new FileInputStream(new File(excelPath));
+//            wb = new XSSFWorkbook(fileInput);
+//            sheet = wb.getSheetAt(0);
+//        }catch(Exception err){
+//            System.out.print(err);
+//        }
+//    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -176,21 +177,27 @@ public class LoginPage extends JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
     private boolean checkUserPass(String userName,String password){
-        for(Row row : sheet ){
-            Cell rowUsername = row.getCell(2);
-            Cell rowPassword = row.getCell(3);
-//            System.out.println("Username : "+rowUsername);
-//            System.out.println("Password : "+rowPassword);
-            if (rowUsername != null && rowPassword != null) {
-                if (rowUsername.getCellTypeEnum() == CellType.STRING &&  rowPassword.getCellTypeEnum() == CellType.STRING) {
-                    String excelUsername = rowUsername.getStringCellValue();
-                    String excelPassword = rowPassword.getStringCellValue();
-                    if (excelUsername.equals(userName) && excelPassword.equals(password)) {
-                        System.out.println("Login success");
-                        return true;
-                    }
-                }
-            }
+//        for(Row row : sheet ){
+//            Cell rowUsername = row.getCell(2);
+//            Cell rowPassword = row.getCell(3);
+////            System.out.println("Username : "+rowUsername);
+////            System.out.println("Password : "+rowPassword);
+//            if (rowUsername != null && rowPassword != null) {
+//                if (rowUsername.getCellTypeEnum() == CellType.STRING &&  rowPassword.getCellTypeEnum() == CellType.STRING) {
+//                    String excelUsername = rowUsername.getStringCellValue();
+//                    String excelPassword = rowPassword.getStringCellValue();
+//                    if (excelUsername.equals(userName) && excelPassword.equals(password)) {
+//                        System.out.println("Login success");
+//                        return true;
+//                    }
+//                }
+//            }
+//        }
+        new Userdao().findData(userName, password);
+        if(Userdao.checkLogin){
+            System.out.println("Login success");
+            Userdao.checkLogin = false;
+            return true; 
         }
         JOptionPane.showMessageDialog(this, "User Not Found !", "Search Error", JOptionPane.ERROR_MESSAGE);
         return false;

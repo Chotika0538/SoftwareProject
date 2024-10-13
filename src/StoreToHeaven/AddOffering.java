@@ -26,23 +26,15 @@ public class AddOffering extends javax.swing.JPanel{
     private void initComponents() {
 
         nameTF = new javax.swing.JTextField();
-        price = new javax.swing.JLabel();
-        priceTF = new javax.swing.JTextField();
         pic_detail = new javax.swing.JLabel();
         pic_detailSP = new javax.swing.JScrollPane();
         pic_detailJP = new javax.swing.JPanel();
         addListBT = new javax.swing.JButton();
         name = new javax.swing.JLabel();
-        deleteListBT = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(480, 480));
 
         nameTF.setFont(new java.awt.Font("TH SarabunPSK", 0, 20)); // NOI18N
-
-        price.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
-        price.setText("ราคาสินค้าแต่ละแบบ  : ");
-
-        priceTF.setFont(new java.awt.Font("TH SarabunPSK", 0, 20)); // NOI18N
 
         pic_detail.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
         pic_detail.setText("รูปและรายละเอียดของสินค้า");
@@ -72,14 +64,6 @@ public class AddOffering extends javax.swing.JPanel{
         name.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
         name.setText("ชื่อสินค้า : ");
 
-        deleteListBT.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
-        deleteListBT.setText("- ลบรายการ");
-        deleteListBT.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                deleteListBTMouseClicked(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -87,45 +71,33 @@ public class AddOffering extends javax.swing.JPanel{
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
+                        .addGap(35, 35, 35)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(pic_detailSP, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(pic_detail)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(price)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(priceTF, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(name)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(nameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(121, 121, 121)
-                        .addComponent(deleteListBT)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(176, 176, 176)
                         .addComponent(addListBT)))
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(22, 22, 22)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(name)
                     .addComponent(nameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(priceTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(price, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(27, 27, 27)
                 .addComponent(pic_detail, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(25, 25, 25)
                 .addComponent(pic_detailSP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(addListBT)
-                    .addComponent(deleteListBT))
-                .addGap(14, 14, 14))
+                .addGap(18, 18, 18)
+                .addComponent(addListBT)
+                .addContainerGap(67, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -147,17 +119,6 @@ public class AddOffering extends javax.swing.JPanel{
         pic_detailJP.repaint();
     }//GEN-LAST:event_addListBTMouseClicked
 
-    private void deleteListBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteListBTMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_deleteListBTMouseClicked
-
-    public JTextField getPriceTF() {
-        return priceTF;
-    }
-
-    public void setPriceTF(JTextField priceTF) {
-        this.priceTF = priceTF;
-    }
 
     public JTextField getNameTF() {
         return nameTF;
@@ -178,13 +139,10 @@ public class AddOffering extends javax.swing.JPanel{
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addListBT;
-    private javax.swing.JButton deleteListBT;
     private javax.swing.JLabel name;
     private javax.swing.JTextField nameTF;
     private javax.swing.JLabel pic_detail;
     private javax.swing.JPanel pic_detailJP;
     private javax.swing.JScrollPane pic_detailSP;
-    private javax.swing.JLabel price;
-    private javax.swing.JTextField priceTF;
     // End of variables declaration//GEN-END:variables
 }
