@@ -11,7 +11,7 @@ public class Product {
     private String name;
     private String pattern;
     private String detail;
-    private double price;
+    double price;
     private String path;
 
     public Product(String name,String pattern,String detail,String path){
@@ -60,6 +60,10 @@ public class Product {
 
     public void setPath(String path) {
         this.path = path;
+    }
+    
+    public String toString(){
+        return getName()+" : "+getPattern();
     }
   
 }

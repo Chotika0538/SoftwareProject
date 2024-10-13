@@ -53,6 +53,11 @@ public class ProductPage extends javax.swing.JPanel {
                 wreathBTMouseClicked(evt);
             }
         });
+        wreathBT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                wreathBTActionPerformed(evt);
+            }
+        });
         add(wreathBT);
         wreathBT.setBounds(160, 130, 135, 41);
 
@@ -88,6 +93,16 @@ public class ProductPage extends javax.swing.JPanel {
         incenseBT.setText("ธูป");
         incenseBT.setBorder(null);
         incenseBT.setPreferredSize(new java.awt.Dimension(75, 30));
+        incenseBT.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                incenseBTMouseClicked(evt);
+            }
+        });
+        incenseBT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                incenseBTActionPerformed(evt);
+            }
+        });
         add(incenseBT);
         incenseBT.setBounds(510, 190, 135, 41);
 
@@ -95,6 +110,11 @@ public class ProductPage extends javax.swing.JPanel {
         candleBT.setText("เทียน");
         candleBT.setBorder(null);
         candleBT.setPreferredSize(new java.awt.Dimension(75, 30));
+        candleBT.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                candleBTMouseClicked(evt);
+            }
+        });
         add(candleBT);
         candleBT.setBounds(510, 250, 135, 41);
 
@@ -118,6 +138,22 @@ public class ProductPage extends javax.swing.JPanel {
         //CardLayout cd = (CardLayout) frameJP.getLayout();
         ((CardLayout)mainPanel.getLayout()).show(mainPanel, "wreathproductpage");
     }//GEN-LAST:event_wreathBTMouseClicked
+
+    private void wreathBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_wreathBTActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_wreathBTActionPerformed
+
+    private void incenseBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_incenseBTActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_incenseBTActionPerformed
+
+    private void incenseBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_incenseBTMouseClicked
+       ((CardLayout)mainPanel.getLayout()).show(mainPanel, "incenseproductpage");
+    }//GEN-LAST:event_incenseBTMouseClicked
+
+    private void candleBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_candleBTMouseClicked
+       ((CardLayout)mainPanel.getLayout()).show(mainPanel, "candleproductpage");
+    }//GEN-LAST:event_candleBTMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -99,12 +99,18 @@ public class MainFrame extends javax.swing.JPanel {
         CustomCoffin coffincustom = new CustomCoffin(frameJP);
         CustomFuneral funeral = new CustomFuneral(frameJP);
         CustomAsh ash = new CustomAsh(frameJP);
+        CoffinProductPage cpp = new CoffinProductPage(frameJP);
+        IncenseProductPage ipp = new IncenseProductPage(frameJP);
+        CandleProductPage cnpp = new CandleProductPage(frameJP);
         PackagePage packagepage = new PackagePage(frameJP);
 
         /*add each pages into cardlayout on frameJP*/
         frameJP.add(home, "home");
         frameJP.add(product, "product");
         frameJP.add(wpp, "wreathproductpage");
+        frameJP.add(cpp, "coffinproductpage");
+        frameJP.add(ipp, "incenseproductpage");
+        frameJP.add(cnpp, "candleproductpage");
         frameJP.add(coffincustom, "coffincustom");
         frameJP.add(funeral, "funeral");
         frameJP.add(ash, "ash");

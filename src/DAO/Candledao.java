@@ -11,6 +11,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import StoreToHaven.AddCandle;
 import StoreToHaven.CandleDetail;
+import StoreToHaven.IncenseDetail;
 import StoreToHeaven.*;
 import java.awt.Component;
 import java.io.FileOutputStream;
@@ -30,7 +31,10 @@ public class Candledao {
     private ArrayList<List<String>> candlelist = new ArrayList<>();
     private String[] nameCol = { "ชื่อ","ขนาด","รายละเอียด" ,"pathรูปภาพ", "ราคา"};
     private ArrayList<CandleDetail> cnd;
+    private ArrayList<Candle> cnList;
     private Component[] cmp;
+    String name , pattern, detail, path;
+    double price;
 
     /*Save data in Excel file*/
     public void save(AddCandle candle) {
@@ -61,7 +65,6 @@ public class Candledao {
             String pattern = cnd.get(a).getPatternTF().getText();    
             String detail = cnd.get(a).getDetailTA().getText();
             String path = cnd.get(a).getFilePath();
-            String size = candle.getSizeTF().getText();
             double price = Double.parseDouble(cnd.get(a).getPriceTF().getText());
             String[] dataChecked = {pattern,detail,path,Double.toString(price)};
    
@@ -78,7 +81,6 @@ public class Candledao {
                 int lastRow = sheet.getLastRowNum();
                 Row newRow = sheet.createRow(lastRow+1);
                 newRow.createCell(0).setCellValue(pattern);
-                newRow.createCell(1).setCellValue(size);
                 newRow.createCell(2).setCellValue(detail);
                 newRow.createCell(3).setCellValue(path);
                 newRow.createCell(4).setCellValue(price);
@@ -109,17 +111,81 @@ public class Candledao {
             }
         }
     }
-    
+    public ArrayList<Candle> getAll() {        
+    cnList = new ArrayList<>();
+    read();
+    try {
+        if (sheet == null) {
+            System.out.println("Sheet not found");
+            return cnList; // หรือทำการรีเทิร์นอย่างอื่นหากไม่มีชีต
+        }
+
+        for (Row row : sheet) {
+            if (row.getRowNum() == 0) {
+                name = row.getCell(0).getStringCellValue();
+                continue;
+            }
+            String pattern = null, detail = null, path = null;
+            double price = 0.0;
+            for (Cell cell : row) {
+                if (cell == null) {
+                    continue; // ข้าม cell ที่เป็น null
+                }
+                switch (cell.getColumnIndex()) {
+                    case 0:
+                        pattern = cell.getStringCellValue();
+                        break;
+                    case 1:
+                        detail = cell.getStringCellValue();
+                        break;
+                    case 2:
+                        path = cell.getStringCellValue();
+                        break;
+                    case 3:
+                        price = cell.getNumericCellValue();
+                        break;
+                }
+            }
+
+            // ตรวจสอบค่าที่ได้ก่อนเพิ่มลง oList
+            if (name != null && pattern != null && detail != null && path != null && price > 0.0) {
+                Candle newCandle = new Candle(name, pattern, detail, path, price);
+                // ตรวจสอบไม่ให้มีการเพิ่มซ้ำ
+                if (!cnList.contains(newCandle)) {
+                    cnList.add(newCandle);
+                }
+            }
+        }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                if (fileInput != null) {
+                    fileInput.close();
+                }
+                if (fos != null) {
+                    fos.close();
+                }
+                if (wb != null) {
+                    wb.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return cnList;
+    }
     /*Read Excel file*/
-    public void read() {
+   public void read() {
         wb = null;
         try {
             fileInput = new FileInputStream(new File(FILE_NAME));
             wb = new XSSFWorkbook(fileInput);
-            sheet = wb.getSheetAt(4); // เปลี่ยนไปที่ชีต 4
+            sheet = wb.getSheetAt(4); // เปลี่ยนไปที่ชีต 5
         } catch (Exception err) {
             System.out.println("can't read file: " + err);
         }
     }
-   
+  
 }
+

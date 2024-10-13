@@ -4,27 +4,22 @@ import java.util.*;
 
 public class Candle extends Product{
     private ArrayList<Candle> cnList;
-    private ArrayList<Double> priceAll;
-    private int size;
-
-    public Candle(String name,String pattern,int size, String detail,String path, String price){
-        super(name,pattern,detail,path);
-        setSize(size);
-        priceAll.add(Double.parseDouble((Arrays.toString(price.split(",")))));
+    private double price;
+  
+    public Candle(String name,String pattern,String detail,String path, double price){
+       super(name,pattern,detail,path);
+       this.price=price;
     }
 
-    public int getSize() {
-        return size;
-    }
-
-    public void setSize(int size) {
-        this.size = size;
-    }
-        public ArrayList<Candle> getwList() {
+    public ArrayList<Candle> getwList() {
         return cnList;
     }
 
-    public void setwList(ArrayList<Candle> wList) {
+    public void setwList(ArrayList<Candle> cnList) {
         this.cnList = cnList;
+    }
+
+    public Object getPriceAll() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

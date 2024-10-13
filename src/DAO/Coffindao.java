@@ -25,6 +25,9 @@ public class Coffindao {
     private String[] nameCol = { "ชื่อ","ขนาด","รายละเอียด" ,"pathรูปภาพ", "ราคา"};
     private ArrayList<CoffinDetail> cfd;
     private Component[] cmp;
+    private ArrayList<Coffin> cList;
+    String name , size, pattern, detail, path;
+    double price;  
 
     /*Save data in Excel file*/
     public void save(AddCoffin coffin) {
@@ -106,7 +109,74 @@ public class Coffindao {
             }
         }
     }
-    
+    public ArrayList<Coffin> getAll() {        
+    cList = new ArrayList<>();
+    read();
+    try {
+        if (sheet == null) {
+            System.out.println("Sheet not found");
+            return cList; // หรือทำการรีเทิร์นอย่างอื่นหากไม่มีชีต
+        }
+
+        for (Row row : sheet) {
+            if (row.getRowNum() == 0) {
+                name = row.getCell(0).getStringCellValue();
+                continue;
+            }
+            String pattern = null, size= null, detail = null, path = null;
+            double price = 0.0;
+
+            for (Cell cell : row) {
+                if (cell == null) {
+                    continue; // ข้าม cell ที่เป็น null
+                }
+                switch (cell.getColumnIndex()) {
+                    case 0:
+                        pattern = cell.getStringCellValue();
+                        break;
+                    case 1:
+                        size = cell.getStringCellValue();
+                        break;
+                    case 2:
+                        detail = cell.getStringCellValue();
+                        break;
+                    case 3:
+                        path = cell.getStringCellValue();
+                        break;
+                    case 4:
+                        price = cell.getNumericCellValue();
+                        break;
+                }
+            }
+
+            // ตรวจสอบค่าที่ได้ก่อนเพิ่มลง oList
+            if (name != null && pattern != null && detail != null && path != null && price > 0.0) {
+                Coffin newCoffin = new Coffin(name, pattern, size, detail, path, price);
+                // ตรวจสอบไม่ให้มีการเพิ่มซ้ำ
+                if (!cList.contains(newCoffin)) {
+                    cList.add(newCoffin);
+                }
+            }
+        }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                if (fileInput != null) {
+                    fileInput.close();
+                }
+                if (fos != null) {
+                    fos.close();
+                }
+                if (wb != null) {
+                    wb.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return cList;
+    }
     /*Read Excel file*/
     public void read() {
         wb = null;
