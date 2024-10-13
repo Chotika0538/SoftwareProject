@@ -8,19 +8,20 @@ import java.util.ArrayList;
 import javax.swing.JPanel;
 
 
-public class WreathProductPage extends javax.swing.JPanel {
+public class SnackProductPage extends javax.swing.JPanel {
     
-    private ArrayList<Wreath> wreathClassList;
-    private ArrayList<WreathProduct> wreathProduct;
+    private ArrayList<SnackBox> snackClassList;
+    private ArrayList<SnackProduct> snackProduct;
     private CardLayout cd;
     private JPanel mainPanel;
     int i = 1;
-    private Wreathdao wreathdao;
+    private Snackboxdao sboxdao;
     
-    public WreathProductPage(JPanel mainPanel) {
-        wreathdao = new Wreathdao();
-        wreathClassList = wreathdao.getAll();
-        wreathProduct = new ArrayList<>();
+    public SnackProductPage(JPanel mainPanel) {
+        sboxdao = new Snackboxdao();
+        snackClassList = new ArrayList<>();
+        snackClassList = sboxdao.getAll();
+        snackProduct = new ArrayList<>();
         this.mainPanel = mainPanel;
         cd = (CardLayout) mainPanel.getLayout();
         initComponents();
@@ -42,7 +43,7 @@ public class WreathProductPage extends javax.swing.JPanel {
         backBT = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        wreathProductPanel = new javax.swing.JPanel();
+        SnackProductPanel = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(201, 156, 99));
         setPreferredSize(new java.awt.Dimension(800, 500));
@@ -51,7 +52,7 @@ public class WreathProductPage extends javax.swing.JPanel {
         wreathNameLB.setBackground(new java.awt.Color(255, 204, 204));
         wreathNameLB.setFont(new java.awt.Font("TH SarabunPSK", 1, 24)); // NOI18N
         wreathNameLB.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        wreathNameLB.setText("พวงหรีด");
+        wreathNameLB.setText("ชุดของว่าง");
         wreathNameLB.setPreferredSize(new java.awt.Dimension(800, 50));
         add(wreathNameLB, java.awt.BorderLayout.PAGE_START);
 
@@ -101,12 +102,12 @@ public class WreathProductPage extends javax.swing.JPanel {
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
-        wreathProductPanel.setBackground(new java.awt.Color(255, 180, 87));
-        wreathProductPanel.setPreferredSize(new java.awt.Dimension(798, 500));
-        wreathProductPanel.setLayout(new javax.swing.BoxLayout(wreathProductPanel, javax.swing.BoxLayout.Y_AXIS));
+        SnackProductPanel.setBackground(new java.awt.Color(255, 180, 87));
+        SnackProductPanel.setPreferredSize(new java.awt.Dimension(798, 500));
+        SnackProductPanel.setLayout(new javax.swing.BoxLayout(SnackProductPanel, javax.swing.BoxLayout.Y_AXIS));
         //wreathList.add(new WreathProduct().getData(wreath));
         //wreathProductPanel.add(wreathList.get(0));
-        jScrollPane1.setViewportView(wreathProductPanel);
+        jScrollPane1.setViewportView(SnackProductPanel);
 
         add(jScrollPane1, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
@@ -128,23 +129,23 @@ public class WreathProductPage extends javax.swing.JPanel {
 //         wreathClassList = wreathdao.getAll();
 //    }
     public void showData(){
-        for (Wreath wreath : wreathClassList){
-            wreathProduct.add(new WreathProduct(wreath));
-            wreathProductPanel.setPreferredSize(new Dimension(800, wreathProductPanel.getHeight()+500));
-            wreathProductPanel.add(wreathProduct.getLast());
-            wreathProductPanel.revalidate();
-            wreathProductPanel.repaint();
+        for (SnackBox boxset : snackClassList){
+            snackProduct.add(new SnackProduct(boxset));
+            SnackProductPanel.setPreferredSize(new Dimension(800, SnackProductPanel.getHeight()+500));
+            SnackProductPanel.add(snackProduct.getLast());
+            SnackProductPanel.revalidate();
+            SnackProductPanel.repaint();
         }
     }
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel SnackProductPanel;
     private javax.swing.JButton addBT;
     private javax.swing.JButton backBT;
     private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel menuPanel;
     private javax.swing.JLabel wreathNameLB;
-    private javax.swing.JPanel wreathProductPanel;
     // End of variables declaration//GEN-END:variables
 }

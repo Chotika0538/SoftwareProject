@@ -3,27 +3,19 @@ package StoreToHeaven;
 import java.util.*;
 public class Candle extends Product{
     private ArrayList<Candle> cnList;
-    private ArrayList<Double> priceAll;
-    private int size;
+    private ArrayList<Integer> sizeAll;
+    
 
-    public Candle(String name,String pattern,int size, String detail,String path, String price){
+    public Candle(String name,String pattern, String detail,String path, String price){
         super(name,pattern,detail,path);
-        priceAll.add(Double.parseDouble((Arrays.toString(price.split(",")))));
-        this.size = size;
+        setPrice(Double.parseDouble(price));
     }
-
-    public int getSize() {
-        return size;
-    }
-
-    public void setSize(int size) {
-        this.size = size;
-    }
-        public ArrayList<Candle> getwList() {
+    
+    public ArrayList<Candle> getcandleList() {
         return cnList;
     }
 
-    public void setwList(ArrayList<Candle> wList) {
+    public void setcandleListt(ArrayList<Candle> wList) {
         this.cnList = cnList;
     }
 }

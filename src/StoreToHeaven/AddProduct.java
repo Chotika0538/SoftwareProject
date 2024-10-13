@@ -7,12 +7,20 @@ import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.*;
 import java.util.ArrayList;
-import DAO.Wreathdao;
-import DAO.Snackboxdao;
+//import DAO.Wreathdao;
+//import DAO.Snackboxdao;
+import DAO.*;
 public class AddProduct extends javax.swing.JPanel implements CheckPanel{
     
     private ArrayList<Wreath> wList;
     private ArrayList<SnackBox> snackList;
+    private ArrayList<Candle> candList;
+    private ArrayList<Coffin> cofList;
+    private ArrayList<Frame> fList;
+    private ArrayList<Incense> incList;
+    private ArrayList<Offering> ofrList;
+    private ArrayList<SandalWood> sandWList;
+    
     
     public AddProduct() {
         wList = new ArrayList<>();
@@ -70,6 +78,10 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
         AddFrame frame = new AddFrame(showAddProduct);
         AddOffering offerings = new AddOffering(showAddProduct);
         AddSandalWood sandalW = new AddSandalWood(showAddProduct);
+        AddCandle candle = new AddCandle(showAddProduct);
+        AddCoffin coffin = new AddCoffin(showAddProduct);
+        AddIncense incense = new AddIncense(showAddProduct);
+        AddSouvenir souvenir = new AddSouvenir(showAddProduct);
 
         emptyPanel.setBackground(new java.awt.Color(153, 255, 204));
         showAddProduct.add(emptyPanel, "empty");
@@ -78,6 +90,10 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
         showAddProduct.add(frame, "frame");
         showAddProduct.add(offerings, "offerings");
         showAddProduct.add(sandalW, "sandalW");
+        showAddProduct.add(candle, "candle");
+        showAddProduct.add(coffin, "coffin");
+        showAddProduct.add(incense, "incense");
+        showAddProduct.add(souvenir, "souvenir");
         add(showAddProduct);
         showAddProduct.setBounds(10, 110, 480, 480);
 
@@ -114,8 +130,8 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
         }
         //choose coffin
         else if(((String)cb.getSelectedItem()).equals("โลงศพ")){
-//            cd = (CardLayout) showAddProduct.getLayout();
-//            cd.show(showAddProduct, "");
+            cd = (CardLayout) showAddProduct.getLayout();
+            cd.show(showAddProduct, "coffin");
         }
         //choose snack box
         else if(((String)cb.getSelectedItem()).equals("ชุดอาหารว่าง")){
@@ -129,13 +145,13 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
         }
         //choose candles
         else if(((String)cb.getSelectedItem()).equals("ธูปและเทียน")){
-            //cd = (CardLayout) showAddProduct.getLayout();
-            //cd.show(showAddProduct, "");
+            cd = (CardLayout) showAddProduct.getLayout();
+            cd.show(showAddProduct, "candle");
         }
         //choose sevanior
         else if(((String)cb.getSelectedItem()).equals("ของชำร่วย")){
-            //cd = (CardLayout) showAddProduct.getLayout();
-            //cd.show(showAddProduct, "");
+            cd = (CardLayout) showAddProduct.getLayout();
+            cd.show(showAddProduct, "souvenir");
         }
         //choose frame 
         else if(((String)cb.getSelectedItem()).equals("กรอบรูป")){
@@ -183,38 +199,59 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
     @Override
     public void checkCurrentCard() {
         for (Component comp : showAddProduct.getComponents()) {
-//            if (comp.isVisible()&& comp instanceof AddWreath) {
-//                AddWreath aw = (AddWreath) comp;
-//                Wreathdao wd = new Wreathdao();
-//                
-//                wd.save(aw);//save to excel
+            if (comp.isVisible()&& comp instanceof AddWreath) {
+                AddWreath aw = (AddWreath) comp;
+                Wreathdao wd = new Wreathdao();
+                
+                wd.save(aw);//save to excel
 //                for(int i = 0; i<aw.getCountPic_DetailJP(); i++){
 //                    WreathDetail temp = (WreathDetail) aw.getPic_detailJP().getComponent(i);
 //                    String name = aw.getNameTF().getText();
 //                    String pattern = temp.getPatternTF().getText();
 //                    String detail = temp.getDetailTA().getText();
 //                    String path = temp.getFilePath();
-//                    String material = aw.getMaterialTF().getText();
-//                    String color = aw.getColorTF().getText();
-//                    String price = aw.getPriceTF().getText();
+//                    String[] material = aw.getMaterialTF().getText().split(",");
+//                    String[] color = aw.getColorTF().getText().split(",");
+//                    //String[] price = aw.getPriceTF().getText().split(",");
+//                    String[] temp_p = aw.getPriceTF().getText().split(",");
+//                    Double[] price = {};
+//                    for(int a=0; a<temp_p.length; a++){
+//                        price[a]= Double.parseDouble(temp_p[a]);
+//                    }
 //                    wList.add(new Wreath(name,pattern,detail,path,material,color,price));       
 //                }
-//                break; // หยุดหลังจากเจอหน้าแรกที่แสดงอยู่String pattern = wd.get(a).getPatternTF().getText();
-//            }
-            if (comp.isVisible()&& comp instanceof AddSnackBox){
+                break; // หยุดหลังจากเจอหน้าแรกที่แสดงอยู่String pattern = wd.get(a).getPatternTF().getText();
+            }
+            else if (comp.isVisible()&& comp instanceof AddSnackBox){
                 AddSnackBox as = (AddSnackBox)comp;
                 Snackboxdao sd = new Snackboxdao();
                 sd.save(as);
-                for(int i = 0; i<as.getCountPic_DetailJP(); i++){
-                    SnackBoxDetail temp = (SnackBoxDetail) as.getPic_detailJP().getComponent(i);
-                    
-                    String name = as.getNameTF().getText();
-                    String pattern = temp.getPatternTF().getText();
-                    String detail = temp.getDetailTA().getText();
-                    String path = temp.getFilePath();
-                    String price = temp.getPriceTF().getText();
-                    snackList.add(new SnackBox(name, pattern, detail,path, price));   
-                }
+//                for(int i = 0; i<as.getCountPic_DetailJP(); i++){
+//                    SnackBoxDetail temp = (SnackBoxDetail) as.getPic_detailJP().getComponent(i);
+//                    
+//                    String name = as.getNameTF().getText();
+//                    String pattern = temp.getPatternTF().getText();
+//                    String detail = temp.getDetailTA().getText();
+//                    String path = temp.getFilePath();
+//                    String price = temp.getPriceTF().getText();
+//                    snackList.add(new SnackBox(name, pattern, detail,path, price));   
+//                }
+                break;
+            }
+            else if (comp.isVisible()&& comp instanceof AddCandle){
+                AddCandle ac = (AddCandle)comp;
+                Candledao cd = new Candledao();
+                cd.save(ac);
+//                for(int i = 0; i<ac.getCountPic_DetailJP(); i++){
+//                    CandleDetail temp = (CandleDetail) ac.getPic_detailJP().getComponent(i);
+//                    
+//                    String name = ac.getNameTF().getText();
+//                    String size = temp.getSizeTF().getText();
+//                    String detail = temp.getDetailTA().getText();
+//                    String path = temp.getFilePath();
+//                    String price = temp.getPriceTF().getText();
+//                    candList.add(new Candle(name, size, detail,path, price));   
+//                }
                 break;
             }
 //            else if (comp.isVisible()&& comp instanceof AddCoffin) {

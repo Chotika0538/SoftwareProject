@@ -4,8 +4,8 @@
  */
 package DAO;
 
-import StoreToHaven.AddIncense;
-import StoreToHaven.IncenseDetail;
+import StoreToHeaven.AddIncense;
+import StoreToHeaven.IncenseDetail;
 import java.io.BufferedInputStream;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;  // Allows working with .xlsx files

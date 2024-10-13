@@ -60,6 +60,11 @@ public class ProductPage extends javax.swing.JPanel {
         snackBoxBT.setText("ชุดอาหารว่าง");
         snackBoxBT.setBorder(null);
         snackBoxBT.setPreferredSize(new java.awt.Dimension(75, 30));
+        snackBoxBT.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                snackBoxBTMouseClicked(evt);
+            }
+        });
         add(snackBoxBT);
         snackBoxBT.setBounds(160, 190, 135, 41);
 
@@ -118,6 +123,10 @@ public class ProductPage extends javax.swing.JPanel {
         //CardLayout cd = (CardLayout) frameJP.getLayout();
         ((CardLayout)mainPanel.getLayout()).show(mainPanel, "wreathproductpage");
     }//GEN-LAST:event_wreathBTMouseClicked
+
+    private void snackBoxBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_snackBoxBTMouseClicked
+        ((CardLayout)mainPanel.getLayout()).show(mainPanel, "snackPage");
+    }//GEN-LAST:event_snackBoxBTMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

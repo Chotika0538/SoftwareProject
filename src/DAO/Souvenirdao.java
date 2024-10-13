@@ -3,11 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package DAO;
-
-
-import StoreToHeaven.AddSnackBox;
-import StoreToHeaven.SnackBoxDetail;
-import StoreToHeaven.SnackBox;
+import StoreToHeaven.*;
 import java.awt.Component;
 import java.io.File;
 import java.io.FileInputStream;
@@ -21,46 +17,42 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-/**
- *
- * @author Chotika
- */
-public class Snackboxdao {
-    
+public class Souvenirdao {
     private Workbook wb;
     private Sheet sheet;
     private final String FILE_NAME = "StoreStock.xlsx";
     private FileInputStream fileInput;
     private FileOutputStream fos;
-    private ArrayList<List<String>> Snacklist ;
-    private ArrayList<SnackBox> sList;
+    private ArrayList<List<String>> SouvenirList ;
+    private ArrayList<Souvenir> svnList;
+    private ArrayList<SouvenirDetail> sd;
     private String[] nameCol = {"ชื่อ", "รายละเอียด", "pathรูปภาพ", "ราคา"};
-    private ArrayList<SnackBoxDetail> sd;
     private Component[] cmp;
     String name , incence_size, detail, path, price;
     
-    public Snackboxdao(){
-        Snacklist = new ArrayList<>();
-        sList  = new ArrayList<>();
-    }
+    public Souvenirdao(){
+        svnList = new ArrayList<>();
+        SouvenirList = new ArrayList<>();
+    } 
+    
     /*Read Excel file*/
     public void read() {
         wb = null;
         try {
             fileInput = new FileInputStream(new File(FILE_NAME));
             wb = new XSSFWorkbook(fileInput);
-            sheet = wb.getSheetAt(7); // เปลี่ยนไปที่ชีตแรก Snackbox is written at sheet index 7
+            sheet = wb.getSheetAt(2);
         } catch (Exception err) {
             System.out.println("can't read file: " + err);
         }
     }
-   
     /*Save data in Excel file*/
-    public void save(AddSnackBox boxset) {
-        cmp = boxset.getPic_detailJP().getComponents();// get SnackBoxDetail panel
+    public void save(AddSouvenir gift) {
+        cmp = gift.getPic_detailJP().getComponents();// get SnackBoxDetail panel
         sd = new ArrayList<>();
+        
         for (Component c : cmp){
-            sd.add((SnackBoxDetail) c);
+            sd.add((SouvenirDetail) c);
         }
     
         /*Excel*/    
@@ -72,9 +64,10 @@ public class Snackboxdao {
                 return;
             }
             Row firstRow = sheet.getRow(0);
+            //Create column name
             if (firstRow == null) {       // this files valid?
                 firstRow = sheet.createRow(0);          // create first row
-                nameCol[0] = boxset.getNameTF().getText();
+                nameCol[0] = gift.getNameTF().getText();
                 /*bring all data in Snacklist to create each col in valid sheet*/
                 for(int j=0; j<nameCol.length; j++){
                     Cell cell = firstRow.createCell(j);//create cell in row 0
@@ -82,7 +75,7 @@ public class Snackboxdao {
                 }
             }
             else{
-                nameCol[0] = boxset.getNameTF().getText();
+                nameCol[0] = gift.getNameTF().getText();
                 Cell cell = sheet.getRow(0).getCell(0);
                 cell.setCellValue(nameCol[0]);
             }
@@ -90,23 +83,17 @@ public class Snackboxdao {
             //add
 
             for (int a=0; a<sd.size(); a++){
-                String pattern = sd.get(a).getPatternTF().getText();
+                String souvenir = sd.get(a).getSouvenirPatternTF().getText();
                 String price = sd.get(a).getPriceTF().getText();
                 String path = sd.get(a).getFilePath();
                 String detail = sd.get(a).getDetailTA().getText();
                 
-                String[] dataChecked = {pattern, price, path, detail};
+                String[] dataChecked = {souvenir, price, path, detail};
                 
                 boolean haveData = false ;
                 
                 
                 for (Row row : sheet){
-//                    Cell c = row.getCell(0);//pull the value in the first cell(.getCell(0)) of that row
-//                    if(c.toString().equals(dataChecked[0])){
-//                        haveData = true;
-//                        break;
-//                       }
-
                     if (row.getCell(0) != null) {
                         Cell c = row.getCell(0);
                         String cellValue = c.toString();
@@ -123,7 +110,7 @@ public class Snackboxdao {
                         int lastRow = sheet.getLastRowNum();
                         Row newRow = sheet.createRow(lastRow+1);
                         //create new column in that row
-                        newRow.createCell(0).setCellValue(pattern);
+                        newRow.createCell(0).setCellValue(souvenir);
                         newRow.createCell(1).setCellValue(detail);
                         newRow.createCell(2).setCellValue(path);
                         newRow.createCell(3).setCellValue(price);
@@ -135,24 +122,6 @@ public class Snackboxdao {
                 }
                 
             }
-//            //remove empty row
-//            int lastRow = sheet.getLastRowNum();
-//            int emptyRowPointer = -1; 
-//            //int rowIndex = 0;
-//            for (int rowIndex = 0; rowIndex <= lastRow; rowIndex++){
-//                Row row = sheet.getRow(rowIndex);
-//                if (row == null) {  
-//                        if (emptyRowPointer == -1) {  
-//                            emptyRowPointer = rowIndex;
-//                        }
-//                }else if (emptyRowPointer != -1) {
-//                    Row targetRow = sheet.createRow(emptyRowPointer);
-//                    copyRow(sheet, row, targetRow);
-//                    sheet.removeRow(row);  
-//                    emptyRowPointer++;
-//                }
-//                
-//            }
             /*write data into StoreStock.xlsx*/
             fos = new FileOutputStream(new File(FILE_NAME));
             wb.write(fos);
@@ -178,70 +147,4 @@ public class Snackboxdao {
             }
         }
     }
-    public ArrayList<SnackBox> getAll(){        
-        read();
-        try {
-            if (sheet == null) {
-                System.out.println("Sheet not found");
-            }
-           // String name = 
-            for(Row row : sheet){
-                if(row.getRowNum()==0){
-                    name = row.getCell(0).getStringCellValue();
-                    continue;
-                }
-                for(Cell cell : row){
-                    if (cell == null) {
-                     continue;  // ข้าม cell ที่เป็น null
-                    }                 
-                   switch (cell.getColumnIndex()){
-                       case 0:
-                           incence_size = cell.getStringCellValue();
-                           break;
-                       case 1:
-                           detail = cell.getStringCellValue();
-                           break;
-                       case 2:
-                           path = cell.getStringCellValue();
-                           break;
-                       case 3:
-                           price = cell.getStringCellValue();
-                           break;
-                       
-                   }
-                   if (name != null && incence_size != null && detail != null && path != null && price != null) {
-                        sList.add(new SnackBox(name, incence_size, detail, path, price));
-                    }
-                }
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }finally {
-            try {
-                if (fileInput != null) {
-                    fileInput.close();
-                }
-                if (fos != null) {
-                    fos.close();
-                }
-                if (wb != null) {
-                    wb.close();
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        return sList;
-    }
-//    private static void copyRow(Sheet sheet, Row sourceRow, Row targetRow) {
-//        for (int cellIndex = sourceRow.getFirstCellNum(); cellIndex < sourceRow.getLastCellNum(); cellIndex++) {
-//            Cell sourceCell = sourceRow.getCell(cellIndex);
-//            Cell targetCell = targetRow.createCell(cellIndex);
-//
-//            if (sourceCell != null) {
-//               targetCell.setCellValue(sourceCell.getStringCellValue());
-//               break; 
-//            }
-//        }
-//    }
 }

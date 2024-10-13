@@ -16,13 +16,6 @@ private JPanel jp;
 private String filePath;
 
 
-public String getFilePath() {
-        return filePath;
-    }
-
-    /**
-     * Creates new form WreathDetail
-     */
     public SandalWoodDetail (ArrayList l, JPanel jp) {
         sddList = l; 
         this.jp = jp;
@@ -207,11 +200,11 @@ public String getFilePath() {
         this.deleteCB = deleteCB;
     }
 
-    public JTextField getPatternTF() {
+    public JTextField getSandalPatternTF() {
         return patternTF;
     }
 
-    public void setPatternTF(JTextField patternTF) {
+    public void setgetSandalPatternTF(JTextField patternTF) {
         this.patternTF = patternTF;
     }
 
@@ -222,7 +215,10 @@ public String getFilePath() {
     public void setPriceTF(JTextField priceTF) {
         this.priceTF = priceTF;
     }
-
+    
+    public String getFilePath() {
+        return filePath;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel bathLB;

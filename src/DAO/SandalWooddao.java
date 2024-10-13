@@ -26,7 +26,7 @@ public class SandalWooddao {
     private FileInputStream fileInput;
     private FileOutputStream fos;
     private ArrayList<List<String>> sandalWoodlist = new ArrayList<>();
-    private String[] nameCol = { "ชื่อ","รายละเอียด" ,"pathรูปภาพ", "วัสดุ",  "ราคา","สี"};
+    private String[] nameCol = { "ชื่อ","รายละเอียด" ,"pathรูปภาพ", "ราคา"};
     private ArrayList<SandalWoodDetail> sd;
     private ArrayList<SandalWood> sddList;
     private Component[] cmp;
@@ -57,20 +57,21 @@ public class SandalWooddao {
                 }
             }
             for (int a=0; a<sd.size(); a++){
-            String pattern = sd.get(a).getPatternTF().getText();
-            String detail = sd.get(a).getDetailTA().getText();
-            String path = sd.get(a).getFilePath();
-            String[] material = sandalWood.getMaterialTF().getText().split(",");
-            String[] price = sandalWood.getPriceTF().getText().split(",");
-            String[] color = sandalWood.getColorTF().getText().split(",");
-            String[] dataChecked = {pattern,detail,path,String.join(",", material),String.join(",", price),String.join(",", color)};
-            boolean haveData = false ;
-            for (Row row : sheet){
-                Cell c = row.getCell(0);
-                if(c.toString().equals(dataChecked[0])){
-                    haveData = true;
-                    break;
-                }
+                String pattern = sd.get(a).getSandalPatternTF().getText();
+                String price = sd.get(a).getPriceTF().getText();
+                String path = sd.get(a).getFilePath();
+                String detail = sd.get(a).getDetailTA().getText();
+                
+                String[] dataChecked = {pattern, price, path, detail};
+                
+                boolean haveData = false ;
+                
+                for (Row row : sheet){
+                    Cell c = row.getCell(0);
+                    if(c.toString().equals(dataChecked[0])){
+                        haveData = true;
+                        break;
+                    }
             }
             if(!haveData){
                try {
@@ -79,9 +80,8 @@ public class SandalWooddao {
                 newRow.createCell(0).setCellValue(pattern);
                 newRow.createCell(1).setCellValue(detail);
                 newRow.createCell(2).setCellValue(path);
-                newRow.createCell(3).setCellValue(sandalWood.getMaterialTF().getText());
-                newRow.createCell(4).setCellValue(sandalWood.getPriceTF().getText());
-                newRow.createCell(5).setCellValue(sandalWood.getColorTF().getText());
+                newRow.createCell(3).setCellValue(price);
+                
                } catch (Exception e) {
                     e.printStackTrace();
                }             
