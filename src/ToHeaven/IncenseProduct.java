@@ -7,6 +7,7 @@ package ToHeaven;
 import StoreToHeaven.*;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
+import javax.swing.JPanel;
 
 /**
  *
@@ -30,9 +31,12 @@ public class IncenseProduct extends javax.swing.JPanel {
         priceLB.setText(Double.toString(incenseClass.getPrice()));
 }
 
-        public Incense getFrameClass() {
-        return incenseClass;
-    }
+         public Incense getIncenseClass() {
+            return incenseClass;
+        }
+        public JPanel gertPanel(){
+            return this;
+        }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -44,8 +48,8 @@ public class IncenseProduct extends javax.swing.JPanel {
     private void initComponents() {
 
         name = new javax.swing.JLabel();
-        choosePieceWreath = new javax.swing.JLabel();
-        pieceWreath = new javax.swing.JSpinner();
+        choosePieceIncense = new javax.swing.JLabel();
+        pieceIncense = new javax.swing.JSpinner();
         productImage = new javax.swing.JLabel();
         scrollDetail = new javax.swing.JScrollPane();
         details = new javax.swing.JTextArea();
@@ -59,20 +63,20 @@ public class IncenseProduct extends javax.swing.JPanel {
 
         name.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         add(name);
-        name.setBounds(270, 10, 298, 31);
+        name.setBounds(280, 10, 298, 31);
 
-        choosePieceWreath.setFont(new java.awt.Font("TH Sarabun New", 1, 18)); // NOI18N
-        choosePieceWreath.setText("เลือกจำนวนสินค้า");
-        add(choosePieceWreath);
-        choosePieceWreath.setBounds(480, 191, 110, 30);
+        choosePieceIncense.setFont(new java.awt.Font("TH Sarabun New", 1, 18)); // NOI18N
+        choosePieceIncense.setText("เลือกจำนวนสินค้า");
+        add(choosePieceIncense);
+        choosePieceIncense.setBounds(410, 190, 110, 30);
 
-        pieceWreath.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
-        add(pieceWreath);
-        pieceWreath.setBounds(590, 190, 80, 30);
+        pieceIncense.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+        add(pieceIncense);
+        pieceIncense.setBounds(520, 190, 80, 30);
 
         productImage.setPreferredSize(new java.awt.Dimension(180, 180));
         add(productImage);
-        productImage.setBounds(100, 20, 180, 180);
+        productImage.setBounds(40, 20, 180, 180);
 
         scrollDetail.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         scrollDetail.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
@@ -84,7 +88,7 @@ public class IncenseProduct extends javax.swing.JPanel {
         scrollDetail.setViewportView(details);
 
         add(scrollDetail);
-        scrollDetail.setBounds(320, 50, 330, 130);
+        scrollDetail.setBounds(270, 50, 330, 130);
 
         name1.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         add(name1);
@@ -93,16 +97,16 @@ public class IncenseProduct extends javax.swing.JPanel {
         priceLB.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         priceLB.setText("ราคา : ");
         add(priceLB);
-        priceLB.setBounds(320, 190, 100, 30);
+        priceLB.setBounds(270, 190, 100, 30);
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel choosePieceWreath;
+    private javax.swing.JLabel choosePieceIncense;
     private javax.swing.JTextArea details;
     private javax.swing.JLabel name;
     private javax.swing.JLabel name1;
-    private javax.swing.JSpinner pieceWreath;
+    private javax.swing.JSpinner pieceIncense;
     private javax.swing.JLabel priceLB;
     private javax.swing.JLabel productImage;
     private javax.swing.JScrollPane scrollDetail;

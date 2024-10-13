@@ -33,7 +33,7 @@
           <Font name="TH SarabunPSK" size="24" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="&#xe18;&#xe39;&#xe1b;"/>
+        <Property name="text" type="java.lang.String" value="&#xe18;&#xe39;&#xe1b; (Incense)"/>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[800, 50]"/>
         </Property>

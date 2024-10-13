@@ -51,7 +51,7 @@ public class CandleProductPage extends javax.swing.JPanel {
         candleNameLB.setBackground(new java.awt.Color(255, 204, 204));
         candleNameLB.setFont(new java.awt.Font("TH SarabunPSK", 1, 24)); // NOI18N
         candleNameLB.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        candleNameLB.setText("ธูป");
+        candleNameLB.setText("เทียน (Candle)");
         candleNameLB.setPreferredSize(new java.awt.Dimension(800, 50));
         add(candleNameLB, java.awt.BorderLayout.PAGE_START);
 
@@ -129,7 +129,8 @@ public class CandleProductPage extends javax.swing.JPanel {
     public void showData(){
         for (Candle candle : candleClassList){
             candleProduct.add(new CandleProduct(candle));
-            //candleProductPanel.setPreferredSize(new Dimension(800, candleProductPanel.getHeight()+500));
+            if(candleClassList.size()>1)
+                candleProductPanel.setPreferredSize(new Dimension(800, candleProductPanel.getHeight()+3000));
             candleProductPanel.add(candleProduct.getLast());
             candleProductPanel.revalidate();
             candleProductPanel.repaint();

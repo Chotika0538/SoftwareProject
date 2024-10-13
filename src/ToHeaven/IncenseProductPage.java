@@ -50,7 +50,7 @@ public class IncenseProductPage extends javax.swing.JPanel {
         incenseNameLB.setBackground(new java.awt.Color(255, 204, 204));
         incenseNameLB.setFont(new java.awt.Font("TH SarabunPSK", 1, 24)); // NOI18N
         incenseNameLB.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        incenseNameLB.setText("ธูป");
+        incenseNameLB.setText("ธูป (Incense)");
         incenseNameLB.setPreferredSize(new java.awt.Dimension(800, 50));
         add(incenseNameLB, java.awt.BorderLayout.PAGE_START);
 
@@ -126,14 +126,14 @@ public class IncenseProductPage extends javax.swing.JPanel {
 //    public void getWreathData(){
 //         wreathClassList = wreathdao.getAll();
 //    }
-    public void showData(){
-         for(int i=0; i<incenseClassList.size(); i++){
-             incenseProduct.add(new IncenseProduct(incenseClassList.get(i)));
-             //offeringProductPanel.setPreferredSize(new Dimension(800, offeringProductPanel.getHeight()+250));
-            incenseProductPanel.add(incenseProduct.get(i));
+   public void showData(){
+        for (Incense incense : incenseClassList){
+            incenseProduct.add(new IncenseProduct(incense));
+            //candleProductPanel.setPreferredSize(new Dimension(800, candleProductPanel.getHeight()+500));
+            incenseProductPanel.add(incenseProduct.getLast());
             incenseProductPanel.revalidate();
             incenseProductPanel.repaint();
-         }
+        }
     }
     
 
