@@ -72,7 +72,7 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
         AddOffering offering = new AddOffering(showAddProduct);
         AddSandalWood sandalwood = new AddSandalWood(showAddProduct);
         AddSnackBox snackbox = new AddSnackBox(showAddProduct);
-        //AddSouvenirs souvenir= new AddSouvenirs(showAddProduct);
+        AddSouvenir souvenir= new AddSouvenir(showAddProduct);
         emptyPanel.setBackground(new java.awt.Color(153, 255, 204));
         showAddProduct.add(emptyPanel, "empty");
         //showAddProduct.add(coffin, "coffin");
@@ -83,7 +83,7 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
         showAddProduct.add(offering, "offering");
         showAddProduct.add(sandalwood, "sandalwood");
         showAddProduct.add(snackbox, "snackbox");
-        //showAddProduct.add(souvenir, "souvenir");
+        showAddProduct.add(souvenir, "souvenir");
         add(showAddProduct);
         showAddProduct.setBounds(10, 110, 480, 480);
 
@@ -140,8 +140,8 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
         }
         //choose sevanior
         else if(((String)cb.getSelectedItem()).equals("ของชำร่วย")){
-            //cd = (CardLayout) showAddProduct.getLayout();
-            //cd.show(showAddProduct, "");
+             cd = (CardLayout) showAddProduct.getLayout();
+             cd.show(showAddProduct, "souvenir");
         }
         //choose frame 
         else if(((String)cb.getSelectedItem()).equals("กรอบรูป")){
@@ -226,11 +226,11 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
                 sand.save((AddSandalWood) comp);
                 break; // หยุดหลังจากเจอหน้าแรกที่แสดงอยู่
             }
-//            else if (comp.isVisible()&& comp instanceof AddSouvenir) {
-//                Souvenirdao soud = new Souvenirdao();
-//                soud.save((AddSouvenir) comp);
-//                break; // หยุดหลังจากเจอหน้าแรกที่แสดงอยู่
-//            }
+            else if (comp.isVisible()&& comp instanceof AddSouvenir) {
+                Souvenirdao soud = new Souvenirdao();
+                soud.save((AddSouvenir) comp);
+                break; // หยุดหลังจากเจอหน้าแรกที่แสดงอยู่
+            }
 //            else if (comp.isVisible()&& comp instanceof AddPackage) {
 //                Packagedao packd = new Packagedao();
 //                packd.save((AddPackage) comp);

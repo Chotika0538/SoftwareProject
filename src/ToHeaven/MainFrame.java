@@ -102,7 +102,7 @@ public class MainFrame extends javax.swing.JPanel {
         //CandleProductPage canpp = new CandleProductPage(frameJP);
         //IncenseProductPage inpp = new IncenseProductPage(frameJP);
         SnackBoxProductPage snackpp = new SnackBoxProductPage(frameJP);
-        //SouvenirProductPage soupp = new SouvenirProductPackage(frameJP);
+        SouvenirProductPage soupp = new SouvenirProductPage(frameJP);
         SandalWoodProductPage sandpp = new SandalWoodProductPage(frameJP);
         FrameProductPage framepp = new FrameProductPage(frameJP);
 
@@ -120,7 +120,7 @@ public class MainFrame extends javax.swing.JPanel {
         //frameJP.add(canpp ,"candleproductpage");
         //frameJP.add(inpp, "incenseproductpage");
         frameJP.add(snackpp, "snackboxproductpage");
-        //frameJP.add(soupp, "souvenirproductpage");
+        frameJP.add(soupp, "souvenirproductpage");
         frameJP.add(sandpp, "sandalwoodproductpage");
         frameJP.add(framepp, "frameproductpage");
 
