@@ -11,13 +11,10 @@ import DAO.Packagedao;
 import java.util.ArrayList;
 
 public class AddProduct extends javax.swing.JPanel implements CheckPanel{
-    private ArrayList<Wreath> wList;  //keep data to show at wreath template of user
-    /**
-     * Creates new form AddProduct
-     */
+        private ArrayList<Wreath> wList;  //keep data to show at wreath template of user
     public AddProduct() {
         wList = new ArrayList<>();
-        initComponents();
+        initComponents();;
     }
 
     /**
@@ -173,28 +170,25 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
     @Override
     public void checkCurrentCard() {
         for (Component comp : showAddProduct.getComponents()) {
-            if (comp.isVisible()&& comp instanceof AddWreath) {
-                AddWreath aw = (AddWreath) comp;
-                Wreathdao wd = new Wreathdao();
-                wd.save(aw);
-                for(int i = 0; i<aw.getCountPic_DetailJP(); i++){
-                    WreathDetail temp = (WreathDetail) aw.getPic_detailJP().getComponent(i);
-                    String name = aw.getNameTF().getText();
-                    String pattern = temp.getPatternTF().getText();
-                    String detail = temp.getDetailTA().getText();
-                    String path = temp.getFilePath();
-                    String material = aw.getMaterialTF().getText();
-                    String color = aw.getColorTF().getText();
-                    String price = aw.getPriceTF().getText();
-                    wList.add(new Wreath(name,pattern,detail,path,material,color,price));       
-                }
-                break; // หยุดหลังจากเจอหน้าแรกที่แสดงอยู่String pattern = wd.get(a).getPatternTF().getText();
+            if (comp.isVisible()&&comp instanceof AddPackage){
+                Packagedao pgd = new Packagedao();
+                pgd.save((AddPackage) comp);
+                 break; // หยุดหลังจากเจอหน้าแรกที่แสดงอยู่String pattern = wd.get(a).getPatternTF().getText();
             }
+           // else if(comp.isVisible()&&comp instanceof AddSouvenirs){
+           //     Souvenirsdao svd = new Souvenirsdao();
+           //     svd.save((AddSouvenirs) comp);
+           //     break;
+            //}
+        }
+    }
+}
+                
 //            else if (comp.isVisible()&& comp instanceof AddCoffin) {
 //                Wreathdao wd = new Wreathdao();
 //                wd.save((AddWreath) comp);
 //                break; // หยุดหลังจากเจอหน้าแรกที่แสดงอยู่
 //            }
-        }
-    }
-}
+        
+    
+
