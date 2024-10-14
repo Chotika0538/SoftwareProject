@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 public class SnackBoxProductPage extends javax.swing.JPanel {
     
     private ArrayList<SnackBox> snackClassList;
-    private ArrayList<SnackBoxProduct> snackProduct;
+    public static ArrayList<SnackBoxProduct> snackProduct;
     private CardLayout cd;
     private JPanel mainPanel;
     int i = 1;
