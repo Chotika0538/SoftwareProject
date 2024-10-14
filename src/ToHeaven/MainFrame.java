@@ -103,9 +103,9 @@ public class MainFrame extends javax.swing.JPanel {
         ProductPage product = new ProductPage(frameJP);
         WreathProductPage wpp = new WreathProductPage(frameJP);
         OfferingProductPage ofp = new OfferingProductPage(frameJP);
-        //CoffinProductPage cofpp = new CoffinProductPage(frameJP);
-        //CandleProductPage canpp = new CandleProductPage(frameJP);
-        //IncenseProductPage inpp = new IncenseProductPage(frameJP);
+        CoffinProductPage cofpp = new CoffinProductPage(frameJP);
+        CandleProductPage canpp = new CandleProductPage(frameJP);
+        IncenseProductPage inpp = new IncenseProductPage(frameJP);
         SnackBoxProductPage snackpp = new SnackBoxProductPage(frameJP);
         SouvenirProductPage soupp = new SouvenirProductPage(frameJP);
         SandalWoodProductPage sandpp = new SandalWoodProductPage(frameJP);
@@ -121,9 +121,9 @@ public class MainFrame extends javax.swing.JPanel {
         frameJP.add(product, "productpage");
         frameJP.add(wpp, "wreathproductpage");
         frameJP.add(ofp, "offeringproductpage");
-        //framepp.add(cofpp, "coffinproductpage");
-        //frameJP.add(canpp ,"candleproductpage");
-        //frameJP.add(inpp, "incenseproductpage");
+        framepp.add(cofpp, "coffinproductpage");
+        frameJP.add(canpp ,"candleproductpage");
+        frameJP.add(inpp, "incenseproductpage");
         frameJP.add(snackpp, "snackboxproductpage");
         frameJP.add(soupp, "souvenirproductpage");
         frameJP.add(sandpp, "sandalwoodproductpage");

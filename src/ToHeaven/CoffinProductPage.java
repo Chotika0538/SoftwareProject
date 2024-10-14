@@ -8,20 +8,19 @@ import java.util.ArrayList;
 import javax.swing.JPanel;
 
 
-public class SnackBoxProductPage extends javax.swing.JPanel {
- 
-    private ArrayList<SnackBox> snackClassList;
-    public static ArrayList<SnackBoxProduct> snackProduct;
+public class CoffinProductPage extends javax.swing.JPanel {
+    
+    private ArrayList<Coffin> coffinClassList ;
+    private ArrayList<CoffinProduct> coffinProduct;
     private CardLayout cd;
     private JPanel mainPanel;
-   // int i = 1;
-    private SnackBoxdao sboxdao;
+    int i = 1;
+    private Coffindao coffindao;
     
-    public SnackBoxProductPage(JPanel mainPanel) {
-        sboxdao = new SnackBoxdao();
-        snackClassList = new ArrayList<>();
-        snackClassList = sboxdao.getAll();
-        snackProduct = new ArrayList<>();
+    public CoffinProductPage(JPanel mainPanel) {
+        coffindao = new Coffindao();
+        coffinClassList = coffindao.getAll();
+        coffinProduct = new ArrayList<>();
         this.mainPanel = mainPanel;
         cd = (CardLayout) mainPanel.getLayout();
         initComponents();
@@ -37,24 +36,24 @@ public class SnackBoxProductPage extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        wreathNameLB = new javax.swing.JLabel();
+        coffinNameLB = new javax.swing.JLabel();
         menuPanel = new javax.swing.JPanel();
         addBT = new javax.swing.JButton();
         backBT = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        SnackProductPanel = new javax.swing.JPanel();
+        coffinProductPanel = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(201, 156, 99));
         setPreferredSize(new java.awt.Dimension(800, 500));
         setLayout(new java.awt.BorderLayout());
 
-        wreathNameLB.setBackground(new java.awt.Color(255, 204, 204));
-        wreathNameLB.setFont(new java.awt.Font("TH SarabunPSK", 1, 24)); // NOI18N
-        wreathNameLB.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        wreathNameLB.setText("ชุดของว่าง");
-        wreathNameLB.setPreferredSize(new java.awt.Dimension(800, 50));
-        add(wreathNameLB, java.awt.BorderLayout.PAGE_START);
+        coffinNameLB.setBackground(new java.awt.Color(255, 204, 204));
+        coffinNameLB.setFont(new java.awt.Font("TH SarabunPSK", 1, 24)); // NOI18N
+        coffinNameLB.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        coffinNameLB.setText("หีบศพ");
+        coffinNameLB.setPreferredSize(new java.awt.Dimension(800, 50));
+        add(coffinNameLB, java.awt.BorderLayout.PAGE_START);
 
         addBT.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         addBT.setText("เพิ่มสินค้า");
@@ -102,12 +101,12 @@ public class SnackBoxProductPage extends javax.swing.JPanel {
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
-        SnackProductPanel.setBackground(new java.awt.Color(255, 180, 87));
-        SnackProductPanel.setPreferredSize(new java.awt.Dimension(798, 1400));
-        SnackProductPanel.setLayout(new java.awt.GridLayout(0, 1, 0, 5));
+        coffinProductPanel.setBackground(new java.awt.Color(153, 153, 153));
+        coffinProductPanel.setPreferredSize(new java.awt.Dimension(798, 2500));
+        coffinProductPanel.setLayout(new java.awt.GridLayout(0, 1, 0, 5));
         //wreathList.add(new WreathProduct().getData(wreath));
         //wreathProductPanel.add(wreathList.get(0));
-        jScrollPane1.setViewportView(SnackProductPanel);
+        jScrollPane1.setViewportView(coffinProductPanel);
 
         add(jScrollPane1, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
@@ -117,35 +116,57 @@ public class SnackBoxProductPage extends javax.swing.JPanel {
     }//GEN-LAST:event_backBTActionPerformed
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-//        for(int j = 1; j<5; j++){
-//           wreathList.add(new WreathProduct());
-//           wreathProductPanel.setPreferredSize(new Dimension(800, wreathProductPanel.getHeight()+500));
-//           wreathProductPanel.add(wreathList.get(j));
-//           wreathProductPanel.revalidate();
-//        }
-  
+        //        for(int j = 1; j<5; j++){
+            //           wreathList.add(new WreathProduct());
+            //           wreathProductPanel.setPreferredSize(new Dimension(800, wreathProductPanel.getHeight()+500));
+            //           wreathProductPanel.add(wreathList.get(j));
+            //           wreathProductPanel.revalidate();
+            //        }
     }//GEN-LAST:event_jButton1MouseClicked
 //    public void getWreathData(){
 //         wreathClassList = wreathdao.getAll();
 //    }
-    public void showData(){
-        for (SnackBox boxset : snackClassList){
-            snackProduct.add(new SnackBoxProduct(boxset));
-            //SnackProductPanel.setPreferredSize(new Dimension(800, SnackProductPanel.getHeight()+500));
-            SnackProductPanel.add(snackProduct.getLast());
-            SnackProductPanel.revalidate();
-            SnackProductPanel.repaint();
-        }
+//    public void showData(){
+//        for (Coffin coffin : coffinClassList){
+//            coffinProduct.add(new CoffinProduct(coffin));
+//            coffinProductPanel.add(coffinProduct.getLast());
+//            coffinProductPanel.setPreferredSize(new Dimension(800, coffinProduct.size() * 150));
+//            coffinProductPanel.revalidate();
+//            coffinProductPanel.repaint();
+//        }
+//
+//        // Revalidate JScrollPane ด้วย
+//        jScrollPane1.revalidate();
+//        jScrollPane1.repaint();
+//    }
+       public void showData() {
+    // ตรวจสอบขนาดของรายการ
+    System.out.println("Size of coffinClassList: " + coffinClassList.size());
+
+    // แสดงข้อมูลชื่อโลงศพ
+    for (Coffin coffin : coffinClassList) {
+        System.out.println(coffin.getName());  // ตรวจสอบข้อมูลชื่อโลงศพ
+        coffinProduct.add(new CoffinProduct(coffin));
+        coffinProductPanel.add(coffinProduct.get(coffinProduct.size() - 1));
+        coffinProductPanel.setPreferredSize(new Dimension(800, coffinProduct.size() * 250));
+        coffinProductPanel.revalidate();
+        coffinProductPanel.repaint();
     }
+
+    // Revalidate JScrollPane ด้วย
+    jScrollPane1.revalidate();
+    jScrollPane1.repaint();
+}
+
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel SnackProductPanel;
     private javax.swing.JButton addBT;
     private javax.swing.JButton backBT;
+    private javax.swing.JLabel coffinNameLB;
+    private javax.swing.JPanel coffinProductPanel;
     private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel menuPanel;
-    private javax.swing.JLabel wreathNameLB;
     // End of variables declaration//GEN-END:variables
 }

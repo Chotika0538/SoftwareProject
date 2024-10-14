@@ -4,17 +4,28 @@
  */
 package ToHeaven;
 
+import DAO.*;
+import StoreToHeaven.*;
 import java.awt.CardLayout;
+import java.awt.Dimension;
+import java.util.ArrayList;
 import javax.swing.JPanel;
 
 public class CustomFuneral extends javax.swing.JPanel {
+  //  private ArrayList<SnackBox> snackClassList;
+    //private ArrayList<SnackBoxProduct> snackProduct;
     private CardLayout cd;
     private JPanel mainPanel;
+    //int i = 1;
+   // private SnackBoxdao sboxdao;
     
-    public CustomFuneral(JPanel mainPanel) {
-        this.mainPanel = mainPanel;
-        cd = (CardLayout) mainPanel.getLayout();
+    public CustomFuneral(SnackBoxProductPage s){
         initComponents();
+        
+    }
+    public CustomFuneral(JPanel mainPanel) {
+        initComponents();
+        showData();
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -34,8 +45,28 @@ public class CustomFuneral extends javax.swing.JPanel {
         nextBT = new javax.swing.JButton();
         backBT = new javax.swing.JButton();
         funeralPanel = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jPanel1 = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        snackboxPN = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        jScrollPane7 = new javax.swing.JScrollPane();
 
-        setPreferredSize(new java.awt.Dimension(800, 1800));
+        setPreferredSize(new java.awt.Dimension(800, 1000));
         setLayout(new java.awt.BorderLayout());
 
         menuCustom.setBackground(new java.awt.Color(0, 204, 204));
@@ -94,7 +125,7 @@ public class CustomFuneral extends javax.swing.JPanel {
         buttonPanelLayout.setVerticalGroup(
             buttonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, buttonPanelLayout.createSequentialGroup()
-                .addContainerGap(9, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(buttonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(confirmBT)
                     .addComponent(nextBT)
@@ -105,16 +136,167 @@ public class CustomFuneral extends javax.swing.JPanel {
         add(buttonPanel, java.awt.BorderLayout.PAGE_END);
 
         funeralPanel.setBackground(new java.awt.Color(255, 255, 204));
+        funeralPanel.setPreferredSize(new java.awt.Dimension(795, 1400));
+
+        jScrollPane3.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+        jScrollPane3.setPreferredSize(new java.awt.Dimension(670, 260));
+
+        snackboxPN.setPreferredSize(new java.awt.Dimension(500, 260*SnackBoxProductPage.snackProduct.size()));
+        snackboxPN.setRequestFocusEnabled(false);
+        snackboxPN.setLayout(new java.awt.GridLayout(1, 0, 5, 0));
+        jScrollPane3.setViewportView(snackboxPN);
+
+        jLabel1.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
+        jLabel1.setText("ชุดอาหารว่าง");
+
+        jLabel2.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
+
+        jScrollPane1.setPreferredSize(new java.awt.Dimension(500, 260));
+
+        jPanel3.setPreferredSize(new java.awt.Dimension(500, 260));
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 500, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 260, Short.MAX_VALUE)
+        );
+
+        jScrollPane1.setViewportView(jPanel3);
+
+        jLabel3.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
+        jLabel3.setText("กรอบรูป");
+
+        jScrollPane4.setPreferredSize(new java.awt.Dimension(500, 260));
+
+        jPanel4.setPreferredSize(new java.awt.Dimension(500, 260));
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 500, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 260, Short.MAX_VALUE)
+        );
+
+        jScrollPane4.setViewportView(jPanel4);
+
+        jLabel4.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
+        jLabel4.setText("เครื่องไทยธรรม ");
+
+        jLabel5.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
+        jLabel5.setText("ธูป");
+
+        jScrollPane5.setPreferredSize(new java.awt.Dimension(500, 260));
+
+        jLabel6.setPreferredSize(new java.awt.Dimension(500, 260));
+        jScrollPane5.setViewportView(jLabel6);
+
+        jLabel7.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
+        jLabel7.setText("เทียน");
+
+        jScrollPane6.setPreferredSize(new java.awt.Dimension(500, 260));
+
+        jPanel5.setPreferredSize(new java.awt.Dimension(500, 260));
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 500, Short.MAX_VALUE)
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 260, Short.MAX_VALUE)
+        );
+
+        jScrollPane6.setViewportView(jPanel5);
+
+        jLabel8.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
+        jLabel8.setText("พวงหลีด");
+
+        jScrollPane7.setPreferredSize(new java.awt.Dimension(500, 260));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(126, 126, 126)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel1)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(70, 70, 70)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 655, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(162, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(97, 97, 97)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 186, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(499, Short.MAX_VALUE))
+        );
+
+        jScrollPane2.setViewportView(jPanel1);
 
         javax.swing.GroupLayout funeralPanelLayout = new javax.swing.GroupLayout(funeralPanel);
         funeralPanel.setLayout(funeralPanelLayout);
         funeralPanelLayout.setHorizontalGroup(
             funeralPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
+            .addComponent(jScrollPane2)
         );
         funeralPanelLayout.setVerticalGroup(
             funeralPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1647, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 850, Short.MAX_VALUE)
         );
 
         add(funeralPanel, java.awt.BorderLayout.CENTER);
@@ -131,7 +313,14 @@ public class CustomFuneral extends javax.swing.JPanel {
 //         CardLayout cd = (CardLayout) mainPanel.getLayout();
 //         cd.show(mainPanel, "ash");
     }//GEN-LAST:event_nextBTMouseClicked
-
+        public void showData(){
+           for (SnackBoxProduct s : SnackBoxProductPage.snackProduct){
+               snackboxPN.add(s);
+               snackboxPN.setPreferredSize(new Dimension(650*SnackBoxProductPage.snackProduct.size(), 250));
+               snackboxPN.revalidate();
+               snackboxPN.repaint();            
+           }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backBT;
@@ -141,7 +330,28 @@ public class CustomFuneral extends javax.swing.JPanel {
     private javax.swing.JButton confirmBT;
     private javax.swing.JPanel funeralPanel;
     private javax.swing.JLabel funeralStageLB;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JPanel menuCustom;
     private javax.swing.JButton nextBT;
+    private javax.swing.JPanel snackboxPN;
     // End of variables declaration//GEN-END:variables
+
 }
