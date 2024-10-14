@@ -59,6 +59,11 @@ public class MainFrame extends javax.swing.JPanel {
                 packageBTMouseClicked(evt);
             }
         });
+        packageBT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                packageBTActionPerformed(evt);
+            }
+        });
         menuBar.add(packageBT);
         packageBT.setBounds(530, 0, 110, 100);
 
@@ -157,6 +162,12 @@ public class MainFrame extends javax.swing.JPanel {
          CardLayout cd = (CardLayout) frameJP.getLayout();
          cd.show(frameJP, "coffin");
     }//GEN-LAST:event_customBTMouseClicked
+
+    private void packageBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_packageBTActionPerformed
+        // TODO add your handling code here:
+        CardLayout cd = (CardLayout) frameJP.getLayout();
+       cd.show(frameJP, "coffincustom");
+    }//GEN-LAST:event_packageBTActionPerformed
 // /* testing panel*/
 //    public static void main(String[] args){
 //        JFrame f = new JFrame();
