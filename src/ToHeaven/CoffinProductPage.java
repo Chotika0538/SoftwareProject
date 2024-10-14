@@ -101,7 +101,7 @@ public class CoffinProductPage extends javax.swing.JPanel {
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
-        coffinProductPanel.setBackground(new java.awt.Color(153, 255, 204));
+        coffinProductPanel.setBackground(new java.awt.Color(153, 153, 153));
         coffinProductPanel.setPreferredSize(new java.awt.Dimension(798, 2500));
         coffinProductPanel.setLayout(new java.awt.GridLayout(0, 1, 0, 5));
         //wreathList.add(new WreathProduct().getData(wreath));
@@ -126,19 +126,38 @@ public class CoffinProductPage extends javax.swing.JPanel {
 //    public void getWreathData(){
 //         wreathClassList = wreathdao.getAll();
 //    }
-    public void showData(){
-        for (Coffin coffin : coffinClassList){
-            coffinProduct.add(new CoffinProduct(coffin));
-            coffinProductPanel.add(coffinProduct.getLast());
-            coffinProductPanel.setPreferredSize(new Dimension(800, coffinProduct.size() * 150));
-            coffinProductPanel.revalidate();
-            coffinProductPanel.repaint();
-        }
+//    public void showData(){
+//        for (Coffin coffin : coffinClassList){
+//            coffinProduct.add(new CoffinProduct(coffin));
+//            coffinProductPanel.add(coffinProduct.getLast());
+//            coffinProductPanel.setPreferredSize(new Dimension(800, coffinProduct.size() * 150));
+//            coffinProductPanel.revalidate();
+//            coffinProductPanel.repaint();
+//        }
+//
+//        // Revalidate JScrollPane ด้วย
+//        jScrollPane1.revalidate();
+//        jScrollPane1.repaint();
+//    }
+       public void showData() {
+    // ตรวจสอบขนาดของรายการ
+    System.out.println("Size of coffinClassList: " + coffinClassList.size());
 
-        // Revalidate JScrollPane ด้วย
-        jScrollPane1.revalidate();
-        jScrollPane1.repaint();
+    // แสดงข้อมูลชื่อโลงศพ
+    for (Coffin coffin : coffinClassList) {
+        System.out.println(coffin.getName());  // ตรวจสอบข้อมูลชื่อโลงศพ
+        coffinProduct.add(new CoffinProduct(coffin));
+        coffinProductPanel.add(coffinProduct.get(coffinProduct.size() - 1));
+        coffinProductPanel.setPreferredSize(new Dimension(800, coffinProduct.size() * 150));
+        coffinProductPanel.revalidate();
+        coffinProductPanel.repaint();
     }
+
+    // Revalidate JScrollPane ด้วย
+    jScrollPane1.revalidate();
+    jScrollPane1.repaint();
+}
+
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

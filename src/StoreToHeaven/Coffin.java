@@ -24,7 +24,7 @@ public class Coffin extends Product {
         priceAll.add((double) size24);
     }
 
-    // Getter สำหรับขนาดโลงแต่ละขนาด
+    //Getter สำหรับขนาดโลงแต่ละขนาด
 
     public double getSize20() {
         return size20;
@@ -50,33 +50,27 @@ public class Coffin extends Product {
         this.size24 = size24;
     }
 
-
-    // Setter สำหรับรายการโลงทั้งหมด
-    public void setwList(ArrayList<Coffin> cList) {
-        this.cList = cList;
+    public void setcList(ArrayList<Coffin> cList) {
+        if (cList != null) // ตรวจค่า null สำหรับตรวจสอบการส่งพารามิเตอร์ 
+            this.cList = cList;
     }
 
-    // Getter สำหรับรายการโลงทั้งหมด
     public ArrayList<Coffin> getcList() {
         return cList;
     }
 
-    // Setter สำหรับราคาทั้งหมด
     public void setPriceAll(ArrayList<Double> priceAll) {
         this.priceAll = priceAll;
     }
 
-    // Getter สำหรับราคาทั้งหมด
     public ArrayList<Double> getPriceAll() {
         return priceAll;
     }
 
-    // Setter สำหรับราคา (กรณีต้องการกำหนดราคาที่ต่างจากขนาดโลง)
     public void setPrice(double price) {
         this.price = price;
     }
 
-    // Getter สำหรับราคา
     public double getPrice() {
         return price;
     }

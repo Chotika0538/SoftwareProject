@@ -117,7 +117,7 @@ public class CoffinProduct extends javax.swing.JPanel {
 
         pieceCoffin.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
         add(pieceCoffin);
-        pieceCoffin.setBounds(510, 260, 80, 30);
+        pieceCoffin.setBounds(520, 260, 80, 30);
 
         scrollDetail.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         scrollDetail.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
@@ -151,9 +151,9 @@ public class CoffinProduct extends javax.swing.JPanel {
     public Coffin getCoffinClass() {
         return coffinClass;
     }
-    public JPanel getPanel(){
-        return this;
-    }
+//    public JPanel getPanel(){
+//        return this;
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel choosePieceCoffin;
