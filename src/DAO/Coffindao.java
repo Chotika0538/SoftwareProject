@@ -59,31 +59,37 @@ public class Coffindao {
                 String pattern = cfd.get(a).getPatternTF1().getText(); 
                 String detail = cfd.get(a).getDetailTA().getText(); //รายละเอียด
                 String path = cfd.get(a).getFilePath(); //path รูปภาพ
-                int size20 = 0, size22 = 0, size24 = 0; //ขนาดโลง 20, 22, 24 นิ้ว
-
-                //ตรวจสอบและแปลงค่าราคาแต่ละขนาด (20, 22, 24 นิ้ว)
-                try {
-                    String size20Str = cfd.get(a).getPricesize20().getText().trim();
-                    String size22Str = cfd.get(a).getPricesize22().getText().trim();
-                    String size24Str = cfd.get(a).getPricesize24().getText().trim();
-
-                    //ตรวจสอบว่ามีการกรอกข้อมูลในแต่ละขนาดหรือไม่
-                    if (!size20Str.isEmpty()) {
-                        size20 = Integer.parseInt(size20Str); //แปลงราคาเป็นจำนวนเต็ม
-                    }
-                    if (!size22Str.isEmpty()) {
-                        size22 = Integer.parseInt(size22Str);
-                    }
-                    if (!size24Str.isEmpty()) {
-                        size24 = Integer.parseInt(size24Str);
-                    }
-                } catch (NumberFormatException e) {
-                    System.out.println("Invalid size format: " + e.getMessage());
-                    continue; 
-                }
+//                int size20 = 0, size22 = 0, size24 = 0; //ขนาดโลง 20, 22, 24 นิ้ว
+//
+//                //ตรวจสอบและแปลงค่าราคาแต่ละขนาด (20, 22, 24 นิ้ว)
+//                try {
+//                    String size20Str = cfd.get(a).getPricesize20().getText().trim();
+//                    String size22Str = cfd.get(a).getPricesize22().getText().trim();
+//                    String size24Str = cfd.get(a).getPricesize24().getText().trim();
+//
+//                    //ตรวจสอบว่ามีการกรอกข้อมูลในแต่ละขนาดหรือไม่
+//                    if (!size20Str.isEmpty()) {
+//                        size20 = Integer.parseInt(size20Str); //แปลงราคาเป็นจำนวนเต็ม
+//                    }
+//                    if (!size22Str.isEmpty()) {
+//                        size22 = Integer.parseInt(size22Str);
+//                    }
+//                    if (!size24Str.isEmpty()) {
+//                        size24 = Integer.parseInt(size24Str);
+//                    }
+//                } catch (NumberFormatException e) {
+//                    System.out.println("Invalid size format: " + e.getMessage());
+//                    continue; 
+//                }
+        
+                    String priceSize20 = cfd.get(a).getPricesize20().getText();
+                    String priceSize22 = cfd.get(a).getPricesize22().getText();
+                    String priceSize24 = cfd.get(a).getPricesize24().getText();
+                    
 
                 // ตรวจสอบว่าข้อมูลซ้ำหรือไม่
-                String[] dataChecked = { pattern, detail, path, String.valueOf(size20), String.valueOf(size22), String.valueOf(size24) };
+               // String[] dataChecked = { pattern, detail, path, String.valueOf(size20), String.valueOf(size22), String.valueOf(size24) };
+               String[] dataChecked = { pattern, detail, path, priceSize20, priceSize22, priceSize24 };
                 boolean haveData = false;
                 for (Row row : sheet) {
                     Cell c = row.getCell(0);
@@ -100,9 +106,9 @@ public class Coffindao {
                         Row newRow = sheet.createRow(lastRow + 1); //สร้างแถวใหม่สำหรับข้อมูล
                         newRow.createCell(0).setCellValue(pattern);
                         newRow.createCell(1).setCellValue(detail);
-                        newRow.createCell(2).setCellValue(size20);
-                        newRow.createCell(3).setCellValue(size22);
-                        newRow.createCell(4).setCellValue(size24);
+                        newRow.createCell(2).setCellValue(Double.parseDouble(priceSize20));
+                        newRow.createCell(3).setCellValue(Double.parseDouble(priceSize22));
+                        newRow.createCell(4).setCellValue(Double.parseDouble(priceSize24));
                         newRow.createCell(5).setCellValue(path);
                     } catch (Exception e) {
                         e.printStackTrace();

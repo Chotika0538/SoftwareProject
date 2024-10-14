@@ -46,12 +46,9 @@ public class AddCoffin extends javax.swing.JPanel {
         nameTF = new javax.swing.JTextField();
 
         setPreferredSize(new java.awt.Dimension(480, 370));
-        setLayout(null);
 
         pic_detail.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
         pic_detail.setText("รูปและรายละเอียดของสินค้า");
-        add(pic_detail);
-        pic_detail.setBounds(30, 50, 157, 27);
 
         pic_detailSP.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         pic_detailSP.setPreferredSize(new java.awt.Dimension(400, 300));
@@ -68,9 +65,6 @@ public class AddCoffin extends javax.swing.JPanel {
         pic_detailJP.add(cfdList.get(0));
         pic_detailSP.setViewportView(pic_detailJP);
 
-        add(pic_detailSP);
-        pic_detailSP.setBounds(30, 80, 400, 250);
-
         addListBT.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
         addListBT.setText("+ เพิ่มรายการ");
         addListBT.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -78,8 +72,6 @@ public class AddCoffin extends javax.swing.JPanel {
                 addListBTMouseClicked(evt);
             }
         });
-        add(addListBT);
-        addListBT.setBounds(240, 340, 100, 32);
 
         deleteListBT.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
         deleteListBT.setText("- ลบรายการ");
@@ -88,17 +80,53 @@ public class AddCoffin extends javax.swing.JPanel {
                 deleteListBTMouseClicked(evt);
             }
         });
-        add(deleteListBT);
-        deleteListBT.setBounds(130, 340, 93, 32);
 
         nameproduct.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
         nameproduct.setText("ชื่อสินค้า : ");
-        add(nameproduct);
-        nameproduct.setBounds(30, 10, 58, 27);
 
         nameTF.setFont(new java.awt.Font("TH SarabunPSK", 0, 20)); // NOI18N
-        add(nameTF);
-        nameTF.setBounds(100, 10, 270, 27);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(nameproduct, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(nameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(pic_detail, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(128, 128, 128)
+                        .addComponent(deleteListBT, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(17, 17, 17)
+                        .addComponent(addListBT, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(pic_detailSP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(50, 50, 50))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(nameproduct)
+                    .addComponent(nameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(13, 13, 13)
+                .addComponent(pic_detail)
+                .addGap(3, 3, 3)
+                .addComponent(pic_detailSP, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(deleteListBT)
+                    .addComponent(addListBT))
+                .addContainerGap())
+        );
     }// </editor-fold>//GEN-END:initComponents
 
     private void deleteListBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteListBTMouseClicked

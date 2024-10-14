@@ -72,18 +72,18 @@ private String filePath;
             }
         });
         add(choosePicBT);
-        choosePicBT.setBounds(20, 110, 106, 26);
+        choosePicBT.setBounds(10, 100, 106, 26);
 
         showPicName.setBackground(new java.awt.Color(204, 255, 255));
         showPicName.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
         add(showPicName);
-        showPicName.setBounds(140, 110, 160, 30);
+        showPicName.setBounds(120, 100, 160, 30);
 
         detailLB.setBackground(new java.awt.Color(204, 255, 255));
         detailLB.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
         detailLB.setText("24 นิ้ว ");
         add(detailLB);
-        detailLB.setBounds(320, 80, 37, 22);
+        detailLB.setBounds(310, 80, 37, 22);
 
         detailSP.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
 
@@ -93,7 +93,7 @@ private String filePath;
         detailSP.setViewportView(detailTA);
 
         add(detailSP);
-        detailSP.setBounds(20, 170, 347, 110);
+        detailSP.setBounds(10, 150, 347, 110);
 
         deleteCB.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         deleteCB.setText("เลือกเพื่อลบ");
@@ -108,51 +108,51 @@ private String filePath;
             }
         });
         add(deleteCB);
-        deleteCB.setBounds(290, 10, 85, 20);
+        deleteCB.setBounds(280, 10, 85, 20);
 
         size.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
         size.setText("ราคาสินค้าตามขนาด : ");
         add(size);
-        size.setBounds(20, 50, 120, 21);
+        size.setBounds(10, 50, 120, 21);
 
         patternTF1.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         add(patternTF1);
-        patternTF1.setBounds(110, 10, 160, 27);
+        patternTF1.setBounds(100, 10, 160, 27);
 
         priceSize24.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         add(priceSize24);
-        priceSize24.setBounds(300, 50, 70, 27);
+        priceSize24.setBounds(290, 50, 70, 27);
 
         pattern.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
         pattern.setText("รูปแบบสินค้า : ");
         add(pattern);
-        pattern.setBounds(20, 10, 90, 21);
+        pattern.setBounds(10, 10, 90, 21);
 
         priceSize20.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         add(priceSize20);
-        priceSize20.setBounds(140, 50, 70, 27);
+        priceSize20.setBounds(130, 50, 70, 27);
 
         priceSize22.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         add(priceSize22);
-        priceSize22.setBounds(220, 50, 70, 27);
+        priceSize22.setBounds(210, 50, 70, 27);
 
         detailLB1.setBackground(new java.awt.Color(204, 255, 255));
         detailLB1.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
         detailLB1.setText("รายละเอียด ");
         add(detailLB1);
-        detailLB1.setBounds(30, 140, 66, 22);
+        detailLB1.setBounds(10, 130, 66, 22);
 
         detailLB2.setBackground(new java.awt.Color(204, 255, 255));
         detailLB2.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
         detailLB2.setText("20 นิ้ว ");
         add(detailLB2);
-        detailLB2.setBounds(160, 80, 37, 22);
+        detailLB2.setBounds(150, 80, 37, 22);
 
         detailLB3.setBackground(new java.awt.Color(204, 255, 255));
         detailLB3.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
         detailLB3.setText("22 นิ้ว ");
         add(detailLB3);
-        detailLB3.setBounds(240, 80, 37, 22);
+        detailLB3.setBounds(230, 80, 37, 22);
     }// </editor-fold>//GEN-END:initComponents
 
     private void choosePicBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_choosePicBTActionPerformed
