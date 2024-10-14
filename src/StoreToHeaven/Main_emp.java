@@ -18,7 +18,7 @@ public class Main_emp extends javax.swing.JFrame {
         mainPanel.add(new AddProduct(mainPanel),"AddPro");
         add(mainPanel);
         cardLayout.show(mainPanel,"EmpLogin");
-        setSize(800,500);
+        setSize(800,640);
         setContentPane(mainPanel);
                setLocationRelativeTo(null);
         setResizable(false);
@@ -30,15 +30,15 @@ public class Main_emp extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 800, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
+            .addGap(0, 600, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 

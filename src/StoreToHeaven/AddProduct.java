@@ -30,7 +30,7 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
         showAddProduct = new javax.swing.JPanel();
         confirmBT = new javax.swing.JButton();
 
-        setPreferredSize(new java.awt.Dimension(800, 500));
+        setPreferredSize(new java.awt.Dimension(800, 600));
         setLayout(null);
 
         addChoices.setFont(new java.awt.Font("TH Sarabun New", 0, 24)); // NOI18N
