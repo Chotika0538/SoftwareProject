@@ -11,32 +11,18 @@ import javax.swing.ImageIcon;
 //import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JRadioButton;
-import javax.swing.ComboBoxModel;
 
 /**
  *
  * @author ASUS
  */
-public class WreathProduct extends javax.swing.JPanel {
-    private ArrayList<Wreath> wList;
-    private Wreath wreathClass;
-    private ArrayList<String> colors;
-    String[] wreath_color;
-    String[] wreath_material;
-    int c=0, p=0;
-    public WreathProduct(Wreath wreath) {
-        this.wreathClass = wreath;
-        colors = wreath.getColorAll();
-        for(int i=0; i<colors.size();i++){
-            wreath_color[i]=colors.get(i);
-        }
-        //String[] items = {"hi", "Item2", "Item3"};
-        for(String i : wreath_color){
-            materialCB.addItem(i);
-        }
-        
+public class PackageProduct_2 extends javax.swing.JPanel {
+    private ArrayList<Packages> pkList;
+    private Packages packageClass;
+    
+    public PackageProduct_2(Packages pack) {
         initComponents();
-        getData(wreath);
+        getData(pack);
     }
 
     /**
@@ -60,21 +46,21 @@ public class WreathProduct extends javax.swing.JPanel {
         message = new javax.swing.JLabel();
         textMessage = new javax.swing.JTextField();
         name = new javax.swing.JLabel();
-        priceLB = new javax.swing.JLabel();
         colorCB = new javax.swing.JComboBox<>();
-        materialCB = new javax.swing.JComboBox<>();
+        typeCB1 = new javax.swing.JComboBox<>();
+        priceLB = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(242, 217, 220));
-        setPreferredSize(new java.awt.Dimension(800, 500));
+        setBackground(new java.awt.Color(204, 204, 255));
+        setPreferredSize(new java.awt.Dimension(780, 400));
         setLayout(null);
 
         choose.setFont(new java.awt.Font("TH Sarabun New", 1, 22)); // NOI18N
-        choose.setText("กรุณาเลือกวัสดุพวงหรีด");
+        choose.setText("กรุณาเลือก");
         add(choose);
         choose.setBounds(50, 250, 176, 30);
 
         chooseColor.setFont(new java.awt.Font("TH Sarabun New", 1, 22)); // NOI18N
-        chooseColor.setText("กรุณาเลือกสีพวงหรีด");
+        chooseColor.setText("กรุณาเลือกสี");
         add(chooseColor);
         chooseColor.setBounds(50, 310, 155, 41);
 
@@ -105,7 +91,7 @@ public class WreathProduct extends javax.swing.JPanel {
         scrollDetail.setBounds(330, 100, 410, 130);
 
         message.setFont(new java.awt.Font("TH Sarabun New", 1, 22)); // NOI18N
-        message.setText("กรุณาระบุข้อความบนพวงหรีด");
+        message.setText("กรุณาระบุข้อความ");
         add(message);
         message.setBounds(330, 250, 219, 30);
         add(textMessage);
@@ -115,32 +101,32 @@ public class WreathProduct extends javax.swing.JPanel {
         add(name);
         name.setBounds(40, 20, 270, 31);
 
+        colorCB.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
+        colorCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "เลือกสี" }));
+        add(colorCB);
+        colorCB.setBounds(50, 350, 220, 30);
+
+        typeCB1.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
+        typeCB1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "เลือกชนิด" }));
+        add(typeCB1);
+        typeCB1.setBounds(50, 280, 220, 30);
+
         priceLB.setFont(new java.awt.Font("TH SarabunPSK", 0, 24)); // NOI18N
         priceLB.setText("ราคา : ");
         add(priceLB);
         priceLB.setBounds(330, 60, 280, 30);
-
-        colorCB.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
-        colorCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "เลือกสี"}));
-        add(colorCB);
-        colorCB.setBounds(50, 350, 220, 30);
-
-        materialCB.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
-        materialCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "วัสดุ"}));
-        add(materialCB);
-        materialCB.setBounds(50, 282, 220, 30);
     }// </editor-fold>//GEN-END:initComponents
 
-    public void getData(Wreath wreath){
-    
-        name.setText(wreathClass.toString());
-        details.setText(wreathClass.getDetail());
-        productImage.setIcon(new ImageIcon(wreathClass.getPath()));
-        priceLB.setText(wreathClass.getPriceAll().toString());
+    public void getData(Packages pack){
+        this.packageClass = pack;
+        name.setText(packageClass.toString());
+        details.setText(packageClass.getDetail());
+        productImage.setIcon(new ImageIcon(packageClass.getPath()));
+        priceLB.setText(packageClass.getPrice()+"");
     }
 
-    public Wreath getWreathClass() {
-        return wreathClass;
+    public Packages getPackageClass() {
+        return packageClass;
     }
 
 
@@ -152,7 +138,6 @@ public class WreathProduct extends javax.swing.JPanel {
     private javax.swing.JTextArea details;
     private javax.swing.ButtonGroup groupColors;
     private javax.swing.ButtonGroup groupWreath;
-    private javax.swing.JComboBox<String> materialCB;
     private javax.swing.JLabel message;
     private javax.swing.JLabel name;
     private javax.swing.JSpinner pieceWreath;
@@ -160,5 +145,6 @@ public class WreathProduct extends javax.swing.JPanel {
     private javax.swing.JLabel productImage;
     private javax.swing.JScrollPane scrollDetail;
     private javax.swing.JTextField textMessage;
+    private javax.swing.JComboBox<String> typeCB1;
     // End of variables declaration//GEN-END:variables
 }

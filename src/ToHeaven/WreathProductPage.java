@@ -10,12 +10,16 @@ import javax.swing.JPanel;
 
 public class WreathProductPage extends javax.swing.JPanel {
     
+    private Wreathdao wreathdao;
     private ArrayList<Wreath> wreathClassList;
     private ArrayList<WreathProduct> wreathProduct;
+    
     private CardLayout cd;
     private JPanel mainPanel;
+    String[] wreath_color;
+    String[] wreath_pattern;
 //    int i = 1;
-    private Wreathdao wreathdao;
+    
     
     public WreathProductPage(JPanel mainPanel) {
         wreathdao = new Wreathdao();
@@ -128,7 +132,9 @@ public class WreathProductPage extends javax.swing.JPanel {
          wreathClassList = wreathdao.getAll();
     }
     public void showData(){
+        
         for (Wreath wreath : wreathClassList){
+            
             wreathProduct.add(new WreathProduct(wreath));
             if(wreathClassList.size()>1){
                 wreathProductPanel.setPreferredSize(new Dimension(800, wreathProductPanel.getHeight()+850));

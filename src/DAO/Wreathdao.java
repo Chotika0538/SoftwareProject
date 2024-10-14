@@ -117,7 +117,29 @@ public class Wreathdao {
             }
         }
     }
-    
+//    public ArrayList<String> getPatternColumn(){
+//        read();
+//        ArrayList<String> items = new ArrayList<>();
+//        try {
+//            for (Row row : sheet) {
+//                Cell cell = row.getCell(0); 
+//                if (cell != null) {
+//                    items.add(cell.getStringCellValue()); 
+//                }
+//            }
+//
+//            wb.close();
+//
+//            // เพิ่มค่าจาก ArrayList ลงใน JComboBox
+////            for (String item : items) {
+////                comboBox.addItem(item);
+////            }
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        return items;
+//    }
+//    
     /*get All Data from excel file*/
     public ArrayList<Wreath> getAll(){        
         read();

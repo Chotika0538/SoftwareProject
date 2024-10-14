@@ -49,64 +49,36 @@ public class PackageProduct extends javax.swing.JPanel {
         priceLB = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(153, 153, 153));
-        setPreferredSize(new java.awt.Dimension(750, 300));
+        setPreferredSize(new java.awt.Dimension(798, 300));
+        setLayout(null);
 
         jLabel3.setFont(new java.awt.Font("TH Sarabun New", 0, 24)); // NOI18N
         jLabel3.setText("<html>ราคา </html> ");
+        add(jLabel3);
+        jLabel3.setBounds(602, 28, 52, 31);
 
         packageName.setFont(new java.awt.Font("TH Sarabun New", 0, 24)); // NOI18N
         packageName.setToolTipText("");
+        add(packageName);
+        packageName.setBounds(20, 30, 254, 37);
+        add(imageLB);
+        imageLB.setBounds(40, 70, 220, 191);
 
         jLabel5.setFont(new java.awt.Font("TH Sarabun New", 0, 24)); // NOI18N
         jLabel5.setText("บาท");
+        add(jLabel5);
+        jLabel5.setBounds(760, 27, 44, 33);
 
         detailTA.setColumns(20);
         detailTA.setRows(5);
         jScrollPane1.setViewportView(detailTA);
 
-        priceLB.setFont(new java.awt.Font("TH Sarabun New", 0, 12)); // NOI18N
+        add(jScrollPane1);
+        jScrollPane1.setBounds(292, 66, 512, 200);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(45, 45, 45)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addComponent(imageLB, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(38, 38, 38)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 512, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(packageName, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(priceLB, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 288, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addComponent(packageName, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5)
-                            .addComponent(priceLB, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(imageLB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE))
-                .addContainerGap(43, Short.MAX_VALUE))
-        );
+        priceLB.setFont(new java.awt.Font("TH Sarabun New", 0, 12)); // NOI18N
+        add(priceLB);
+        priceLB.setBounds(660, 27, 82, 33);
     }// </editor-fold>//GEN-END:initComponents
 
 
