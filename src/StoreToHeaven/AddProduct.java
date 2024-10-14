@@ -143,6 +143,7 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
     private void confirmBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_confirmBTMouseClicked
         // TODO add your handling code here:
         checkCurrentCard();
+       System.out.println("Added success");
     }//GEN-LAST:event_confirmBTMouseClicked
  /* testing panel*/
     public static void main(String[] args){
@@ -173,22 +174,10 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
             if (comp.isVisible()&&comp instanceof AddPackage){
                 Packagedao pgd = new Packagedao();
                 pgd.save((AddPackage) comp);
-                 break; // หยุดหลังจากเจอหน้าแรกที่แสดงอยู่String pattern = wd.get(a).getPatternTF().getText();
+                
+                break; // หยุดหลังจากเจอหน้าแรกที่แสดงอยู่String pattern = wd.get(a).getPatternTF().getText();
             }
-           // else if(comp.isVisible()&&comp instanceof AddSouvenirs){
-           //     Souvenirsdao svd = new Souvenirsdao();
-           //     svd.save((AddSouvenirs) comp);
-           //     break;
-            //}
         }
     }
 }
-                
-//            else if (comp.isVisible()&& comp instanceof AddCoffin) {
-//                Wreathdao wd = new Wreathdao();
-//                wd.save((AddWreath) comp);
-//                break; // หยุดหลังจากเจอหน้าแรกที่แสดงอยู่
-//            }
-        
-    
 

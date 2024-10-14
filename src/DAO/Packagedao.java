@@ -19,7 +19,7 @@ import StoreToHeaven.Package ;
  * @author Khao
  */
 public class Packagedao {
-   private Workbook wb;
+    private Workbook wb;
     private Sheet sheet;
     private final String FILE_NAME = "StoreStock.xlsx";
     private FileInputStream fileInput;
@@ -108,6 +108,7 @@ public class Packagedao {
             }
         }
     }
+    
     public ArrayList<Package> getAll() {        
     pList = new ArrayList<>();
     read();
@@ -185,62 +186,8 @@ public class Packagedao {
     }
 
    public void deletePackageDetail(PackageDetail packageDetail) {
-    // อ่านไฟล์ Excel
-     read(); // ฟังก์ชันนี้ควรอ่านข้อมูลจาก Excel ไปยัง sheet
-
-    try {
-        if (sheet == null) {
-            System.out.println("Sheet not found");
-            return;
-        }
-
-        // หาตำแหน่งแถวที่ต้องการลบ
-        int rowToDelete = -1; // ตัวแปรเก็บตำแหน่งแถวที่จะลบ
-        for (int rowIndex = 1; rowIndex <= sheet.getLastRowNum(); rowIndex++) {
-            Row row = sheet.getRow(rowIndex);
-            // ตรวจสอบเงื่อนไขการลบ (เช่น ตรงกับข้อมูลของ packageDetail)
-            if (row.getCell(0).getStringCellValue().equals(packageDetail.getPatternTF().getText())) {
-                rowToDelete = rowIndex; // เก็บตำแหน่งแถวที่ต้องการลบ
-                break;
-            }
-        }
-
-        if (rowToDelete != -1) { // ถ้าพบแถวที่จะลบ
-            Row row = sheet.getRow(rowToDelete);
-            // ตั้งค่าเซลล์ในแถวให้เป็น -
-            for (int cellIndex = 0; cellIndex < row.getPhysicalNumberOfCells(); cellIndex++) {
-                Cell cell = row.getCell(cellIndex);
-                
-                // ตรวจสอบว่าเซลล์เป็น null หรือไม่
-                if (cell == null) {
-                    // ถ้าเซลล์เป็น null สร้างเซลล์ใหม่
-                    cell = row.createCell(cellIndex);
-                }
-                
-                // ตั้งค่าเซลล์ให้เป็น "-"
-                cell.setCellValue("-");
-            }
-        }
-
-        // บันทึกการเปลี่ยนแปลง
-        try (FileOutputStream fos = new FileOutputStream(new File(FILE_NAME))) {
-            wb.write(fos);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    } catch (Exception e) {
-        e.printStackTrace();
-    } finally {
-        // ปิด resources
-        try {
-            if (wb != null) {
-                wb.close();
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-}
-  
+   
+   
+   }
 }
 
