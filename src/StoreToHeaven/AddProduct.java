@@ -82,8 +82,8 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
         AddWreath wreath = new AddWreath(showAddProduct);
         //AddCoffin coffin = new AddCoffin(showAddProduct);
         AddFrame frame = new AddFrame(showAddProduct);
-        //AddIncense incense = new AddIncense(showAddProduct);
-        //AddCandle candle = new AddCandle(showAddProduct);
+        AddIncense incense = new AddIncense(showAddProduct);
+        AddCandle candle = new AddCandle(showAddProduct);
         AddOffering offering = new AddOffering(showAddProduct);
         AddSandalWood sandalwood = new AddSandalWood(showAddProduct);
         AddSnackBox snackbox = new AddSnackBox(showAddProduct);
@@ -93,8 +93,8 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
         //showAddProduct.add(coffin, "coffin");
         showAddProduct.add(wreath, "wreath");
         showAddProduct.add(frame, "frame");
-        //showAddProduct.add(incense, "incense");
-        //showAddProduct.add(candle, "candle");
+        showAddProduct.add(incense, "incense");
+        showAddProduct.add(candle, "candle");
         showAddProduct.add(offering, "offering");
         showAddProduct.add(sandalwood, "sandalwood");
         showAddProduct.add(snackbox, "snackbox");
@@ -134,9 +134,14 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
             cd.show(showAddProduct, "offering");
         }
         //choose candles
-        else if(((String)cb.getSelectedItem()).equals("ธูปและเทียน")){
-            //cd = (CardLayout) showAddProduct.getLayout();
-            //cd.show(showAddProduct, "");
+        else if(((String)cb.getSelectedItem()).equals("เทียน")){
+            cd = (CardLayout) showAddProduct.getLayout();
+            cd.show(showAddProduct, "candle");
+        }
+         //choose incense
+        else if(((String)cb.getSelectedItem()).equals("ธูป")){
+            cd = (CardLayout) showAddProduct.getLayout();
+            cd.show(showAddProduct, "incense");
         }
         //choose sevanior
         else if(((String)cb.getSelectedItem()).equals("ของชำร่วย")){
@@ -216,11 +221,11 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
                 cand.save((AddCandle) comp);
                 break; // หยุดหลังจากเจอหน้าแรกที่แสดงอยู่
             }
-//            else if (comp.isVisible()&& comp instanceof AddIncense) {
-//                Incensedao ind = new Incensedao();
-//                ind.save((AddIncense) comp);
-//                break; // หยุดหลังจากเจอหน้าแรกที่แสดงอยู่
-//            }
+            else if (comp.isVisible()&& comp instanceof AddIncense) {
+                Incensedao ind = new Incensedao();
+                ind.save((AddIncense) comp);
+                break; // หยุดหลังจากเจอหน้าแรกที่แสดงอยู่
+            }
             else if (comp.isVisible()&& comp instanceof AddSandalWood) {
                 SandalWooddao sand = new SandalWooddao();
                 sand.save((AddSandalWood) comp);

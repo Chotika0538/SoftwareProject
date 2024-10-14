@@ -3,6 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package DAO;
+
+import StoreToHeaven.*;
 import java.io.BufferedInputStream;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;  // Allows working with .xlsx files
@@ -10,35 +12,47 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import StoreToHeaven.*;
+//import StoreToHeaven.IncenseDetail;
+import StoreToHeaven.*;
 import java.awt.Component;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.*;
-/**
- *
- * @author Khao
- */
-public class Candledao {
-   private Workbook wb;
+
+import java.awt.Component;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class Incensedao {
+    private Workbook wb;
     private Sheet sheet;
     private final String FILE_NAME = "StoreStock.xlsx";
     private FileInputStream fileInput;
     private FileOutputStream fos;
-    private ArrayList<List<String>> candlelist = new ArrayList<>();
+    private ArrayList<List<String>> incenselist = new ArrayList<>();
     private String[] nameCol = { "ชื่อ","รายละเอียด" ,"pathรูปภาพ", "ราคา"};
-    private ArrayList<CandleDetail> cnd;
-    private ArrayList<Candle> cnList;
+    private ArrayList<IncenseDetail> icd;
+    private ArrayList<Incense> iList;
     private Component[] cmp;
     String name , pattern, detail, path;
-    double price;
-
+    double price;   
+    
+    public Incensedao(){
+        iList = new ArrayList<>();
+        icd = new ArrayList<>();
+        incenselist = new ArrayList<>();
+    }
     /*Save data in Excel file*/
-    public void save(AddCandle candle) {
-        cmp = candle.getPic_detailJP().getComponents();    // get CoffinDetail panel
-        cnd = new ArrayList<>();
+    public void save(AddIncense incense) {
+        cmp = incense.getPic_detailJP().getComponents();    // get IncenseDetail panel
+        icd = new ArrayList<>();
         for (Component c : cmp){
-            cnd.add((CandleDetail) c);
+            icd.add((IncenseDetail) c);
         }
     
         /*Excel*/    
@@ -51,20 +65,19 @@ public class Candledao {
             Row firstRow = sheet.getRow(0);
             if (firstRow == null) {       // this files valid?
                 firstRow = sheet.createRow(0);          // create first row
-                nameCol[0] = candle.getNameTF().getText();
+                nameCol[0] = incense.getNameTF().getText();
                 /*bring all data in wreathlist to create each col in valid sheet*/
                 for(int j=0; j<nameCol.length; j++){
                     Cell cell = firstRow.createCell(j);
                     cell.setCellValue(nameCol[j]);
                 }
             }
-            for (int a=0; a<cnd.size(); a++){
-            String pattern = cnd.get(a).getPatternTF().getText();    
-            String detail = cnd.get(a).getDetailTA().getText();
-            String path = cnd.get(a).getFilePath();
-            double price = Double.parseDouble(cnd.get(a).getPriceTF().getText());
+            for (int a=0; a<icd.size(); a++){
+            String pattern = icd.get(a).getPatternTF().getText();
+            String detail = icd.get(a).getDetailTA().getText();
+            String path = icd.get(a).getFilePath();
+            double price = Double.parseDouble(icd.get(a).getPriceTF().getText());
             String[] dataChecked = {pattern,detail,path,Double.toString(price)};
-   
             boolean haveData = false ;
             for (Row row : sheet){
                 Cell c = row.getCell(0);
@@ -81,6 +94,7 @@ public class Candledao {
                 newRow.createCell(1).setCellValue(detail);
                 newRow.createCell(2).setCellValue(path);
                 newRow.createCell(3).setCellValue(price);
+                //newRow.createCell(4).setCellValue(incense.getPriceTF().getText());
                } catch (Exception e) {
                     e.printStackTrace();
                }             
@@ -108,13 +122,14 @@ public class Candledao {
             }
         }
     }
-    public ArrayList<Candle> getAll() {        
-    cnList = new ArrayList<>();
+    
+public ArrayList<Incense> getAll() {        
+    iList = new ArrayList<>();
     read();
     try {
         if (sheet == null) {
             System.out.println("Sheet not found");
-            return cnList; // หรือทำการรีเทิร์นอย่างอื่นหากไม่มีชีต
+            return iList; // หรือทำการรีเทิร์นอย่างอื่นหากไม่มีชีต
         }
 
         for (Row row : sheet) {
@@ -124,6 +139,7 @@ public class Candledao {
             }
             String pattern = null, detail = null, path = null;
             double price = 0.0;
+
             for (Cell cell : row) {
                 if (cell == null) {
                     continue; // ข้าม cell ที่เป็น null
@@ -146,10 +162,10 @@ public class Candledao {
 
             // ตรวจสอบค่าที่ได้ก่อนเพิ่มลง oList
             if (name != null && pattern != null && detail != null && path != null && price > 0.0) {
-                Candle newCandle = new Candle(name, pattern, detail, path, price);
+                Incense newIncense = new Incense(name, pattern, detail, path, price);
                 // ตรวจสอบไม่ให้มีการเพิ่มซ้ำ
-                if (!cnList.contains(newCandle)) {
-                    cnList.add(newCandle);
+                if (!iList.contains(newIncense)) {
+                    iList.add(newIncense);
                 }
             }
         }
@@ -170,19 +186,19 @@ public class Candledao {
                 e.printStackTrace();
             }
         }
-        return cnList;
+        return iList;
     }
     /*Read Excel file*/
-   public void read() {
+    public void read() {
         wb = null;
         try {
             fileInput = new FileInputStream(new File(FILE_NAME));
             wb = new XSSFWorkbook(fileInput);
-            sheet = wb.getSheetAt(4); // เปลี่ยนไปที่ชีต 5
+            sheet = wb.getSheetAt(5); // เปลี่ยนไปที่ชีต 5
         } catch (Exception err) {
             System.out.println("can't read file: " + err);
         }
     }
-  
+ 
 }
 

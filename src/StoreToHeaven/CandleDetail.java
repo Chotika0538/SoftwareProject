@@ -96,7 +96,7 @@ private JPanel jp;
 
         bathLB.setBackground(new java.awt.Color(204, 255, 255));
         bathLB.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
-        bathLB.setText("บาทต่อชิ้น");
+        bathLB.setText("บาทต่อห่อ");
         add(bathLB);
         bathLB.setBounds(300, 80, 55, 21);
 

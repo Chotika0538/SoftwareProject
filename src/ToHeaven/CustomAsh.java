@@ -30,6 +30,7 @@ public class CustomAsh extends javax.swing.JPanel {
         backPanel = new javax.swing.JButton();
         confirmPanel = new javax.swing.JButton();
         ashPanel = new javax.swing.JPanel();
+        jComboBox1 = new javax.swing.JComboBox<>();
 
         setPreferredSize(new java.awt.Dimension(800, 600));
         setLayout(new java.awt.BorderLayout());
@@ -95,6 +96,11 @@ public class CustomAsh extends javax.swing.JPanel {
         add(buttonPanel, java.awt.BorderLayout.PAGE_END);
 
         ashPanel.setBackground(new java.awt.Color(204, 204, 255));
+
+        jComboBox1.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "วัดพระศรีมหาธาตุ (กรุงเทพ)", "วัดโสมนัส (กรุงเทพ)", "วัดหัวลำโพง (กรุงเทพ)", "วัดเขาใหญ่ (สุพรรณบุรี)", "วัดบ้านบึง (พิษณุโลก)", "วัดสว่างอารมณ์ (กำแพงเพชร)", "วัดบางม่วง (นนทบุรี)", "วัดไผ่ล้อม (นครปฐม)", "วัดป้อมแก้ว (สมุทรสงคราม)", "วัดป่าอดุลยาราม (ขอนแก่น)", "วัดสุกาวาส (บุรีรัมย์)", "วัดหนองคู (นครราชสีมา)", "วัดสว่างสระทอง (ร้อยเอ็ด)", "วัดจันทิมา (อำนาจเจริญ)", "วัดสองพี่น้อง (สระแก้ว)", "วัดหัวสวน (ฉะเชิงเทรา)", "วัดสายวารี (ชลบุรี)", "วัดน้ำใส (ระยอง)", "วัดทองทั่ว (จันทบุรี)", "วัดดอนเจดีย์ (ตาก)", "วัดท่าเรือ (กาญจนบุรี)", "วัดทุ่งตาล (ราชบุรี)", "วัดแหลมปอ (ชุมพร)", "วัดจันทาราม (ระนอง)", "วัดแก้วโกรวาราม (กระบี่)" }));
+        ashPanel.add(jComboBox1);
+
         add(ashPanel, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -116,6 +122,7 @@ public class CustomAsh extends javax.swing.JPanel {
     private javax.swing.JLabel coffinStageLB;
     private javax.swing.JButton confirmPanel;
     private javax.swing.JLabel funeralStageLB;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JPanel menuCustom;
     // End of variables declaration//GEN-END:variables
 }

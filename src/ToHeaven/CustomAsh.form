@@ -149,6 +149,47 @@
       </Constraints>
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JComboBox" name="jComboBox1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="TH Sarabun New" size="18" style="0"/>
+            </Property>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="25">
+                <StringItem index="0" value="&#xe27;&#xe31;&#xe14;&#xe1e;&#xe23;&#xe30;&#xe28;&#xe23;&#xe35;&#xe21;&#xe2b;&#xe32;&#xe18;&#xe32;&#xe15;&#xe38; (&#xe01;&#xe23;&#xe38;&#xe07;&#xe40;&#xe17;&#xe1e;)"/>
+                <StringItem index="1" value="&#xe27;&#xe31;&#xe14;&#xe42;&#xe2a;&#xe21;&#xe19;&#xe31;&#xe2a; (&#xe01;&#xe23;&#xe38;&#xe07;&#xe40;&#xe17;&#xe1e;)"/>
+                <StringItem index="2" value="&#xe27;&#xe31;&#xe14;&#xe2b;&#xe31;&#xe27;&#xe25;&#xe33;&#xe42;&#xe1e;&#xe07; (&#xe01;&#xe23;&#xe38;&#xe07;&#xe40;&#xe17;&#xe1e;)"/>
+                <StringItem index="3" value="&#xe27;&#xe31;&#xe14;&#xe40;&#xe02;&#xe32;&#xe43;&#xe2b;&#xe0d;&#xe48; (&#xe2a;&#xe38;&#xe1e;&#xe23;&#xe23;&#xe13;&#xe1a;&#xe38;&#xe23;&#xe35;)"/>
+                <StringItem index="4" value="&#xe27;&#xe31;&#xe14;&#xe1a;&#xe49;&#xe32;&#xe19;&#xe1a;&#xe36;&#xe07; (&#xe1e;&#xe34;&#xe29;&#xe13;&#xe38;&#xe42;&#xe25;&#xe01;)"/>
+                <StringItem index="5" value="&#xe27;&#xe31;&#xe14;&#xe2a;&#xe27;&#xe48;&#xe32;&#xe07;&#xe2d;&#xe32;&#xe23;&#xe21;&#xe13;&#xe4c; (&#xe01;&#xe33;&#xe41;&#xe1e;&#xe07;&#xe40;&#xe1e;&#xe0a;&#xe23;)"/>
+                <StringItem index="6" value="&#xe27;&#xe31;&#xe14;&#xe1a;&#xe32;&#xe07;&#xe21;&#xe48;&#xe27;&#xe07; (&#xe19;&#xe19;&#xe17;&#xe1a;&#xe38;&#xe23;&#xe35;)"/>
+                <StringItem index="7" value="&#xe27;&#xe31;&#xe14;&#xe44;&#xe1c;&#xe48;&#xe25;&#xe49;&#xe2d;&#xe21; (&#xe19;&#xe04;&#xe23;&#xe1b;&#xe10;&#xe21;)"/>
+                <StringItem index="8" value="&#xe27;&#xe31;&#xe14;&#xe1b;&#xe49;&#xe2d;&#xe21;&#xe41;&#xe01;&#xe49;&#xe27; (&#xe2a;&#xe21;&#xe38;&#xe17;&#xe23;&#xe2a;&#xe07;&#xe04;&#xe23;&#xe32;&#xe21;)"/>
+                <StringItem index="9" value="&#xe27;&#xe31;&#xe14;&#xe1b;&#xe48;&#xe32;&#xe2d;&#xe14;&#xe38;&#xe25;&#xe22;&#xe32;&#xe23;&#xe32;&#xe21; (&#xe02;&#xe2d;&#xe19;&#xe41;&#xe01;&#xe48;&#xe19;)"/>
+                <StringItem index="10" value="&#xe27;&#xe31;&#xe14;&#xe2a;&#xe38;&#xe01;&#xe32;&#xe27;&#xe32;&#xe2a; (&#xe1a;&#xe38;&#xe23;&#xe35;&#xe23;&#xe31;&#xe21;&#xe22;&#xe4c;)"/>
+                <StringItem index="11" value="&#xe27;&#xe31;&#xe14;&#xe2b;&#xe19;&#xe2d;&#xe07;&#xe04;&#xe39; (&#xe19;&#xe04;&#xe23;&#xe23;&#xe32;&#xe0a;&#xe2a;&#xe35;&#xe21;&#xe32;)"/>
+                <StringItem index="12" value="&#xe27;&#xe31;&#xe14;&#xe2a;&#xe27;&#xe48;&#xe32;&#xe07;&#xe2a;&#xe23;&#xe30;&#xe17;&#xe2d;&#xe07; (&#xe23;&#xe49;&#xe2d;&#xe22;&#xe40;&#xe2d;&#xe47;&#xe14;)"/>
+                <StringItem index="13" value="&#xe27;&#xe31;&#xe14;&#xe08;&#xe31;&#xe19;&#xe17;&#xe34;&#xe21;&#xe32; (&#xe2d;&#xe33;&#xe19;&#xe32;&#xe08;&#xe40;&#xe08;&#xe23;&#xe34;&#xe0d;)"/>
+                <StringItem index="14" value="&#xe27;&#xe31;&#xe14;&#xe2a;&#xe2d;&#xe07;&#xe1e;&#xe35;&#xe48;&#xe19;&#xe49;&#xe2d;&#xe07; (&#xe2a;&#xe23;&#xe30;&#xe41;&#xe01;&#xe49;&#xe27;)"/>
+                <StringItem index="15" value="&#xe27;&#xe31;&#xe14;&#xe2b;&#xe31;&#xe27;&#xe2a;&#xe27;&#xe19; (&#xe09;&#xe30;&#xe40;&#xe0a;&#xe34;&#xe07;&#xe40;&#xe17;&#xe23;&#xe32;)"/>
+                <StringItem index="16" value="&#xe27;&#xe31;&#xe14;&#xe2a;&#xe32;&#xe22;&#xe27;&#xe32;&#xe23;&#xe35; (&#xe0a;&#xe25;&#xe1a;&#xe38;&#xe23;&#xe35;)"/>
+                <StringItem index="17" value="&#xe27;&#xe31;&#xe14;&#xe19;&#xe49;&#xe33;&#xe43;&#xe2a; (&#xe23;&#xe30;&#xe22;&#xe2d;&#xe07;)"/>
+                <StringItem index="18" value="&#xe27;&#xe31;&#xe14;&#xe17;&#xe2d;&#xe07;&#xe17;&#xe31;&#xe48;&#xe27; (&#xe08;&#xe31;&#xe19;&#xe17;&#xe1a;&#xe38;&#xe23;&#xe35;)"/>
+                <StringItem index="19" value="&#xe27;&#xe31;&#xe14;&#xe14;&#xe2d;&#xe19;&#xe40;&#xe08;&#xe14;&#xe35;&#xe22;&#xe4c; (&#xe15;&#xe32;&#xe01;)"/>
+                <StringItem index="20" value="&#xe27;&#xe31;&#xe14;&#xe17;&#xe48;&#xe32;&#xe40;&#xe23;&#xe37;&#xe2d; (&#xe01;&#xe32;&#xe0d;&#xe08;&#xe19;&#xe1a;&#xe38;&#xe23;&#xe35;)"/>
+                <StringItem index="21" value="&#xe27;&#xe31;&#xe14;&#xe17;&#xe38;&#xe48;&#xe07;&#xe15;&#xe32;&#xe25; (&#xe23;&#xe32;&#xe0a;&#xe1a;&#xe38;&#xe23;&#xe35;)"/>
+                <StringItem index="22" value="&#xe27;&#xe31;&#xe14;&#xe41;&#xe2b;&#xe25;&#xe21;&#xe1b;&#xe2d; (&#xe0a;&#xe38;&#xe21;&#xe1e;&#xe23;)"/>
+                <StringItem index="23" value="&#xe27;&#xe31;&#xe14;&#xe08;&#xe31;&#xe19;&#xe17;&#xe32;&#xe23;&#xe32;&#xe21; (&#xe23;&#xe30;&#xe19;&#xe2d;&#xe07;)"/>
+                <StringItem index="24" value="&#xe27;&#xe31;&#xe14;&#xe41;&#xe01;&#xe49;&#xe27;&#xe42;&#xe01;&#xe23;&#xe27;&#xe32;&#xe23;&#xe32;&#xe21; (&#xe01;&#xe23;&#xe30;&#xe1a;&#xe35;&#xe48;)"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+      </SubComponents>
     </Container>
   </SubComponents>
 </Form>
