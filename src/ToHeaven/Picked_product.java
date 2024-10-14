@@ -6,7 +6,7 @@
 package ToHeaven;
 import javax.swing.*;
 import java.awt.*;
-import javax.swing.border.MatteBorder;
+import java.awt.image.BufferedImage;
 /**
  *
  * @author Chotika
@@ -15,13 +15,16 @@ public class Picked_product extends javax.swing.JPanel {
     private String productName;
     private double price;
     private int quentity;
-    private String PATH_IMG;
-    public Picked_product(String name,double price,int quentity,String path) {
+    private BufferedImage IMG;
+    public Picked_product(String name,double price,int quentity,BufferedImage img) {
+        System.out.println("Construc work");
         this.productName=name;
         this.price=price;
         this.quentity=quentity;
-        PATH_IMG=path;
+        this.IMG=img;
+        System.out.println("init do");
         initComponents();
+        System.out.println("set evverything do");
         setEverything();
     }
     @SuppressWarnings("unchecked")
@@ -176,27 +179,39 @@ public class Picked_product extends javax.swing.JPanel {
         ProductInCart.setDisplay();
     }//GEN-LAST:event_deleteProductBtnMouseClicked
     private void setEverything(){
+        productImg.setPreferredSize(new Dimension(260,180));
+        System.out.println("img panel : w ,"+productImg.getWidth()+" h, "+productImg.getHeight());
         name.setText(productName);
-        priceLabel.setText(price+"");
-        quentityLabel.setText(quentity+"");
-       
-         productImg.addComponentListener(new java.awt.event.ComponentAdapter() {
-        @Override
-        public void componentResized(java.awt.event.ComponentEvent evt) {
-                // Load the image from the resource path
-                ImageIcon icon = new ImageIcon(getClass().getResource(PATH_IMG));
-                Image img = icon.getImage();
-
-                // Scale the image to fit the JLabel after it has a valid size
-                Image scaledImg = img.getScaledInstance(productImg.getWidth(), productImg.getHeight(), Image.SCALE_SMOOTH);
-                ImageIcon scaledIcon = new ImageIcon(scaledImg);
-
-                // Set the scaled icon to the JLabel
-                productImg.setIcon(scaledIcon);
-            }
+        priceLabel.setText(String.format("฿%.2f", price));
+        quentityLabel.setText(String.valueOf(quentity));
+        productImgPanel.addComponentListener(new java.awt.event.ComponentAdapter() {
+        public void componentShown(java.awt.event.ComponentEvent evt) {
+            updateImage(); // Update image when the panel is shown
+        }
         });
-    }
 
+        // Initial call to handle any existing image
+        updateImage();
+    }
+    private void updateImage() {
+        if (IMG != null) {
+            try {
+                int width = productImgPanel.getWidth();
+                int height = productImgPanel.getHeight();
+                if (width > 0 && height > 0) {
+                    Image scaledImg = IMG.getScaledInstance(width, height, Image.SCALE_SMOOTH);
+                    productImg.setIcon(new ImageIcon(scaledImg));
+                } else {
+                    productImg.setIcon(null);
+                }
+            } catch (Exception e) {
+                System.out.println(e);
+                productImg.setIcon(null);
+            }
+        } else {
+            productImg.setIcon(null); // If no image, set to null
+        }
+    }
     public String getName(){return productName;}
     public double getPrice(){return price;}
     public int getQuantity(){return quentity;}

@@ -117,7 +117,6 @@
         </Property>
       </Properties>
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="ImageIcon icon = new ImageIcon(getClass().getResource(&quot;tmpQR.png&quot;));&#xa;Image img = icon.getImage();&#xa;// Scale the image to fit the JLabel after it has a valid size&#xa;Image scaledImg = img.getScaledInstance(qrImg.getWidth(), qrImg.getHeight(), Image.SCALE_SMOOTH);&#xa;ImageIcon scaledIcon = new ImageIcon(scaledImg);&#xa;// Set the scaled icon to the JLabel&#xa;qrImg.setIcon(scaledIcon);"/>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="8"/>
       </AuxValues>
       <Constraints>

@@ -5,8 +5,21 @@
 package ToHeaven;
 
 import java.awt.CardLayout;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.FileInputStream;
+import javax.imageio.ImageIO;
 import javax.swing.JFrame;
-import java.util.*;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.ClientAnchor;
+import org.apache.poi.ss.usermodel.PictureData;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFDrawing;
+import org.apache.poi.xssf.usermodel.XSSFPicture;
+import org.apache.poi.xssf.usermodel.XSSFShape;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 public class Main_ProductInCart extends javax.swing.JPanel {
 
     /**
@@ -111,10 +124,67 @@ public class Main_ProductInCart extends javax.swing.JPanel {
 
         add(CartJP, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
+    private BufferedImage getImageFromExcel(String name,int indexsheet) throws Exception{
+        FileInputStream fileInput = new FileInputStream("StoreStock.xlsx");
+        Workbook wb = new XSSFWorkbook(fileInput);
+        Sheet sheet = wb.getSheetAt(indexsheet); // ชีตที่คุณต้องการ
 
+        BufferedImage tmpImg = null;
+
+        // วนลูปตรวจสอบแต่ละแถวใน Sheet
+        for (Row row : sheet) {
+            Cell firstCell = row.getCell(0); // คอลัมน์แรกที่มีชื่อ
+            if (firstCell != null && firstCell.getStringCellValue().equals(name)) {
+                System.out.println("Found cell name");
+                // ถ้าพบชื่อที่ต้องการ, ตรวจสอบว่ามีรูปภาพในแถวนี้หรือไม่
+                XSSFDrawing drawing = (XSSFDrawing) sheet.getDrawingPatriarch();
+                if (drawing != null) {
+                    System.out.println("drawing pass");
+                    for (XSSFShape shape : drawing.getShapes()) {
+                        System.out.println("shape pass");
+                        if (shape instanceof XSSFPicture) {
+                            XSSFPicture picture = (XSSFPicture) shape;
+                            ClientAnchor anchor = picture.getPreferredSize();
+
+                            // ตรวจสอบว่าแถวของรูปภาพตรงกับแถวที่เราพบชื่อหรือไม่
+                            if (anchor.getRow1() == row.getRowNum()) {
+                                PictureData pictureData = picture.getPictureData();
+                                byte[] imageBytes = pictureData.getData();
+
+                                // แปลง byte array เป็น BufferedImage
+                                ByteArrayInputStream bis = new ByteArrayInputStream(imageBytes);
+                                tmpImg = ImageIO.read(bis);
+                                bis.close();
+                                System.out.println("byte pass");
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // ปิดไฟล์ Excel
+        wb.close();
+        fileInput.close();
+
+        return tmpImg; // คืนค่า BufferedImage ที่ดึงมา
+    }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        ProductInCart.add(new Picked_product("test",100*Math.random(),(int)(10*Math.random()),"/ToHeaven/t.png"));
+        try{
+            String name = "form_9";
+            BufferedImage tmpImg = getImageFromExcel(name,6);
+            if (tmpImg == null) {
+                System.err.println("Image not found for: " + name);
+                return; // หยุดการทำงานถ้าภาพไม่ถูกต้อง
+            }
+            double price= 100;
+            int quentity = 3;
+            System.out.println("Before new");
+            ProductInCart.add(new Picked_product(name,price,quentity,tmpImg));
+            System.out.println("added success");
+        }catch(Exception e){System.out.println(e);}
     }//GEN-LAST:event_jButton1ActionPerformed
  /* testing panel*/
     public static void main(String[] args){

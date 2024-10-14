@@ -93,13 +93,6 @@ public class Payment extends javax.swing.JPanel {
         qrImg.setPreferredSize(new java.awt.Dimension(100, 100));
         add(qrImg);
         qrImg.setBounds(360, 120, 100, 100);
-        ImageIcon icon = new ImageIcon(getClass().getResource("tmpQR.png"));
-        Image img = icon.getImage();
-        // Scale the image to fit the JLabel after it has a valid size
-        Image scaledImg = img.getScaledInstance(qrImg.getWidth(), qrImg.getHeight(), Image.SCALE_SMOOTH);
-        ImageIcon scaledIcon = new ImageIcon(scaledImg);
-        // Set the scaled icon to the JLabel
-        qrImg.setIcon(scaledIcon);
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
