@@ -148,7 +148,7 @@ public class CoffinProductPage extends javax.swing.JPanel {
         System.out.println(coffin.getName());  // ตรวจสอบข้อมูลชื่อโลงศพ
         coffinProduct.add(new CoffinProduct(coffin));
         coffinProductPanel.add(coffinProduct.get(coffinProduct.size() - 1));
-        coffinProductPanel.setPreferredSize(new Dimension(800, coffinProduct.size() * 150));
+        coffinProductPanel.setPreferredSize(new Dimension(800, coffinProduct.size() * 250));
         coffinProductPanel.revalidate();
         coffinProductPanel.repaint();
     }

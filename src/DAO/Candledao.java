@@ -9,9 +9,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;  // Allows working with .xlsx
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import StoreToHaven.AddCandle;
-import StoreToHaven.CandleDetail;
-import StoreToHaven.IncenseDetail;
+import StoreToHaven.*;
 import StoreToHeaven.*;
 import java.awt.Component;
 import java.io.FileOutputStream;

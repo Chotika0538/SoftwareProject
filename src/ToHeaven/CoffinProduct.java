@@ -88,7 +88,7 @@ public class CoffinProduct extends javax.swing.JPanel {
             }
         });
         add(jRadioButton2);
-        jRadioButton2.setBounds(520, 220, 120, 32);
+        jRadioButton2.setBounds(520, 220, 140, 32);
 
         groupSize.add(jRadioButton3);
         jRadioButton3.setFont(new java.awt.Font("TH Sarabun New", 1, 20)); // NOI18N
@@ -99,16 +99,16 @@ public class CoffinProduct extends javax.swing.JPanel {
             }
         });
         add(jRadioButton3);
-        jRadioButton3.setBounds(520, 190, 120, 32);
+        jRadioButton3.setBounds(520, 190, 140, 32);
 
         jLabel1.setFont(new java.awt.Font("TH Sarabun New", 1, 20)); // NOI18N
         jLabel1.setText("ราคาแต่ละขนาด");
         add(jLabel1);
-        jLabel1.setBounds(410, 160, 110, 40);
+        jLabel1.setBounds(410, 150, 110, 40);
 
         productImage.setPreferredSize(new java.awt.Dimension(250, 90));
         add(productImage);
-        productImage.setBounds(40, 50, 250, 90);
+        productImage.setBounds(40, 40, 340, 110);
 
         choosePieceCoffin.setFont(new java.awt.Font("TH Sarabun New", 1, 18)); // NOI18N
         choosePieceCoffin.setText("เลือกจำนวนสินค้า");

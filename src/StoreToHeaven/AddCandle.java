@@ -1,4 +1,3 @@
-
 package StoreToHaven;
 
 import java.awt.CardLayout;
