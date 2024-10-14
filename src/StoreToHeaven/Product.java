@@ -20,6 +20,7 @@ public class Product {
         this.detail = detail;
         this.path = path;
     }
+    
     /*get & set methods of private variables*/
 
     public String getName() {

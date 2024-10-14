@@ -169,9 +169,11 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
     public void checkCurrentCard() {
         for (Component comp : showAddProduct.getComponents()) {
             if (comp.isVisible()&& comp instanceof AddCoffin) {
-                AddCoffin cf = (AddCoffin) comp;
+//                AddCoffin cf = (AddCoffin) comp;
+//                Coffindao cfda = new Coffindao();
+//                cfda.save(cf);
                 Coffindao cfda = new Coffindao();
-                cfda.save(cf);
+                cfda.save((AddCoffin) comp);
                 break; // หยุดหลังจากเจอหน้าแรกที่แสดงอยู่String pattern = wd.get(a).getPatternTF().getText();
             }
              else if (comp.isVisible()&& comp instanceof AddCandle) {
