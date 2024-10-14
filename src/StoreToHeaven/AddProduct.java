@@ -31,8 +31,8 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
         addChoices = new javax.swing.JComboBox<>();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        showAddProduct = new javax.swing.JPanel();
         confirmBT = new javax.swing.JButton();
+        showAddProduct = new javax.swing.JPanel();
 
         setPreferredSize(new java.awt.Dimension(800, 600));
         setLayout(null);
@@ -61,6 +61,21 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
         add(jPanel1);
         jPanel1.setBounds(0, 0, 800, 100);
 
+        confirmBT.setFont(new java.awt.Font("TH SarabunPSK", 0, 24)); // NOI18N
+        confirmBT.setText("ยืนยันรายการ");
+        confirmBT.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                confirmBTMouseClicked(evt);
+            }
+        });
+        confirmBT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirmBTActionPerformed(evt);
+            }
+        });
+        add(confirmBT);
+        confirmBT.setBounds(590, 460, 120, 35);
+
         showAddProduct.setBackground(new java.awt.Color(153, 255, 204));
         showAddProduct.setLayout(new java.awt.CardLayout());
         JPanel emptyPanel = new JPanel();
@@ -86,21 +101,6 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
         showAddProduct.add(souvenir, "souvenir");
         add(showAddProduct);
         showAddProduct.setBounds(10, 110, 480, 480);
-
-        confirmBT.setFont(new java.awt.Font("TH SarabunPSK", 0, 24)); // NOI18N
-        confirmBT.setText("ยืนยันรายการ");
-        confirmBT.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                confirmBTMouseClicked(evt);
-            }
-        });
-        confirmBT.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                confirmBTActionPerformed(evt);
-            }
-        });
-        add(confirmBT);
-        confirmBT.setBounds(590, 460, 120, 35);
     }// </editor-fold>//GEN-END:initComponents
 
     private void addChoicesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addChoicesActionPerformed
@@ -131,7 +131,7 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
         //choose offerings
         else if(((String)cb.getSelectedItem()).equals("ชุดไทยธรรม")){
             cd = (CardLayout) showAddProduct.getLayout();
-            cd.show(showAddProduct, "offerings");
+            cd.show(showAddProduct, "offering");
         }
         //choose candles
         else if(((String)cb.getSelectedItem()).equals("ธูปและเทียน")){

@@ -90,23 +90,6 @@
         </Component>
       </SubComponents>
     </Container>
-    <Container class="javax.swing.JPanel" name="showAddProduct">
-      <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="cc" green="ff" red="99" type="rgb"/>
-        </Property>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_LayoutCodePre" type="java.lang.String" value="JPanel emptyPanel = new JPanel();&#xa;AddWreath wreath = new AddWreath(showAddProduct);&#xa;//AddCoffin coffin = new AddCoffin(showAddProduct);&#xa;AddFrame frame = new AddFrame(showAddProduct);&#xa;//AddIncense incense = new AddIncense(showAddProduct);&#xa;//AddCandle candle = new AddCandle(showAddProduct);&#xa;AddOffering offering = new AddOffering(showAddProduct);&#xa;AddSandalWood sandalwood = new AddSandalWood(showAddProduct);&#xa;AddSnackBox snackbox = new AddSnackBox(showAddProduct);&#xa;AddSouvenir souvenir= new AddSouvenir(showAddProduct);&#xa;emptyPanel.setBackground(new java.awt.Color(153, 255, 204)); &#xa;showAddProduct.add(emptyPanel, &quot;empty&quot;);&#xa;//showAddProduct.add(coffin, &quot;coffin&quot;);&#xa;showAddProduct.add(wreath, &quot;wreath&quot;);&#xa;showAddProduct.add(frame, &quot;frame&quot;);&#xa;//showAddProduct.add(incense, &quot;incense&quot;);&#xa;//showAddProduct.add(candle, &quot;candle&quot;);&#xa;showAddProduct.add(offering, &quot;offering&quot;);&#xa;showAddProduct.add(sandalwood, &quot;sandalwood&quot;);&#xa;showAddProduct.add(snackbox, &quot;snackbox&quot;);&#xa;showAddProduct.add(souvenir, &quot;souvenir&quot;);"/>
-      </AuxValues>
-      <Constraints>
-        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="10" y="110" width="480" height="480"/>
-        </Constraint>
-      </Constraints>
-
-      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
-    </Container>
     <Component class="javax.swing.JButton" name="confirmBT">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -124,5 +107,22 @@
         </Constraint>
       </Constraints>
     </Component>
+    <Container class="javax.swing.JPanel" name="showAddProduct">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="cc" green="ff" red="99" type="rgb"/>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_LayoutCodePre" type="java.lang.String" value="JPanel emptyPanel = new JPanel();&#xa;AddWreath wreath = new AddWreath(showAddProduct);&#xa;//AddCoffin coffin = new AddCoffin(showAddProduct);&#xa;AddFrame frame = new AddFrame(showAddProduct);&#xa;//AddIncense incense = new AddIncense(showAddProduct);&#xa;//AddCandle candle = new AddCandle(showAddProduct);&#xa;AddOffering offering = new AddOffering(showAddProduct);&#xa;AddSandalWood sandalwood = new AddSandalWood(showAddProduct);&#xa;AddSnackBox snackbox = new AddSnackBox(showAddProduct);&#xa;AddSouvenir souvenir= new AddSouvenir(showAddProduct);&#xa;emptyPanel.setBackground(new java.awt.Color(153, 255, 204)); &#xa;showAddProduct.add(emptyPanel, &quot;empty&quot;);&#xa;//showAddProduct.add(coffin, &quot;coffin&quot;);&#xa;showAddProduct.add(wreath, &quot;wreath&quot;);&#xa;showAddProduct.add(frame, &quot;frame&quot;);&#xa;//showAddProduct.add(incense, &quot;incense&quot;);&#xa;//showAddProduct.add(candle, &quot;candle&quot;);&#xa;showAddProduct.add(offering, &quot;offering&quot;);&#xa;showAddProduct.add(sandalwood, &quot;sandalwood&quot;);&#xa;showAddProduct.add(snackbox, &quot;snackbox&quot;);&#xa;showAddProduct.add(souvenir, &quot;souvenir&quot;);"/>
+      </AuxValues>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="10" y="110" width="480" height="480"/>
+        </Constraint>
+      </Constraints>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
+    </Container>
   </SubComponents>
 </Form>

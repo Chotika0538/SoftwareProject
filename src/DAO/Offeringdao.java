@@ -8,10 +8,12 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import org.apache.commons.io.IOUtils;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
@@ -20,6 +22,7 @@ public class Offeringdao {
     private Sheet sheet;
     private final String FILE_NAME = "StoreStock.xlsx";
     private FileInputStream fileInput;
+    private FileInputStream picInput;
     private FileOutputStream fos;
     //private ArrayList<List<String>> offeringlist = new ArrayList<>();
     private String[] nameCol = { "ชื่อ","รายละเอียด" ,"pathรูปภาพ",  "ราคา"};
@@ -58,6 +61,8 @@ public class Offeringdao {
             String pattern = od.get(a).getPatternTF().getText();
             String detail = od.get(a).getDetailTA().getText();
             String path = od.get(a).getFilePath();
+            byte[] imageByte = IOUtils.toByteArray(new FileInputStream(path));
+         
             double price = Double.parseDouble(od.get(a).getPriceTF().getText());
             String[] dataChecked = {pattern,detail,path,Double.toString(price)};
             boolean haveData = false ;
@@ -74,8 +79,17 @@ public class Offeringdao {
                 Row newRow = sheet.createRow(lastRow+1);
                 newRow.createCell(0).setCellValue(pattern);
                 newRow.createCell(1).setCellValue(detail);
-                newRow.createCell(2).setCellValue(path);
+                //newRow.createCell(2).setCellValue(path);
                 newRow.createCell(3).setCellValue(price);
+                 // ฝังภาพลงในเซลล์
+                int pictureIdx = wb.addPicture(imageByte, Workbook.PICTURE_TYPE_JPEG);
+                CreationHelper helper = wb.getCreationHelper();
+                Drawing<?> drawing = sheet.createDrawingPatriarch();
+                ClientAnchor anchor = helper.createClientAnchor();
+                anchor.setCol1(2);  // คอลัมน์ที่ 3 (index 2)
+                anchor.setRow1(lastRow + 1);  // แถวใหม่
+                Picture pict = drawing.createPicture(anchor, pictureIdx);
+                pict.resize();  // ปรับขนาดภาพให้พอดีกับเซลล์
                } catch (Exception e) {
                     e.printStackTrace();
                }             
