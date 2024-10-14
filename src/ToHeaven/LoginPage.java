@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package ToHeaven;
+import DAO.Userdao;
 import java.util.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -29,24 +30,24 @@ public class LoginPage extends JPanel {
      */
     public LoginPage() {
         initComponents();
-        setReadfile();
+        //setReadfile();
     }
     public LoginPage(JPanel mainpanel){
         this.mainPanel=mainpanel;
         this.card= (CardLayout) mainPanel.getLayout();
         initComponents();
-        setReadfile();
+        //setReadfile();
     }
-    private void setReadfile(){
-        try{
-            excelPath = "UserInfo.xlsx";
-            fileInput = new FileInputStream(new File(excelPath));
-            wb = new XSSFWorkbook(fileInput);
-            sheet = wb.getSheetAt(0);
-        }catch(Exception err){
-            System.out.print(err);
-        }
-    }
+//    private void setReadfile(){
+//        try{
+//            excelPath = "User.xlsx";
+//            fileInput = new FileInputStream(new File(excelPath));
+//            wb = new XSSFWorkbook(fileInput);
+//            sheet = wb.getSheetAt(0);
+//        }catch(Exception err){
+//            System.out.print(err);
+//        }
+//    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -103,6 +104,11 @@ public class LoginPage extends JPanel {
 
         loginButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         loginButton.setText("Login");
+        loginButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                loginButtonMouseClicked(evt);
+            }
+        });
         loginButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginButtonActionPerformed(evt);
@@ -171,21 +177,27 @@ public class LoginPage extends JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
     private boolean checkUserPass(String userName,String password){
-        for(Row row : sheet ){
-            Cell rowUsername = row.getCell(2);
-            Cell rowPassword = row.getCell(3);
-//            System.out.println("Username : "+rowUsername);
-//            System.out.println("Password : "+rowPassword);
-            if (rowUsername != null && rowPassword != null) {
-                if (rowUsername.getCellTypeEnum() == CellType.STRING &&  rowPassword.getCellTypeEnum() == CellType.STRING) {
-                    String excelUsername = rowUsername.getStringCellValue();
-                    String excelPassword = rowPassword.getStringCellValue();
-                    if (excelUsername.equals(userName) && excelPassword.equals(password)) {
-                        System.out.println("Login success");
-                        return true;
-                    }
-                }
-            }
+//        for(Row row : sheet ){
+//            Cell rowUsername = row.getCell(2);
+//            Cell rowPassword = row.getCell(3);
+////            System.out.println("Username : "+rowUsername);
+////            System.out.println("Password : "+rowPassword);
+//            if (rowUsername != null && rowPassword != null) {
+//                if (rowUsername.getCellTypeEnum() == CellType.STRING &&  rowPassword.getCellTypeEnum() == CellType.STRING) {
+//                    String excelUsername = rowUsername.getStringCellValue();
+//                    String excelPassword = rowPassword.getStringCellValue();
+//                    if (excelUsername.equals(userName) && excelPassword.equals(password)) {
+//                        System.out.println("Login success");
+//                        return true;
+//                    }
+//                }
+//            }
+//        }
+        new Userdao().findData(userName, password);
+        if(Userdao.checkLogin){
+            System.out.println("Login success");
+            Userdao.checkLogin = false;
+            return true; 
         }
         JOptionPane.showMessageDialog(this, "User Not Found !", "Search Error", JOptionPane.ERROR_MESSAGE);
         return false;
@@ -220,6 +232,7 @@ public class LoginPage extends JPanel {
         // Proceed with the login process (validation, etc.)
         if(checkUserPass(userName,password)){
              // DO SOMETHING
+             card.show(mainPanel, "MainPage");
          }
     } else {
         JOptionPane.showMessageDialog(this, "Please enter both username and password.", "Input Error", JOptionPane.WARNING_MESSAGE);
@@ -230,6 +243,11 @@ public class LoginPage extends JPanel {
         // TODO add your handling code here:
         card.show(mainPanel, "RegisterPage");
     }//GEN-LAST:event_registerButtonActionPerformed
+
+    private void loginButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginButtonMouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_loginButtonMouseClicked
   
    
 
