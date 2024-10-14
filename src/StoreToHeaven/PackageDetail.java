@@ -4,6 +4,7 @@
  */
 package StoreToHeaven;
 
+import DAO.Packagedao;
 import java.awt.event.ItemEvent;
 import java.io.File;
 import java.util.ArrayList;
@@ -21,6 +22,7 @@ public class PackageDetail extends javax.swing.JPanel {
 final JFileChooser fc = new JFileChooser();
 private ArrayList<PackageDetail> pgList;
 private JPanel jp;
+    private String FilePath;
     /**
      * Creates new form WreathDetail
      */
@@ -149,7 +151,11 @@ private JPanel jp;
     }//GEN-LAST:event_choosePicBTActionPerformed
 
     private void deleteCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteCBActionPerformed
-        // TODO add your handling code here:
+     if (deleteCB.isSelected()) {
+        // สมมุติว่า pgList เป็นรายการที่เก็บ PackageDetail ที่ต้องการลบ
+        Packagedao packageDao = new Packagedao();
+        packageDao.deletePackageDetail(this); // เรียกใช้ฟังก์ชัน delete
+    }
     }//GEN-LAST:event_deleteCBActionPerformed
 
     private void deleteCBItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_deleteCBItemStateChanged
@@ -179,7 +185,21 @@ private int getPanelIndex(){
 //        f.setVisible(true);
 //        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 //    }
-
+private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {
+    // สร้างตัวแปรสำหรับ Packagedao
+    Packagedao packageDao = new Packagedao();
+    
+    // เช็คว่า checkbox ถูกเลือกหรือไม่
+    if (deleteCB.isSelected()) {
+        // เรียกใช้ฟังก์ชันเพื่อลบ
+        packageDao.deletePackageDetail(this);
+        
+        // แสดงข้อความหรือการอัพเดท UI ที่จำเป็น
+        showPicName.setText("ข้อมูลถูกลบเรียบร้อยแล้ว");
+    } else {
+        showPicName.setText("กรุณาเลือกข้อมูลเพื่อลบ");
+    }
+}
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel bathLB;
     private javax.swing.JButton choosePicBT;
@@ -215,6 +235,6 @@ private int getPanelIndex(){
     }
 
     public String getFilePath() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return FilePath ;
     }
 }

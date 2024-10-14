@@ -1,54 +1,44 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package DAO;
-
-import java.io.BufferedInputStream;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;  // Allows working with .xlsx files
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import StoreToHeaven.*;
-import StoreToHeaven.Package;
-//import StoreToHeaven.IncenseDetail;
 import java.awt.Component;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.*;
-
-import java.awt.Component;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.util.ArrayList;
-import java.util.List;
-
-
+import StoreToHeaven.Package ;
+/**
+ *
+ * @author Khao
+ */
 public class Packagedao {
-    private Workbook wb;
+   private Workbook wb;
     private Sheet sheet;
     private final String FILE_NAME = "StoreStock.xlsx";
     private FileInputStream fileInput;
     private FileOutputStream fos;
-    private ArrayList<List<String>> packagelist = new ArrayList<>();
+    private ArrayList<List<String>> candlelist = new ArrayList<>();
     private String[] nameCol = { "ชื่อ","รายละเอียด" ,"pathรูปภาพ", "ราคา"};
-    private ArrayList<PackageDetail> pcd;
-    private ArrayList<Package> pgList;
-    //private Component[] cmp;
-    String name,pattern, detail, path, price;
-    
-    
-    public Packagedao(){
-        pgList = new ArrayList<>();
-        pcd = new ArrayList<>();
-        packagelist = new ArrayList<>();
-    }
+    private ArrayList<PackageDetail> pgd;
+    private ArrayList<Package> pList;
+    private Component[] cmp;
+    String name , pattern, detail, path;
+    double price;
+    private ArrayList<PackageDetail> pgList;
     /*Save data in Excel file*/
     public void save(AddPackage pack) {
-        Component[] cmp = pack.getPic_detailJP().getComponents();    // get IncenseDetail panel
-        pcd = new ArrayList<>();
-        pcd.clear();
+        cmp = pack.getPic_detailJP().getComponents();    // get CoffinDetail panel
+        pgd = new ArrayList<>();
+        
         for (Component c : cmp){
-            pcd.add((PackageDetail) c);
+            pgd.add((PackageDetail) c);
         }
     
         /*Excel*/    
@@ -68,17 +58,17 @@ public class Packagedao {
                     cell.setCellValue(nameCol[j]);
                 }
             }
-            for (int a=0; a<pcd.size(); a++){
-            String pattern = pcd.get(a).getPatternTF().getText();
-            String detail = pcd.get(a).getDetailTA().getText();
-            String path = pcd.get(a).getFilePath();
-            double price = Double.parseDouble(pcd.get(a).getPriceTF().getText());
+            for (int a=0; a<pgd.size(); a++){
+            String pattern = pgd.get(a).getPatternTF().getText();    
+            String detail = pgd.get(a).getDetailTA().getText();
+            String path = pgd.get(a).getFilePath();
+            double price = Double.parseDouble(pgd.get(a).getPriceTF().getText());
             String[] dataChecked = {pattern,detail,path,Double.toString(price)};
+   
             boolean haveData = false ;
-            
             for (Row row : sheet){
-                Cell cell = row.getCell(0);
-                if(cell.toString().equals(dataChecked[0])){
+                Cell c = row.getCell(0);
+                if(c.toString().equals(dataChecked[0])){
                     haveData = true;
                     break;
                 }
@@ -91,7 +81,6 @@ public class Packagedao {
                 newRow.createCell(1).setCellValue(detail);
                 newRow.createCell(2).setCellValue(path);
                 newRow.createCell(3).setCellValue(price);
-                //newRow.createCell(4).setCellValue(incense.getPriceTF().getText());
                } catch (Exception e) {
                     e.printStackTrace();
                }             
@@ -114,20 +103,18 @@ public class Packagedao {
                 if (fileInput != null) {
                     fileInput.close();
                 }
-            } catch (IOException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }
     }
-    
-public ArrayList<Package> getAll() {        
-    pgList = new ArrayList<>();
-    pgList.clear();
+    public ArrayList<Package> getAll() {        
+    pList = new ArrayList<>();
     read();
     try {
         if (sheet == null) {
             System.out.println("Sheet not found");
-            return pgList; // หรือทำการรีเทิร์นอย่างอื่นหากไม่มีชีต
+            return pList; // หรือทำการรีเทิร์นอย่างอื่นหากไม่มีชีต
         }
 
         for (Row row : sheet) {
@@ -137,7 +124,6 @@ public ArrayList<Package> getAll() {
             }
             String pattern = null, detail = null, path = null;
             double price = 0.0;
-
             for (Cell cell : row) {
                 if (cell == null) {
                     continue; // ข้าม cell ที่เป็น null
@@ -162,8 +148,8 @@ public ArrayList<Package> getAll() {
             if (name != null && pattern != null && detail != null && path != null && price > 0.0) {
                 Package newPackage = new Package(name, pattern, detail, path, price);
                 // ตรวจสอบไม่ให้มีการเพิ่มซ้ำ
-                if (!pgList.contains(newPackage)) {
-                    pgList.add(newPackage);
+                if (!pList.contains(newPackage)) {
+                    pList.add(newPackage);
                 }
             }
         }
@@ -184,19 +170,77 @@ public ArrayList<Package> getAll() {
                 e.printStackTrace();
             }
         }
-        return pgList;
+        return pList;
     }
     /*Read Excel file*/
-    public void read() {
+   public void read() {
         wb = null;
         try {
             fileInput = new FileInputStream(new File(FILE_NAME));
             wb = new XSSFWorkbook(fileInput);
             sheet = wb.getSheetAt(8); // เปลี่ยนไปที่ชีต 8
-        } catch (IOException err) {
+        } catch (Exception err) {
             System.out.println("can't read file: " + err);
         }
     }
+
+   public void deletePackageDetail(PackageDetail packageDetail) {
+    // อ่านไฟล์ Excel
+     read(); // ฟังก์ชันนี้ควรอ่านข้อมูลจาก Excel ไปยัง sheet
+
+    try {
+        if (sheet == null) {
+            System.out.println("Sheet not found");
+            return;
+        }
+
+        // หาตำแหน่งแถวที่ต้องการลบ
+        int rowToDelete = -1; // ตัวแปรเก็บตำแหน่งแถวที่จะลบ
+        for (int rowIndex = 1; rowIndex <= sheet.getLastRowNum(); rowIndex++) {
+            Row row = sheet.getRow(rowIndex);
+            // ตรวจสอบเงื่อนไขการลบ (เช่น ตรงกับข้อมูลของ packageDetail)
+            if (row.getCell(0).getStringCellValue().equals(packageDetail.getPatternTF().getText())) {
+                rowToDelete = rowIndex; // เก็บตำแหน่งแถวที่ต้องการลบ
+                break;
+            }
+        }
+
+        if (rowToDelete != -1) { // ถ้าพบแถวที่จะลบ
+            Row row = sheet.getRow(rowToDelete);
+            // ตั้งค่าเซลล์ในแถวให้เป็น -
+            for (int cellIndex = 0; cellIndex < row.getPhysicalNumberOfCells(); cellIndex++) {
+                Cell cell = row.getCell(cellIndex);
+                
+                // ตรวจสอบว่าเซลล์เป็น null หรือไม่
+                if (cell == null) {
+                    // ถ้าเซลล์เป็น null สร้างเซลล์ใหม่
+                    cell = row.createCell(cellIndex);
+                }
+                
+                // ตั้งค่าเซลล์ให้เป็น "-"
+                cell.setCellValue("-");
+            }
+        }
+
+        // บันทึกการเปลี่ยนแปลง
+        try (FileOutputStream fos = new FileOutputStream(new File(FILE_NAME))) {
+            wb.write(fos);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    } catch (Exception e) {
+        e.printStackTrace();
+    } finally {
+        // ปิด resources
+        try {
+            if (wb != null) {
+                wb.close();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
   
 }
 

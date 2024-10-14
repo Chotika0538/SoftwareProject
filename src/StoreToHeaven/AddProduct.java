@@ -11,9 +11,9 @@ import DAO.Packagedao;
 import java.util.ArrayList;
 
 public class AddProduct extends javax.swing.JPanel implements CheckPanel{
-        private ArrayList<Wreath> wList;  //keep data to show at wreath template of user
+        private ArrayList<Package> pList;  //keep data to show at wreath template of user
     public AddProduct() {
-        wList = new ArrayList<>();
+        pList = new ArrayList<>();
         initComponents();;
     }
 
