@@ -63,7 +63,7 @@ public class CoffinProduct extends javax.swing.JPanel {
         details = new javax.swing.JTextArea();
         name = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(242, 217, 220));
+        setBackground(new java.awt.Color(244, 244, 224));
         setPreferredSize(new java.awt.Dimension(800, 240));
         setLayout(null);
 

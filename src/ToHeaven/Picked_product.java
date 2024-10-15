@@ -41,7 +41,7 @@ public class Picked_product extends javax.swing.JPanel {
         name = new javax.swing.JLabel();
         priceLabel = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 252, 234));
+        setBackground(new java.awt.Color(244, 244, 224));
         setPreferredSize(new java.awt.Dimension(800, 260));
         setLayout(null);
 
@@ -55,7 +55,7 @@ public class Picked_product extends javax.swing.JPanel {
         add(minusBT);
         minusBT.setBounds(410, 160, 50, 40);
 
-        jLabel1.setFont(new java.awt.Font("TH Sarabun New", 0, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("TH Sarabun New", 0, 36)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("฿");
         add(jLabel1);
@@ -71,13 +71,13 @@ public class Picked_product extends javax.swing.JPanel {
         add(PlusBT);
         PlusBT.setBounds(570, 160, 50, 40);
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("TH Sarabun New", 0, 24)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("จำนวน ");
         add(jLabel4);
-        jLabel4.setBounds(330, 170, 80, 29);
+        jLabel4.setBounds(330, 170, 80, 33);
 
-        kk.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        kk.setFont(new java.awt.Font("TH Sarabun New", 0, 24)); // NOI18N
         kk.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         kk.setText("ราคา");
         add(kk);
@@ -101,7 +101,7 @@ public class Picked_product extends javax.swing.JPanel {
         add(productImgPanel);
         productImgPanel.setBounds(30, 60, 260, 180);
 
-        jPanel1.setBackground(new java.awt.Color(215, 186, 143));
+        jPanel1.setBackground(new java.awt.Color(101, 85, 61));
 
         deleteProductBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ToHeaven/bin(1).png"))); // NOI18N
         deleteProductBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -136,7 +136,7 @@ public class Picked_product extends javax.swing.JPanel {
         add(quentityLabel);
         quentityLabel.setBounds(460, 160, 110, 40);
 
-        name.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        name.setFont(new java.awt.Font("TH Sarabun New", 1, 30)); // NOI18N
         name.setText("Product's Name");
         add(name);
         name.setBounds(330, 60, 390, 40);

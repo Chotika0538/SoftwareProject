@@ -34,6 +34,7 @@ public class OfferingDetail extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuItem1 = new javax.swing.JMenuItem();
         detailSP = new javax.swing.JScrollPane();
         detailTA = new javax.swing.JTextArea();
         priceLB = new javax.swing.JLabel();
@@ -45,6 +46,8 @@ public class OfferingDetail extends javax.swing.JPanel {
         choosePicBT = new javax.swing.JButton();
         showPicName = new javax.swing.JLabel();
         detailLB = new javax.swing.JLabel();
+
+        jMenuItem1.setText("jMenuItem1");
 
         setBackground(new java.awt.Color(244, 244, 224));
         setLayout(null);
@@ -185,6 +188,7 @@ public class OfferingDetail extends javax.swing.JPanel {
     private javax.swing.JLabel detailLB;
     private javax.swing.JScrollPane detailSP;
     private javax.swing.JTextArea detailTA;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JLabel pattern;
     private javax.swing.JTextField patternTF;
     private javax.swing.JLabel priceLB;

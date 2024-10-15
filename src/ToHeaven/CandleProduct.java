@@ -52,7 +52,7 @@ public class CandleProduct extends javax.swing.JPanel {
         name = new javax.swing.JLabel();
         priceLB = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 204));
+        setBackground(new java.awt.Color(244, 244, 224));
         setPreferredSize(new java.awt.Dimension(600, 220));
         setLayout(null);
 

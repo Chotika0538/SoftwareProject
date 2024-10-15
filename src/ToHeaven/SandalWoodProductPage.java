@@ -43,16 +43,19 @@ public class SandalWoodProductPage extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         sandalwoodProductPanel = new javax.swing.JPanel();
 
-        setBackground(new java.awt.Color(201, 156, 99));
+        setBackground(new java.awt.Color(101, 85, 61));
         setPreferredSize(new java.awt.Dimension(800, 500));
         setLayout(new java.awt.BorderLayout());
 
         sandalwoodNameLB.setBackground(new java.awt.Color(255, 204, 204));
-        sandalwoodNameLB.setFont(new java.awt.Font("TH SarabunPSK", 1, 24)); // NOI18N
+        sandalwoodNameLB.setFont(new java.awt.Font("TH Sarabun New", 1, 30)); // NOI18N
+        sandalwoodNameLB.setForeground(new java.awt.Color(255, 255, 255));
         sandalwoodNameLB.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sandalwoodNameLB.setText("ดอกไม้จันทน์");
         sandalwoodNameLB.setPreferredSize(new java.awt.Dimension(800, 50));
         add(sandalwoodNameLB, java.awt.BorderLayout.PAGE_START);
+
+        menuPanel.setBackground(new java.awt.Color(101, 85, 61));
 
         addBT.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         addBT.setText("เพิ่มสินค้า");
@@ -95,7 +98,7 @@ public class SandalWoodProductPage extends javax.swing.JPanel {
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
-        sandalwoodProductPanel.setBackground(new java.awt.Color(255, 180, 87));
+        sandalwoodProductPanel.setBackground(new java.awt.Color(244, 244, 224));
         sandalwoodProductPanel.setPreferredSize(new java.awt.Dimension(798, 600));
         sandalwoodProductPanel.setLayout(new java.awt.GridLayout(0, 1, 0, 5));
         //wreathList.add(new WreathProduct().getData(wreath));

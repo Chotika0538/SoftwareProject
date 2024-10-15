@@ -39,17 +39,17 @@ public class CustomAsh extends javax.swing.JPanel {
         menuCustom.setPreferredSize(new java.awt.Dimension(800, 80));
         menuCustom.setLayout(null);
 
-        coffinStageLB.setFont(new java.awt.Font("MiTNThin", 1, 24)); // NOI18N
+        coffinStageLB.setFont(new java.awt.Font("TH Sarabun New", 1, 30)); // NOI18N
         coffinStageLB.setText("สั่งซื้อโลงศพ");
         menuCustom.add(coffinStageLB);
-        coffinStageLB.setBounds(70, 20, 110, 41);
+        coffinStageLB.setBounds(70, 20, 112, 41);
 
-        funeralStageLB.setFont(new java.awt.Font("MiTNThin", 1, 24)); // NOI18N
+        funeralStageLB.setFont(new java.awt.Font("TH Sarabun New", 1, 30)); // NOI18N
         funeralStageLB.setText("งานฌาปนกิจ");
         menuCustom.add(funeralStageLB);
         funeralStageLB.setBounds(340, 20, 121, 41);
 
-        boneStageLB.setFont(new java.awt.Font("MiTNThin", 1, 24)); // NOI18N
+        boneStageLB.setFont(new java.awt.Font("TH Sarabun New", 1, 30)); // NOI18N
         boneStageLB.setText("การจัดการอัฐิ");
         menuCustom.add(boneStageLB);
         boneStageLB.setBounds(610, 20, 117, 41);

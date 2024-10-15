@@ -56,7 +56,8 @@ public class IncenseProduct extends javax.swing.JPanel {
         name1 = new javax.swing.JLabel();
         priceLB = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 204));
+        setBackground(new java.awt.Color(244, 244, 224));
+        setForeground(new java.awt.Color(244, 244, 224));
         setOpaque(false);
         setPreferredSize(new java.awt.Dimension(600, 220));
         setLayout(null);
@@ -74,6 +75,7 @@ public class IncenseProduct extends javax.swing.JPanel {
         add(pieceIncense);
         pieceIncense.setBounds(520, 190, 80, 30);
 
+        productImage.setBackground(new java.awt.Color(244, 244, 224));
         productImage.setPreferredSize(new java.awt.Dimension(180, 180));
         add(productImage);
         productImage.setBounds(40, 20, 180, 180);

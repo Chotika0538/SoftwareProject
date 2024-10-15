@@ -51,7 +51,7 @@ public class FrameProduct extends javax.swing.JPanel {
         priceLB = new javax.swing.JLabel();
         name = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 204, 204));
+        setBackground(new java.awt.Color(244, 244, 224));
         setPreferredSize(new java.awt.Dimension(800, 235));
         setLayout(null);
 

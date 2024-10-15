@@ -43,7 +43,7 @@
         <Component class="javax.swing.JLabel" name="coffinStageLB">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="MiTNThin" size="24" style="1"/>
+              <Font name="TH Sarabun New" size="30" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="&#xe2a;&#xe31;&#xe48;&#xe07;&#xe0b;&#xe37;&#xe49;&#xe2d;&#xe42;&#xe25;&#xe07;&#xe28;&#xe1e;"/>
           </Properties>
@@ -56,7 +56,7 @@
         <Component class="javax.swing.JLabel" name="funeralStageLB">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="MiTNThin" size="24" style="1"/>
+              <Font name="TH Sarabun New" size="30" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="&#xe07;&#xe32;&#xe19;&#xe0c;&#xe32;&#xe1b;&#xe19;&#xe01;&#xe34;&#xe08;"/>
           </Properties>
@@ -69,7 +69,7 @@
         <Component class="javax.swing.JLabel" name="boneStageLB">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="MiTNThin" size="24" style="1"/>
+              <Font name="TH Sarabun New" size="30" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="&#xe01;&#xe32;&#xe23;&#xe08;&#xe31;&#xe14;&#xe01;&#xe32;&#xe23;&#xe2d;&#xe31;&#xe10;&#xe34;"/>
           </Properties>

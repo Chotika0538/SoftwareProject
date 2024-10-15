@@ -48,31 +48,36 @@ public class CustomCoffin extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(800, 1400));
         setLayout(new java.awt.BorderLayout());
 
-        menuCustom.setBackground(new java.awt.Color(0, 204, 204));
+        menuCustom.setBackground(new java.awt.Color(101, 85, 61));
         menuCustom.setPreferredSize(new java.awt.Dimension(800, 80));
         menuCustom.setLayout(null);
 
-        coffinStageLB.setFont(new java.awt.Font("MiTNThin", 1, 24)); // NOI18N
+        coffinStageLB.setFont(new java.awt.Font("TH Sarabun New", 1, 30)); // NOI18N
+        coffinStageLB.setForeground(new java.awt.Color(255, 255, 255));
         coffinStageLB.setText("สั่งซื้อโลงศพ");
         menuCustom.add(coffinStageLB);
-        coffinStageLB.setBounds(70, 20, 110, 41);
+        coffinStageLB.setBounds(70, 20, 112, 41);
 
-        funeralStageLB.setFont(new java.awt.Font("MiTNThin", 1, 24)); // NOI18N
+        funeralStageLB.setFont(new java.awt.Font("TH Sarabun New", 1, 30)); // NOI18N
+        funeralStageLB.setForeground(new java.awt.Color(255, 255, 255));
         funeralStageLB.setText("งานฌาปนกิจ");
         menuCustom.add(funeralStageLB);
         funeralStageLB.setBounds(340, 20, 121, 41);
 
-        boneStageLB.setFont(new java.awt.Font("MiTNThin", 1, 24)); // NOI18N
+        boneStageLB.setFont(new java.awt.Font("TH Sarabun New", 1, 30)); // NOI18N
+        boneStageLB.setForeground(new java.awt.Color(255, 255, 255));
         boneStageLB.setText("การจัดการอัฐิ");
         menuCustom.add(boneStageLB);
         boneStageLB.setBounds(610, 20, 117, 41);
 
         add(menuCustom, java.awt.BorderLayout.PAGE_START);
 
-        confirmBT.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
+        buttonPanel.setBackground(new java.awt.Color(101, 85, 61));
+
+        confirmBT.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
         confirmBT.setText("ยืนยัน");
 
-        nextBT.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
+        nextBT.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
         nextBT.setText("หน้าถัดไป>");
         nextBT.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -103,7 +108,7 @@ public class CustomCoffin extends javax.swing.JPanel {
 
         add(buttonPanel, java.awt.BorderLayout.PAGE_END);
 
-        coffinPanel.setBackground(new java.awt.Color(204, 255, 204));
+        coffinPanel.setBackground(new java.awt.Color(244, 244, 224));
 
         javax.swing.GroupLayout coffinPanelLayout = new javax.swing.GroupLayout(coffinPanel);
         coffinPanel.setLayout(coffinPanelLayout);
@@ -113,7 +118,7 @@ public class CustomCoffin extends javax.swing.JPanel {
         );
         coffinPanelLayout.setVerticalGroup(
             coffinPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1295, Short.MAX_VALUE)
+            .addGap(0, 1291, Short.MAX_VALUE)
         );
 
         add(coffinPanel, java.awt.BorderLayout.CENTER);

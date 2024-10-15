@@ -38,6 +38,7 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
         setPreferredSize(new java.awt.Dimension(800, 600));
         setLayout(null);
 
+        addChoices.setBackground(new java.awt.Color(243, 239, 215));
         addChoices.setFont(new java.awt.Font("TH Sarabun New", 0, 24)); // NOI18N
         addChoices.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "กรุณาเลือกตัวเลือก", "โลงศพ", "พวงหรีด", "ดอกไม้จันทน์", "ชุดไทยธรรม", "ธูป", "เทียน", "ชุดอาหารว่าง", "ของชำร่วย", "กรอบรูป", "แพ็คเกจ" }));
         addChoices.setAlignmentX(1.0F);
@@ -50,10 +51,10 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
         add(addChoices);
         addChoices.setBounds(520, 130, 241, 39);
 
-        jPanel1.setBackground(new java.awt.Color(148, 151, 140));
+        jPanel1.setBackground(new java.awt.Color(183, 175, 156));
         jPanel1.setLayout(null);
 
-        jLabel2.setBackground(new java.awt.Color(55, 52, 42));
+        jLabel2.setBackground(new java.awt.Color(157, 150, 127));
         jLabel2.setFont(new java.awt.Font("TH Sarabun New", 0, 48)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("เพิ่ม - ลดสินค้า");
@@ -63,6 +64,7 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
         add(jPanel1);
         jPanel1.setBounds(0, 0, 800, 100);
 
+        confirmBT.setBackground(new java.awt.Color(243, 239, 215));
         confirmBT.setFont(new java.awt.Font("TH SarabunPSK", 0, 24)); // NOI18N
         confirmBT.setText("ยืนยันรายการ");
         confirmBT.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -78,7 +80,7 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
         add(confirmBT);
         confirmBT.setBounds(590, 460, 120, 35);
 
-        showAddProduct.setBackground(new java.awt.Color(244, 244, 224));
+        showAddProduct.setBackground(new java.awt.Color(238, 238, 226));
         showAddProduct.setForeground(new java.awt.Color(244, 244, 224));
         showAddProduct.setLayout(new java.awt.CardLayout());
         JPanel emptyPanel = new JPanel();
@@ -91,7 +93,7 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
         AddSandalWood sandalwood = new AddSandalWood(showAddProduct);
         AddSnackBox snackbox = new AddSnackBox(showAddProduct);
         AddSouvenir souvenir= new AddSouvenir(showAddProduct);
-        emptyPanel.setBackground(new java.awt.Color(153, 255, 204));
+        emptyPanel.setBackground(new java.awt.Color(225, 225, 204));
         showAddProduct.add(emptyPanel, "empty");
         //showAddProduct.add(coffin, "coffin");
         showAddProduct.add(wreath, "wreath");

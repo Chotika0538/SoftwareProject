@@ -50,21 +50,22 @@ public class Payment extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(800, 400));
         setLayout(null);
 
-        slipImg.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        slipImg.setFont(new java.awt.Font("TH Sarabun New", 0, 24)); // NOI18N
         slipImg.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         slipImg.setText("แนบไฟล์รูป");
         slipImg.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(slipImg);
         slipImg.setBounds(560, 90, 200, 200);
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("TH Sarabun New", 0, 24)); // NOI18N
         jLabel3.setText("ชนิด");
         add(jLabel3);
-        jLabel3.setBounds(160, 60, 50, 22);
+        jLabel3.setBounds(170, 60, 50, 33);
 
-        jPanel1.setBackground(new java.awt.Color(215, 186, 143));
+        jPanel1.setBackground(new java.awt.Color(101, 85, 61));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("TH Sarabun New", 1, 30)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel2.setText("รายการชำระเงิน");
 
@@ -72,14 +73,14 @@ public class Payment extends javax.swing.JPanel {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(280, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(331, 331, 331)
                 .addComponent(jLabel2)
-                .addGap(257, 257, 257))
+                .addContainerGap(331, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -104,7 +105,7 @@ public class Payment extends javax.swing.JPanel {
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
-        scrollProduct.setBackground(new java.awt.Color(255, 204, 102));
+        scrollProduct.setBackground(new java.awt.Color(255, 222, 158));
 
         javax.swing.GroupLayout scrollProductLayout = new javax.swing.GroupLayout(scrollProduct);
         scrollProduct.setLayout(scrollProductLayout);
@@ -122,14 +123,14 @@ public class Payment extends javax.swing.JPanel {
         add(jScrollPane1);
         jScrollPane1.setBounds(10, 90, 290, 210);
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("TH Sarabun New", 0, 24)); // NOI18N
         jLabel6.setText("สินค้าทั้งหมด");
         add(jLabel6);
-        jLabel6.setBounds(20, 60, 110, 22);
+        jLabel6.setBounds(20, 60, 110, 30);
 
         jPanel5.setBackground(new java.awt.Color(196, 166, 121));
 
-        backToCart.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        backToCart.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
         backToCart.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         backToCart.setText("กลับหน้าตะกร้า");
         backToCart.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -142,10 +143,10 @@ public class Payment extends javax.swing.JPanel {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addContainerGap(8, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
                 .addComponent(backToCart)
-                .addContainerGap())
+                .addContainerGap(16, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -157,7 +158,7 @@ public class Payment extends javax.swing.JPanel {
         add(jPanel5);
         jPanel5.setBounds(10, 320, 140, 30);
 
-        addSlipBT.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        addSlipBT.setFont(new java.awt.Font("TH Sarabun New", 0, 24)); // NOI18N
         addSlipBT.setText("แนปสลิป");
         addSlipBT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -165,11 +166,11 @@ public class Payment extends javax.swing.JPanel {
             }
         });
         add(addSlipBT);
-        addSlipBT.setBounds(590, 290, 140, 29);
+        addSlipBT.setBounds(590, 290, 140, 40);
 
         jPanel4.setBackground(new java.awt.Color(196, 166, 121));
 
-        comfirmBtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        comfirmBtn.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
         comfirmBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         comfirmBtn.setText("ยืนยันการชำระ");
         comfirmBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -190,7 +191,7 @@ public class Payment extends javax.swing.JPanel {
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addGap(0, 8, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(comfirmBtn))
         );
 
@@ -198,15 +199,15 @@ public class Payment extends javax.swing.JPanel {
         jPanel4.setBounds(640, 320, 140, 30);
 
         numOfProduct.setBackground(new java.awt.Color(255, 255, 255));
-        numOfProduct.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        numOfProduct.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
         numOfProduct.setText("-10");
         add(numOfProduct);
-        numOfProduct.setBounds(130, 60, 40, 20);
+        numOfProduct.setBounds(130, 60, 30, 30);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("TH Sarabun New", 0, 24)); // NOI18N
         jLabel1.setText("กรุณาชำระเงิน");
         add(jLabel1);
-        jLabel1.setBounds(360, 90, 150, 22);
+        jLabel1.setBounds(360, 90, 100, 33);
     }// </editor-fold>//GEN-END:initComponents
 
     private void addSlipBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addSlipBTActionPerformed

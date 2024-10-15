@@ -40,11 +40,11 @@ public class ProductInCart extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(800, 500));
         setLayout(new java.awt.BorderLayout());
 
-        HeaderJP.setBackground(new java.awt.Color(102, 102, 0));
+        HeaderJP.setBackground(new java.awt.Color(101, 85, 61));
         HeaderJP.setPreferredSize(new java.awt.Dimension(800, 52));
 
         header_textJL.setBackground(new java.awt.Color(0, 0, 0));
-        header_textJL.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        header_textJL.setFont(new java.awt.Font("TH Sarabun New", 1, 30)); // NOI18N
         header_textJL.setForeground(new java.awt.Color(255, 255, 255));
         header_textJL.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         header_textJL.setText("สินค้าในตะกร้า");
@@ -71,7 +71,7 @@ public class ProductInCart extends javax.swing.JPanel {
         jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane2.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
-        Scroll_page.setBackground(new java.awt.Color(102, 102, 102));
+        Scroll_page.setBackground(new java.awt.Color(244, 244, 224));
 
         javax.swing.GroupLayout Scroll_pageLayout = new javax.swing.GroupLayout(Scroll_page);
         Scroll_page.setLayout(Scroll_pageLayout);
@@ -92,7 +92,7 @@ public class ProductInCart extends javax.swing.JPanel {
 
         add(jScrollPane2, java.awt.BorderLayout.CENTER);
 
-        PaybarJP.setBackground(new java.awt.Color(215, 186, 143));
+        PaybarJP.setBackground(new java.awt.Color(101, 85, 61));
         PaybarJP.setPreferredSize(new java.awt.Dimension(800, 45));
 
         PayButton_JP.setBackground(new java.awt.Color(196, 166, 121));
@@ -104,7 +104,7 @@ public class ProductInCart extends javax.swing.JPanel {
         });
 
         goPayment.setBackground(new java.awt.Color(204, 204, 204));
-        goPayment.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        goPayment.setFont(new java.awt.Font("TH Sarabun New", 0, 24)); // NOI18N
         goPayment.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         goPayment.setText("ชำระเงิน>");
         goPayment.addMouseListener(new java.awt.event.MouseAdapter() {

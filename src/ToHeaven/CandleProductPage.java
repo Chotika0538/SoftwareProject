@@ -48,7 +48,7 @@ public class CandleProductPage extends javax.swing.JPanel {
         setLayout(new java.awt.BorderLayout());
 
         candleNameLB.setBackground(new java.awt.Color(101, 85, 61));
-        candleNameLB.setFont(new java.awt.Font("TH SarabunPSK", 1, 24)); // NOI18N
+        candleNameLB.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
         candleNameLB.setForeground(new java.awt.Color(255, 255, 255));
         candleNameLB.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         candleNameLB.setText("เทียน ");

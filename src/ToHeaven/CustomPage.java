@@ -46,28 +46,31 @@ public class CustomPage extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(800, 1200));
         setLayout(new java.awt.BorderLayout());
 
-        jPanel1.setBackground(new java.awt.Color(0, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(101, 85, 61));
         jPanel1.setPreferredSize(new java.awt.Dimension(800, 80));
         jPanel1.setLayout(null);
 
-        coffinStageLB.setFont(new java.awt.Font("MiTNThin", 1, 24)); // NOI18N
+        coffinStageLB.setFont(new java.awt.Font("TH Sarabun New", 1, 30)); // NOI18N
+        coffinStageLB.setForeground(new java.awt.Color(255, 255, 255));
         coffinStageLB.setText("สั่งซื้อโลงศพ");
         jPanel1.add(coffinStageLB);
-        coffinStageLB.setBounds(70, 20, 110, 41);
+        coffinStageLB.setBounds(70, 20, 112, 41);
 
-        funeralStageLB.setFont(new java.awt.Font("MiTNThin", 1, 24)); // NOI18N
+        funeralStageLB.setFont(new java.awt.Font("TH Sarabun New", 1, 30)); // NOI18N
+        funeralStageLB.setForeground(new java.awt.Color(255, 255, 255));
         funeralStageLB.setText("งานฌาปนกิจ");
         jPanel1.add(funeralStageLB);
         funeralStageLB.setBounds(340, 20, 121, 41);
 
-        boneStageLB.setFont(new java.awt.Font("MiTNThin", 1, 24)); // NOI18N
+        boneStageLB.setFont(new java.awt.Font("TH Sarabun New", 1, 30)); // NOI18N
+        boneStageLB.setForeground(new java.awt.Color(255, 255, 255));
         boneStageLB.setText("การจัดการอัฐิ");
         jPanel1.add(boneStageLB);
         boneStageLB.setBounds(610, 20, 117, 41);
 
         add(jPanel1, java.awt.BorderLayout.PAGE_START);
 
-        customFrameJP.setBackground(new java.awt.Color(255, 51, 51));
+        customFrameJP.setBackground(new java.awt.Color(244, 244, 224));
         customFrameJP.setLayout(new java.awt.CardLayout());
         CustomCoffin coffin = new CustomCoffin(customFrameJP);
         CustomFuneral funeral = new CustomFuneral(customFrameJP);

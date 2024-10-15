@@ -43,16 +43,19 @@ public class OfferingProductPage extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         offeringProductPanel = new javax.swing.JPanel();
 
-        setBackground(new java.awt.Color(201, 156, 99));
+        setBackground(new java.awt.Color(101, 85, 61));
         setPreferredSize(new java.awt.Dimension(800, 500));
         setLayout(new java.awt.BorderLayout());
 
         offeringNameLB.setBackground(new java.awt.Color(255, 204, 204));
-        offeringNameLB.setFont(new java.awt.Font("TH SarabunPSK", 1, 24)); // NOI18N
+        offeringNameLB.setFont(new java.awt.Font("TH Sarabun New", 1, 30)); // NOI18N
+        offeringNameLB.setForeground(new java.awt.Color(255, 255, 255));
         offeringNameLB.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         offeringNameLB.setText("เครื่องไทยธรรม");
         offeringNameLB.setPreferredSize(new java.awt.Dimension(800, 50));
         add(offeringNameLB, java.awt.BorderLayout.PAGE_START);
+
+        menuPanel.setBackground(new java.awt.Color(101, 85, 61));
 
         addBT.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         addBT.setText("เพิ่มสินค้า");
@@ -101,7 +104,7 @@ public class OfferingProductPage extends javax.swing.JPanel {
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane1.setPreferredSize(new java.awt.Dimension(800, 502));
 
-        offeringProductPanel.setBackground(new java.awt.Color(255, 180, 87));
+        offeringProductPanel.setBackground(new java.awt.Color(244, 244, 224));
         offeringProductPanel.setPreferredSize(new java.awt.Dimension(798, 500));
         offeringProductPanel.setLayout(new java.awt.GridLayout(0, 1, 0, 5));
         jScrollPane1.setViewportView(offeringProductPanel);

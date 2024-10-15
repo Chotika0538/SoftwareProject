@@ -24,7 +24,7 @@
     <Container class="javax.swing.JPanel" name="jPanel1">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="cc" green="cc" red="0" type="rgb"/>
+          <Color blue="3d" green="55" red="65" type="rgb"/>
         </Property>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[800, 80]"/>
@@ -43,7 +43,10 @@
         <Component class="javax.swing.JLabel" name="coffinStageLB">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="MiTNThin" size="24" style="1"/>
+              <Font name="TH Sarabun New" size="30" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="&#xe2a;&#xe31;&#xe48;&#xe07;&#xe0b;&#xe37;&#xe49;&#xe2d;&#xe42;&#xe25;&#xe07;&#xe28;&#xe1e;"/>
           </Properties>
@@ -56,7 +59,10 @@
         <Component class="javax.swing.JLabel" name="funeralStageLB">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="MiTNThin" size="24" style="1"/>
+              <Font name="TH Sarabun New" size="30" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="&#xe07;&#xe32;&#xe19;&#xe0c;&#xe32;&#xe1b;&#xe19;&#xe01;&#xe34;&#xe08;"/>
           </Properties>
@@ -69,7 +75,10 @@
         <Component class="javax.swing.JLabel" name="boneStageLB">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="MiTNThin" size="24" style="1"/>
+              <Font name="TH Sarabun New" size="30" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="&#xe01;&#xe32;&#xe23;&#xe08;&#xe31;&#xe14;&#xe01;&#xe32;&#xe23;&#xe2d;&#xe31;&#xe10;&#xe34;"/>
           </Properties>
@@ -93,7 +102,7 @@
         <Container class="javax.swing.JPanel" name="customFrameJP">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="33" green="33" red="ff" type="rgb"/>
+              <Color blue="e0" green="f4" red="f4" type="rgb"/>
             </Property>
           </Properties>
           <AuxValues>

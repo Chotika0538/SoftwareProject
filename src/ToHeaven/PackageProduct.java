@@ -50,7 +50,7 @@ public class PackageProduct extends javax.swing.JPanel {
         typeCB1 = new javax.swing.JComboBox<>();
         priceLB = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(204, 204, 255));
+        setBackground(new java.awt.Color(244, 244, 224));
         setPreferredSize(new java.awt.Dimension(780, 400));
         setLayout(null);
 

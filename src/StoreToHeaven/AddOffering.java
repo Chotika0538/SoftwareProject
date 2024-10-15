@@ -32,7 +32,7 @@ public class AddOffering extends javax.swing.JPanel{
         addListBT = new javax.swing.JButton();
         name = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(244, 244, 224));
+        setBackground(new java.awt.Color(238, 238, 226));
         setPreferredSize(new java.awt.Dimension(480, 480));
 
         nameTF.setFont(new java.awt.Font("TH SarabunPSK", 0, 20)); // NOI18N
@@ -42,7 +42,7 @@ public class AddOffering extends javax.swing.JPanel{
 
         pic_detailSP.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
-        pic_detailJP.setBackground(new java.awt.Color(220, 236, 236));
+        pic_detailJP.setBackground(new java.awt.Color(244, 244, 224));
         pic_detailJP.setPreferredSize(new java.awt.Dimension(408, 231));
         pic_detailJP.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

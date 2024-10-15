@@ -39,7 +39,7 @@ public class MainFrame extends javax.swing.JPanel {
         menuBar.setLayout(null);
 
         customBT.setBackground(new java.awt.Color(255, 204, 204));
-        customBT.setFont(new java.awt.Font("TH SarabunPSK", 0, 24)); // NOI18N
+        customBT.setFont(new java.awt.Font("TH Sarabun New", 0, 30)); // NOI18N
         customBT.setText("ปรับแต่ง");
         customBT.setBorder(null);
         customBT.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -51,7 +51,7 @@ public class MainFrame extends javax.swing.JPanel {
         customBT.setBounds(650, 0, 110, 100);
 
         packageBT.setBackground(new java.awt.Color(255, 204, 204));
-        packageBT.setFont(new java.awt.Font("TH SarabunPSK", 0, 24)); // NOI18N
+        packageBT.setFont(new java.awt.Font("TH Sarabun New", 0, 30)); // NOI18N
         packageBT.setText("แพ็คเกจ\n");
         packageBT.setBorder(null);
         packageBT.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -63,7 +63,7 @@ public class MainFrame extends javax.swing.JPanel {
         packageBT.setBounds(530, 0, 110, 100);
 
         productBT.setBackground(new java.awt.Color(255, 204, 204));
-        productBT.setFont(new java.awt.Font("TH SarabunPSK", 0, 24)); // NOI18N
+        productBT.setFont(new java.awt.Font("TH Sarabun New", 0, 30)); // NOI18N
         productBT.setText("ผลิตภัณฑ์");
         productBT.setBorder(null);
         productBT.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -75,7 +75,7 @@ public class MainFrame extends javax.swing.JPanel {
         productBT.setBounds(410, 0, 110, 100);
 
         homeBT.setBackground(new java.awt.Color(255, 204, 204));
-        homeBT.setFont(new java.awt.Font("TH SarabunPSK", 0, 24)); // NOI18N
+        homeBT.setFont(new java.awt.Font("TH Sarabun New", 0, 30)); // NOI18N
         homeBT.setText("เกี่ยวกับเรา");
         homeBT.setBorder(null);
         homeBT.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -94,6 +94,7 @@ public class MainFrame extends javax.swing.JPanel {
 
         add(menuBar, java.awt.BorderLayout.PAGE_START);
 
+        frameJP.setBackground(new java.awt.Color(244, 244, 224));
         frameJP.setLayout(new java.awt.CardLayout());
         Home home = new Home(frameJP);
         ProductPage product = new ProductPage(frameJP);

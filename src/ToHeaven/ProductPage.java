@@ -34,7 +34,7 @@ public class ProductPage extends javax.swing.JPanel {
         coffinBT = new javax.swing.JButton();
         offeringBT = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(242, 217, 220));
+        setBackground(new java.awt.Color(244, 244, 224));
         setMaximumSize(new java.awt.Dimension(800, 400));
         setPreferredSize(new java.awt.Dimension(800, 400));
         setLayout(null);
