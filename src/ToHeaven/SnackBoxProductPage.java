@@ -41,7 +41,6 @@ public class SnackBoxProductPage extends javax.swing.JPanel {
         menuPanel = new javax.swing.JPanel();
         addBT = new javax.swing.JButton();
         backBT = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         SnackProductPanel = new javax.swing.JPanel();
 
@@ -58,19 +57,17 @@ public class SnackBoxProductPage extends javax.swing.JPanel {
 
         addBT.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         addBT.setText("เพิ่มสินค้า");
+        addBT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addBTActionPerformed(evt);
+            }
+        });
 
         backBT.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         backBT.setText("<ย้อนกลับ");
         backBT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backBTActionPerformed(evt);
-            }
-        });
-
-        jButton1.setText("TEST");
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
             }
         });
 
@@ -81,9 +78,7 @@ public class SnackBoxProductPage extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuPanelLayout.createSequentialGroup()
                 .addGap(47, 47, 47)
                 .addComponent(backBT)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 239, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(231, 231, 231)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 538, Short.MAX_VALUE)
                 .addComponent(addBT)
                 .addGap(56, 56, 56))
         );
@@ -93,8 +88,7 @@ public class SnackBoxProductPage extends javax.swing.JPanel {
                 .addContainerGap(17, Short.MAX_VALUE)
                 .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addBT)
-                    .addComponent(backBT)
-                    .addComponent(jButton1))
+                    .addComponent(backBT))
                 .addGap(18, 18, 18))
         );
 
@@ -116,15 +110,10 @@ public class SnackBoxProductPage extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_backBTActionPerformed
 
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-//        for(int j = 1; j<5; j++){
-//           wreathList.add(new WreathProduct());
-//           wreathProductPanel.setPreferredSize(new Dimension(800, wreathProductPanel.getHeight()+500));
-//           wreathProductPanel.add(wreathList.get(j));
-//           wreathProductPanel.revalidate();
-//        }
-  
-    }//GEN-LAST:event_jButton1MouseClicked
+    private void addBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBTActionPerformed
+        // TODO add your handling code here:
+        ProductInCart.add(new Picked_product("test",100*Math.random(),(int)(10*Math.random()),"/ToHeaven/t.png"));
+    }//GEN-LAST:event_addBTActionPerformed
 //    public void getWreathData(){
 //         wreathClassList = wreathdao.getAll();
 //    }
@@ -143,7 +132,6 @@ public class SnackBoxProductPage extends javax.swing.JPanel {
     private javax.swing.JPanel SnackProductPanel;
     private javax.swing.JButton addBT;
     private javax.swing.JButton backBT;
-    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel menuPanel;
     private javax.swing.JLabel wreathNameLB;
