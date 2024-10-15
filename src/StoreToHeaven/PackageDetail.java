@@ -59,6 +59,7 @@ private JPanel jp;
 
         setBackground(new java.awt.Color(255, 241, 211));
         setMinimumSize(new java.awt.Dimension(400, 230));
+        setPreferredSize(new java.awt.Dimension(400, 240));
         setLayout(null);
 
         choosePicBT.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N

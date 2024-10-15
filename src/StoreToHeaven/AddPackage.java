@@ -65,13 +65,13 @@ public class AddPackage extends javax.swing.JPanel {
         pic_detailSP.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
         pic_detailJP.setBackground(new java.awt.Color(255, 204, 204));
-        pic_detailJP.setPreferredSize(new java.awt.Dimension(410, 233));
+        pic_detailJP.setPreferredSize(new java.awt.Dimension(410, 300));
         pic_detailJP.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 pic_detailJPMouseClicked(evt);
             }
         });
-        pic_detailJP.setLayout(new java.awt.GridLayout(0, 1));
+        pic_detailJP.setLayout(new java.awt.GridLayout(0, 1, 0, 5));
         wdList.add(new PackageDetail(wdList, pic_detailJP));
         pic_detailJP.add(wdList.get(0));
         pic_detailSP.setViewportView(pic_detailJP);
@@ -117,10 +117,10 @@ public class AddPackage extends javax.swing.JPanel {
                                 .addComponent(nameTF))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(pic_detailSP, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(pic_detail))
+                                    .addComponent(pic_detail)
+                                    .addComponent(pic_detailSP, javax.swing.GroupLayout.DEFAULT_SIZE, 415, Short.MAX_VALUE))
                                 .addGap(0, 0, Short.MAX_VALUE)))))
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -129,11 +129,11 @@ public class AddPackage extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(name)
                     .addComponent(nameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(50, 50, 50)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(pic_detail, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pic_detailSP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(pic_detailSP, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addListBT)
                     .addComponent(deleteListBT))
@@ -183,8 +183,8 @@ public class AddPackage extends javax.swing.JPanel {
     }
     private void addListBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addListBTMouseClicked
         // TODO add your handling code here:
+        pic_detailJP.setPreferredSize(new Dimension(408, pic_detailJP.getHeight()+280));
         wdList.add(new PackageDetail(wdList, pic_detailJP));
-//        pic_detailJP.setPreferredSize(new Dimension(408, 260*wdList.size()));
         pic_detailJP.add(wdList.get(wdList.size()-1));
         pic_detailJP.revalidate();
         pic_detailJP.repaint();
