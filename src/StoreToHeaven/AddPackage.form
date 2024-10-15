@@ -37,13 +37,8 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="nameTF" max="32767" attributes="0"/>
                           </Group>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="pic_detail" min="-2" max="-2" attributes="0"/>
-                                  <Component id="pic_detailSP" pref="415" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="pic_detail" min="-2" max="-2" attributes="0"/>
+                          <Component id="pic_detailSP" pref="415" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -116,9 +111,6 @@
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="pic_detailJPMouseClicked"/>
           </Events>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_LayoutCodePre" type="java.lang.String" value="wdList.add(new PackageDetail(wdList, pic_detailJP));&#xa;pic_detailJP.add(wdList.get(0));"/>
-          </AuxValues>
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
             <Property name="columns" type="int" value="1"/>

@@ -72,8 +72,6 @@ public class AddPackage extends javax.swing.JPanel {
             }
         });
         pic_detailJP.setLayout(new java.awt.GridLayout(0, 1, 0, 5));
-        wdList.add(new PackageDetail(wdList, pic_detailJP));
-        pic_detailJP.add(wdList.get(0));
         pic_detailSP.setViewportView(pic_detailJP);
 
         addListBT.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
@@ -115,11 +113,8 @@ public class AddPackage extends javax.swing.JPanel {
                                 .addComponent(name)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(nameTF))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(pic_detail)
-                                    .addComponent(pic_detailSP, javax.swing.GroupLayout.DEFAULT_SIZE, 415, Short.MAX_VALUE))
-                                .addGap(0, 0, Short.MAX_VALUE)))))
+                            .addComponent(pic_detail)
+                            .addComponent(pic_detailSP, javax.swing.GroupLayout.DEFAULT_SIZE, 415, Short.MAX_VALUE))))
                 .addContainerGap(31, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -133,7 +128,7 @@ public class AddPackage extends javax.swing.JPanel {
                 .addComponent(pic_detail, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pic_detailSP, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addListBT)
                     .addComponent(deleteListBT))
@@ -141,7 +136,7 @@ public class AddPackage extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
     private void loadAllfromExcel(){
-        int i = 0,numOfRow=-1;
+        int i = 0,numOfRow=0;
         System.out.println("In load");
         if(FIRST_LOAD){
             try {
@@ -151,7 +146,7 @@ public class AddPackage extends javax.swing.JPanel {
             for(Row row: sheet){
                 numOfRow++;
             }
-            System.out.println(numOfRow);
+            System.out.println("num of row : "+numOfRow);
             for(Row row : sheet){
                 if(i==0){ 
                     i++; continue;
@@ -164,7 +159,7 @@ public class AddPackage extends javax.swing.JPanel {
                 pic_detailJP.add(wdList.get(wdList.size()-1));
                 pic_detailJP.revalidate();
                 pic_detailJP.repaint();
-                System.out.println("test "+i++);
+                System.out.println("row : "+i++);
             }
             FIRST_LOAD = false;
             }catch (IOException e) {

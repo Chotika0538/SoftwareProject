@@ -5,11 +5,13 @@
 package StoreToHeaven;
 
 import DAO.Packagedao;
+import java.awt.Dimension;
 import java.awt.event.ItemEvent;
 import java.io.File;
 import java.util.ArrayList;
 import javax.swing.JCheckBox;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
@@ -160,18 +162,32 @@ private JPanel jp;
     }//GEN-LAST:event_choosePicBTActionPerformed
 
     private void deleteCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteCBActionPerformed
-     if (deleteCB.isSelected()) {
-        // สมมุติว่า pgList เป็นรายการที่เก็บ PackageDetail ที่ต้องการลบ
-        Packagedao packageDao = new Packagedao();
-        packageDao.deletePackageDetail(this); // เรียกใช้ฟังก์ชัน delete
-    }
+         // Only proceed if the checkbox is selected
+        if (deleteCB.isSelected()) {
+            int result = JOptionPane.showConfirmDialog(null, 
+                "You can not go back after you choose. Do you want to continue?", 
+                "Confirm", 
+                JOptionPane.YES_NO_OPTION);
+
+            if (result == JOptionPane.YES_OPTION) {
+                Packagedao dao = new Packagedao();
+                dao.deletePackageDetail(this);
+                pgList.remove(this);
+                jp.remove(this);
+                jp.setPreferredSize(new Dimension(408, jp.getHeight() - 235));
+                jp.revalidate();
+                jp.repaint(); 
+            } else {
+                // If they choose NO, you may want to uncheck the checkbox
+                deleteCB.setSelected(false);
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "กรุณาเลือกข้อมูลเพื่อลบ");
+        }
     }//GEN-LAST:event_deleteCBActionPerformed
 
     private void deleteCBItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_deleteCBItemStateChanged
-        // TODO add your handling code here:
-//        if (evt.getStateChange() == ItemEvent.SELECTED){
-//           wdList.remove(  getPanelIndex());
-//        }
+        
     }//GEN-LAST:event_deleteCBItemStateChanged
 
     private void priceTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_priceTFActionPerformed

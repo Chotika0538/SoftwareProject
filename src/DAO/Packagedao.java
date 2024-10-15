@@ -14,6 +14,7 @@ import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.*;
 import StoreToHeaven.Package ;
+import org.apache.poi.ss.usermodel.CellType;
 /**
  *
  * @author Khao
@@ -40,7 +41,7 @@ public class Packagedao {
         for (Component c : cmp){
             pgd.add((PackageDetail) c);
         }
-    
+        System.out.println("pgd size : "+pgd.size());
         /*Excel*/    
         read();             // read StroeStock.xlsx
         try {           // check that StoreStock.xlsx was found
@@ -59,33 +60,34 @@ public class Packagedao {
                 }
             }
             for (int a=0; a<pgd.size(); a++){
-            String pattern = pgd.get(a).getPatternTF().getText();    
-            String detail = pgd.get(a).getDetailTA().getText();
-            String path = pgd.get(a).getFilePath();
-            double price = Double.parseDouble(pgd.get(a).getPriceTF().getText());
-            String[] dataChecked = {pattern,detail,path,Double.toString(price)};
-   
-            boolean haveData = false ;
-            for (Row row : sheet){
-                Cell c = row.getCell(0);
-                if(c.toString().equals(dataChecked[0])){
-                    haveData = true;
-                    break;
-                }
+                String pattern = pgd.get(a).getPatternTF().getText();    
+                String detail = pgd.get(a).getDetailTA().getText();
+                String path = pgd.get(a).getFilePath();
+                double price = Double.parseDouble(pgd.get(a).getPriceTF().getText());
+//                System.out.println("Strat > "+pattern+" "+detail+" "+path+" "+Double.toString(price)+" <end");
+                if(sheet.getRow(a+1)!=null){
+                    Row row = sheet.getRow(a+1);
+                    try{row.getCell(0).setCellValue(pattern);}catch(Exception e){System.out.println(e);}
+                    try{row.getCell(1).setCellValue(detail);}catch(Exception e){System.out.println(e);}
+                    try{row.getCell(2).setCellValue(path);}catch(Exception e){System.out.println(e);}
+                    try{row.getCell(3).setCellValue(price);}catch(Exception e){System.out.println(e);}
+                   
+                }else{
+                    try {
+                        int lastRow = sheet.getLastRowNum();
+                        Row newRow = sheet.createRow(lastRow+1);
+                        try{newRow.createCell(0).setCellValue(pattern);}catch(Exception e){System.out.println(e);}
+                        try{newRow.createCell(1).setCellValue(detail);}catch(Exception e){System.out.println(e);}
+                        try{newRow.createCell(2).setCellValue(path);}catch(Exception e){System.out.println(e);}
+                        try{newRow.createCell(3).setCellValue(price);}catch(Exception e){System.out.println(e);}
+                       
+                   } catch (Exception e) {
+                        e.printStackTrace();
+                   }             
+               
+               
             }
-            if(!haveData){
-               try {
-                int lastRow = sheet.getLastRowNum();
-                Row newRow = sheet.createRow(lastRow+1);
-                newRow.createCell(0).setCellValue(pattern);
-                newRow.createCell(1).setCellValue(detail);
-                newRow.createCell(2).setCellValue(path);
-                newRow.createCell(3).setCellValue(price);
-               } catch (Exception e) {
-                    e.printStackTrace();
-               }             
-           }
-        }
+            }      
             /*write data into StoreStock.xlsx*/
             fos = new FileOutputStream(new File(FILE_NAME));
             wb.write(fos);
@@ -185,9 +187,41 @@ public class Packagedao {
         }
     }
 
-   public void deletePackageDetail(PackageDetail packageDetail) {
-   
-   
+   public void deletePackageDetail(PackageDetail pack) {
+         read(); // Ensure the sheet is read and populated
+        String pattern = pack.getPatternTF().getText();
+        String detail = pack.getDetailTA().getText();
+        double price = Double.parseDouble(pack.getPriceTF().getText());
+        int rowIndexToDelete = -1; // Variable to store the index of the row to delete
+        for (Row row : sheet) {
+            if(row.getRowNum()==0)continue;
+            String rowPattern = row.getCell(0).getStringCellValue(); // Assuming the first column contains strings
+            String rowDetail = row.getCell(1).getStringCellValue(); // Assuming the second column contains strings
+            double rowPrice = row.getCell(3).getNumericCellValue(); // Assuming the fourth column contains numeric values
+
+            if (rowPattern.equals(pattern) && rowDetail.equals(detail) && rowPrice == price) {
+                rowIndexToDelete = row.getRowNum(); // Store the index of the row to delete
+                System.out.println("Row to delete: " + rowIndexToDelete);
+                break; // Exit the loop after finding the matching row
+            }
+        }
+        // If a row was found to delete
+        if (rowIndexToDelete != -1) {
+            // Move all rows up
+            for (int i = rowIndexToDelete + 1; i <= sheet.getLastRowNum(); i++) {
+                if(i==sheet.getLastRowNum()){sheet.removeRow(sheet.getRow(i));}
+                Row currRow = sheet.getRow(i);
+                Row previousRow = sheet.getRow(i - 1);
+                // Copy values from the current row to the previous row
+                if (previousRow != null && currRow != null) {
+                    previousRow.getCell(0).setCellValue(currRow.getCell(0).getStringCellValue());
+                    previousRow.getCell(1).setCellValue(currRow.getCell(1).getStringCellValue());
+                    previousRow.getCell(3).setCellValue(currRow.getCell(3).getNumericCellValue());
+                }
+            }
+
+            System.out.println("Row " + rowIndexToDelete + " deleted and data shifted up.");
+        }
    }
 }
 
