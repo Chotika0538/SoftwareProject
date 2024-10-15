@@ -56,7 +56,7 @@ public class ProductInCart extends javax.swing.JPanel {
             .addGroup(HeaderJPLayout.createSequentialGroup()
                 .addGap(283, 283, 283)
                 .addComponent(header_textJL, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(282, Short.MAX_VALUE))
+                .addContainerGap(270, Short.MAX_VALUE))
         );
         HeaderJPLayout.setVerticalGroup(
             HeaderJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -81,7 +81,7 @@ public class ProductInCart extends javax.swing.JPanel {
         );
         Scroll_pageLayout.setVerticalGroup(
             Scroll_pageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 301, Short.MAX_VALUE)
+            .addGap(0, 401, Short.MAX_VALUE)
         );
 
         Scroll_page.setLayout(new java.awt.GridLayout(0, 1));
@@ -135,7 +135,7 @@ public class ProductInCart extends javax.swing.JPanel {
         PaybarJPLayout.setHorizontalGroup(
             PaybarJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PaybarJPLayout.createSequentialGroup()
-                .addGap(0, 683, Short.MAX_VALUE)
+                .addGap(0, 671, Short.MAX_VALUE)
                 .addComponent(PayButton_JP, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         PaybarJPLayout.setVerticalGroup(

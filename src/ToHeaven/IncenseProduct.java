@@ -55,8 +55,9 @@ public class IncenseProduct extends javax.swing.JPanel {
         details = new javax.swing.JTextArea();
         name1 = new javax.swing.JLabel();
         priceLB = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
 
-        setBackground(new java.awt.Color(244, 244, 224));
+        setBackground(new java.awt.Color(255, 255, 255));
         setForeground(new java.awt.Color(244, 244, 224));
         setOpaque(false);
         setPreferredSize(new java.awt.Dimension(600, 220));
@@ -100,12 +101,17 @@ public class IncenseProduct extends javax.swing.JPanel {
         priceLB.setText("ราคา : ");
         add(priceLB);
         priceLB.setBounds(270, 190, 100, 30);
+
+        jPanel1.setBackground(new java.awt.Color(244, 244, 224));
+        add(jPanel1);
+        jPanel1.setBounds(0, 0, 800, 240);
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel choosePieceIncense;
     private javax.swing.JTextArea details;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel name;
     private javax.swing.JLabel name1;
     private javax.swing.JSpinner pieceIncense;

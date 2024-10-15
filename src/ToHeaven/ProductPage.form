@@ -44,6 +44,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="wreathBT">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="d7" green="e4" red="c8" type="rgb"/>
+        </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="TH Sarabun New" size="24" style="1"/>
         </Property>
@@ -66,6 +69,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="snackBoxBT">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="d7" green="e4" red="c8" type="rgb"/>
+        </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="TH Sarabun New" size="24" style="1"/>
         </Property>
@@ -88,6 +94,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="frameBT">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="d7" green="e4" red="c8" type="rgb"/>
+        </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="TH Sarabun New" size="24" style="1"/>
         </Property>
@@ -110,6 +119,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="sandalWoodBT">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="d7" green="e4" red="c8" type="rgb"/>
+        </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="TH Sarabun New" size="24" style="1"/>
         </Property>
@@ -132,6 +144,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="SouvenirBT">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="d7" green="e4" red="c8" type="rgb"/>
+        </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="TH Sarabun New" size="24" style="1"/>
         </Property>
@@ -154,6 +169,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="incenseBT">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="d7" green="e4" red="c8" type="rgb"/>
+        </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="TH Sarabun New" size="24" style="1"/>
         </Property>
@@ -176,6 +194,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="candleBT">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="d7" green="e4" red="c8" type="rgb"/>
+        </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="TH Sarabun New" size="24" style="1"/>
         </Property>
@@ -198,6 +219,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="coffinBT">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="d7" green="e4" red="c8" type="rgb"/>
+        </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="TH Sarabun New" size="24" style="1"/>
         </Property>
@@ -220,6 +244,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="offeringBT">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="d7" green="e4" red="c8" type="rgb"/>
+        </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="TH Sarabun New" size="24" style="1"/>
         </Property>

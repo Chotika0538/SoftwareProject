@@ -10,6 +10,7 @@ public class ProductPage extends javax.swing.JPanel {
     
     public ProductPage(JPanel mainPanel) {
         this.mainPanel = mainPanel;
+//        wreath
        // cd = (CardLayout) mainPanel.getLayout();
         initComponents();
     }
@@ -44,6 +45,7 @@ public class ProductPage extends javax.swing.JPanel {
         add(product);
         product.setBounds(50, 50, 140, 61);
 
+        wreathBT.setBackground(new java.awt.Color(200, 228, 215));
         wreathBT.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
         wreathBT.setText("พวงหรีด");
         wreathBT.setBorder(null);
@@ -56,6 +58,7 @@ public class ProductPage extends javax.swing.JPanel {
         add(wreathBT);
         wreathBT.setBounds(160, 130, 135, 41);
 
+        snackBoxBT.setBackground(new java.awt.Color(200, 228, 215));
         snackBoxBT.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
         snackBoxBT.setText("ชุดอาหารว่าง");
         snackBoxBT.setBorder(null);
@@ -68,6 +71,7 @@ public class ProductPage extends javax.swing.JPanel {
         add(snackBoxBT);
         snackBoxBT.setBounds(160, 190, 135, 41);
 
+        frameBT.setBackground(new java.awt.Color(200, 228, 215));
         frameBT.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
         frameBT.setText("กรอบรูป");
         frameBT.setBorder(null);
@@ -80,6 +84,7 @@ public class ProductPage extends javax.swing.JPanel {
         add(frameBT);
         frameBT.setBounds(160, 250, 135, 41);
 
+        sandalWoodBT.setBackground(new java.awt.Color(200, 228, 215));
         sandalWoodBT.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
         sandalWoodBT.setText("ดอกไม้จันทน์");
         sandalWoodBT.setBorder(null);
@@ -92,6 +97,7 @@ public class ProductPage extends javax.swing.JPanel {
         add(sandalWoodBT);
         sandalWoodBT.setBounds(160, 310, 135, 41);
 
+        SouvenirBT.setBackground(new java.awt.Color(200, 228, 215));
         SouvenirBT.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
         SouvenirBT.setText("ของชำร่วย");
         SouvenirBT.setBorder(null);
@@ -104,6 +110,7 @@ public class ProductPage extends javax.swing.JPanel {
         add(SouvenirBT);
         SouvenirBT.setBounds(510, 130, 135, 41);
 
+        incenseBT.setBackground(new java.awt.Color(200, 228, 215));
         incenseBT.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
         incenseBT.setText("ธูป");
         incenseBT.setBorder(null);
@@ -116,6 +123,7 @@ public class ProductPage extends javax.swing.JPanel {
         add(incenseBT);
         incenseBT.setBounds(510, 190, 135, 41);
 
+        candleBT.setBackground(new java.awt.Color(200, 228, 215));
         candleBT.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
         candleBT.setText("เทียน");
         candleBT.setBorder(null);
@@ -128,6 +136,7 @@ public class ProductPage extends javax.swing.JPanel {
         add(candleBT);
         candleBT.setBounds(510, 250, 135, 41);
 
+        coffinBT.setBackground(new java.awt.Color(200, 228, 215));
         coffinBT.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
         coffinBT.setText("โลงศพ");
         coffinBT.setBorder(null);
@@ -140,6 +149,7 @@ public class ProductPage extends javax.swing.JPanel {
         add(coffinBT);
         coffinBT.setBounds(510, 310, 135, 41);
 
+        offeringBT.setBackground(new java.awt.Color(200, 228, 215));
         offeringBT.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
         offeringBT.setText("เครื่องไทยธรรม");
         offeringBT.setBorder(null);

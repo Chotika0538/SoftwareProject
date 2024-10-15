@@ -65,9 +65,9 @@ public class SnackBoxProductPage extends javax.swing.JPanel {
 
         backBT.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         backBT.setText("<ย้อนกลับ");
-        backBT.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backBTActionPerformed(evt);
+        backBT.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                backBTMouseClicked(evt);
             }
         });
 
@@ -106,14 +106,14 @@ public class SnackBoxProductPage extends javax.swing.JPanel {
         add(jScrollPane1, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void backBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBTActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_backBTActionPerformed
-
     private void addBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBTActionPerformed
         // TODO add your handling code here:
         ProductInCart.add(new Picked_product("test",100*Math.random(),(int)(10*Math.random()),"/ToHeaven/t.png"));
     }//GEN-LAST:event_addBTActionPerformed
+
+    private void backBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backBTMouseClicked
+        ((CardLayout)mainPanel.getLayout()).show(mainPanel, "productpage");
+    }//GEN-LAST:event_backBTMouseClicked
 //    public void getWreathData(){
 //         wreathClassList = wreathdao.getAll();
 //    }

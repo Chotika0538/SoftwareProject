@@ -1,6 +1,7 @@
 package ToHeaven;
 
 import java.awt.CardLayout;
+import java.awt.Color;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -24,34 +25,37 @@ public class MainFrame extends javax.swing.JPanel {
     private void initComponents() {
 
         menuBar = new javax.swing.JPanel();
-        customBT = new javax.swing.JToggleButton();
+        templeBT = new javax.swing.JToggleButton();
         packageBT = new javax.swing.JToggleButton();
         productBT = new javax.swing.JToggleButton();
         homeBT = new javax.swing.JToggleButton();
         jLabel1 = new javax.swing.JLabel();
+        cartBT = new javax.swing.JToggleButton();
         frameJP = new javax.swing.JPanel();
 
         setPreferredSize(new java.awt.Dimension(800, 600));
         setLayout(new java.awt.BorderLayout());
 
-        menuBar.setBackground(new java.awt.Color(219, 237, 255));
+        menuBar.setBackground(new java.awt.Color(200, 228, 215));
         menuBar.setPreferredSize(new java.awt.Dimension(800, 100));
         menuBar.setLayout(null);
 
-        customBT.setBackground(new java.awt.Color(255, 204, 204));
-        customBT.setFont(new java.awt.Font("TH Sarabun New", 0, 30)); // NOI18N
-        customBT.setText("ปรับแต่ง");
-        customBT.setBorder(null);
-        customBT.addMouseListener(new java.awt.event.MouseAdapter() {
+        templeBT.setBackground(new java.awt.Color(200, 228, 215));
+        templeBT.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
+        templeBT.setForeground(new java.awt.Color(102, 51, 0));
+        templeBT.setText("วัด");
+        templeBT.setBorder(null);
+        templeBT.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                customBTMouseClicked(evt);
+                templeBTMouseClicked(evt);
             }
         });
-        menuBar.add(customBT);
-        customBT.setBounds(650, 0, 110, 100);
+        menuBar.add(templeBT);
+        templeBT.setBounds(590, 0, 100, 100);
 
-        packageBT.setBackground(new java.awt.Color(255, 204, 204));
-        packageBT.setFont(new java.awt.Font("TH Sarabun New", 0, 30)); // NOI18N
+        packageBT.setBackground(new java.awt.Color(200, 228, 215));
+        packageBT.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
+        packageBT.setForeground(new java.awt.Color(102, 51, 0));
         packageBT.setText("แพ็คเกจ\n");
         packageBT.setBorder(null);
         packageBT.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -60,10 +64,11 @@ public class MainFrame extends javax.swing.JPanel {
             }
         });
         menuBar.add(packageBT);
-        packageBT.setBounds(530, 0, 110, 100);
+        packageBT.setBounds(480, 0, 100, 100);
 
-        productBT.setBackground(new java.awt.Color(255, 204, 204));
-        productBT.setFont(new java.awt.Font("TH Sarabun New", 0, 30)); // NOI18N
+        productBT.setBackground(new java.awt.Color(200, 228, 215));
+        productBT.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
+        productBT.setForeground(new java.awt.Color(102, 51, 0));
         productBT.setText("ผลิตภัณฑ์");
         productBT.setBorder(null);
         productBT.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -72,10 +77,11 @@ public class MainFrame extends javax.swing.JPanel {
             }
         });
         menuBar.add(productBT);
-        productBT.setBounds(410, 0, 110, 100);
+        productBT.setBounds(360, 0, 110, 100);
 
-        homeBT.setBackground(new java.awt.Color(255, 204, 204));
-        homeBT.setFont(new java.awt.Font("TH Sarabun New", 0, 30)); // NOI18N
+        homeBT.setBackground(new java.awt.Color(200, 228, 215));
+        homeBT.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
+        homeBT.setForeground(new java.awt.Color(102, 51, 0));
         homeBT.setText("เกี่ยวกับเรา");
         homeBT.setBorder(null);
         homeBT.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -84,13 +90,26 @@ public class MainFrame extends javax.swing.JPanel {
             }
         });
         menuBar.add(homeBT);
-        homeBT.setBounds(280, 0, 120, 100);
+        homeBT.setBounds(240, 0, 110, 100);
 
         jLabel1.setFont(new java.awt.Font("TH SarabunPSK", 1, 24)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ToHeaven/LoGoToHeaven (2).png"))); // NOI18N
         jLabel1.setText("LOGO");
         menuBar.add(jLabel1);
         jLabel1.setBounds(30, 10, 120, 80);
+
+        cartBT.setBackground(new java.awt.Color(200, 228, 215));
+        cartBT.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
+        cartBT.setForeground(new java.awt.Color(102, 51, 0));
+        cartBT.setText("ตะกร้า");
+        cartBT.setBorder(null);
+        cartBT.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cartBTMouseClicked(evt);
+            }
+        });
+        menuBar.add(cartBT);
+        cartBT.setBounds(700, 0, 100, 100);
 
         add(menuBar, java.awt.BorderLayout.PAGE_START);
 
@@ -112,7 +131,8 @@ public class MainFrame extends javax.swing.JPanel {
         CustomFuneral funeral = new CustomFuneral(frameJP);
         CustomAsh ash = new CustomAsh(frameJP);
         PackagePage packagepage = new PackagePage(frameJP);
-
+        Temple_select temS = new Temple_select(frameJP);
+        ProductInCart cart = new ProductInCart(frameJP);
         /*add each pages into cardlayout on frameJP*/
         frameJP.add(home, "home");
         frameJP.add(product, "productpage");
@@ -130,7 +150,8 @@ public class MainFrame extends javax.swing.JPanel {
         frameJP.add(funeral, "funeral");
         frameJP.add(ash, "ash");
         frameJP.add(packagepage, "package");
-
+        frameJP.add(temS, "templeSelect");
+        frameJP.add(cart , "cartPage");
         /*called home page(1st page)*/
         CardLayout cd = (CardLayout) frameJP.getLayout();
         cd.show(frameJP, "home");
@@ -138,27 +159,50 @@ public class MainFrame extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void productBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_productBTMouseClicked
+        
+        homeBT.setSelected(false);
+        packageBT.setSelected(false);
+        templeBT.setSelected(false);
+        cartBT.setSelected(false);
         CardLayout cd = (CardLayout) frameJP.getLayout();
         cd.show(frameJP, "productpage");
     }//GEN-LAST:event_productBTMouseClicked
 
     private void homeBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeBTMouseClicked
-        // TODO add your handling code here:
+        productBT.setSelected(false);
+        packageBT.setSelected(false);
+        templeBT.setSelected(false);
+        cartBT.setSelected(false);
         CardLayout cd = (CardLayout) frameJP.getLayout();
         cd.show(frameJP, "home");
     }//GEN-LAST:event_homeBTMouseClicked
 
     private void packageBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_packageBTMouseClicked
-        // TODO add your handling code here:
+        homeBT.setSelected(false);
+        productBT.setSelected(false);
+        templeBT.setSelected(false);
+        cartBT.setSelected(false);
        CardLayout cd = (CardLayout) frameJP.getLayout();
        cd.show(frameJP, "package");
     }//GEN-LAST:event_packageBTMouseClicked
 
-    private void customBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_customBTMouseClicked
-        // TODO add your handling code here:
+    private void templeBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_templeBTMouseClicked
+        homeBT.setSelected(false);
+        productBT.setSelected(false);
+        packageBT.setSelected(false);
+        cartBT.setSelected(false);
          CardLayout cd = (CardLayout) frameJP.getLayout();
-         cd.show(frameJP, "coffin");
-    }//GEN-LAST:event_customBTMouseClicked
+         cd.show(frameJP, "templeSelect");
+    }//GEN-LAST:event_templeBTMouseClicked
+
+    private void cartBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cartBTMouseClicked
+        homeBT.setSelected(false);
+        packageBT.setSelected(false);
+        templeBT.setSelected(false);
+        productBT.setSelected(false);
+        CardLayout cd = (CardLayout) frameJP.getLayout();
+         cd.show(frameJP, "cartPage");
+    }//GEN-LAST:event_cartBTMouseClicked
 // /* testing panel*/
 //    public static void main(String[] args){
 //        JFrame f = new JFrame();
@@ -171,12 +215,13 @@ public class MainFrame extends javax.swing.JPanel {
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JToggleButton customBT;
+    private javax.swing.JToggleButton cartBT;
     private javax.swing.JPanel frameJP;
     private javax.swing.JToggleButton homeBT;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel menuBar;
     private javax.swing.JToggleButton packageBT;
     private javax.swing.JToggleButton productBT;
+    private javax.swing.JToggleButton templeBT;
     // End of variables declaration//GEN-END:variables
 }

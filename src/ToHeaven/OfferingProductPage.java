@@ -72,11 +72,6 @@ public class OfferingProductPage extends javax.swing.JPanel {
                 backBTMouseClicked(evt);
             }
         });
-        backBT.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backBTActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout menuPanelLayout = new javax.swing.GroupLayout(menuPanel);
         menuPanel.setLayout(menuPanelLayout);
@@ -111,10 +106,6 @@ public class OfferingProductPage extends javax.swing.JPanel {
 
         add(jScrollPane1, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void backBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBTActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_backBTActionPerformed
 
     private void backBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backBTMouseClicked
        ((CardLayout)mainPanel.getLayout()).show(mainPanel, "productpage");

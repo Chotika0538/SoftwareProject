@@ -72,13 +72,13 @@ public class LoginPage extends JPanel {
             }
         });
 
-        jLoginText.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLoginText.setFont(new java.awt.Font("TH Sarabun New", 1, 36)); // NOI18N
         jLoginText.setText("LOGIN");
 
-        jLabelUsernameText.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabelUsernameText.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
         jLabelUsernameText.setText("USERNAME  : ");
 
-        jLabelPasswordText.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabelPasswordText.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
         jLabelPasswordText.setText("PASSWORD  : ");
 
         jTextFieldUsername.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -95,6 +95,7 @@ public class LoginPage extends JPanel {
             }
         });
 
+        showPassRiado.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
         showPassRiado.setText("Show password");
         showPassRiado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,7 +103,7 @@ public class LoginPage extends JPanel {
             }
         });
 
-        loginButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        loginButton.setFont(new java.awt.Font("TH Sarabun New", 1, 36)); // NOI18N
         loginButton.setText("Login");
         loginButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -115,7 +116,7 @@ public class LoginPage extends JPanel {
             }
         });
 
-        registerButton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        registerButton.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
         registerButton.setText("Register");
         registerButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
