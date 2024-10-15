@@ -125,6 +125,7 @@ public class Temple_select extends javax.swing.JPanel {
 
         buttonPanel.setPreferredSize(new java.awt.Dimension(800, 45));
 
+        backPanel.setBackground(new java.awt.Color(242, 242, 242));
         backPanel.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         backPanel.setText("<ย้อนกลับ");
         backPanel.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -133,6 +134,7 @@ public class Temple_select extends javax.swing.JPanel {
             }
         });
 
+        confirmPanel.setBackground(new java.awt.Color(242, 242, 242));
         confirmPanel.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         confirmPanel.setText("ยืนยัน");
         confirmPanel.addActionListener(new java.awt.event.ActionListener() {
@@ -164,10 +166,12 @@ public class Temple_select extends javax.swing.JPanel {
 
         add(buttonPanel, java.awt.BorderLayout.PAGE_END);
 
-        ashPanel.setBackground(new java.awt.Color(204, 204, 255));
+        ashPanel.setBackground(new java.awt.Color(101, 85, 61));
         ashPanel.setLayout(null);
 
+        noCB.setBackground(new java.awt.Color(101, 85, 61));
         noCB.setFont(new java.awt.Font("TH Sarabun New", 0, 24)); // NOI18N
+        noCB.setForeground(new java.awt.Color(255, 255, 255));
         noCB.setText("ไม่ใช้บริการ");
         noCB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -177,7 +181,9 @@ public class Temple_select extends javax.swing.JPanel {
         ashPanel.add(noCB);
         noCB.setBounds(600, 30, 140, 30);
 
+        yesCB.setBackground(new java.awt.Color(101, 85, 61));
         yesCB.setFont(new java.awt.Font("TH Sarabun New", 0, 24)); // NOI18N
+        yesCB.setForeground(new java.awt.Color(255, 255, 255));
         yesCB.setText("ใช้บริการ");
         yesCB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -194,7 +200,8 @@ public class Temple_select extends javax.swing.JPanel {
         jPanel6.setPreferredSize(new java.awt.Dimension(320, 45));
         jPanel6.setRequestFocusEnabled(false);
 
-        chooseProvCB.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
+        chooseProvCB.setFont(new java.awt.Font("TH Sarabun New", 1, 18)); // NOI18N
+        chooseProvCB.setForeground(new java.awt.Color(101, 85, 61));
         chooseProvCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "เลือกจังหวัด"}));
         chooseProvCB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -224,7 +231,7 @@ public class Temple_select extends javax.swing.JPanel {
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
-        templeListJP.setBackground(new java.awt.Color(213, 245, 241));
+        templeListJP.setBackground(new java.awt.Color(244, 244, 224));
         templeListJP.setLayout(new java.awt.GridLayout(0, 1, 0, 5));
         jScrollPane1.setViewportView(templeListJP);
 
@@ -240,13 +247,16 @@ public class Temple_select extends javax.swing.JPanel {
         jPanel5.setPreferredSize(new java.awt.Dimension(330, 45));
 
         jLabel1.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(101, 85, 61));
         jLabel1.setText("วัดที่เลือก");
 
         jLabel3.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(101, 85, 61));
         jLabel3.setText("(เลือกได้ไม่เกิน 5 ลำดับ)");
 
         clearSelectedListBT.setBackground(new java.awt.Color(204, 204, 204));
         clearSelectedListBT.setFont(new java.awt.Font("TH Sarabun New", 1, 18)); // NOI18N
+        clearSelectedListBT.setForeground(new java.awt.Color(101, 85, 61));
         clearSelectedListBT.setText("ล้างทั้งหมด");
         clearSelectedListBT.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -349,6 +359,7 @@ public class Temple_select extends javax.swing.JPanel {
         jPanel3.setBounds(50, 90, 340, 320);
 
         jLabel2.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("คุณต้องการใช้บริการจัดการอัฐิหรือไม่? : ");
         ashPanel.add(jLabel2);
         jLabel2.setBounds(50, 30, 330, 30);

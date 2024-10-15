@@ -96,6 +96,7 @@ public class Register extends javax.swing.JPanel {
         jLoginText.setFont(new java.awt.Font("TH Sarabun New", 1, 48)); // NOI18N
         jLoginText.setText("REGISTER");
 
+        backToLogin.setBackground(new java.awt.Color(204, 204, 185));
         backToLogin.setFont(new java.awt.Font("TH Sarabun New", 0, 30)); // NOI18N
         backToLogin.setText("< Login");
         backToLogin.addActionListener(new java.awt.event.ActionListener() {
@@ -124,7 +125,9 @@ public class Register extends javax.swing.JPanel {
 
         passwordfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
+        registerButton.setBackground(new java.awt.Color(147, 130, 103));
         registerButton.setFont(new java.awt.Font("TH Sarabun New", 1, 30)); // NOI18N
+        registerButton.setForeground(new java.awt.Color(255, 255, 255));
         registerButton.setText("Register");
         registerButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

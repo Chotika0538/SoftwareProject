@@ -48,7 +48,7 @@ public class Temple_comp extends javax.swing.JPanel {
         temNameLB = new javax.swing.JLabel();
         chooseCB = new javax.swing.JCheckBox();
 
-        setBackground(new java.awt.Color(255, 204, 153));
+        setBackground(new java.awt.Color(244, 244, 224));
         setPreferredSize(new java.awt.Dimension(310, 150));
         setLayout(null);
 

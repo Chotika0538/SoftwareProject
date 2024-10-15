@@ -67,6 +67,7 @@ public class AddIncense extends javax.swing.JPanel {
         add(pic_detailSP);
         pic_detailSP.setBounds(30, 80, 400, 250);
 
+        addListBT.setBackground(new java.awt.Color(242, 242, 242));
         addListBT.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
         addListBT.setText("+ เพิ่มรายการ");
         addListBT.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -77,6 +78,7 @@ public class AddIncense extends javax.swing.JPanel {
         add(addListBT);
         addListBT.setBounds(240, 350, 100, 32);
 
+        deleteListBT.setBackground(new java.awt.Color(242, 242, 242));
         deleteListBT.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
         deleteListBT.setText("- ลบรายการ");
         deleteListBT.addMouseListener(new java.awt.event.MouseAdapter() {

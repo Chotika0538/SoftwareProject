@@ -33,6 +33,7 @@ public class AddTemple extends javax.swing.JPanel{
         addListBT = new javax.swing.JButton();
         name = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(238, 238, 226));
         setPreferredSize(new java.awt.Dimension(480, 480));
 
         nameTF.setFont(new java.awt.Font("TH SarabunPSK", 0, 20)); // NOI18N
@@ -42,7 +43,7 @@ public class AddTemple extends javax.swing.JPanel{
 
         pic_detailSP.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
-        pic_detailJP.setBackground(new java.awt.Color(255, 204, 204));
+        pic_detailJP.setBackground(new java.awt.Color(244, 244, 224));
         pic_detailJP.setPreferredSize(new java.awt.Dimension(408, 231));
         pic_detailJP.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -54,6 +55,7 @@ public class AddTemple extends javax.swing.JPanel{
         pic_detailJP.add(tmpList.get(0));
         pic_detailSP.setViewportView(pic_detailJP);
 
+        addListBT.setBackground(new java.awt.Color(242, 242, 242));
         addListBT.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
         addListBT.setText("+ เพิ่มรายการ");
         addListBT.addMouseListener(new java.awt.event.MouseAdapter() {

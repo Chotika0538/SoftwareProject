@@ -61,6 +61,7 @@ public class LoginPage extends JPanel {
         loginButton = new javax.swing.JButton();
         registerButton = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(244, 244, 224));
         setPreferredSize(new java.awt.Dimension(800, 500));
         addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
@@ -72,13 +73,13 @@ public class LoginPage extends JPanel {
             }
         });
 
-        jLoginText.setFont(new java.awt.Font("TH Sarabun New", 1, 36)); // NOI18N
+        jLoginText.setFont(new java.awt.Font("TH Sarabun New", 1, 48)); // NOI18N
         jLoginText.setText("LOGIN");
 
-        jLabelUsernameText.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
+        jLabelUsernameText.setFont(new java.awt.Font("TH Sarabun New", 0, 28)); // NOI18N
         jLabelUsernameText.setText("USERNAME  : ");
 
-        jLabelPasswordText.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
+        jLabelPasswordText.setFont(new java.awt.Font("TH Sarabun New", 0, 28)); // NOI18N
         jLabelPasswordText.setText("PASSWORD  : ");
 
         jTextFieldUsername.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -95,7 +96,8 @@ public class LoginPage extends JPanel {
             }
         });
 
-        showPassRiado.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
+        showPassRiado.setBackground(new java.awt.Color(244, 244, 224));
+        showPassRiado.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
         showPassRiado.setText("Show password");
         showPassRiado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -103,7 +105,9 @@ public class LoginPage extends JPanel {
             }
         });
 
-        loginButton.setFont(new java.awt.Font("TH Sarabun New", 1, 36)); // NOI18N
+        loginButton.setBackground(new java.awt.Color(147, 130, 103));
+        loginButton.setFont(new java.awt.Font("TH Sarabun New", 1, 48)); // NOI18N
+        loginButton.setForeground(new java.awt.Color(255, 255, 255));
         loginButton.setText("Login");
         loginButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -116,7 +120,8 @@ public class LoginPage extends JPanel {
             }
         });
 
-        registerButton.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
+        registerButton.setBackground(new java.awt.Color(204, 204, 185));
+        registerButton.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
         registerButton.setText("Register");
         registerButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -147,20 +152,20 @@ public class LoginPage extends JPanel {
                             .addComponent(jPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(83, 83, 83))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(300, 300, 300)
-                .addComponent(loginButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(296, 296, 296))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLoginText)
-                .addGap(293, 293, 293))
+                .addGap(365, 365, 365))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(327, 327, 327)
+                .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(327, 327, 327))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(6, 6, 6)
                 .addComponent(jLoginText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(45, 45, 45)
+                .addGap(49, 49, 49)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextFieldUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelUsernameText))
@@ -172,9 +177,9 @@ public class LoginPage extends JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(showPassRiado)
                     .addComponent(registerButton))
-                .addGap(44, 44, 44)
-                .addComponent(loginButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(113, 113, 113))
+                .addGap(57, 57, 57)
+                .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(102, 102, 102))
         );
     }// </editor-fold>//GEN-END:initComponents
     private boolean checkUserPass(String userName,String password){

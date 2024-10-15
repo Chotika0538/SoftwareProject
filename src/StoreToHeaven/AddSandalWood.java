@@ -54,6 +54,7 @@ public class AddSandalWood extends javax.swing.JPanel implements  CheckPanel{
         pic_detailJP.add(sddList.get(0));
         pic_detailSP.setViewportView(pic_detailJP);
 
+        addListBT.setBackground(new java.awt.Color(242, 242, 242));
         addListBT.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
         addListBT.setText("+ เพิ่มรายการ");
         addListBT.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -65,6 +66,7 @@ public class AddSandalWood extends javax.swing.JPanel implements  CheckPanel{
         name.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
         name.setText("ชื่อสินค้า : ");
 
+        deleteListBT.setBackground(new java.awt.Color(242, 242, 242));
         deleteListBT.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
         deleteListBT.setText("- ลบรายการ");
         deleteListBT.addMouseListener(new java.awt.event.MouseAdapter() {

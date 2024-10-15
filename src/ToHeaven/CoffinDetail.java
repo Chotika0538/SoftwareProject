@@ -64,6 +64,7 @@ private String filePath;
         setPreferredSize(new java.awt.Dimension(400, 300));
         setLayout(null);
 
+        choosePicBT.setBackground(new java.awt.Color(242, 242, 242));
         choosePicBT.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
         choosePicBT.setText("กดแนบรูปภาพ");
         choosePicBT.addActionListener(new java.awt.event.ActionListener() {
@@ -79,7 +80,7 @@ private String filePath;
         add(showPicName);
         showPicName.setBounds(120, 100, 160, 30);
 
-        detailLB.setBackground(new java.awt.Color(204, 255, 255));
+        detailLB.setBackground(new java.awt.Color(244, 244, 224));
         detailLB.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
         detailLB.setText("24 นิ้ว ");
         add(detailLB);
@@ -87,6 +88,7 @@ private String filePath;
 
         detailSP.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
 
+        detailTA.setBackground(new java.awt.Color(242, 242, 242));
         detailTA.setColumns(20);
         detailTA.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         detailTA.setRows(5);
@@ -142,13 +144,13 @@ private String filePath;
         add(detailLB1);
         detailLB1.setBounds(10, 130, 66, 22);
 
-        detailLB2.setBackground(new java.awt.Color(204, 255, 255));
+        detailLB2.setBackground(new java.awt.Color(244, 244, 224));
         detailLB2.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
         detailLB2.setText("20 นิ้ว ");
         add(detailLB2);
         detailLB2.setBounds(150, 80, 37, 22);
 
-        detailLB3.setBackground(new java.awt.Color(204, 255, 255));
+        detailLB3.setBackground(new java.awt.Color(244, 244, 224));
         detailLB3.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
         detailLB3.setText("22 นิ้ว ");
         add(detailLB3);

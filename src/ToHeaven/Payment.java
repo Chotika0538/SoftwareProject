@@ -55,7 +55,7 @@ public class Payment extends javax.swing.JPanel {
         slipImg.setText("แนบไฟล์รูป");
         slipImg.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(slipImg);
-        slipImg.setBounds(560, 90, 200, 200);
+        slipImg.setBounds(580, 70, 200, 200);
 
         jLabel3.setFont(new java.awt.Font("TH Sarabun New", 0, 24)); // NOI18N
         jLabel3.setText("ชนิด");
@@ -105,7 +105,8 @@ public class Payment extends javax.swing.JPanel {
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
-        scrollProduct.setBackground(new java.awt.Color(255, 222, 158));
+        scrollProduct.setBackground(new java.awt.Color(101, 85, 61));
+        scrollProduct.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout scrollProductLayout = new javax.swing.GroupLayout(scrollProduct);
         scrollProduct.setLayout(scrollProductLayout);
@@ -158,7 +159,9 @@ public class Payment extends javax.swing.JPanel {
         add(jPanel5);
         jPanel5.setBounds(10, 320, 140, 30);
 
+        addSlipBT.setBackground(new java.awt.Color(101, 85, 61));
         addSlipBT.setFont(new java.awt.Font("TH Sarabun New", 0, 24)); // NOI18N
+        addSlipBT.setForeground(new java.awt.Color(255, 255, 255));
         addSlipBT.setText("แนปสลิป");
         addSlipBT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -166,7 +169,7 @@ public class Payment extends javax.swing.JPanel {
             }
         });
         add(addSlipBT);
-        addSlipBT.setBounds(590, 290, 140, 40);
+        addSlipBT.setBounds(610, 270, 140, 40);
 
         jPanel4.setBackground(new java.awt.Color(196, 166, 121));
 

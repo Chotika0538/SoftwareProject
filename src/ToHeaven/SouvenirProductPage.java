@@ -44,17 +44,21 @@ public class SouvenirProductPage extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         souvenirProductPanel = new javax.swing.JPanel();
 
-        setBackground(new java.awt.Color(201, 156, 99));
+        setBackground(new java.awt.Color(101, 85, 61));
         setPreferredSize(new java.awt.Dimension(800, 500));
         setLayout(new java.awt.BorderLayout());
 
         souvenirNameLB.setBackground(new java.awt.Color(255, 204, 204));
-        souvenirNameLB.setFont(new java.awt.Font("TH SarabunPSK", 1, 24)); // NOI18N
+        souvenirNameLB.setFont(new java.awt.Font("TH SarabunPSK", 1, 30)); // NOI18N
+        souvenirNameLB.setForeground(new java.awt.Color(255, 255, 255));
         souvenirNameLB.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         souvenirNameLB.setText("ของชำร่วย");
         souvenirNameLB.setPreferredSize(new java.awt.Dimension(800, 50));
         add(souvenirNameLB, java.awt.BorderLayout.PAGE_START);
 
+        menuPanel.setBackground(new java.awt.Color(101, 85, 61));
+
+        addBT.setBackground(new java.awt.Color(242, 242, 242));
         addBT.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         addBT.setText("เพิ่มสินค้า");
         addBT.addActionListener(new java.awt.event.ActionListener() {
@@ -63,6 +67,7 @@ public class SouvenirProductPage extends javax.swing.JPanel {
             }
         });
 
+        backBT.setBackground(new java.awt.Color(242, 242, 242));
         backBT.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         backBT.setText("<ย้อนกลับ");
         backBT.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -96,7 +101,7 @@ public class SouvenirProductPage extends javax.swing.JPanel {
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
-        souvenirProductPanel.setBackground(new java.awt.Color(255, 180, 87));
+        souvenirProductPanel.setBackground(new java.awt.Color(244, 244, 224));
         souvenirProductPanel.setPreferredSize(new java.awt.Dimension(798, 1600));
         souvenirProductPanel.setLayout(new java.awt.GridLayout(0, 1, 0, 5));
         //wreathList.add(new WreathProduct().getData(wreath));

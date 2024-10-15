@@ -74,6 +74,7 @@ public class AddPackage extends javax.swing.JPanel {
         pic_detailJP.add(pkList.get(0));
         pic_detailSP.setViewportView(pic_detailJP);
 
+        addListBT.setBackground(new java.awt.Color(242, 242, 242));
         addListBT.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
         addListBT.setText("+ เพิ่มรายการ");
         addListBT.addMouseListener(new java.awt.event.MouseAdapter() {

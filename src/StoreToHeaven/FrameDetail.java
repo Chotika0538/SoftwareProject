@@ -94,6 +94,7 @@ public class FrameDetail extends javax.swing.JPanel {
         add(patternTF);
         patternTF.setBounds(102, 10, 160, 27);
 
+        choosePicBT.setBackground(new java.awt.Color(242, 242, 242));
         choosePicBT.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
         choosePicBT.setText("กดแนบรูปภาพ");
         choosePicBT.addActionListener(new java.awt.event.ActionListener() {

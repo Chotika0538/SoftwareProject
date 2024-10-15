@@ -49,7 +49,7 @@ public class TempleDetail extends javax.swing.JPanel {
         pattern = new javax.swing.JLabel();
         templeNameTF = new javax.swing.JTextField();
 
-        setBackground(new java.awt.Color(255, 217, 103));
+        setBackground(new java.awt.Color(244, 244, 224));
         setPreferredSize(new java.awt.Dimension(400, 230));
         setLayout(null);
 

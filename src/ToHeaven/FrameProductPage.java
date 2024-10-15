@@ -57,6 +57,7 @@ public class FrameProductPage extends javax.swing.JPanel {
 
         menuPanel.setBackground(new java.awt.Color(101, 85, 61));
 
+        addBT.setBackground(new java.awt.Color(242, 242, 242));
         addBT.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
         addBT.setText("เพิ่มสินค้า");
         addBT.addActionListener(new java.awt.event.ActionListener() {
@@ -65,6 +66,7 @@ public class FrameProductPage extends javax.swing.JPanel {
             }
         });
 
+        backBT.setBackground(new java.awt.Color(242, 242, 242));
         backBT.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
         backBT.setText("<ย้อนกลับ");
         backBT.addMouseListener(new java.awt.event.MouseAdapter() {

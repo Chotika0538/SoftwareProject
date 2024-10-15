@@ -45,6 +45,7 @@ public class Picked_product extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(800, 260));
         setLayout(null);
 
+        minusBT.setBackground(new java.awt.Color(242, 242, 242));
         minusBT.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
         minusBT.setText("-");
         minusBT.addActionListener(new java.awt.event.ActionListener() {
@@ -61,6 +62,7 @@ public class Picked_product extends javax.swing.JPanel {
         add(jLabel1);
         jLabel1.setBounds(670, 120, 20, 24);
 
+        PlusBT.setBackground(new java.awt.Color(242, 242, 242));
         PlusBT.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
         PlusBT.setText("+");
         PlusBT.addActionListener(new java.awt.event.ActionListener() {
@@ -85,6 +87,7 @@ public class Picked_product extends javax.swing.JPanel {
 
         productImgPanel.setBackground(new java.awt.Color(204, 204, 204));
 
+        productImg.setFont(new java.awt.Font("TH Sarabun New", 0, 12)); // NOI18N
         productImg.setPreferredSize(new java.awt.Dimension(260, 180));
 
         javax.swing.GroupLayout productImgPanelLayout = new javax.swing.GroupLayout(productImgPanel);

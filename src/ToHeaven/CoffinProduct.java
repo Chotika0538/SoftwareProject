@@ -67,6 +67,7 @@ public class CoffinProduct extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(800, 240));
         setLayout(null);
 
+        jRadioButton1.setBackground(new java.awt.Color(244, 244, 224));
         groupSize.add(jRadioButton1);
         jRadioButton1.setFont(new java.awt.Font("TH Sarabun New", 1, 20)); // NOI18N
         jRadioButton1.setSelected(true);
@@ -79,6 +80,7 @@ public class CoffinProduct extends javax.swing.JPanel {
         add(jRadioButton1);
         jRadioButton1.setBounds(520, 160, 140, 32);
 
+        jRadioButton2.setBackground(new java.awt.Color(244, 244, 224));
         groupSize.add(jRadioButton2);
         jRadioButton2.setFont(new java.awt.Font("TH Sarabun New", 1, 20)); // NOI18N
         jRadioButton2.setText("24 นิ้ว");
@@ -90,6 +92,7 @@ public class CoffinProduct extends javax.swing.JPanel {
         add(jRadioButton2);
         jRadioButton2.setBounds(520, 220, 140, 32);
 
+        jRadioButton3.setBackground(new java.awt.Color(244, 244, 224));
         groupSize.add(jRadioButton3);
         jRadioButton3.setFont(new java.awt.Font("TH Sarabun New", 1, 20)); // NOI18N
         jRadioButton3.setText("22 นิ้ว");

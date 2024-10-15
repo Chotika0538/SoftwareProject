@@ -37,24 +37,29 @@ public class SnackBoxProductPage extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        wreathNameLB = new javax.swing.JLabel();
+        snackBoxNameLB = new javax.swing.JLabel();
         menuPanel = new javax.swing.JPanel();
         addBT = new javax.swing.JButton();
         backBT = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         SnackProductPanel = new javax.swing.JPanel();
 
-        setBackground(new java.awt.Color(201, 156, 99));
+        setBackground(new java.awt.Color(101, 85, 61));
+        setForeground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(800, 500));
         setLayout(new java.awt.BorderLayout());
 
-        wreathNameLB.setBackground(new java.awt.Color(255, 204, 204));
-        wreathNameLB.setFont(new java.awt.Font("TH SarabunPSK", 1, 24)); // NOI18N
-        wreathNameLB.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        wreathNameLB.setText("ชุดของว่าง");
-        wreathNameLB.setPreferredSize(new java.awt.Dimension(800, 50));
-        add(wreathNameLB, java.awt.BorderLayout.PAGE_START);
+        snackBoxNameLB.setBackground(new java.awt.Color(255, 204, 204));
+        snackBoxNameLB.setFont(new java.awt.Font("TH SarabunPSK", 1, 30)); // NOI18N
+        snackBoxNameLB.setForeground(new java.awt.Color(255, 255, 255));
+        snackBoxNameLB.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        snackBoxNameLB.setText("ชุดอาหารว่าง");
+        snackBoxNameLB.setPreferredSize(new java.awt.Dimension(800, 50));
+        add(snackBoxNameLB, java.awt.BorderLayout.PAGE_START);
 
+        menuPanel.setBackground(new java.awt.Color(101, 85, 61));
+
+        addBT.setBackground(new java.awt.Color(242, 242, 242));
         addBT.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         addBT.setText("เพิ่มสินค้า");
         addBT.addActionListener(new java.awt.event.ActionListener() {
@@ -63,6 +68,7 @@ public class SnackBoxProductPage extends javax.swing.JPanel {
             }
         });
 
+        backBT.setBackground(new java.awt.Color(242, 242, 242));
         backBT.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         backBT.setText("<ย้อนกลับ");
         backBT.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -96,7 +102,7 @@ public class SnackBoxProductPage extends javax.swing.JPanel {
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
-        SnackProductPanel.setBackground(new java.awt.Color(255, 180, 87));
+        SnackProductPanel.setBackground(new java.awt.Color(244, 244, 224));
         SnackProductPanel.setPreferredSize(new java.awt.Dimension(798, 1400));
         SnackProductPanel.setLayout(new java.awt.GridLayout(0, 1, 0, 5));
         //wreathList.add(new WreathProduct().getData(wreath));
@@ -134,6 +140,6 @@ public class SnackBoxProductPage extends javax.swing.JPanel {
     private javax.swing.JButton backBT;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel menuPanel;
-    private javax.swing.JLabel wreathNameLB;
+    private javax.swing.JLabel snackBoxNameLB;
     // End of variables declaration//GEN-END:variables
 }
