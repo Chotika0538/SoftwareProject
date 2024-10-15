@@ -122,7 +122,9 @@ public class WreathProduct extends javax.swing.JPanel {
     productImage.setIcon(new ImageIcon(wreathClass.getPath()));
     priceLB.setText(wreathClass.getPriceAll().toString());
 }
-
+ 
+    
+    
     public Wreath getWreathClass() {
         return wreathClass;
     }

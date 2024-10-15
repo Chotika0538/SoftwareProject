@@ -6,6 +6,8 @@ package ToHeaven;
 
 import DAO.*;
 import StoreToHeaven.*;
+import static ToHeaven.Picked_product.productImg;
+import java.awt.Image;
 import java.util.*;
 import javax.swing.ImageIcon;
 //import java.util.ArrayList;
@@ -87,8 +89,9 @@ public class OfferingProduct extends javax.swing.JPanel {
     this.offeringClass = offering;
     name.setText(offeringClass.toString());
     details.setText(offeringClass.getDetail());
-    productImage.setIcon(new ImageIcon(offeringClass.getPath()));
+    //productImage.setIcon(new ImageIcon(offeringClass.getPath()));
     priceLB.setText(Double.toString(offeringClass.getPrice()));
+    updateImage();
 }
 
     public Offering getOfferingClass() {
@@ -97,7 +100,25 @@ public class OfferingProduct extends javax.swing.JPanel {
     public JPanel gertPanel(){
         return this;
     }
-
+private void updateImage() {
+        if (offeringClass.getIm() != null) {
+            try {
+                int width = productImage.getWidth();
+                int height = productImage.getHeight();
+                if (width > 0 && height > 0) {
+                    Image scaledImg = offeringClass.getIm().getScaledInstance(width, height, Image.SCALE_SMOOTH);
+                    productImage.setIcon(new ImageIcon(scaledImg));
+                } else {
+                    productImage.setIcon(null);
+                }
+            } catch (Exception e) {
+                System.out.println(e);
+                productImage.setIcon(null);
+            }
+        } else {
+            productImage.setIcon(null); // If no image, set to null
+        }
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel choosePieceWreath;
     private javax.swing.JTextArea details;

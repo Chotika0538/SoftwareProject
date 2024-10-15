@@ -5,12 +5,18 @@ import StoreToHeaven.AddOffering;
 import StoreToHeaven.Offering;
 import StoreToHeaven.OfferingDetail;
 import java.awt.Component;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import javax.imageio.ImageIO;
 import org.apache.poi.util.IOUtils;
+import org.apache.poi.xssf.usermodel.XSSFDrawing;
+import org.apache.poi.xssf.usermodel.XSSFPicture;
+import org.apache.poi.xssf.usermodel.XSSFShape;
 
 public class Offeringdao {
     private Workbook wb;
@@ -125,6 +131,56 @@ public class Offeringdao {
         }
     }
     
+    /*get Image from excel*/
+    private BufferedImage getImageFromExcel() throws Exception{
+//           FileInputStream fileInput = new FileInputStream("StoreStock.xlsx");
+//           Workbook wb = new XSSFWorkbook(fileInput);
+//           Sheet sheet = wb.getSheetAt(indexsheet); // ชีตที่คุณต้องการ
+
+            read();
+
+           BufferedImage tmpImg = null;
+
+           // วนลูปตรวจสอบแต่ละแถวใน Sheet
+           for (Row row : sheet) {
+               Cell firstCell = row.getCell(0); // คอลัมน์แรกที่มีชื่อ
+               if (firstCell != null && firstCell.getStringCellValue().equals(name)) {
+                   System.out.println("Found cell name");
+                   // ถ้าพบชื่อที่ต้องการ, ตรวจสอบว่ามีรูปภาพในแถวนี้หรือไม่
+                   XSSFDrawing drawing = (XSSFDrawing) sheet.getDrawingPatriarch();
+                   if (drawing != null) {
+                       System.out.println("drawing pass");
+                       for (XSSFShape shape : drawing.getShapes()) {
+                           System.out.println("shape pass");
+                           if (shape instanceof XSSFPicture) {
+                               XSSFPicture picture = (XSSFPicture) shape;
+                               ClientAnchor anchor = picture.getPreferredSize();
+
+                               // ตรวจสอบว่าแถวของรูปภาพตรงกับแถวที่เราพบชื่อหรือไม่
+                               if (anchor.getRow1() == row.getRowNum()) {
+                                   PictureData pictureData = picture.getPictureData();
+                                   byte[] imageBytes = pictureData.getData();
+
+                                   // แปลง byte array เป็น BufferedImage
+                                   ByteArrayInputStream bis = new ByteArrayInputStream(imageBytes);
+                                   tmpImg = ImageIO.read(bis);
+                                   bis.close();
+                                   System.out.println("byte pass");
+                                   break;
+                               }
+                           }
+                       }
+                   }
+               }
+           }
+
+           // ปิดไฟล์ Excel
+           wb.close();
+           fileInput.close();
+
+           return tmpImg; // คืนค่า BufferedImage ที่ดึงมา
+       }    
+    
 public ArrayList<Offering> getAll() {        
     oList = new ArrayList<>();
     read();
@@ -141,6 +197,7 @@ public ArrayList<Offering> getAll() {
             }
             String pattern = null, detail = null, path = null;
             double price = 0.0;
+             BufferedImage img = null;
 
             for (Cell cell : row) {
                 if (cell == null) {
@@ -154,17 +211,19 @@ public ArrayList<Offering> getAll() {
                         detail = cell.getStringCellValue();
                         break;
                     case 2:
-                        path = cell.getStringCellValue();
+                        //path = cell.getStringCellValue();
+                        img = getImageFromExcel();
                         break;
                     case 3:
                         price = cell.getNumericCellValue();
                         break;
+                        
                 }
             }
 
             // ตรวจสอบค่าที่ได้ก่อนเพิ่มลง oList
-            if (name != null && pattern != null && detail != null && path != null && price > 0.0) {
-                Offering newOffering = new Offering(name, pattern, detail, path, price);
+            if (name != null && pattern != null && detail != null && path != null && price > 0.0 && img != null) {
+                Offering newOffering = new Offering(name, pattern, detail, path, price, img);
                 // ตรวจสอบไม่ให้มีการเพิ่มซ้ำ
                 if (!oList.contains(newOffering)) {
                     oList.add(newOffering);

@@ -1,5 +1,6 @@
 package StoreToHeaven;
 
+import java.awt.image.BufferedImage;
 import java.util.Objects;
 
 public class Offering extends Product {
@@ -23,10 +24,11 @@ public class Offering extends Product {
 //        return Objects.hash(pattern, detail, path, price);
 //    }
     private double price;
-
-    public Offering(String name, String pattern, String detail, String path, double price) {
+    private BufferedImage im = null;
+    public Offering(String name, String pattern, String detail, String path, double price, BufferedImage tmp) {
         super(name, pattern, detail, path);
         this.price = price;
+        im = tmp;
     }
 
     public double getPrice() {
@@ -35,6 +37,10 @@ public class Offering extends Product {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public BufferedImage getIm() {
+        return im;
     }
 
     @Override

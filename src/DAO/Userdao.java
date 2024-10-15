@@ -105,7 +105,7 @@ public class Userdao {
 
             // ตรวจสอบว่าทั้ง username และ password ไม่ใช่ค่าว่าง
             if (rowUsername != null && rowPassword != null) {
-                if (rowUsername.getCellTypeEnum() == CellType.STRING && rowPassword.getCellTypeEnum() == CellType.STRING) {
+                if (rowUsername.getCellTypeEnum()== CellType.STRING && rowPassword.getCellTypeEnum() == CellType.STRING) {
                     String excelUsername = rowUsername.getStringCellValue();
                     String excelPassword = rowPassword.getStringCellValue();
 
