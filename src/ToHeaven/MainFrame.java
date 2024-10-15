@@ -34,7 +34,7 @@ public class MainFrame extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(800, 600));
         setLayout(new java.awt.BorderLayout());
 
-        menuBar.setBackground(new java.awt.Color(255, 204, 204));
+        menuBar.setBackground(new java.awt.Color(219, 237, 255));
         menuBar.setPreferredSize(new java.awt.Dimension(800, 100));
         menuBar.setLayout(null);
 
@@ -87,9 +87,10 @@ public class MainFrame extends javax.swing.JPanel {
         homeBT.setBounds(280, 0, 120, 100);
 
         jLabel1.setFont(new java.awt.Font("TH SarabunPSK", 1, 24)); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ToHeaven/LoGoToHeaven (2).png"))); // NOI18N
         jLabel1.setText("LOGO");
         menuBar.add(jLabel1);
-        jLabel1.setBounds(70, 40, 60, 28);
+        jLabel1.setBounds(30, 10, 120, 80);
 
         add(menuBar, java.awt.BorderLayout.PAGE_START);
 

@@ -36,11 +36,11 @@ public class Main_ProductInCart extends javax.swing.JPanel {
 
         setLayout(new java.awt.BorderLayout());
 
-        menuBar.setBackground(new java.awt.Color(89, 73, 34));
+        menuBar.setBackground(new java.awt.Color(219, 237, 255));
         menuBar.setPreferredSize(new java.awt.Dimension(800, 100));
         menuBar.setLayout(null);
 
-        jToggleButton1.setBackground(new java.awt.Color(89, 73, 34));
+        jToggleButton1.setBackground(new java.awt.Color(255, 204, 204));
         jToggleButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jToggleButton1.setForeground(new java.awt.Color(255, 255, 255));
         jToggleButton1.setText("ปรับแต่ง");
@@ -48,7 +48,7 @@ public class Main_ProductInCart extends javax.swing.JPanel {
         menuBar.add(jToggleButton1);
         jToggleButton1.setBounds(650, 0, 110, 100);
 
-        jToggleButton2.setBackground(new java.awt.Color(89, 73, 34));
+        jToggleButton2.setBackground(new java.awt.Color(255, 204, 204));
         jToggleButton2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jToggleButton2.setForeground(new java.awt.Color(255, 255, 255));
         jToggleButton2.setText("แพ็คเกจ\n");
@@ -56,7 +56,7 @@ public class Main_ProductInCart extends javax.swing.JPanel {
         menuBar.add(jToggleButton2);
         jToggleButton2.setBounds(530, 0, 110, 100);
 
-        jToggleButton3.setBackground(new java.awt.Color(89, 73, 34));
+        jToggleButton3.setBackground(new java.awt.Color(255, 204, 204));
         jToggleButton3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jToggleButton3.setForeground(new java.awt.Color(255, 255, 255));
         jToggleButton3.setText("ผลิตภัณฑ์");
@@ -64,7 +64,7 @@ public class Main_ProductInCart extends javax.swing.JPanel {
         menuBar.add(jToggleButton3);
         jToggleButton3.setBounds(410, 0, 110, 100);
 
-        jToggleButton4.setBackground(new java.awt.Color(89, 73, 34));
+        jToggleButton4.setBackground(new java.awt.Color(255, 204, 204));
         jToggleButton4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jToggleButton4.setForeground(new java.awt.Color(255, 255, 255));
         jToggleButton4.setText("เกี่ยวกับเรา");
@@ -77,18 +77,19 @@ public class Main_ProductInCart extends javax.swing.JPanel {
         menuBar.add(jLabel1);
         jLabel1.setBounds(70, 40, 37, 16);
 
-        jButton1.setText("TEST add");
+        jButton1.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
+        jButton1.setText("เพิ่มสินค้า");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
         menuBar.add(jButton1);
-        jButton1.setBounds(160, 40, 110, 23);
+        jButton1.setBounds(160, 40, 110, 32);
 
         add(menuBar, java.awt.BorderLayout.PAGE_START);
 
-        CartJP.setBackground(new java.awt.Color(204, 204, 255));
+        CartJP.setBackground(new java.awt.Color(189, 189, 255));
 
         javax.swing.GroupLayout CartJPLayout = new javax.swing.GroupLayout(CartJP);
         CartJP.setLayout(CartJPLayout);

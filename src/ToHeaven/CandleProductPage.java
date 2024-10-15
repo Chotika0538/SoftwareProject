@@ -43,16 +43,19 @@ public class CandleProductPage extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         candleProductPanel = new javax.swing.JPanel();
 
-        setBackground(new java.awt.Color(201, 156, 99));
+        setBackground(new java.awt.Color(101, 85, 61));
         setPreferredSize(new java.awt.Dimension(800, 500));
         setLayout(new java.awt.BorderLayout());
 
-        candleNameLB.setBackground(new java.awt.Color(255, 204, 204));
+        candleNameLB.setBackground(new java.awt.Color(101, 85, 61));
         candleNameLB.setFont(new java.awt.Font("TH SarabunPSK", 1, 24)); // NOI18N
+        candleNameLB.setForeground(new java.awt.Color(255, 255, 255));
         candleNameLB.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        candleNameLB.setText("เทียน (Candle)");
+        candleNameLB.setText("เทียน ");
         candleNameLB.setPreferredSize(new java.awt.Dimension(800, 50));
         add(candleNameLB, java.awt.BorderLayout.PAGE_START);
+
+        menuPanel.setBackground(new java.awt.Color(101, 85, 61));
 
         addBT.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         addBT.setText("เพิ่มสินค้า");
@@ -95,7 +98,7 @@ public class CandleProductPage extends javax.swing.JPanel {
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
-        candleProductPanel.setBackground(new java.awt.Color(255, 180, 87));
+        candleProductPanel.setBackground(new java.awt.Color(244, 244, 224));
         candleProductPanel.setPreferredSize(new java.awt.Dimension(798, 500));
         candleProductPanel.setLayout(new java.awt.GridLayout(0, 1, 0, 5));
         //wreathList.add(new WreathProduct().getData(wreath));
