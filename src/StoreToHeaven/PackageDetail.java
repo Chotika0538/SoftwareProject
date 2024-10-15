@@ -156,8 +156,12 @@ private JPanel jp;
         int returnVal = fc.showDialog(null, "Choose");
         if (returnVal == JFileChooser.APPROVE_OPTION){
             File file = fc.getSelectedFile();
+            try {
+                FilePath = file.getCanonicalPath();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             showPicName.setText("รูปภาพที่แนบ: "+file.getName());
-            //JOptionPane.showMessageDialog(jButton1, file);
         }
     }//GEN-LAST:event_choosePicBTActionPerformed
 

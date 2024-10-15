@@ -6,16 +6,25 @@ package StoreToHeaven;
 
 import java.awt.CardLayout;
 import java.awt.Dimension;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.ClientAnchor;
+import org.apache.poi.ss.usermodel.PictureData;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFDrawing;
+import org.apache.poi.xssf.usermodel.XSSFPicture;
+import org.apache.poi.xssf.usermodel.XSSFShape;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 /**
@@ -209,7 +218,9 @@ public class AddPackage extends javax.swing.JPanel {
     public JPanel getPic_detailJP() {
         return pic_detailJP;
     }
-    
+     public Object getPatternTF() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addListBT;
@@ -221,10 +232,7 @@ public class AddPackage extends javax.swing.JPanel {
     private javax.swing.JScrollPane pic_detailSP;
     // End of variables declaration//GEN-END:variables
 
-    public Object getPatternTF() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
+   
 
 
 

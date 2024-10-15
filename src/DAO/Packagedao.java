@@ -14,11 +14,8 @@ import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.*;
 import StoreToHeaven.Package ;
-import org.apache.poi.ss.usermodel.CellType;
-/**
- *
- * @author Khao
- */
+import java.io.InputStream;
+import org.apache.poi.util.IOUtils;
 public class Packagedao {
     private Workbook wb;
     private Sheet sheet;
@@ -57,38 +54,52 @@ public class Packagedao {
                 for(int j=0; j<nameCol.length; j++){
                     Cell cell = firstRow.createCell(j);
                     cell.setCellValue(nameCol[j]);
-                }
-            }
-            for (int a=0; a<pgd.size(); a++){
-                String pattern = pgd.get(a).getPatternTF().getText();    
+                 }
+             }
+             for (int a = 0; a < pgd.size(); a++) {
+                String pattern = pgd.get(a).getPatternTF().getText();
                 String detail = pgd.get(a).getDetailTA().getText();
                 String path = pgd.get(a).getFilePath();
-                double price = Double.parseDouble(pgd.get(a).getPriceTF().getText());
-//                System.out.println("Strat > "+pattern+" "+detail+" "+path+" "+Double.toString(price)+" <end");
-                if(sheet.getRow(a+1)!=null){
-                    Row row = sheet.getRow(a+1);
-                    try{row.getCell(0).setCellValue(pattern);}catch(Exception e){System.out.println(e);}
-                    try{row.getCell(1).setCellValue(detail);}catch(Exception e){System.out.println(e);}
-                    try{row.getCell(2).setCellValue(path);}catch(Exception e){System.out.println(e);}
-                    try{row.getCell(3).setCellValue(price);}catch(Exception e){System.out.println(e);}
-                   
-                }else{
-                    try {
-                        int lastRow = sheet.getLastRowNum();
-                        Row newRow = sheet.createRow(lastRow+1);
-                        try{newRow.createCell(0).setCellValue(pattern);}catch(Exception e){System.out.println(e);}
-                        try{newRow.createCell(1).setCellValue(detail);}catch(Exception e){System.out.println(e);}
-                        try{newRow.createCell(2).setCellValue(path);}catch(Exception e){System.out.println(e);}
-                        try{newRow.createCell(3).setCellValue(price);}catch(Exception e){System.out.println(e);}
-                       
-                   } catch (Exception e) {
-                        e.printStackTrace();
-                   }             
-               
-               
+                System.out.println("PATH  : " + path);
+                double price;
+
+                try {
+                    price = Double.parseDouble(pgd.get(a).getPriceTF().getText());
+                } catch (NumberFormatException e) {
+                    System.out.println("Error parsing price: " + e.getMessage());
+                    continue; // Skip to the next iteration if price parsing fails
+                }
+
+                Row row = sheet.getRow(a + 1);
+                if (row == null) {
+                    row = sheet.createRow(a + 1);
+                    row.createCell(0);row.createCell(1);row.createCell(2);row.createCell(3);
+                }
+
+                try {
+                    row.getCell(0).setCellValue(pattern);
+                    row.getCell(1).setCellValue(detail);
+                    row.getCell(3).setCellValue(price);
+
+                    if (path != null && !path.isEmpty()) {
+                        try (InputStream inputStream = new FileInputStream(path)) {
+                            byte[] imageBytes = IOUtils.toByteArray(inputStream);
+                            int pictureIndex = wb.addPicture(imageBytes, Workbook.PICTURE_TYPE_PNG);
+                            CreationHelper helper = wb.getCreationHelper();
+                            Drawing<?> drawingNew = sheet.createDrawingPatriarch();
+                            ClientAnchor anchor = helper.createClientAnchor();
+                            anchor.setCol1(2); // Column index for the image
+                            anchor.setRow1(row.getRowNum()); // Row index for the image
+                            Picture picture = drawingNew.createPicture(anchor, pictureIndex);
+                            picture.resize(); // Resize to fit cell
+                            System.out.println("New image added to row: " + row.getRowNum() + " column: 2");
+                        }
+                    }
+                } catch (Exception e) {
+                    System.out.println("Error: " + e);
+                }
             }
-            }      
-            /*write data into StoreStock.xlsx*/
+
             fos = new FileOutputStream(new File(FILE_NAME));
             wb.write(fos);
         } catch (Exception e) {
@@ -186,43 +197,6 @@ public class Packagedao {
             System.out.println("can't read file: " + err);
         }
     }
-
-//   public void deletePackageDetail(PackageDetail pack) {
-//         read(); // Ensure the sheet is read and populated
-//        String pattern = pack.getPatternTF().getText();
-//        String detail = pack.getDetailTA().getText();
-//        double price = Double.parseDouble(pack.getPriceTF().getText());
-//        int rowIndexToDelete = -1; // Variable to store the index of the row to delete
-//        for (Row row : sheet) {
-//            if(row.getRowNum()==0)continue;
-//            String rowPattern = row.getCell(0).getStringCellValue(); // Assuming the first column contains strings
-//            String rowDetail = row.getCell(1).getStringCellValue(); // Assuming the second column contains strings
-//            double rowPrice = row.getCell(3).getNumericCellValue(); // Assuming the fourth column contains numeric values
-//
-//            if (rowPattern.equals(pattern) && rowDetail.equals(detail) && rowPrice == price) {
-//                rowIndexToDelete = row.getRowNum(); // Store the index of the row to delete
-//                System.out.println("Row to delete: " + rowIndexToDelete);
-//                break; // Exit the loop after finding the matching row
-//            }
-//        }
-//        // If a row was found to delete
-//        if (rowIndexToDelete != -1) {
-//            // Move all rows up
-//            for (int i = rowIndexToDelete + 1; i <= sheet.getLastRowNum(); i++) {
-//                if(i==sheet.getLastRowNum()){sheet.removeRow(sheet.getRow(i));}
-//                Row currRow = sheet.getRow(i);
-//                Row previousRow = sheet.getRow(i - 1);
-//                // Copy values from the current row to the previous row
-//                if (previousRow != null && currRow != null) {
-//                    previousRow.getCell(0).setCellValue(currRow.getCell(0).getStringCellValue());
-//                    previousRow.getCell(1).setCellValue(currRow.getCell(1).getStringCellValue());
-//                    previousRow.getCell(3).setCellValue(currRow.getCell(3).getNumericCellValue());
-//                }
-//            }
-//
-//            System.out.println("Row " + rowIndexToDelete + " deleted and data shifted up.");
-//        }
-//   }
     public void deletePackageDetail(PackageDetail pack) {
         read(); // Ensure the sheet is read and populated
         String pattern = pack.getPatternTF().getText();
