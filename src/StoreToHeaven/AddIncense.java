@@ -42,6 +42,7 @@ public class AddIncense extends javax.swing.JPanel {
         name1 = new javax.swing.JLabel();
         nameTF = new javax.swing.JTextField();
 
+        setBackground(new java.awt.Color(244, 244, 224));
         setLayout(null);
 
         pic_detail.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
@@ -51,7 +52,7 @@ public class AddIncense extends javax.swing.JPanel {
 
         pic_detailSP.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
-        pic_detailJP.setBackground(new java.awt.Color(255, 204, 204));
+        pic_detailJP.setBackground(new java.awt.Color(220, 236, 236));
         pic_detailJP.setPreferredSize(new java.awt.Dimension(400, 300));
         pic_detailJP.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

@@ -47,7 +47,7 @@ public String getFilePath() {
         pattern = new javax.swing.JLabel();
         patternTF = new javax.swing.JTextField();
 
-        setBackground(new java.awt.Color(204, 228, 236));
+        setBackground(new java.awt.Color(244, 244, 224));
 
         choosePicBT.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
         choosePicBT.setText("กดแนบรูปภาพ");

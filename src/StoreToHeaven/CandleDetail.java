@@ -51,7 +51,7 @@ private JPanel jp;
         pattern = new javax.swing.JLabel();
         patternTF = new javax.swing.JTextField();
 
-        setBackground(new java.awt.Color(204, 204, 255));
+        setBackground(new java.awt.Color(244, 244, 224));
         setPreferredSize(new java.awt.Dimension(400, 300));
         setLayout(null);
 

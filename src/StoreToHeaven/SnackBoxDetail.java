@@ -54,7 +54,7 @@ public class SnackBoxDetail extends javax.swing.JPanel {
         pattern = new javax.swing.JLabel();
         patternTF = new javax.swing.JTextField();
 
-        setBackground(new java.awt.Color(115, 161, 178));
+        setBackground(new java.awt.Color(244, 244, 224));
         setLayout(null);
 
         choosePicBT.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
@@ -123,7 +123,7 @@ public class SnackBoxDetail extends javax.swing.JPanel {
         pattern.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
         pattern.setText("รูปแบบสินค้า: ");
         add(pattern);
-        pattern.setBounds(15, 14, 78, 21);
+        pattern.setBounds(15, 14, 72, 21);
 
         patternTF.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         add(patternTF);

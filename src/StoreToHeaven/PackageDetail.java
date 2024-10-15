@@ -58,7 +58,7 @@ private String filePath;
         pattern = new javax.swing.JLabel();
         patternTF = new javax.swing.JTextField();
 
-        setBackground(new java.awt.Color(255, 241, 211));
+        setBackground(new java.awt.Color(244, 244, 224));
         setMinimumSize(new java.awt.Dimension(400, 230));
         setLayout(null);
 

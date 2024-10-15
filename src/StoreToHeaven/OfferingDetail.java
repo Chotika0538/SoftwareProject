@@ -46,7 +46,7 @@ public class OfferingDetail extends javax.swing.JPanel {
         showPicName = new javax.swing.JLabel();
         detailLB = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 128, 178));
+        setBackground(new java.awt.Color(244, 244, 224));
         setLayout(null);
 
         detailTA.setColumns(20);

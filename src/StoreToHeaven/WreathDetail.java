@@ -50,7 +50,7 @@ public class WreathDetail extends javax.swing.JPanel {
         pattern = new javax.swing.JLabel();
         patternTF = new javax.swing.JTextField();
 
-        setBackground(new java.awt.Color(255, 241, 211));
+        setBackground(new java.awt.Color(244, 244, 224));
         setLayout(null);
 
         choosePicBT.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N

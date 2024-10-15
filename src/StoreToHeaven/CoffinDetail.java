@@ -57,7 +57,7 @@ private String filePath;
         detailLB2 = new javax.swing.JLabel();
         detailLB3 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 204, 204));
+        setBackground(new java.awt.Color(244, 244, 224));
         setMaximumSize(new java.awt.Dimension(400, 300));
         setMinimumSize(new java.awt.Dimension(400, 300));
         setName(""); // NOI18N
@@ -83,7 +83,7 @@ private String filePath;
         detailLB.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
         detailLB.setText("24 นิ้ว ");
         add(detailLB);
-        detailLB.setBounds(310, 80, 38, 22);
+        detailLB.setBounds(310, 80, 37, 22);
 
         detailSP.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
 
@@ -146,13 +146,13 @@ private String filePath;
         detailLB2.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
         detailLB2.setText("20 นิ้ว ");
         add(detailLB2);
-        detailLB2.setBounds(150, 80, 38, 22);
+        detailLB2.setBounds(150, 80, 37, 22);
 
         detailLB3.setBackground(new java.awt.Color(204, 255, 255));
         detailLB3.setFont(new java.awt.Font("TH SarabunPSK", 1, 18)); // NOI18N
         detailLB3.setText("22 นิ้ว ");
         add(detailLB3);
-        detailLB3.setBounds(230, 80, 38, 22);
+        detailLB3.setBounds(230, 80, 37, 22);
     }// </editor-fold>//GEN-END:initComponents
 
     private void choosePicBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_choosePicBTActionPerformed

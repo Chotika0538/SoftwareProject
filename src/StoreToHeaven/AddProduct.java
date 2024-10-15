@@ -34,6 +34,7 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
         confirmBT = new javax.swing.JButton();
         showAddProduct = new javax.swing.JPanel();
 
+        setBackground(new java.awt.Color(92, 87, 70));
         setPreferredSize(new java.awt.Dimension(800, 600));
         setLayout(null);
 
@@ -49,9 +50,10 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
         add(addChoices);
         addChoices.setBounds(520, 130, 241, 39);
 
-        jPanel1.setBackground(new java.awt.Color(255, 204, 153));
+        jPanel1.setBackground(new java.awt.Color(195, 196, 175));
         jPanel1.setLayout(null);
 
+        jLabel2.setBackground(new java.awt.Color(187, 193, 158));
         jLabel2.setFont(new java.awt.Font("TH Sarabun New", 0, 48)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("เพิ่ม - ลดสินค้า");
@@ -76,7 +78,8 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
         add(confirmBT);
         confirmBT.setBounds(590, 460, 120, 35);
 
-        showAddProduct.setBackground(new java.awt.Color(153, 255, 204));
+        showAddProduct.setBackground(new java.awt.Color(244, 244, 224));
+        showAddProduct.setForeground(new java.awt.Color(244, 244, 224));
         showAddProduct.setLayout(new java.awt.CardLayout());
         JPanel emptyPanel = new JPanel();
         AddWreath wreath = new AddWreath(showAddProduct);
