@@ -46,10 +46,10 @@ public class WreathProduct extends javax.swing.JPanel {
         textMessage = new javax.swing.JTextField();
         name = new javax.swing.JLabel();
         colorCB = new javax.swing.JComboBox<>();
-        typeCB1 = new javax.swing.JComboBox<>();
+        typeCB = new javax.swing.JComboBox<>();
         priceLB = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(242, 217, 220));
+        setBackground(new java.awt.Color(244, 244, 224));
         setPreferredSize(new java.awt.Dimension(800, 500));
         setLayout(null);
 
@@ -104,10 +104,10 @@ public class WreathProduct extends javax.swing.JPanel {
         add(colorCB);
         colorCB.setBounds(420, 270, 120, 30);
 
-        typeCB1.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
-        typeCB1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "เลือกชนิด" }));
-        add(typeCB1);
-        typeCB1.setBounds(140, 270, 120, 30);
+        typeCB.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
+        typeCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "เลือกชนิด" }));
+        add(typeCB);
+        typeCB.setBounds(140, 270, 120, 30);
 
         priceLB.setFont(new java.awt.Font("TH SarabunPSK", 0, 24)); // NOI18N
         priceLB.setText("ราคา : ");
@@ -121,13 +121,18 @@ public class WreathProduct extends javax.swing.JPanel {
     details.setText(wreathClass.getDetail());
     productImage.setIcon(new ImageIcon(wreathClass.getPath()));
     priceLB.setText(wreathClass.getPriceAll().toString());
-}
-
-    public Wreath getWreathClass() {
-        return wreathClass;
+    String[] types = wreathClass.getMaterialAll().toArray(new String[0]);
+            // เปลี่ยนค่าใน JComboBox
+    typeCB.removeAllItems(); // ลบค่าทั้งหมด
+    for(int i=0; i<types.length; i++){
+        typeCB.addItem(types[i]);
     }
-
-
+    String[] colors = wreathClass.getColorAll().toArray(new String[0]);
+     colorCB.removeAllItems(); // ลบค่าทั้งหมด
+    for(int i=0; i<colors.length; i++){
+        colorCB.addItem(colors[i]);
+    }
+}
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel choose;
     private javax.swing.JLabel chooseColor;
@@ -143,6 +148,6 @@ public class WreathProduct extends javax.swing.JPanel {
     private javax.swing.JLabel productImage;
     private javax.swing.JScrollPane scrollDetail;
     private javax.swing.JTextField textMessage;
-    private javax.swing.JComboBox<String> typeCB1;
+    private javax.swing.JComboBox<String> typeCB;
     // End of variables declaration//GEN-END:variables
 }
