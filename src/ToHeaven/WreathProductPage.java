@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 public class WreathProductPage extends javax.swing.JPanel {
     
     private ArrayList<Wreath> wreathClassList;
-    private ArrayList<WreathProduct> wreathProduct;
+    protected static ArrayList<WreathProduct> wreathProduct;
     private CardLayout cd;
     private JPanel mainPanel;
     int i = 1;

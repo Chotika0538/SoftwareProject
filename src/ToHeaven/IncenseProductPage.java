@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 public class IncenseProductPage extends javax.swing.JPanel {
     
     private ArrayList<Incense> incenseClassList;
-    private ArrayList<IncenseProduct> incenseProduct;
+    protected static ArrayList<IncenseProduct> incenseProduct;
     private CardLayout cd;
     private JPanel mainPanel;
     private Incensedao incensedao;

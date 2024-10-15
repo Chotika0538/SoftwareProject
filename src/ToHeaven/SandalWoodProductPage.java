@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 public class SandalWoodProductPage extends javax.swing.JPanel {
     
     private ArrayList<SandalWood> sandalwoodClassList;
-    private ArrayList<SandalWoodProduct> sandalwoodProduct;
+    protected static ArrayList<SandalWoodProduct> sandalwoodProduct;
     private CardLayout cd;
     private JPanel mainPanel;
     int i = 1;

@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 public class CoffinProductPage extends javax.swing.JPanel {
     
     private ArrayList<Coffin> coffinClassList ;
-    private ArrayList<CoffinProduct> coffinProduct;
+    protected static ArrayList<CoffinProduct> coffinProduct;
     private CardLayout cd;
     private JPanel mainPanel;
     int i = 1;

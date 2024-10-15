@@ -121,7 +121,7 @@ public class MainFrame extends javax.swing.JPanel {
         frameJP.add(product, "productpage");
         frameJP.add(wpp, "wreathproductpage");
         frameJP.add(ofp, "offeringproductpage");
-        framepp.add(cofpp, "coffinproductpage");
+        frameJP.add(cofpp, "coffinproductpage");
         frameJP.add(canpp ,"candleproductpage");
         frameJP.add(inpp, "incenseproductpage");
         frameJP.add(snackpp, "snackboxproductpage");

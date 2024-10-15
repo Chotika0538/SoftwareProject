@@ -12,7 +12,7 @@ import javax.swing.JPanel;
 public class OfferingProductPage extends javax.swing.JPanel {
     
     private ArrayList<Offering> offeringClassList;
-    private ArrayList<OfferingProduct> offeringProduct;
+    protected static ArrayList<OfferingProduct> offeringProduct;
     private CardLayout cd;
     private JPanel mainPanel;
     private Offeringdao offeringdao;

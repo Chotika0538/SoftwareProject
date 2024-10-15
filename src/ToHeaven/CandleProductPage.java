@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 public class CandleProductPage extends javax.swing.JPanel {
     
     private ArrayList<Candle> candleClassList;
-    private ArrayList<CandleProduct> candleProduct;
+    protected static ArrayList<CandleProduct> candleProduct;
     private CardLayout cd;
     private JPanel mainPanel;
     int i = 1;

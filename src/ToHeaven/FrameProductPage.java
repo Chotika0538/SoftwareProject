@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 public class FrameProductPage extends javax.swing.JPanel {
     
     private ArrayList<Frame> frameClassList;
-    private ArrayList<FrameProduct> frameProduct;
+    protected static ArrayList<FrameProduct> frameProduct;
     private CardLayout cd;
     private JPanel mainPanel;
     int i = 1;
