@@ -199,6 +199,70 @@ public ArrayList<Incense> getAll() {
             System.out.println("can't read file: " + err);
         }
     }
+    
+   
+   /*delete column from excel*/
+       public void deletePackageDetail(IncenseDetail in) {
+        read(); // Ensure the sheet is read and populated
+        String pattern = in.getPatternTF().getText();
+        String detail = in.getDetailTA().getText();
+        double price = Double.parseDouble(in.getPriceTF().getText());
+        int rowIndexToDelete = -1; // Variable to store the index of the row to delete
+
+        // ค้นหาบรรทัดที่ตรงกัน
+        for (Row row : sheet) {
+            if(row.getRowNum() == 0) continue; // ข้ามแถวที่ 0 (หัวตาราง)
+            String rowPattern = row.getCell(0).getStringCellValue();
+            String rowDetail = row.getCell(1).getStringCellValue();
+            double rowPrice = row.getCell(3).getNumericCellValue();
+
+            // เปรียบเทียบค่าที่ต้องการลบ
+            if (rowPattern.equals(pattern) && rowDetail.equals(detail) && Math.abs(rowPrice - price) < 0.0001) {
+                rowIndexToDelete = row.getRowNum(); // เก็บตำแหน่งของบรรทัดที่ต้องการลบ
+                System.out.println("Row to delete: " + rowIndexToDelete);
+                break; // ออกจากลูปเมื่อพบแถวที่ตรงกัน
+            }
+        }
+
+        // ถ้ามีการพบแถวที่ต้องการลบ
+        if (rowIndexToDelete != -1) {
+            // เลื่อนข้อมูลขึ้น
+            for (int i = rowIndexToDelete + 1; i <= sheet.getLastRowNum(); i++) {
+                Row currRow = sheet.getRow(i);
+                Row previousRow = sheet.getRow(i - 1);
+
+                if (previousRow != null && currRow != null) {
+                    // คัดลอกค่าจากแถวปัจจุบันไปยังแถวก่อนหน้า
+                    previousRow.getCell(0).setCellValue(currRow.getCell(0).getStringCellValue());
+                    previousRow.getCell(1).setCellValue(currRow.getCell(1).getStringCellValue());
+                    previousRow.getCell(3).setCellValue(currRow.getCell(3).getNumericCellValue());
+                }
+            }
+
+            // ลบแถวที่ค้นพบ
+            Row rowToDelete = sheet.getRow(rowIndexToDelete);
+            if (rowToDelete != null) {
+                sheet.removeRow(rowToDelete);
+                System.out.println("Row " + rowIndexToDelete + " deleted.");
+            }
+
+            // หากต้องการให้ข้อมูลในแถวสุดท้ายหายไป
+            int lastRowIndex = sheet.getLastRowNum();
+            if (lastRowIndex >= rowIndexToDelete) {
+                sheet.shiftRows(rowIndexToDelete + 1, lastRowIndex, -1); // เลื่อนข้อมูลขึ้น
+            }
+
+            // บันทึกการเปลี่ยนแปลง
+            try (FileOutputStream fileOut = new FileOutputStream(FILE_NAME)) {
+                wb.write(fileOut);
+                wb.close();
+                fileOut.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }    
+     
  
 }
 
