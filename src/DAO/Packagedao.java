@@ -187,41 +187,100 @@ public class Packagedao {
         }
     }
 
-   public void deletePackageDetail(PackageDetail pack) {
-         read(); // Ensure the sheet is read and populated
+//   public void deletePackageDetail(PackageDetail pack) {
+//         read(); // Ensure the sheet is read and populated
+//        String pattern = pack.getPatternTF().getText();
+//        String detail = pack.getDetailTA().getText();
+//        double price = Double.parseDouble(pack.getPriceTF().getText());
+//        int rowIndexToDelete = -1; // Variable to store the index of the row to delete
+//        for (Row row : sheet) {
+//            if(row.getRowNum()==0)continue;
+//            String rowPattern = row.getCell(0).getStringCellValue(); // Assuming the first column contains strings
+//            String rowDetail = row.getCell(1).getStringCellValue(); // Assuming the second column contains strings
+//            double rowPrice = row.getCell(3).getNumericCellValue(); // Assuming the fourth column contains numeric values
+//
+//            if (rowPattern.equals(pattern) && rowDetail.equals(detail) && rowPrice == price) {
+//                rowIndexToDelete = row.getRowNum(); // Store the index of the row to delete
+//                System.out.println("Row to delete: " + rowIndexToDelete);
+//                break; // Exit the loop after finding the matching row
+//            }
+//        }
+//        // If a row was found to delete
+//        if (rowIndexToDelete != -1) {
+//            // Move all rows up
+//            for (int i = rowIndexToDelete + 1; i <= sheet.getLastRowNum(); i++) {
+//                if(i==sheet.getLastRowNum()){sheet.removeRow(sheet.getRow(i));}
+//                Row currRow = sheet.getRow(i);
+//                Row previousRow = sheet.getRow(i - 1);
+//                // Copy values from the current row to the previous row
+//                if (previousRow != null && currRow != null) {
+//                    previousRow.getCell(0).setCellValue(currRow.getCell(0).getStringCellValue());
+//                    previousRow.getCell(1).setCellValue(currRow.getCell(1).getStringCellValue());
+//                    previousRow.getCell(3).setCellValue(currRow.getCell(3).getNumericCellValue());
+//                }
+//            }
+//
+//            System.out.println("Row " + rowIndexToDelete + " deleted and data shifted up.");
+//        }
+//   }
+    public void deletePackageDetail(PackageDetail pack) {
+        read(); // Ensure the sheet is read and populated
         String pattern = pack.getPatternTF().getText();
         String detail = pack.getDetailTA().getText();
         double price = Double.parseDouble(pack.getPriceTF().getText());
         int rowIndexToDelete = -1; // Variable to store the index of the row to delete
-        for (Row row : sheet) {
-            if(row.getRowNum()==0)continue;
-            String rowPattern = row.getCell(0).getStringCellValue(); // Assuming the first column contains strings
-            String rowDetail = row.getCell(1).getStringCellValue(); // Assuming the second column contains strings
-            double rowPrice = row.getCell(3).getNumericCellValue(); // Assuming the fourth column contains numeric values
 
-            if (rowPattern.equals(pattern) && rowDetail.equals(detail) && rowPrice == price) {
-                rowIndexToDelete = row.getRowNum(); // Store the index of the row to delete
+        // ค้นหาบรรทัดที่ตรงกัน
+        for (Row row : sheet) {
+            if(row.getRowNum() == 0) continue; // ข้ามแถวที่ 0 (หัวตาราง)
+            String rowPattern = row.getCell(0).getStringCellValue();
+            String rowDetail = row.getCell(1).getStringCellValue();
+            double rowPrice = row.getCell(3).getNumericCellValue();
+
+            // เปรียบเทียบค่าที่ต้องการลบ
+            if (rowPattern.equals(pattern) && rowDetail.equals(detail) && Math.abs(rowPrice - price) < 0.0001) {
+                rowIndexToDelete = row.getRowNum(); // เก็บตำแหน่งของบรรทัดที่ต้องการลบ
                 System.out.println("Row to delete: " + rowIndexToDelete);
-                break; // Exit the loop after finding the matching row
+                break; // ออกจากลูปเมื่อพบแถวที่ตรงกัน
             }
         }
-        // If a row was found to delete
+
+        // ถ้ามีการพบแถวที่ต้องการลบ
         if (rowIndexToDelete != -1) {
-            // Move all rows up
+            // เลื่อนข้อมูลขึ้น
             for (int i = rowIndexToDelete + 1; i <= sheet.getLastRowNum(); i++) {
-                if(i==sheet.getLastRowNum()){sheet.removeRow(sheet.getRow(i));}
                 Row currRow = sheet.getRow(i);
                 Row previousRow = sheet.getRow(i - 1);
-                // Copy values from the current row to the previous row
+
                 if (previousRow != null && currRow != null) {
+                    // คัดลอกค่าจากแถวปัจจุบันไปยังแถวก่อนหน้า
                     previousRow.getCell(0).setCellValue(currRow.getCell(0).getStringCellValue());
                     previousRow.getCell(1).setCellValue(currRow.getCell(1).getStringCellValue());
                     previousRow.getCell(3).setCellValue(currRow.getCell(3).getNumericCellValue());
                 }
             }
 
-            System.out.println("Row " + rowIndexToDelete + " deleted and data shifted up.");
+            // ลบแถวที่ค้นพบ
+            Row rowToDelete = sheet.getRow(rowIndexToDelete);
+            if (rowToDelete != null) {
+                sheet.removeRow(rowToDelete);
+                System.out.println("Row " + rowIndexToDelete + " deleted.");
+            }
+
+            // หากต้องการให้ข้อมูลในแถวสุดท้ายหายไป
+            int lastRowIndex = sheet.getLastRowNum();
+            if (lastRowIndex >= rowIndexToDelete) {
+                sheet.shiftRows(rowIndexToDelete + 1, lastRowIndex, -1); // เลื่อนข้อมูลขึ้น
+            }
+
+            // บันทึกการเปลี่ยนแปลง
+            try (FileOutputStream fileOut = new FileOutputStream(FILE_NAME)) {
+                wb.write(fileOut);
+                fileOut.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
-   }
+    }
 }
 
