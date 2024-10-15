@@ -1,18 +1,95 @@
 package ToHeaven;
 
+import StoreToHeaven.Temple;
 import java.awt.CardLayout;
+import java.util.ArrayList;
+import javax.swing.ButtonGroup;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import DAO.*;
+import java.awt.Component;
+import java.awt.Dimension;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
 
 
 public class CustomAsh extends javax.swing.JPanel {
     private CardLayout cd;
+    private JPanel rightPanel;
     private JPanel mainPanel;
+    private ButtonGroup group;
+
+    private Templedao tdao;
+    private ArrayList<Temple> templeClassList;
+    private ArrayList<String> all_provice;
+    private ArrayList<String> provice_nameForChoose;
     
+    //private ArrayList<Temple_comp> All_TemComp;
+    private ArrayList<Temple_comp> TemComp_Bangkok;
+    private ArrayList<Temple_comp> TemComp_Kampaengpech;
+    private ArrayList<Temple_comp> TemComp_Nonthaburi;
+    private ArrayList<Temple_comp> TemComp_Surin;
+    private ArrayList<Temple> temInBangkok;
+    private ArrayList<Temple> temInKampaengpech;
+    private ArrayList<Temple> temInNonthaburi;
+    private ArrayList<Temple> temInSurin;
+    private ArrayList<Temple_comp> showTemList;
+    
+    private ArrayList<JLabel> lables;
+    private JLabel[] all_label= new JLabel[5];
+    //private boolean[] added_templeList = {false, false, false, false};//Bankok, Kampaengpech Nonthaburi, Surin
+    //int componentOnList;
     public CustomAsh(JPanel mainPanel) {
-        this.mainPanel = mainPanel;
-        cd = (CardLayout) mainPanel.getLayout();
         initComponents();
+        cd = (CardLayout) mainPanel.getLayout();
+        this.mainPanel = mainPanel;
+        this.rightPanel = templeListJP;
+        
+        all_label[0] = choice1;
+        all_label[1] = choice2;
+        all_label[2] = choice3;
+        all_label[3] = choice4;
+        all_label[4] = choice5;
+        
+        lables = new ArrayList<>();
+        lables.add(choice1);
+        lables.add(choice2);
+        lables.add(choice3);
+        lables.add(choice4);
+        lables.add(choice5);
+        
+        group = new ButtonGroup();
+        group.add(noCB);
+        group.add(yesCB);
+        chooseProvCB.setEnabled(false);
+        
+        tdao = new Templedao();
+        all_provice = new ArrayList<>();
+        provice_nameForChoose = new ArrayList<>();
+        
+        temInBangkok = new ArrayList<>();
+        temInKampaengpech = new ArrayList<>();
+        temInNonthaburi = new ArrayList<>();
+        temInSurin = new ArrayList<>();
+        showTemList = new ArrayList<>();
+        
+        //All_TemComp = new ArrayList<>();
+        TemComp_Bangkok = new ArrayList<>();
+        TemComp_Kampaengpech = new ArrayList<>();
+        TemComp_Nonthaburi = new ArrayList<>();
+        TemComp_Surin = new ArrayList<>();
+        
+        templeClassList = tdao.getAll();
+        setProvinceChoice();
+        addTemToList();
+        addTempleComp(temInBangkok);
+        addTempleComp(temInKampaengpech);
+        addTempleComp(temInNonthaburi);
+        addTempleComp(temInSurin);
+        
     }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -30,7 +107,30 @@ public class CustomAsh extends javax.swing.JPanel {
         backPanel = new javax.swing.JButton();
         confirmPanel = new javax.swing.JButton();
         ashPanel = new javax.swing.JPanel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        noCB = new javax.swing.JCheckBox();
+        yesCB = new javax.swing.JCheckBox();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
+        chooseProvCB = new javax.swing.JComboBox<>();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        templeListJP = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        clearSelectedListBT = new javax.swing.JButton();
+        showSelectedJP = new javax.swing.JPanel();
+        choice1 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        choice2 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        choice3 = new javax.swing.JLabel();
+        choice4 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        choice5 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(800, 600));
         setLayout(new java.awt.BorderLayout());
@@ -39,22 +139,24 @@ public class CustomAsh extends javax.swing.JPanel {
         menuCustom.setPreferredSize(new java.awt.Dimension(800, 80));
         menuCustom.setLayout(null);
 
-        coffinStageLB.setFont(new java.awt.Font("MiTNThin", 1, 24)); // NOI18N
+        coffinStageLB.setFont(new java.awt.Font("TH SarabunPSK", 1, 24)); // NOI18N
         coffinStageLB.setText("สั่งซื้อโลงศพ");
         menuCustom.add(coffinStageLB);
-        coffinStageLB.setBounds(70, 20, 110, 41);
+        coffinStageLB.setBounds(70, 20, 82, 28);
 
-        funeralStageLB.setFont(new java.awt.Font("MiTNThin", 1, 24)); // NOI18N
+        funeralStageLB.setFont(new java.awt.Font("TH SarabunPSK", 1, 24)); // NOI18N
         funeralStageLB.setText("งานฌาปนกิจ");
         menuCustom.add(funeralStageLB);
-        funeralStageLB.setBounds(340, 20, 121, 41);
+        funeralStageLB.setBounds(340, 20, 121, 28);
 
-        boneStageLB.setFont(new java.awt.Font("MiTNThin", 1, 24)); // NOI18N
+        boneStageLB.setFont(new java.awt.Font("TH SarabunPSK", 1, 24)); // NOI18N
         boneStageLB.setText("การจัดการอัฐิ");
         menuCustom.add(boneStageLB);
-        boneStageLB.setBounds(610, 20, 117, 41);
+        boneStageLB.setBounds(610, 20, 117, 28);
 
         add(menuCustom, java.awt.BorderLayout.PAGE_START);
+
+        buttonPanel.setPreferredSize(new java.awt.Dimension(800, 45));
 
         backPanel.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         backPanel.setText("<ย้อนกลับ");
@@ -63,66 +165,482 @@ public class CustomAsh extends javax.swing.JPanel {
                 backPanelMouseClicked(evt);
             }
         });
-        backPanel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backPanelActionPerformed(evt);
-            }
-        });
 
         confirmPanel.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         confirmPanel.setText("ยืนยัน");
+        confirmPanel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirmPanelActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout buttonPanelLayout = new javax.swing.GroupLayout(buttonPanel);
         buttonPanel.setLayout(buttonPanelLayout);
         buttonPanelLayout.setHorizontalGroup(
             buttonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(buttonPanelLayout.createSequentialGroup()
-                .addGap(91, 91, 91)
+                .addGap(25, 25, 25)
                 .addComponent(backPanel)
-                .addGap(265, 265, 265)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 594, Short.MAX_VALUE)
                 .addComponent(confirmPanel)
-                .addContainerGap())
+                .addGap(28, 28, 28))
         );
         buttonPanelLayout.setVerticalGroup(
             buttonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(buttonPanelLayout.createSequentialGroup()
-                .addGap(29, 29, 29)
+                .addContainerGap()
                 .addGroup(buttonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(confirmPanel)
                     .addComponent(backPanel))
-                .addGap(25, 25, 25))
+                .addContainerGap(11, Short.MAX_VALUE))
         );
 
         add(buttonPanel, java.awt.BorderLayout.PAGE_END);
 
         ashPanel.setBackground(new java.awt.Color(204, 204, 255));
+        ashPanel.setLayout(null);
 
-        jComboBox1.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "วัดพระศรีมหาธาตุ (กรุงเทพ)", "วัดโสมนัส (กรุงเทพ)", "วัดหัวลำโพง (กรุงเทพ)", "วัดเขาใหญ่ (สุพรรณบุรี)", "วัดบ้านบึง (พิษณุโลก)", "วัดสว่างอารมณ์ (กำแพงเพชร)", "วัดบางม่วง (นนทบุรี)", "วัดไผ่ล้อม (นครปฐม)", "วัดป้อมแก้ว (สมุทรสงคราม)", "วัดป่าอดุลยาราม (ขอนแก่น)", "วัดสุกาวาส (บุรีรัมย์)", "วัดหนองคู (นครราชสีมา)", "วัดสว่างสระทอง (ร้อยเอ็ด)", "วัดจันทิมา (อำนาจเจริญ)", "วัดสองพี่น้อง (สระแก้ว)", "วัดหัวสวน (ฉะเชิงเทรา)", "วัดสายวารี (ชลบุรี)", "วัดน้ำใส (ระยอง)", "วัดทองทั่ว (จันทบุรี)", "วัดดอนเจดีย์ (ตาก)", "วัดท่าเรือ (กาญจนบุรี)", "วัดทุ่งตาล (ราชบุรี)", "วัดแหลมปอ (ชุมพร)", "วัดจันทาราม (ระนอง)", "วัดแก้วโกรวาราม (กระบี่)" }));
-        ashPanel.add(jComboBox1);
+        noCB.setFont(new java.awt.Font("TH Sarabun New", 0, 24)); // NOI18N
+        noCB.setText("ไม่ใช้บริการ");
+        noCB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                noCBActionPerformed(evt);
+            }
+        });
+        ashPanel.add(noCB);
+        noCB.setBounds(580, 10, 140, 30);
+
+        yesCB.setFont(new java.awt.Font("TH Sarabun New", 0, 24)); // NOI18N
+        yesCB.setText("ใช้บริการ");
+        yesCB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yesCBActionPerformed(evt);
+            }
+        });
+        ashPanel.add(yesCB);
+        yesCB.setBounds(410, 10, 140, 30);
+
+        jPanel1.setBackground(new java.awt.Color(149, 170, 188));
+        jPanel1.setEnabled(false);
+        jPanel1.setLayout(new java.awt.BorderLayout());
+
+        jPanel6.setPreferredSize(new java.awt.Dimension(320, 45));
+        jPanel6.setRequestFocusEnabled(false);
+
+        chooseProvCB.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
+        chooseProvCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "เลือกจังหวัด"}));
+        chooseProvCB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chooseProvCBActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(chooseProvCB, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(98, Short.MAX_VALUE))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(chooseProvCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(8, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(jPanel6, java.awt.BorderLayout.PAGE_START);
+
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+
+        templeListJP.setBackground(new java.awt.Color(255, 204, 204));
+        templeListJP.setLayout(new java.awt.GridLayout(0, 1, 0, 5));
+        jScrollPane1.setViewportView(templeListJP);
+
+        jPanel1.add(jScrollPane1, java.awt.BorderLayout.CENTER);
+
+        ashPanel.add(jPanel1);
+        jPanel1.setBounds(400, 60, 320, 300);
+
+        jPanel3.setBackground(new java.awt.Color(255, 204, 204));
+        jPanel3.setLayout(new java.awt.BorderLayout());
+
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel5.setPreferredSize(new java.awt.Dimension(330, 45));
+
+        jLabel1.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
+        jLabel1.setText("วัดที่เลือก");
+
+        jLabel3.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
+        jLabel3.setText("(เลือกได้ไม่เกิน 5 ลำดับ)");
+
+        clearSelectedListBT.setBackground(new java.awt.Color(204, 204, 204));
+        clearSelectedListBT.setFont(new java.awt.Font("TH Sarabun New", 1, 18)); // NOI18N
+        clearSelectedListBT.setText("ล้างทั้งหมด");
+        clearSelectedListBT.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                clearSelectedListBTMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addComponent(clearSelectedListBT)
+                .addGap(10, 10, 10))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(clearSelectedListBT, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addGap(2, 2, 2))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(0, 3, Short.MAX_VALUE)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3))))
+                .addContainerGap())
+        );
+
+        jPanel3.add(jPanel5, java.awt.BorderLayout.PAGE_START);
+
+        showSelectedJP.setLayout(null);
+
+        choice1.setBackground(new java.awt.Color(255, 255, 255));
+        choice1.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
+        choice1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        showSelectedJP.add(choice1);
+        choice1.setBounds(40, 30, 270, 30);
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel9.setText("1");
+        showSelectedJP.add(jLabel9);
+        jLabel9.setBounds(20, 30, 20, 30);
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel10.setText("2");
+        showSelectedJP.add(jLabel10);
+        jLabel10.setBounds(20, 70, 20, 30);
+
+        choice2.setBackground(new java.awt.Color(255, 255, 255));
+        choice2.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
+        choice2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        showSelectedJP.add(choice2);
+        choice2.setBounds(40, 70, 270, 30);
+
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel13.setText("3");
+        showSelectedJP.add(jLabel13);
+        jLabel13.setBounds(20, 110, 20, 30);
+
+        choice3.setBackground(new java.awt.Color(255, 255, 255));
+        choice3.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
+        choice3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        showSelectedJP.add(choice3);
+        choice3.setBounds(40, 110, 270, 30);
+
+        choice4.setBackground(new java.awt.Color(255, 255, 255));
+        choice4.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
+        choice4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        showSelectedJP.add(choice4);
+        choice4.setBounds(40, 150, 270, 30);
+
+        jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel16.setText("4");
+        showSelectedJP.add(jLabel16);
+        jLabel16.setBounds(20, 150, 20, 30);
+
+        choice5.setBackground(new java.awt.Color(255, 255, 255));
+        choice5.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
+        choice5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        showSelectedJP.add(choice5);
+        choice5.setBounds(40, 190, 270, 30);
+
+        jLabel18.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel18.setText("5");
+        showSelectedJP.add(jLabel18);
+        jLabel18.setBounds(20, 190, 20, 30);
+
+        jPanel3.add(showSelectedJP, java.awt.BorderLayout.CENTER);
+
+        ashPanel.add(jPanel3);
+        jPanel3.setBounds(50, 60, 330, 300);
+
+        jLabel2.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
+        jLabel2.setText("คุณต้องการใช้บริการจัดการอัฐิหรือไม่? : ");
+        ashPanel.add(jLabel2);
+        jLabel2.setBounds(30, 10, 330, 30);
 
         add(ashPanel, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void backPanelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backPanelActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_backPanelActionPerformed
-
     private void backPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backPanelMouseClicked
         // TODO add your handling code here:
-         ((CardLayout)mainPanel.getLayout()).show(mainPanel, "funeral");
+         ((CardLayout)mainPanel.getLayout()).show(mainPanel, "funeralcustom");
     }//GEN-LAST:event_backPanelMouseClicked
 
+    private void chooseProvCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chooseProvCBActionPerformed
+        
+        JComboBox cb = (JComboBox) evt.getSource();
 
+        //Bangkok
+        if(((String)cb.getSelectedItem()).equals("กรุงเทพ")){
+            templeListJP.removeAll();
+            templeListJP.setPreferredSize(new Dimension(318, 500));
+            templeListJP.revalidate();
+            templeListJP.repaint();
+            
+            for(Temple_comp c : TemComp_Bangkok){
+                //templeListJP.setPreferredSize(new Dimension(318, templeListJP.getHeight()+100));
+                templeListJP.add(c);
+                templeListJP.revalidate();
+                templeListJP.repaint();
+            }
+
+        }
+        //Kampaengpech
+        else if(((String)cb.getSelectedItem()).equals("กำแพงเพชร")){
+            
+            templeListJP.removeAll();
+            templeListJP.setPreferredSize(new Dimension(318, 255));
+            templeListJP.revalidate();
+            templeListJP.repaint();
+            
+            for(Temple_comp c : TemComp_Kampaengpech){
+                //templeListJP.setPreferredSize(new Dimension(318, templeListJP.getHeight()+100));
+                templeListJP.add(c);
+                templeListJP.revalidate();
+                templeListJP.repaint();
+            }
+        }
+        //Nonthaburi
+        else if(((String)cb.getSelectedItem()).equals("นนทบุรี")){
+            
+            templeListJP.removeAll();
+            templeListJP.setPreferredSize(new Dimension(318, 255));
+            templeListJP.revalidate();
+            templeListJP.repaint();
+            
+            for(Temple_comp c : TemComp_Nonthaburi){
+                //templeListJP.setPreferredSize(new Dimension(318, templeListJP.getHeight()+100));
+                templeListJP.add(c);
+//                templeListJP.add(TemComp_Nonthaburi.get(TemComp_Nonthaburi.size()-1));
+                templeListJP.revalidate();
+                templeListJP.repaint();
+            }
+            
+        }
+        //Surin
+        else if(((String)cb.getSelectedItem()).equals("สุรินทร์")){
+            templeListJP.removeAll();
+            templeListJP.setPreferredSize(new Dimension(318, 255));
+            templeListJP.revalidate();
+            templeListJP.repaint();
+            
+            for(Temple_comp c : TemComp_Surin){
+                //templeListJP.setPreferredSize(new Dimension(318, templeListJP.getHeight()+100));
+                templeListJP.add(c);
+                templeListJP.revalidate();
+                templeListJP.repaint();
+            }
+        }
+    }//GEN-LAST:event_chooseProvCBActionPerformed
+
+    private void confirmPanelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmPanelActionPerformed
+        if(!yesCB.isSelected() || !noCB.isSelected()){
+            JOptionPane.showMessageDialog(this, "Please select before comfirm.", "Select", JOptionPane.WARNING_MESSAGE);
+        }
+        else{
+            if(yesCB.isSelected()){
+                
+            }
+            else if(noCB.isSelected()){
+            
+            }
+            
+        }
+    }//GEN-LAST:event_confirmPanelActionPerformed
+
+    private void yesCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yesCBActionPerformed
+        checkChoose();
+    }//GEN-LAST:event_yesCBActionPerformed
+
+    private void noCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noCBActionPerformed
+        checkChoose();
+    }//GEN-LAST:event_noCBActionPerformed
+
+    private void clearSelectedListBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clearSelectedListBTMouseClicked
+        int result = JOptionPane.showConfirmDialog(null,"Are you sure you want to delete all?","Confirm", JOptionPane.YES_NO_OPTION);
+            if(result == JOptionPane.YES_OPTION){
+                choice1.setText("");
+                choice2.setText("");
+                choice3.setText("");
+                choice4.setText("");
+                choice5.setText("");
+
+                for(Temple_comp c : TemComp_Bangkok){
+                    c.setChooseBT(false);
+                }
+                for(Temple_comp c : TemComp_Kampaengpech){
+                    c.setChooseBT(false);
+                }
+                for(Temple_comp c : TemComp_Nonthaburi){
+                    c.setChooseBT(false);
+                }
+                for(Temple_comp c : TemComp_Surin){
+                    c.setChooseBT(false);
+                }
+            }
+    }//GEN-LAST:event_clearSelectedListBTMouseClicked
+    
+    public void checkChoose(){
+        if(yesCB.isSelected()){
+            chooseProvCB.setEnabled(true);
+            for(Temple_comp c : TemComp_Bangkok){
+                c.setChooseBTenable(true);
+            }
+            for(Temple_comp c : TemComp_Kampaengpech){
+                c.setChooseBTenable(true);
+            }
+            for(Temple_comp c : TemComp_Nonthaburi){
+                c.setChooseBTenable(true);
+            }
+            for(Temple_comp c : TemComp_Surin){
+                c.setChooseBTenable(true);
+            }
+        }
+        else if(noCB.isSelected()){
+            chooseProvCB.setEnabled(false);
+            for(Temple_comp c : TemComp_Bangkok){
+                c.setChooseBTenable(false);
+            }
+            for(Temple_comp c : TemComp_Kampaengpech){
+                c.setChooseBTenable(false);
+            }
+            for(Temple_comp c : TemComp_Nonthaburi){
+                c.setChooseBTenable(false);
+            }
+            for(Temple_comp c : TemComp_Surin){
+                c.setChooseBTenable(false);
+            }
+        }
+         
+        
+    }
+    public void setProvinceChoice(){
+        
+        //get all province name
+        for(int i=0; i<templeClassList.size(); i++){
+            all_provice.add(templeClassList.get(i).getTempleProvince());
+        }
+        //get only not repeat name to array
+        for(int i=0; i<all_provice.size(); i++){
+            String pName = all_provice.get(i);
+            if(!provice_nameForChoose.contains(pName)){
+                provice_nameForChoose.add(pName);
+            }
+        }
+        //add to Combobox
+        for(int i=0; i<provice_nameForChoose.size(); i++){
+            chooseProvCB.addItem(provice_nameForChoose.get(i));
+        }
+    }
+    
+    public void addTempleComp(ArrayList<Temple> templeList){
+        for(Temple tem : templeList){
+            if(tem.getTempleProvince().equals("กรุงเทพ")){
+                TemComp_Bangkok.add(new Temple_comp(tem, lables));
+            }
+            else if(tem.getTempleProvince().equals("กำแพงเพชร")){
+                TemComp_Kampaengpech.add(new Temple_comp(tem, lables));
+            }
+            else if(tem.getTempleProvince().equals("นนทบุรี")){
+                TemComp_Nonthaburi.add(new Temple_comp(tem, lables));
+            }
+            else if(tem.getTempleProvince().equals("สุรินทร์")){
+                TemComp_Surin.add(new Temple_comp(tem, lables));
+            }
+        }
+    }
+    
+    
+    public void addTemToList(){
+        for(int i=0; i<templeClassList.size(); i++){
+            //Bankok
+            if(templeClassList.get(i).getTempleProvince().equals("กรุงเทพ")){
+                temInBangkok.add(templeClassList.get(i));
+            }
+            //Kampaengpech
+            else if(templeClassList.get(i).getTempleProvince().equals("กำแพงเพชร")){
+                temInKampaengpech.add(templeClassList.get(i));
+            }
+            //Nonthaburi
+            else if(templeClassList.get(i).getTempleProvince().equals("นนทบุรี")){
+                temInNonthaburi.add(templeClassList.get(i));
+            }
+            //Surin
+            else if(templeClassList.get(i).getTempleProvince().equals("สุรินทร์")){
+                temInSurin.add(templeClassList.get(i));
+            }
+            
+        }
+    }
+    
+//    public int countComponent() {
+//        componentOnList = 0;
+//        for(Component c : templeListJP.getComponents()){
+//            componentOnList+=1;
+//        }
+//        return componentOnList;
+//    }
+
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel ashPanel;
     private javax.swing.JButton backPanel;
     private javax.swing.JLabel boneStageLB;
     private javax.swing.JPanel buttonPanel;
+    private javax.swing.JLabel choice1;
+    private javax.swing.JLabel choice2;
+    private javax.swing.JLabel choice3;
+    private javax.swing.JLabel choice4;
+    private javax.swing.JLabel choice5;
+    private javax.swing.JComboBox<String> chooseProvCB;
+    private javax.swing.JButton clearSelectedListBT;
     private javax.swing.JLabel coffinStageLB;
     private javax.swing.JButton confirmPanel;
     private javax.swing.JLabel funeralStageLB;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel menuCustom;
+    private javax.swing.JCheckBox noCB;
+    private javax.swing.JPanel showSelectedJP;
+    private javax.swing.JPanel templeListJP;
+    private javax.swing.JCheckBox yesCB;
     // End of variables declaration//GEN-END:variables
 }

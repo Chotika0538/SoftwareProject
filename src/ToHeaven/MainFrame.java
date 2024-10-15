@@ -125,8 +125,8 @@ public class MainFrame extends javax.swing.JPanel {
         frameJP.add(framepp, "frameproductpage");
 
         frameJP.add(coffincustom, "coffincustom");
-        frameJP.add(funeral, "funeral");
-        frameJP.add(ash, "ash");
+        frameJP.add(funeral, "funeralcustom");
+        frameJP.add(ash, "ashcustom");
         frameJP.add(packagepage, "package");
 
         /*called home page(1st page)*/
@@ -148,14 +148,14 @@ public class MainFrame extends javax.swing.JPanel {
 
     private void packageBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_packageBTMouseClicked
         // TODO add your handling code here:
-       CardLayout cd = (CardLayout) frameJP.getLayout();
-       cd.show(frameJP, "coffincustom");
+//       CardLayout cd = (CardLayout) frameJP.getLayout();
+//       cd.show(frameJP, "coffincustom");
     }//GEN-LAST:event_packageBTMouseClicked
 
     private void customBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_customBTMouseClicked
         // TODO add your handling code here:
          CardLayout cd = (CardLayout) frameJP.getLayout();
-         cd.show(frameJP, "coffin");
+         cd.show(frameJP, "ashcustom");
     }//GEN-LAST:event_customBTMouseClicked
 // /* testing panel*/
 //    public static void main(String[] args){

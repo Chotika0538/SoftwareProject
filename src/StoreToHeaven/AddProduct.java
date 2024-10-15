@@ -38,7 +38,7 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
         setLayout(null);
 
         addChoices.setFont(new java.awt.Font("TH Sarabun New", 0, 24)); // NOI18N
-        addChoices.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "กรุณาเลือกตัวเลือก", "โลงศพ", "พวงหรีด", "ดอกไม้จันทน์", "ชุดไทยธรรม", "ธูป", "เทียน", "ชุดอาหารว่าง", "ของชำร่วย", "กรอบรูป", "แพ็คเกจ" }));
+        addChoices.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "กรุณาเลือกตัวเลือก", "โลงศพ", "พวงหรีด", "ดอกไม้จันทน์", "ชุดไทยธรรม", "ธูป", "เทียน", "ชุดอาหารว่าง", "ของชำร่วย", "กรอบรูป", "แพ็คเกจ", "วัด" }));
         addChoices.setAlignmentX(1.0F);
         addChoices.setAlignmentY(1.0F);
         addChoices.addActionListener(new java.awt.event.ActionListener() {
@@ -88,6 +88,8 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
         AddSandalWood sandalwood = new AddSandalWood(showAddProduct);
         AddSnackBox snackbox = new AddSnackBox(showAddProduct);
         AddSouvenir souvenir= new AddSouvenir(showAddProduct);
+        AddTemple temple = new AddTemple(showAddProduct);
+
         emptyPanel.setBackground(new java.awt.Color(153, 255, 204));
         showAddProduct.add(emptyPanel, "empty");
         //showAddProduct.add(coffin, "coffin");
@@ -99,6 +101,7 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
         showAddProduct.add(sandalwood, "sandalwood");
         showAddProduct.add(snackbox, "snackbox");
         showAddProduct.add(souvenir, "souvenir");
+        showAddProduct.add(temple, "temple");
         add(showAddProduct);
         showAddProduct.setBounds(10, 110, 480, 480);
     }// </editor-fold>//GEN-END:initComponents
@@ -157,6 +160,12 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
         else if(((String)cb.getSelectedItem()).equals("เพิ่มสินค้า")){
             //cd = (CardLayout) showAddProduct.getLayout();
             //cd.show(showAddProduct, "");
+            //"temple"  วัด
+        }
+        //choose temple
+        else if(((String)cb.getSelectedItem()).equals("วัด")){
+            cd = (CardLayout) showAddProduct.getLayout();
+            cd.show(showAddProduct, "temple");
         }
     }//GEN-LAST:event_addChoicesActionPerformed
 
@@ -245,7 +254,12 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
                 Framedao framed = new Framedao();
                 framed.save((AddFrame) comp);
                 break; // หยุดหลังจากเจอหน้าแรกที่แสดงอยู่
-            }            
+            }    
+            else if (comp.isVisible()&& comp instanceof AddTemple) {
+                Templedao tem = new Templedao();
+                tem.save((AddTemple) comp);
+                break; // หยุดหลังจากเจอหน้าแรกที่แสดงอยู่
+            }   
         }
     }
 }

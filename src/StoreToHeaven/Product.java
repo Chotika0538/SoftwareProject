@@ -62,7 +62,7 @@ public class Product {
         this.path = path;
     }
     
-        public String toString(){
-        return getName()+" : "+getPattern();
+    public String toString(){
+       return getName()+" : "+getPattern();
     }
 }

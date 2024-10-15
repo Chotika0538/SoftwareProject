@@ -89,7 +89,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="pic_detail" min="-2" pref="27" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="pic_detailSP" min="-2" max="-2" attributes="0"/>
+              <Component id="pic_detailSP" min="-2" pref="233" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="addListBT" alignment="3" min="-2" max="-2" attributes="0"/>

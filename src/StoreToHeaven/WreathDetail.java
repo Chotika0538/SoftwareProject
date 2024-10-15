@@ -21,9 +21,9 @@ public class WreathDetail extends javax.swing.JPanel {
     private JPanel jp;
     private String filePath;
 
-    public WreathDetail(ArrayList l, JPanel jp) {
+    public WreathDetail(ArrayList l, JPanel mainpanel) {
         wdList = l; 
-        this.jp = jp;
+        this.jp = mainpanel;
         fc.setMultiSelectionEnabled(false);
         fc.setCurrentDirectory(new File(System.getProperty("user.home")));
         initComponents();
@@ -155,13 +155,17 @@ public class WreathDetail extends javax.swing.JPanel {
 
     private void deleteCBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteCBMouseClicked
         // TODO add your handling code here:
-        int result = JOptionPane.showConfirmDialog(null,"You can not go back after you choose. Do you want to continue?","Confirm", JOptionPane.YES_NO_OPTION);
+        int result = JOptionPane.showConfirmDialog(null,"Are you sure you want to delete this?","Confirm", JOptionPane.YES_NO_OPTION);
         if(result == JOptionPane.YES_OPTION){
             wdList.remove(this);
             jp.remove(this);
             jp.setPreferredSize(new Dimension(408, jp.getHeight()-235));
             jp.revalidate();
             jp.repaint(); 
+        }
+        //Choose No option
+        else{
+            deleteCB.setSelected(false);
         }
 //        wdList.remove(this);
 //        jp.remove(this);

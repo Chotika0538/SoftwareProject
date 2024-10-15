@@ -19,8 +19,9 @@ public class WreathProductPage extends javax.swing.JPanel {
     
     public WreathProductPage(JPanel mainPanel) {
         wreathdao = new Wreathdao();
-         wreathClassList = wreathdao.getAll();
-         wreathProduct = new ArrayList<>();
+        wreathProduct = new ArrayList<>();
+        wreathClassList = wreathdao.getAll();
+
         this.mainPanel = mainPanel;
         cd = (CardLayout) mainPanel.getLayout();
         initComponents();
