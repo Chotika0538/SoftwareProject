@@ -98,7 +98,7 @@ public class MainFrame extends javax.swing.JPanel {
         ProductPage product = new ProductPage(frameJP);
         WreathProductPage wpp = new WreathProductPage(frameJP);
         OfferingProductPage ofp = new OfferingProductPage(frameJP);
-        //CoffinProductPage cofpp = new CoffinProductPage(frameJP);
+        CoffinProductPage cofpp = new CoffinProductPage(frameJP);
         CandleProductPage canpp = new CandleProductPage(frameJP);
         IncenseProductPage inpp = new IncenseProductPage(frameJP);
         SnackBoxProductPage snackpp = new SnackBoxProductPage(frameJP);
@@ -116,7 +116,7 @@ public class MainFrame extends javax.swing.JPanel {
         frameJP.add(product, "productpage");
         frameJP.add(wpp, "wreathproductpage");
         frameJP.add(ofp, "offeringproductpage");
-        //framepp.add(cofpp, "coffinproductpage");
+        frameJP.add(cofpp, "coffinproductpage");
         frameJP.add(canpp ,"candleproductpage");
         frameJP.add(inpp, "incenseproductpage");
         frameJP.add(snackpp, "snackboxproductpage");
@@ -149,7 +149,7 @@ public class MainFrame extends javax.swing.JPanel {
     private void packageBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_packageBTMouseClicked
         // TODO add your handling code here:
        CardLayout cd = (CardLayout) frameJP.getLayout();
-       cd.show(frameJP, "coffincustom");
+       cd.show(frameJP, "package");
     }//GEN-LAST:event_packageBTMouseClicked
 
     private void customBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_customBTMouseClicked
