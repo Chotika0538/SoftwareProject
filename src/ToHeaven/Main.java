@@ -7,6 +7,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import StoreToHeaven.*;
 
 public class Main extends javax.swing.JFrame {
     private CardLayout cardLayout;
@@ -18,9 +19,10 @@ public class Main extends javax.swing.JFrame {
         mainPanel.add(new LoginPage(mainPanel),"LoginPage");
         mainPanel.add(new Register(mainPanel),"RegisterPage");
         mainPanel.add(new MainFrame(mainPanel),"MainPage");
+        mainPanel.add(new EmpLogin(mainPanel),"AdminPage");
         add(mainPanel);
         cardLayout.show(mainPanel,"LoginPage");
-        setSize(800,500);
+        setSize(800,640);
         setContentPane(mainPanel);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
@@ -39,11 +41,11 @@ public class Main extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 700, Short.MAX_VALUE)
+            .addGap(0, 800, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
+            .addGap(0, 640, Short.MAX_VALUE)
         );
 
         pack();

@@ -43,22 +43,34 @@ public class EmpLogin extends javax.swing.JPanel {
         usernameTF = new javax.swing.JTextField();
         showPassRB = new javax.swing.JRadioButton();
         loginBT = new javax.swing.JButton();
+        toUserBT = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(244, 243, 222));
         setPreferredSize(new java.awt.Dimension(800, 600));
+        setLayout(null);
 
         passwordJF.setFont(new java.awt.Font("TH Sarabun New", 1, 20)); // NOI18N
+        add(passwordJF);
+        passwordJF.setBounds(305, 288, 350, 32);
 
         loginLB.setFont(new java.awt.Font("TH Sarabun New", 1, 48)); // NOI18N
-        loginLB.setText("LOGIN");
+        loginLB.setText("ADMIN LOGIN");
+        add(loginLB);
+        loginLB.setBounds(299, 86, 209, 65);
 
         usernameLB.setFont(new java.awt.Font("TH Sarabun New", 1, 36)); // NOI18N
         usernameLB.setText("username:");
+        add(usernameLB);
+        usernameLB.setBounds(134, 179, 120, 49);
 
         passwordLB.setFont(new java.awt.Font("TH Sarabun New", 1, 36)); // NOI18N
         passwordLB.setText("password:");
+        add(passwordLB);
+        passwordLB.setBounds(134, 277, 114, 49);
 
         usernameTF.setFont(new java.awt.Font("TH Sarabun New", 1, 20)); // NOI18N
+        add(usernameTF);
+        usernameTF.setBounds(305, 190, 350, 32);
 
         showPassRB.setBackground(new java.awt.Color(244, 243, 222));
         showPassRB.setText("Show password");
@@ -67,62 +79,31 @@ public class EmpLogin extends javax.swing.JPanel {
                 showPassRBActionPerformed(evt);
             }
         });
+        add(showPassRB);
+        showPassRB.setBounds(550, 332, 120, 21);
 
         loginBT.setBackground(new java.awt.Color(233, 227, 179));
         loginBT.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
         loginBT.setText("LOGIN");
+        loginBT.setBorder(null);
         loginBT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginBTActionPerformed(evt);
             }
         });
+        add(loginBT);
+        loginBT.setBounds(318, 418, 156, 60);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(136, 136, 136)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(passwordLB)
-                            .addComponent(usernameLB))
-                        .addGap(51, 51, 51)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(showPassRB)
-                                .addComponent(usernameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(passwordJF, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(loginLB)
-                        .addGap(202, 202, 202)))
-                .addContainerGap(141, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(loginBT, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(342, 342, 342))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(71, 71, 71)
-                .addComponent(loginLB)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(usernameLB)
-                    .addComponent(usernameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(49, 49, 49)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(passwordLB)
-                    .addComponent(passwordJF, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(showPassRB)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
-                .addComponent(loginBT, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(101, 101, 101))
-        );
+        toUserBT.setFont(new java.awt.Font("TH SarabunIT๙", 1, 20)); // NOI18N
+        toUserBT.setText("switch to user login");
+        toUserBT.setBorder(null);
+        toUserBT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                toUserBTActionPerformed(evt);
+            }
+        });
+        add(toUserBT);
+        toUserBT.setBounds(17, 549, 150, 40);
     }// </editor-fold>//GEN-END:initComponents
 
     private void showPassRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showPassRBActionPerformed
@@ -149,6 +130,11 @@ public class EmpLogin extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Please enter both username and password.", "Input Error", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_loginBTActionPerformed
+
+    private void toUserBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toUserBTActionPerformed
+        CardLayout cd = (CardLayout)mainPanel.getLayout();
+        cd.show(mainPanel,"LoginPage");
+    }//GEN-LAST:event_toUserBTActionPerformed
 private boolean checkEmpPass(String userName,String password){
         new Employeedao().findData(userName, password);
         if(Employeedao.checkLogin){
@@ -166,6 +152,7 @@ private boolean checkEmpPass(String userName,String password){
     private javax.swing.JPasswordField passwordJF;
     private javax.swing.JLabel passwordLB;
     private javax.swing.JRadioButton showPassRB;
+    private javax.swing.JButton toUserBT;
     private javax.swing.JLabel usernameLB;
     private javax.swing.JTextField usernameTF;
     // End of variables declaration//GEN-END:variables
