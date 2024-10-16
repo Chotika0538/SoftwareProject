@@ -7,7 +7,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import StoreToHeaven.AddCandle.*;
+import StoreToHeaven.EmpLogin;
 public class Main extends javax.swing.JFrame {
     private CardLayout cardLayout;
     private JPanel mainPanel;
@@ -18,6 +19,7 @@ public class Main extends javax.swing.JFrame {
         mainPanel.add(new LoginPage(mainPanel),"LoginPage");
         mainPanel.add(new Register(mainPanel),"RegisterPage");
         mainPanel.add(new MainFrame(mainPanel),"MainPage");
+        mainPanel.add(new EmpLogin(mainPanel),"AdminPage");
         add(mainPanel);
         cardLayout.show(mainPanel,"LoginPage");
         setSize(814,640);
