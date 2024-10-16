@@ -124,7 +124,7 @@ public class EmpLogin extends javax.swing.JPanel {
             // Proceed with the login process (validation, etc.)
             if(checkEmpPass(userName,password)){
                 // DO SOMETHING
-                card.show(mainPanel, "AddPro");
+                card.show(mainPanel, "AddProduct");
             }
         } else {
             JOptionPane.showMessageDialog(this, "Please enter both username and password.", "Input Error", JOptionPane.WARNING_MESSAGE);

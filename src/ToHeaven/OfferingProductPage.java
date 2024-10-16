@@ -114,8 +114,19 @@ public class OfferingProductPage extends javax.swing.JPanel {
     }//GEN-LAST:event_backBTMouseClicked
 
     private void addBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBTActionPerformed
-        // TODO add your handling code here:
-        ProductInCart.add(new Picked_product("test",100*Math.random(),(int)(10*Math.random()),"/ToHeaven/t.png"));
+//        Cartdao c = new Cartdao();
+//         // ตรวจสอบให้แน่ใจว่ามีข้อมูลในตะกร้า
+//    if (Picked_product.picked != null && !Picked_product.picked.isEmpty()) {
+//        // แทรกการบันทึกข้อมูล
+//        try {
+//            c.save(Picked_product.picked);
+//        } catch (Exception e) {
+//            e.printStackTrace(); // แสดงข้อผิดพลาด
+//        }
+//    } else {
+//        System.out.println("no data"); // แสดงข้อความถ้าไม่มีข้อมูล
+//    }
+//       
     }//GEN-LAST:event_addBTActionPerformed
 
     public void showData(){

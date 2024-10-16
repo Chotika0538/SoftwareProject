@@ -1,3 +1,7 @@
+
+package DAO;
+
+
 import java.io.BufferedInputStream;
 import StoreToHeaven.AddFrame;
 import StoreToHeaven.Frame;
@@ -23,9 +27,9 @@ public class Cartdao {
     private FileOutputStream fos;
     //private ArrayList<List<String>> framelist ;
     private String[] nameCol = { "ชนิดสินค้า","จำนวนชิ้น" , "ราคา"};
-    private ArrayList<FrameDetail> fd;
-    private ArrayList<Frame> fList;
-    private Component[] cmp;
+    //private ArrayList<FrameDetail> fd;
+    private ArrayList<Picked_product> pickedproductList;
+    //private Component[] cmp;
     String name , pattern, detail, path;
     double price;
     int quantity;
@@ -115,7 +119,7 @@ public class Cartdao {
     public ArrayList<Picked_product> getAll(){    
         
         String  pattern = null, detail=null, path=null;
-        price = 0 ;
+        price = 0.0 ;
         quantity = 0;
         read();
         try {
@@ -154,23 +158,23 @@ public class Cartdao {
 //                                    price[i] = 0.0;  // กำหนดค่าเริ่มต้นเป็น 0.0 หากข้อมูลไม่ถูกต้อง
 //                                }
 //                            }
-                           price = cell.getNumericCellValue();
-                            break;
+//                           price = cell.getNumericCellValue();
+//                            break;
                    }
 //                   if (name != null && pattern != null && detail != null && path != null &&  price > 0) {
 //                        fList.add(new Frame(name, pattern, detail, path, price));
 //                    }
                 }
                 // ตรวจสอบค่าที่ได้ก่อนเพิ่มลง oList
-                if (name != null && pattern != null && detail != null && path != null && price > 0.0) {
-                    Frame newFrame = new Frame(name, pattern, detail, path, price);
+                if (pattern != null && quantity>0 && price > 0.0) {
+                    Picked_product pickedproduct = new  Picked_product(name, price, quantity);
                     // ตรวจสอบไม่ให้มีการเพิ่มซ้ำ
-                    if (!fList.contains(newFrame)) {
-                        fList.add(newFrame);
+                    if (!pickedproductList.contains(pickedproduct)) {
+                        pickedproductList.add(pickedproduct);
                     }
-                }                
-            }
-        } catch (Exception e) {
+                }
+            }                
+       } catch (Exception e) {
             e.printStackTrace();
         }finally {
             try {
@@ -187,7 +191,7 @@ public class Cartdao {
                 e.printStackTrace();
             }
         }
-        return fList;
+        return pickedproductList;
     }
 //    private static void copyRow(Sheet sheet, Row sourceRow, Row targetRow) {
 //        for (int cellIndex = sourceRow.getFirstCellNum(); cellIndex < sourceRow.getLastCellNum(); cellIndex++) {

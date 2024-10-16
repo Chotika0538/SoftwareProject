@@ -9,8 +9,12 @@ import java.awt.Component;
 import javax.swing.*;
 import java.util.ArrayList;
 public class AddProduct extends javax.swing.JPanel implements CheckPanel{
-
-    public AddProduct() {
+    private CardLayout cd;
+    private JPanel mainPanel;
+  
+    public AddProduct(JPanel mainPanel) {
+        this.mainPanel = mainPanel;
+        cd = (CardLayout) mainPanel.getLayout();
         initComponents();
     }
 
@@ -171,16 +175,16 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
         // TODO add your handling code here:
         checkCurrentCard();
     }//GEN-LAST:event_confirmBTMouseClicked
- /* testing panel*/
-    public static void main(String[] args){
-        JFrame f = new JFrame();
-        f.setContentPane(new AddProduct());
-        f.setSize(800,640);
-        f.setResizable(false);
-        f.setLocationRelativeTo(null);
-        f.setVisible(true);
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    }
+// /* testing panel*/
+//    public static void main(String[] args){
+//        JFrame f = new JFrame();
+//        f.setContentPane(new AddProduct());
+//        f.setSize(800,640);
+//        f.setResizable(false);
+//        f.setLocationRelativeTo(null);
+//        f.setVisible(true);
+//        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> addChoices;

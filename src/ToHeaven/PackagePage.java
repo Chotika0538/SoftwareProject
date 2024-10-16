@@ -100,8 +100,7 @@ public class PackagePage extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void addBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBTActionPerformed
-        // TODO add your handling code here:
-        ProductInCart.add(new Picked_product("test",100*Math.random(),(int)(10*Math.random()),"/ToHeaven/t.png"));
+
     }//GEN-LAST:event_addBTActionPerformed
     
     public void showData(){

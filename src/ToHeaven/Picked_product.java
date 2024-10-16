@@ -6,6 +6,7 @@
 package ToHeaven;
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 import javax.swing.border.MatteBorder;
 /**
  *
@@ -15,12 +16,11 @@ public class Picked_product extends javax.swing.JPanel {
     private String productName;
     private double price;
     private int quentity;
-    private String PATH_IMG;
-    public Picked_product(String name,double price,int quentity,String path) {
+    public static ArrayList<Picked_product> picked = new ArrayList<>();
+    public Picked_product(String name,double price,int quentity) {
         this.productName=name;
         this.price=price;
         this.quentity=quentity;
-        PATH_IMG=path;
         initComponents();
         setEverything();
     }
@@ -33,8 +33,6 @@ public class Picked_product extends javax.swing.JPanel {
         PlusBT = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         kk = new javax.swing.JLabel();
-        productImgPanel = new javax.swing.JPanel();
-        productImg = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         deleteProductBtn = new javax.swing.JLabel();
         quentityLabel = new javax.swing.JLabel();
@@ -84,25 +82,6 @@ public class Picked_product extends javax.swing.JPanel {
         kk.setText("ราคา");
         add(kk);
         kk.setBounds(350, 120, 60, 30);
-
-        productImgPanel.setBackground(new java.awt.Color(204, 204, 204));
-
-        productImg.setFont(new java.awt.Font("TH Sarabun New", 0, 12)); // NOI18N
-        productImg.setPreferredSize(new java.awt.Dimension(260, 180));
-
-        javax.swing.GroupLayout productImgPanelLayout = new javax.swing.GroupLayout(productImgPanel);
-        productImgPanel.setLayout(productImgPanelLayout);
-        productImgPanelLayout.setHorizontalGroup(
-            productImgPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(productImg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        productImgPanelLayout.setVerticalGroup(
-            productImgPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(productImg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        add(productImgPanel);
-        productImgPanel.setBounds(30, 60, 260, 180);
 
         jPanel1.setBackground(new java.awt.Color(101, 85, 61));
 
@@ -182,22 +161,6 @@ public class Picked_product extends javax.swing.JPanel {
         name.setText(productName);
         priceLabel.setText(price+"");
         quentityLabel.setText(quentity+"");
-       
-         productImg.addComponentListener(new java.awt.event.ComponentAdapter() {
-        @Override
-        public void componentResized(java.awt.event.ComponentEvent evt) {
-                // Load the image from the resource path
-                ImageIcon icon = new ImageIcon(getClass().getResource(PATH_IMG));
-                Image img = icon.getImage();
-
-                // Scale the image to fit the JLabel after it has a valid size
-                Image scaledImg = img.getScaledInstance(productImg.getWidth(), productImg.getHeight(), Image.SCALE_SMOOTH);
-                ImageIcon scaledIcon = new ImageIcon(scaledImg);
-
-                // Set the scaled icon to the JLabel
-                productImg.setIcon(scaledIcon);
-            }
-        });
     }
 
     public String getName(){return productName;}
@@ -214,8 +177,6 @@ public class Picked_product extends javax.swing.JPanel {
     private javax.swing.JButton minusBT;
     private javax.swing.JLabel name;
     private javax.swing.JLabel priceLabel;
-    static javax.swing.JLabel productImg;
-    private javax.swing.JPanel productImgPanel;
     private javax.swing.JLabel quentityLabel;
     // End of variables declaration//GEN-END:variables
 }

@@ -8,12 +8,10 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import org.apache.commons.io.IOUtils;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
@@ -22,7 +20,6 @@ public class Offeringdao {
     private Sheet sheet;
     private final String FILE_NAME = "StoreStock.xlsx";
     private FileInputStream fileInput;
-    private FileInputStream picInput;
     private FileOutputStream fos;
     //private ArrayList<List<String>> offeringlist = new ArrayList<>();
     private String[] nameCol = { "ชื่อ","รายละเอียด" ,"pathรูปภาพ",  "ราคา"};
@@ -61,8 +58,6 @@ public class Offeringdao {
             String pattern = od.get(a).getPatternTF().getText();
             String detail = od.get(a).getDetailTA().getText();
             String path = od.get(a).getFilePath();
-            byte[] imageByte = IOUtils.toByteArray(new FileInputStream(path));
-         
             double price = Double.parseDouble(od.get(a).getPriceTF().getText());
             String[] dataChecked = {pattern,detail,path,Double.toString(price)};
             boolean haveData = false ;
@@ -79,17 +74,8 @@ public class Offeringdao {
                 Row newRow = sheet.createRow(lastRow+1);
                 newRow.createCell(0).setCellValue(pattern);
                 newRow.createCell(1).setCellValue(detail);
-                //newRow.createCell(2).setCellValue(path);
+                newRow.createCell(2).setCellValue(path);
                 newRow.createCell(3).setCellValue(price);
-                 // ฝังภาพลงในเซลล์
-                int pictureIdx = wb.addPicture(imageByte, Workbook.PICTURE_TYPE_JPEG);
-                CreationHelper helper = wb.getCreationHelper();
-                Drawing<?> drawing = sheet.createDrawingPatriarch();
-                ClientAnchor anchor = helper.createClientAnchor();
-                anchor.setCol1(2);  // คอลัมน์ที่ 3 (index 2)
-                anchor.setRow1(lastRow + 1);  // แถวใหม่
-                Picture pict = drawing.createPicture(anchor, pictureIdx);
-                pict.resize();  // ปรับขนาดภาพให้พอดีกับเซลล์
                } catch (Exception e) {
                     e.printStackTrace();
                }             
@@ -196,75 +182,5 @@ public ArrayList<Offering> getAll() {
     return oList;
 }
 
-//   public ArrayList<Offering> getAll() {        
-//    oList = new ArrayList<>();
-//    Set<String> patterns = new HashSet<>();  // ใช้ Set เพื่อเก็บ pattern ที่ไม่ซ้ำกัน
-//    read(); // อ่านข้อมูลจากไฟล์ Excel
-//    
-//    try {
-//        if (sheet == null) {
-//            System.out.println("Sheet not found");
-//            return oList;
-//        }
-//        
-//        for (Row row : sheet) {
-//            // ข้ามแถวแรกที่เป็น header
-//            if (row.getRowNum() == 0) {
-//                continue;
-//            }
-//
-//            String tempPattern = null, tempDetail = null, tempPath = null;
-//            double tempPrice = 0.00;
-//
-//            for (Cell cell : row) {
-//                if (cell == null) {
-//                    continue;  // ข้าม cell ที่เป็น null
-//                }
-//
-//                // ใช้ switch เพื่ออ่านค่าตามคอลัมน์ต่าง ๆ
-//                switch (cell.getColumnIndex()) {
-//                    case 0:
-//                        tempPattern = cell.getStringCellValue();
-//                        break;
-//                    case 1:
-//                        tempDetail = cell.getStringCellValue();
-//                        break;
-//                    case 2:
-//                        tempPath = cell.getStringCellValue();
-//                        break;
-//                    case 3:
-//                        tempPrice = cell.getNumericCellValue();
-//                        break;
-//                }
-//            }
-//
-//            // เช็คข้อมูลให้แน่ชัดก่อนเพิ่มลงในลิสต์ oList
-//            if (tempPattern != null && tempDetail != null && tempPath != null && tempPrice != 0.00) {
-//                // ตรวจสอบว่ามี pattern นี้ใน Set หรือไม่
-//                if (!patterns.contains(tempPattern)) {
-//                    patterns.add(tempPattern);  // เพิ่ม pattern ลงใน Set
-//                    oList.add(new Offering(name, tempPattern, tempDetail, tempPath, tempPrice));  // เพิ่มลงใน oList
-//                }
-//            }
-//        }
-//    } catch (Exception e) {
-//        e.printStackTrace();
-//    } finally {
-//        try {
-//            if (fileInput != null) {
-//                fileInput.close();
-//            }
-//            if (fos != null) {
-//                fos.close();
-//            }
-//            if (wb != null) {
-//                wb.close();
-//            }
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//    }
-//    return oList;
-//}
 }
 

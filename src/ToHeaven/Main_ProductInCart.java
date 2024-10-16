@@ -115,8 +115,7 @@ public class Main_ProductInCart extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        ProductInCart.add(new Picked_product("test",100*Math.random(),(int)(10*Math.random()),"/ToHeaven/t.png"));
+        
     }//GEN-LAST:event_jButton1ActionPerformed
  /* testing panel*/
     public static void main(String[] args){

@@ -12,6 +12,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
+import javax.swing.JSpinner;
 
 /**
  *
@@ -54,6 +55,11 @@ public class OfferingProduct extends javax.swing.JPanel {
         choosePieceWreath.setBounds(480, 191, 110, 30);
 
         pieceWreath.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+        pieceWreath.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pieceWreathMouseClicked(evt);
+            }
+        });
         add(pieceWreath);
         pieceWreath.setBounds(590, 190, 80, 30);
 
@@ -82,6 +88,27 @@ public class OfferingProduct extends javax.swing.JPanel {
         add(priceLB);
         priceLB.setBounds(320, 190, 100, 30);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void pieceWreathMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pieceWreathMouseClicked
+//        JSpinner js = (JSpinner) evt.getSource();
+//    if ((int) js.getValue() > 0) {
+//        String priceText = priceLB.getText().replace("ราคา : ", "").trim();
+//        double price = 0.0;
+//
+//        try {
+//            price = Double.parseDouble(priceText);
+//        } catch (NumberFormatException e) {
+//            System.out.println("ราคาไม่ถูกต้อง: " + priceText);
+//            return;
+//        }
+//
+//        Picked_product.picked.add(new Picked_product(name.getText(), price, (int) js.getValue()));
+//        
+//        // เพิ่มการตรวจสอบค่าที่เพิ่มเข้าไปใน picked
+//        System.out.println("สินค้าที่เพิ่ม: " + name.getText() + ", ราคา: " + price + ", จำนวน: " + (int) js.getValue());
+//        System.out.println("จำนวนสินค้าทั้งหมดใน picked: " + Picked_product.picked.size());
+//    }
+    }//GEN-LAST:event_pieceWreathMouseClicked
 
     public void getData(Offering offering){
     this.offeringClass = offering;
