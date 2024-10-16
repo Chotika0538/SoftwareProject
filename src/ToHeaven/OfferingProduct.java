@@ -65,9 +65,9 @@ public class OfferingProduct extends javax.swing.JPanel {
 
         productImage.setPreferredSize(new java.awt.Dimension(180, 180));
         add(productImage);
-        productImage.setBounds(100, 20, 180, 180);
+        productImage.setBounds(30, 20, 180, 180);
 
-        scrollDetail.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        scrollDetail.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
         scrollDetail.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
         details.setEditable(false);
@@ -77,11 +77,11 @@ public class OfferingProduct extends javax.swing.JPanel {
         scrollDetail.setViewportView(details);
 
         add(scrollDetail);
-        scrollDetail.setBounds(320, 50, 330, 130);
+        scrollDetail.setBounds(250, 50, 510, 130);
 
         name.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         add(name);
-        name.setBounds(320, 10, 298, 31);
+        name.setBounds(250, 10, 298, 31);
 
         priceLB.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         priceLB.setText("ราคา : ");

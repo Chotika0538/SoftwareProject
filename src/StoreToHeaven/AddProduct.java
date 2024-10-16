@@ -93,6 +93,7 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
         AddSnackBox snackbox = new AddSnackBox(showAddProduct);
         AddSouvenir souvenir= new AddSouvenir(showAddProduct);
         AddTemple temple = new AddTemple(showAddProduct);
+        AddPackage pck = new AddPackage(showAddProduct);
 
         emptyPanel.setBackground(new java.awt.Color(225, 225, 204));
         showAddProduct.add(emptyPanel, "empty");
@@ -106,6 +107,7 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
         showAddProduct.add(snackbox, "snackbox");
         showAddProduct.add(souvenir, "souvenir");
         showAddProduct.add(temple, "temple");
+        showAddProduct.add(pck, "package");
         add(showAddProduct);
         showAddProduct.setBounds(10, 110, 480, 480);
     }// </editor-fold>//GEN-END:initComponents
@@ -159,6 +161,11 @@ public class AddProduct extends javax.swing.JPanel implements CheckPanel{
         else if(((String)cb.getSelectedItem()).equals("กรอบรูป")){
             cd = (CardLayout) showAddProduct.getLayout();
             cd.show(showAddProduct, "frame");
+        }
+        //choose package 
+        else if(((String)cb.getSelectedItem()).equals("แพ็คเกจ")){
+            cd = (CardLayout) showAddProduct.getLayout();
+            cd.show(showAddProduct, "package");
         }
         ///choose temple
         else if(((String)cb.getSelectedItem()).equals("วัด")){

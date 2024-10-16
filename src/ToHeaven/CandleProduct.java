@@ -69,9 +69,6 @@ public class CandleProduct extends javax.swing.JPanel {
         add(productImage);
         productImage.setBounds(15, 14, 180, 180);
 
-        scrollDetail.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        scrollDetail.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
-
         details.setEditable(false);
         details.setColumns(20);
         details.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N

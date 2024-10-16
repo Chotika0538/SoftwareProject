@@ -68,13 +68,13 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="100" y="20" width="-1" height="-1"/>
+          <AbsoluteConstraints x="30" y="20" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
     <Container class="javax.swing.JScrollPane" name="scrollDetail">
       <Properties>
-        <Property name="horizontalScrollBarPolicy" type="int" value="31"/>
+        <Property name="horizontalScrollBarPolicy" type="int" value="32"/>
         <Property name="verticalScrollBarPolicy" type="int" value="21"/>
       </Properties>
       <AuxValues>
@@ -82,7 +82,7 @@
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="320" y="50" width="330" height="130"/>
+          <AbsoluteConstraints x="250" y="50" width="510" height="130"/>
         </Constraint>
       </Constraints>
 
@@ -108,7 +108,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="320" y="10" width="298" height="31"/>
+          <AbsoluteConstraints x="250" y="10" width="298" height="31"/>
         </Constraint>
       </Constraints>
     </Component>

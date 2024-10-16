@@ -41,12 +41,11 @@ public class AddCoffin extends javax.swing.JPanel {
         pic_detailSP = new javax.swing.JScrollPane();
         pic_detailJP = new javax.swing.JPanel();
         addListBT = new javax.swing.JButton();
-        deleteListBT = new javax.swing.JButton();
         nameproduct = new javax.swing.JLabel();
         nameTF = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(238, 238, 226));
-        setPreferredSize(new java.awt.Dimension(480, 370));
+        setPreferredSize(new java.awt.Dimension(480, 424));
 
         pic_detail.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
         pic_detail.setText("รูปและรายละเอียดของสินค้า");
@@ -74,14 +73,6 @@ public class AddCoffin extends javax.swing.JPanel {
             }
         });
 
-        deleteListBT.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
-        deleteListBT.setText("- ลบรายการ");
-        deleteListBT.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                deleteListBTMouseClicked(evt);
-            }
-        });
-
         nameproduct.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
         nameproduct.setText("ชื่อสินค้า : ");
 
@@ -102,13 +93,11 @@ public class AddCoffin extends javax.swing.JPanel {
                         .addGap(30, 30, 30)
                         .addComponent(pic_detail, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(128, 128, 128)
-                        .addComponent(deleteListBT, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(17, 17, 17)
-                        .addComponent(addListBT, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(30, 30, 30)
-                        .addComponent(pic_detailSP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(pic_detailSP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(170, 170, 170)
+                        .addComponent(addListBT, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(50, 50, 50))
         );
         layout.setVerticalGroup(
@@ -122,22 +111,16 @@ public class AddCoffin extends javax.swing.JPanel {
                 .addComponent(pic_detail)
                 .addGap(3, 3, 3)
                 .addComponent(pic_detailSP, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(deleteListBT)
-                    .addComponent(addListBT))
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(addListBT)
+                .addContainerGap(12, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void deleteListBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteListBTMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_deleteListBTMouseClicked
 
     private void addListBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addListBTMouseClicked
         // TODO add your handling code here:
         cfdList.add(new CoffinDetail(cfdList, pic_detailJP));
-        pic_detailJP.setPreferredSize(new Dimension(408, pic_detailJP.getHeight()+235));
+        pic_detailJP.setPreferredSize(new Dimension(408, pic_detailJP.getHeight()+300));
         pic_detailJP.add(cfdList.get(cfdList.size()-1));
         pic_detailJP.revalidate();
         pic_detailJP.repaint();
@@ -164,7 +147,6 @@ public class AddCoffin extends javax.swing.JPanel {
 //    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addListBT;
-    private javax.swing.JButton deleteListBT;
     private javax.swing.JTextField nameTF;
     private javax.swing.JLabel nameproduct;
     private javax.swing.JLabel pic_detail;

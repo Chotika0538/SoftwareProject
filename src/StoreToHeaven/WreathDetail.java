@@ -53,6 +53,7 @@ public class WreathDetail extends javax.swing.JPanel {
         setBackground(new java.awt.Color(244, 244, 224));
         setLayout(null);
 
+        choosePicBT.setBackground(new java.awt.Color(242, 242, 242));
         choosePicBT.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
         choosePicBT.setText("กดแนบรูปภาพ");
         choosePicBT.addActionListener(new java.awt.event.ActionListener() {

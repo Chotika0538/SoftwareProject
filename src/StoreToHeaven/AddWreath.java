@@ -51,7 +51,6 @@ public class AddWreath extends javax.swing.JPanel implements CheckPanel{
         pic_detailSP = new javax.swing.JScrollPane();
         pic_detailJP = new javax.swing.JPanel();
         addListBT = new javax.swing.JButton();
-        deleteListBT = new javax.swing.JButton();
         price = new javax.swing.JLabel();
         priceTF = new javax.swing.JTextField();
 
@@ -99,15 +98,6 @@ public class AddWreath extends javax.swing.JPanel implements CheckPanel{
             }
         });
 
-        deleteListBT.setBackground(new java.awt.Color(242, 242, 242));
-        deleteListBT.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
-        deleteListBT.setText("- ลบรายการ");
-        deleteListBT.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                deleteListBTMouseClicked(evt);
-            }
-        });
-
         price.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
         price.setText("ราคาสินค้าแต่ละแบบ  : ");
 
@@ -142,9 +132,7 @@ public class AddWreath extends javax.swing.JPanel implements CheckPanel{
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(materialTF, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(121, 121, 121)
-                        .addComponent(deleteListBT)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(181, 181, 181)
                         .addComponent(addListBT)))
                 .addContainerGap(38, Short.MAX_VALUE))
         );
@@ -172,9 +160,7 @@ public class AddWreath extends javax.swing.JPanel implements CheckPanel{
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pic_detailSP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(addListBT)
-                    .addComponent(deleteListBT))
+                .addComponent(addListBT)
                 .addGap(14, 14, 14))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -187,11 +173,6 @@ public class AddWreath extends javax.swing.JPanel implements CheckPanel{
         pic_detailJP.revalidate();
         pic_detailJP.repaint();
     }//GEN-LAST:event_addListBTMouseClicked
-
-    private void deleteListBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteListBTMouseClicked
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_deleteListBTMouseClicked
 
     private void pic_detailJPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pic_detailJPMouseClicked
         // TODO add your handling code here:
@@ -258,7 +239,6 @@ public class AddWreath extends javax.swing.JPanel implements CheckPanel{
     private javax.swing.JButton addListBT;
     private javax.swing.JLabel color;
     private javax.swing.JTextField colorTF;
-    private javax.swing.JButton deleteListBT;
     private javax.swing.JLabel material;
     private javax.swing.JTextField materialTF;
     private javax.swing.JLabel name;

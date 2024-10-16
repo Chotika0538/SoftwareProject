@@ -49,6 +49,7 @@ public class SandalWoodProduct extends javax.swing.JPanel {
         piece = new javax.swing.JSpinner();
         priceLB = new javax.swing.JLabel();
         name = new javax.swing.JLabel();
+        choosePieceWreath = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(244, 244, 224));
         setPreferredSize(new java.awt.Dimension(800, 235));
@@ -73,20 +74,26 @@ public class SandalWoodProduct extends javax.swing.JPanel {
 
         piece.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
         add(piece);
-        piece.setBounds(443, 187, 64, 22);
+        piece.setBounds(510, 190, 64, 22);
 
         priceLB.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         priceLB.setText("ราคา : ");
         add(priceLB);
-        priceLB.setBounds(250, 190, 190, 20);
+        priceLB.setBounds(250, 190, 140, 20);
 
         name.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         add(name);
         name.setBounds(260, 10, 298, 31);
+
+        choosePieceWreath.setFont(new java.awt.Font("TH Sarabun New", 1, 18)); // NOI18N
+        choosePieceWreath.setText("เลือกจำนวนสินค้า");
+        add(choosePieceWreath);
+        choosePieceWreath.setBounds(400, 170, 110, 60);
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel choosePieceWreath;
     private javax.swing.JScrollPane detailOfProduct;
     private javax.swing.JTextArea detailProduct;
     private javax.swing.JLabel name;

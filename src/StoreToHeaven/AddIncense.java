@@ -38,7 +38,6 @@ public class AddIncense extends javax.swing.JPanel {
         pic_detailSP = new javax.swing.JScrollPane();
         pic_detailJP = new javax.swing.JPanel();
         addListBT = new javax.swing.JButton();
-        deleteListBT = new javax.swing.JButton();
         name1 = new javax.swing.JLabel();
         nameTF = new javax.swing.JTextField();
 
@@ -76,18 +75,7 @@ public class AddIncense extends javax.swing.JPanel {
             }
         });
         add(addListBT);
-        addListBT.setBounds(240, 350, 100, 32);
-
-        deleteListBT.setBackground(new java.awt.Color(242, 242, 242));
-        deleteListBT.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
-        deleteListBT.setText("- ลบรายการ");
-        deleteListBT.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                deleteListBTMouseClicked(evt);
-            }
-        });
-        add(deleteListBT);
-        deleteListBT.setBounds(130, 350, 93, 32);
+        addListBT.setBounds(190, 350, 100, 32);
 
         name1.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
         name1.setText("ชื่อสินค้า : ");
@@ -117,14 +105,9 @@ public class AddIncense extends javax.swing.JPanel {
         pic_detailJP.repaint();
     }//GEN-LAST:event_addListBTMouseClicked
 
-    private void deleteListBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteListBTMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_deleteListBTMouseClicked
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addListBT;
-    private javax.swing.JButton deleteListBT;
     private javax.swing.JLabel name1;
     private javax.swing.JTextField nameTF;
     private javax.swing.JLabel pic_detail;

@@ -30,7 +30,6 @@ public class MainFrame extends javax.swing.JPanel {
         productBT = new javax.swing.JToggleButton();
         homeBT = new javax.swing.JToggleButton();
         jLabel1 = new javax.swing.JLabel();
-        cartBT = new javax.swing.JToggleButton();
         frameJP = new javax.swing.JPanel();
 
         setPreferredSize(new java.awt.Dimension(800, 600));
@@ -51,7 +50,7 @@ public class MainFrame extends javax.swing.JPanel {
             }
         });
         menuBar.add(templeBT);
-        templeBT.setBounds(590, 0, 100, 100);
+        templeBT.setBounds(700, 0, 100, 100);
 
         packageBT.setBackground(new java.awt.Color(200, 228, 215));
         packageBT.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
@@ -64,7 +63,7 @@ public class MainFrame extends javax.swing.JPanel {
             }
         });
         menuBar.add(packageBT);
-        packageBT.setBounds(480, 0, 100, 100);
+        packageBT.setBounds(590, 0, 100, 100);
 
         productBT.setBackground(new java.awt.Color(200, 228, 215));
         productBT.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
@@ -77,7 +76,7 @@ public class MainFrame extends javax.swing.JPanel {
             }
         });
         menuBar.add(productBT);
-        productBT.setBounds(360, 0, 110, 100);
+        productBT.setBounds(470, 0, 110, 100);
 
         homeBT.setBackground(new java.awt.Color(200, 228, 215));
         homeBT.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
@@ -90,26 +89,13 @@ public class MainFrame extends javax.swing.JPanel {
             }
         });
         menuBar.add(homeBT);
-        homeBT.setBounds(240, 0, 110, 100);
+        homeBT.setBounds(350, 0, 110, 100);
 
         jLabel1.setFont(new java.awt.Font("TH SarabunPSK", 1, 24)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ToHeaven/LoGoToHeaven (2).png"))); // NOI18N
         jLabel1.setText("LOGO");
         menuBar.add(jLabel1);
         jLabel1.setBounds(30, 10, 120, 80);
-
-        cartBT.setBackground(new java.awt.Color(200, 228, 215));
-        cartBT.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
-        cartBT.setForeground(new java.awt.Color(102, 51, 0));
-        cartBT.setText("ตะกร้า");
-        cartBT.setBorder(null);
-        cartBT.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                cartBTMouseClicked(evt);
-            }
-        });
-        menuBar.add(cartBT);
-        cartBT.setBounds(700, 0, 100, 100);
 
         add(menuBar, java.awt.BorderLayout.PAGE_START);
 
@@ -127,9 +113,6 @@ public class MainFrame extends javax.swing.JPanel {
         SandalWoodProductPage sandpp = new SandalWoodProductPage(frameJP);
         FrameProductPage framepp = new FrameProductPage(frameJP);
 
-        CustomCoffin coffincustom = new CustomCoffin(frameJP);
-        CustomFuneral funeral = new CustomFuneral(frameJP);
-        CustomAsh ash = new CustomAsh(frameJP);
         PackagePage packagepage = new PackagePage(frameJP);
         Temple_select temS = new Temple_select(frameJP);
         ProductInCart cart = new ProductInCart(frameJP);
@@ -146,9 +129,6 @@ public class MainFrame extends javax.swing.JPanel {
         frameJP.add(sandpp, "sandalwoodproductpage");
         frameJP.add(framepp, "frameproductpage");
 
-        frameJP.add(coffincustom, "coffincustom");
-        frameJP.add(funeral, "funeral");
-        frameJP.add(ash, "ash");
         frameJP.add(packagepage, "package");
         frameJP.add(temS, "templeSelect");
         frameJP.add(cart , "cartPage");
@@ -163,7 +143,7 @@ public class MainFrame extends javax.swing.JPanel {
         homeBT.setSelected(false);
         packageBT.setSelected(false);
         templeBT.setSelected(false);
-        cartBT.setSelected(false);
+        //cartBT.setSelected(false);
         CardLayout cd = (CardLayout) frameJP.getLayout();
         cd.show(frameJP, "productpage");
     }//GEN-LAST:event_productBTMouseClicked
@@ -172,7 +152,7 @@ public class MainFrame extends javax.swing.JPanel {
         productBT.setSelected(false);
         packageBT.setSelected(false);
         templeBT.setSelected(false);
-        cartBT.setSelected(false);
+        //cartBT.setSelected(false);
         CardLayout cd = (CardLayout) frameJP.getLayout();
         cd.show(frameJP, "home");
     }//GEN-LAST:event_homeBTMouseClicked
@@ -181,7 +161,7 @@ public class MainFrame extends javax.swing.JPanel {
         homeBT.setSelected(false);
         productBT.setSelected(false);
         templeBT.setSelected(false);
-        cartBT.setSelected(false);
+        //cartBT.setSelected(false);
        CardLayout cd = (CardLayout) frameJP.getLayout();
        cd.show(frameJP, "package");
     }//GEN-LAST:event_packageBTMouseClicked
@@ -190,32 +170,13 @@ public class MainFrame extends javax.swing.JPanel {
         homeBT.setSelected(false);
         productBT.setSelected(false);
         packageBT.setSelected(false);
-        cartBT.setSelected(false);
+       // cartBT.setSelected(false);
          CardLayout cd = (CardLayout) frameJP.getLayout();
          cd.show(frameJP, "templeSelect");
     }//GEN-LAST:event_templeBTMouseClicked
 
-    private void cartBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cartBTMouseClicked
-        homeBT.setSelected(false);
-        packageBT.setSelected(false);
-        templeBT.setSelected(false);
-        productBT.setSelected(false);
-        CardLayout cd = (CardLayout) frameJP.getLayout();
-         cd.show(frameJP, "cartPage");
-    }//GEN-LAST:event_cartBTMouseClicked
-// /* testing panel*/
-//    public static void main(String[] args){
-//        JFrame f = new JFrame();
-//        f.setContentPane(new MainFrame());
-//        f.setSize(800,640);
-//        f.setResizable(false);
-//        f.setLocationRelativeTo(null);
-//        f.setVisible(true);
-//        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JToggleButton cartBT;
     private javax.swing.JPanel frameJP;
     private javax.swing.JToggleButton homeBT;
     private javax.swing.JLabel jLabel1;

@@ -56,17 +56,18 @@ public class EmpLogin extends javax.swing.JPanel {
         loginLB.setFont(new java.awt.Font("TH Sarabun New", 1, 48)); // NOI18N
         loginLB.setText("ADMIN LOGIN");
         add(loginLB);
-        loginLB.setBounds(299, 86, 209, 65);
+        loginLB.setBounds(300, 60, 209, 65);
 
-        usernameLB.setFont(new java.awt.Font("TH Sarabun New", 1, 36)); // NOI18N
+        usernameLB.setFont(new java.awt.Font("TH Sarabun New", 0, 36)); // NOI18N
         usernameLB.setText("username:");
         add(usernameLB);
-        usernameLB.setBounds(134, 179, 120, 49);
+        usernameLB.setBounds(134, 179, 160, 49);
+        usernameLB.getAccessibleContext().setAccessibleName("username :");
 
-        passwordLB.setFont(new java.awt.Font("TH Sarabun New", 1, 36)); // NOI18N
+        passwordLB.setFont(new java.awt.Font("TH Sarabun New", 0, 36)); // NOI18N
         passwordLB.setText("password:");
         add(passwordLB);
-        passwordLB.setBounds(134, 277, 114, 49);
+        passwordLB.setBounds(134, 277, 160, 49);
 
         usernameTF.setFont(new java.awt.Font("TH Sarabun New", 1, 20)); // NOI18N
         add(usernameTF);
@@ -80,7 +81,7 @@ public class EmpLogin extends javax.swing.JPanel {
             }
         });
         add(showPassRB);
-        showPassRB.setBounds(550, 332, 120, 21);
+        showPassRB.setBounds(550, 332, 140, 21);
 
         loginBT.setBackground(new java.awt.Color(233, 227, 179));
         loginBT.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
@@ -94,7 +95,8 @@ public class EmpLogin extends javax.swing.JPanel {
         add(loginBT);
         loginBT.setBounds(318, 418, 156, 60);
 
-        toUserBT.setFont(new java.awt.Font("TH SarabunIT๙", 1, 20)); // NOI18N
+        toUserBT.setBackground(new java.awt.Color(242, 242, 242));
+        toUserBT.setFont(new java.awt.Font("TH Sarabun New", 0, 24)); // NOI18N
         toUserBT.setText("switch to user login");
         toUserBT.setBorder(null);
         toUserBT.addActionListener(new java.awt.event.ActionListener() {
@@ -103,7 +105,7 @@ public class EmpLogin extends javax.swing.JPanel {
             }
         });
         add(toUserBT);
-        toUserBT.setBounds(17, 549, 150, 40);
+        toUserBT.setBounds(17, 549, 170, 40);
     }// </editor-fold>//GEN-END:initComponents
 
     private void showPassRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showPassRBActionPerformed

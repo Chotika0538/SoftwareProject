@@ -36,8 +36,6 @@ public class PackageProduct extends javax.swing.JPanel {
 
         groupWreath = new javax.swing.ButtonGroup();
         groupColors = new javax.swing.ButtonGroup();
-        choose = new javax.swing.JLabel();
-        chooseColor = new javax.swing.JLabel();
         choosePieceWreath = new javax.swing.JLabel();
         pieceWreath = new javax.swing.JSpinner();
         productImage = new javax.swing.JLabel();
@@ -46,39 +44,27 @@ public class PackageProduct extends javax.swing.JPanel {
         message = new javax.swing.JLabel();
         textMessage = new javax.swing.JTextField();
         name = new javax.swing.JLabel();
-        colorCB = new javax.swing.JComboBox<>();
-        typeCB1 = new javax.swing.JComboBox<>();
         priceLB = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(244, 244, 224));
         setPreferredSize(new java.awt.Dimension(780, 400));
         setLayout(null);
 
-        choose.setFont(new java.awt.Font("TH Sarabun New", 1, 22)); // NOI18N
-        choose.setText("กรุณาเลือก");
-        add(choose);
-        choose.setBounds(50, 250, 176, 30);
-
-        chooseColor.setFont(new java.awt.Font("TH Sarabun New", 1, 22)); // NOI18N
-        chooseColor.setText("กรุณาเลือกสี");
-        add(chooseColor);
-        chooseColor.setBounds(50, 310, 155, 41);
-
         choosePieceWreath.setFont(new java.awt.Font("TH Sarabun New", 1, 22)); // NOI18N
         choosePieceWreath.setText("ระบุจำนวนสินค้า");
         add(choosePieceWreath);
-        choosePieceWreath.setBounds(460, 350, 120, 33);
+        choosePieceWreath.setBounds(490, 280, 120, 33);
 
         pieceWreath.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
         add(pieceWreath);
-        pieceWreath.setBounds(580, 350, 80, 30);
+        pieceWreath.setBounds(610, 280, 80, 30);
 
         productImage.setPreferredSize(new java.awt.Dimension(180, 180));
         add(productImage);
-        productImage.setBounds(70, 60, 180, 180);
+        productImage.setBounds(70, 40, 180, 180);
 
-        scrollDetail.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        scrollDetail.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+        scrollDetail.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+        scrollDetail.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
         details.setEditable(false);
         details.setColumns(20);
@@ -87,33 +73,23 @@ public class PackageProduct extends javax.swing.JPanel {
         scrollDetail.setViewportView(details);
 
         add(scrollDetail);
-        scrollDetail.setBounds(330, 100, 410, 130);
+        scrollDetail.setBounds(330, 50, 410, 180);
 
         message.setFont(new java.awt.Font("TH Sarabun New", 1, 22)); // NOI18N
         message.setText("กรุณาระบุข้อความ");
         add(message);
-        message.setBounds(330, 250, 219, 30);
+        message.setBounds(50, 250, 219, 30);
         add(textMessage);
-        textMessage.setBounds(330, 280, 330, 45);
+        textMessage.setBounds(50, 280, 330, 45);
 
         name.setFont(new java.awt.Font("TH SarabunPSK", 1, 24)); // NOI18N
         add(name);
         name.setBounds(40, 20, 270, 31);
 
-        colorCB.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
-        colorCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "เลือกสี" }));
-        add(colorCB);
-        colorCB.setBounds(50, 350, 220, 30);
-
-        typeCB1.setFont(new java.awt.Font("TH Sarabun New", 0, 18)); // NOI18N
-        typeCB1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "เลือกชนิด" }));
-        add(typeCB1);
-        typeCB1.setBounds(50, 280, 220, 30);
-
         priceLB.setFont(new java.awt.Font("TH SarabunPSK", 0, 24)); // NOI18N
         priceLB.setText("ราคา : ");
         add(priceLB);
-        priceLB.setBounds(330, 60, 280, 30);
+        priceLB.setBounds(330, 20, 280, 30);
     }// </editor-fold>//GEN-END:initComponents
 
     public void getData(Package_Class pack){
@@ -130,10 +106,7 @@ public class PackageProduct extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel choose;
-    private javax.swing.JLabel chooseColor;
     private javax.swing.JLabel choosePieceWreath;
-    private javax.swing.JComboBox<String> colorCB;
     private javax.swing.JTextArea details;
     private javax.swing.ButtonGroup groupColors;
     private javax.swing.ButtonGroup groupWreath;
@@ -144,6 +117,5 @@ public class PackageProduct extends javax.swing.JPanel {
     private javax.swing.JLabel productImage;
     private javax.swing.JScrollPane scrollDetail;
     private javax.swing.JTextField textMessage;
-    private javax.swing.JComboBox<String> typeCB1;
     // End of variables declaration//GEN-END:variables
 }

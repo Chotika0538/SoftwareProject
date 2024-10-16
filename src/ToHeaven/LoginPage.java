@@ -78,17 +78,18 @@ public class LoginPage extends JPanel {
         jLoginText.setFont(new java.awt.Font("TH Sarabun New", 1, 48)); // NOI18N
         jLoginText.setText("USER LOGIN");
         add(jLoginText);
-        jLoginText.setBounds(360, 20, 240, 65);
+        jLoginText.setBounds(360, 50, 240, 65);
 
         jLabelUsernameText.setFont(new java.awt.Font("TH Sarabun New", 0, 28)); // NOI18N
         jLabelUsernameText.setText("USERNAME  : ");
         add(jLabelUsernameText);
-        jLabelUsernameText.setBounds(63, 120, 115, 38);
+        jLabelUsernameText.setBounds(60, 150, 115, 38);
+        jLabelUsernameText.getAccessibleContext().setAccessibleName("username  : ");
 
         jLabelPasswordText.setFont(new java.awt.Font("TH Sarabun New", 0, 28)); // NOI18N
         jLabelPasswordText.setText("PASSWORD  : ");
         add(jLabelPasswordText);
-        jLabelPasswordText.setBounds(63, 190, 118, 38);
+        jLabelPasswordText.setBounds(60, 220, 118, 38);
 
         jTextFieldUsername.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jTextFieldUsername.addActionListener(new java.awt.event.ActionListener() {
@@ -97,7 +98,7 @@ public class LoginPage extends JPanel {
             }
         });
         add(jTextFieldUsername);
-        jTextFieldUsername.setBounds(190, 120, 551, 32);
+        jTextFieldUsername.setBounds(190, 150, 551, 32);
 
         jPasswordField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jPasswordField.addActionListener(new java.awt.event.ActionListener() {
@@ -106,7 +107,7 @@ public class LoginPage extends JPanel {
             }
         });
         add(jPasswordField);
-        jPasswordField.setBounds(193, 196, 382, 32);
+        jPasswordField.setBounds(190, 230, 382, 32);
 
         showPassRiado.setBackground(new java.awt.Color(244, 244, 224));
         showPassRiado.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
@@ -117,12 +118,12 @@ public class LoginPage extends JPanel {
             }
         });
         add(showPassRiado);
-        showPassRiado.setBounds(615, 251, 117, 32);
+        showPassRiado.setBounds(610, 280, 170, 32);
 
         loginButton.setBackground(new java.awt.Color(147, 130, 103));
-        loginButton.setFont(new java.awt.Font("TH Sarabun New", 1, 48)); // NOI18N
+        loginButton.setFont(new java.awt.Font("TH Sarabun New", 1, 24)); // NOI18N
         loginButton.setForeground(new java.awt.Color(255, 255, 255));
-        loginButton.setText("Login");
+        loginButton.setText("LOGIN");
         loginButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 loginButtonMouseClicked(evt);
@@ -134,7 +135,7 @@ public class LoginPage extends JPanel {
             }
         });
         add(loginButton);
-        loginButton.setBounds(327, 341, 170, 57);
+        loginButton.setBounds(320, 370, 170, 57);
 
         registerButton.setBackground(new java.awt.Color(204, 204, 185));
         registerButton.setFont(new java.awt.Font("TH Sarabun New", 0, 20)); // NOI18N
@@ -145,8 +146,10 @@ public class LoginPage extends JPanel {
             }
         });
         add(registerButton);
-        registerButton.setBounds(193, 250, 79, 34);
+        registerButton.setBounds(190, 280, 100, 34);
 
+        goToAdmin.setBackground(new java.awt.Color(242, 242, 242));
+        goToAdmin.setFont(new java.awt.Font("TH Sarabun New", 0, 24)); // NOI18N
         goToAdmin.setText("Admin Login");
         goToAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -154,7 +157,7 @@ public class LoginPage extends JPanel {
             }
         });
         add(goToAdmin);
-        goToAdmin.setBounds(20, 453, 140, 30);
+        goToAdmin.setBounds(30, 540, 140, 30);
     }// </editor-fold>//GEN-END:initComponents
     private boolean checkUserPass(String userName,String password){
 //        for(Row row : sheet ){

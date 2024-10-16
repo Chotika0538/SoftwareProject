@@ -4,11 +4,11 @@ import java.util.*;
 
 public class Candle extends Product{
     private ArrayList<Candle> cnList;
-    private double price;
+    
   
     public Candle(String name,String pattern,String detail,String path, double price){
        super(name,pattern,detail,path);
-       this.price=price;
+        setPrice(price);
     }
 
     public ArrayList<Candle> getwList() {
@@ -19,7 +19,5 @@ public class Candle extends Product{
         this.cnList = cnList;
     }
 
-    public Object getPriceAll() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+  
 }

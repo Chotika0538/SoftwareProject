@@ -72,7 +72,7 @@ public class SnackBoxProduct extends javax.swing.JPanel {
         scrollDetail.setViewportView(details);
 
         add(scrollDetail);
-        scrollDetail.setBounds(350, 80, 290, 100);
+        scrollDetail.setBounds(350, 80, 320, 100);
 
         name.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         add(name);
